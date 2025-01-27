@@ -1,0 +1,278 @@
+Current solution: 
+Machine 0: Task 7: [4] Task 30: [2] Task 23: [7] Task 28: [46] Task 1: [66] Task 16: [67] Task 29: [89] 
+Machine 1: Task 12: [5] Task 19: [9] Task 31: [10] Task 11: [48] Task 27: [74] Task 24: [90] Task 22: [98] 
+Machine 2: Task 9: [2] Task 10: [13] Task 2: [27] Task 6: [43] Task 15: [56] Task 37: [77] Task 34: [67] 
+Machine 3: Task 3: [4] Task 33: [20] Task 0: [34] Task 4: [23] Task 14: [67] Task 36: [82] 
+Machine 4: Task 17: [6] Task 20: [20] Task 26: [33] Task 18: [29] Task 5: [85] Task 21: [76] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 13: [52] Task 25: [56] Task 32: [80] Task 39: [96] 
+Total completion time: 5854
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 30: [2] Task 23: [7] Task 28: [46] Task 1: [66] Task 16: [67] Task 29: [89] 
+Machine 1: Task 12: [5] Task 19: [9] Task 31: [10] Task 11: [48] Task 27: [74] Task 24: [90] Task 22: [98] 
+Machine 2: Task 9: [2] Task 10: [13] Task 2: [27] Task 6: [43] Task 15: [56] Task 37: [77] Task 34: [67] 
+Machine 3: Task 0: [34] Task 3: [4] Task 33: [20] Task 4: [23] Task 14: [67] Task 36: [82] 
+Machine 4: Task 17: [6] Task 20: [20] Task 26: [33] Task 18: [29] Task 5: [85] Task 21: [76] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 13: [52] Task 25: [56] Task 32: [80] Task 39: [96] 
+Total completion time: 5771
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 30: [2] Task 23: [7] Task 28: [46] Task 1: [66] Task 16: [67] Task 29: [89] 
+Machine 1: Task 12: [5] Task 19: [9] Task 31: [10] Task 11: [48] Task 27: [74] Task 24: [90] Task 22: [98] 
+Machine 2: Task 9: [2] Task 10: [13] Task 2: [27] Task 6: [43] Task 15: [56] Task 37: [77] Task 34: [67] 
+Machine 3: Task 0: [34] Task 3: [4] Task 33: [20] Task 4: [23] Task 14: [67] Task 36: [82] 
+Machine 4: Task 17: [6] Task 20: [20] Task 26: [33] Task 18: [29] Task 5: [85] Task 21: [76] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 13: [52] Task 25: [56] Task 32: [80] Task 39: [96] 
+Total completion time: 5771
+
+Current solution: 
+Machine 0: Task 7: [4] Task 23: [7] Task 19: [9] Task 4: [23] Task 11: [48] Task 13: [52] Task 29: [89] Task 37: [77] 
+Machine 1: Task 12: [5] Task 10: [13] Task 20: [20] Task 33: [20] Task 14: [67] Task 16: [67] Task 22: [98] 
+Machine 2: Task 9: [2] Task 2: [27] Task 0: [34] Task 1: [66] Task 25: [56] Task 32: [80] 
+Machine 3: Task 3: [4] Task 30: [2] Task 35: [31] Task 15: [56] Task 5: [85] Task 21: [76] 
+Machine 4: Task 17: [6] Task 31: [10] Task 26: [33] Task 18: [29] Task 34: [67] Task 39: [96] Task 24: [90] 
+Machine 5: Task 38: [18] Task 8: [8] Task 6: [43] Task 28: [46] Task 36: [82] Task 27: [74] 
+Total completion time: 5694
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 23: [7] Task 19: [9] Task 4: [23] Task 11: [48] Task 13: [52] Task 29: [89] Task 37: [77] 
+Machine 1: Task 12: [5] Task 10: [13] Task 20: [20] Task 33: [20] Task 14: [67] Task 16: [67] Task 22: [98] 
+Machine 2: Task 9: [2] Task 2: [27] Task 0: [34] Task 1: [66] Task 25: [56] Task 32: [80] 
+Machine 3: Task 3: [4] Task 30: [2] Task 35: [31] Task 15: [56] Task 5: [85] Task 21: [76] 
+Machine 4: Task 17: [6] Task 31: [10] Task 26: [33] Task 18: [29] Task 34: [67] Task 39: [96] Task 24: [90] 
+Machine 5: Task 38: [18] Task 8: [8] Task 6: [43] Task 28: [46] Task 36: [82] Task 27: [74] 
+Total completion time: 5694
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 23: [7] Task 19: [9] Task 4: [23] Task 11: [48] Task 13: [52] Task 29: [89] Task 37: [77] 
+Machine 1: Task 12: [5] Task 10: [13] Task 20: [20] Task 33: [20] Task 14: [67] Task 16: [67] Task 22: [98] 
+Machine 2: Task 0: [34] Task 2: [27] Task 9: [2] Task 1: [66] Task 25: [56] Task 32: [80] 
+Machine 3: Task 3: [4] Task 30: [2] Task 35: [31] Task 15: [56] Task 5: [85] Task 21: [76] 
+Machine 4: Task 17: [6] Task 31: [10] Task 26: [33] Task 18: [29] Task 34: [67] Task 39: [96] Task 24: [90] 
+Machine 5: Task 38: [18] Task 8: [8] Task 6: [43] Task 28: [46] Task 36: [82] Task 27: [74] 
+Total completion time: 5673
+
+Current solution: 
+Machine 0: Task 7: [4] Task 30: [2] Task 19: [9] Task 18: [29] Task 33: [20] Task 16: [67] Task 24: [90] Task 36: [82] 
+Machine 1: Task 12: [5] Task 23: [7] Task 4: [23] Task 28: [46] Task 34: [67] Task 14: [67] Task 39: [96] 
+Machine 2: Task 9: [2] Task 10: [13] Task 20: [20] Task 0: [34] Task 1: [66] Task 25: [56] Task 22: [98] 
+Machine 3: Task 3: [4] Task 6: [43] Task 13: [52] Task 11: [48] Task 5: [85] Task 29: [89] 
+Machine 4: Task 17: [6] Task 31: [10] Task 2: [27] Task 15: [56] Task 37: [77] Task 27: [74] 
+Machine 5: Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 32: [80] Task 21: [76] 
+Total completion time: 5578
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 30: [2] Task 19: [9] Task 18: [29] Task 33: [20] Task 16: [67] Task 24: [90] Task 36: [82] 
+Machine 1: Task 12: [5] Task 23: [7] Task 4: [23] Task 28: [46] Task 34: [67] Task 14: [67] Task 39: [96] 
+Machine 2: Task 9: [2] Task 10: [13] Task 20: [20] Task 0: [34] Task 1: [66] Task 25: [56] Task 22: [98] 
+Machine 3: Task 3: [4] Task 6: [43] Task 13: [52] Task 11: [48] Task 5: [85] Task 29: [89] 
+Machine 4: Task 17: [6] Task 31: [10] Task 2: [27] Task 15: [56] Task 37: [77] Task 27: [74] 
+Machine 5: Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 32: [80] Task 21: [76] 
+Total completion time: 5578
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 30: [2] Task 19: [9] Task 18: [29] Task 33: [20] Task 16: [67] Task 24: [90] Task 36: [82] 
+Machine 1: Task 12: [5] Task 23: [7] Task 4: [23] Task 28: [46] Task 34: [67] Task 14: [67] Task 39: [96] 
+Machine 2: Task 9: [2] Task 10: [13] Task 20: [20] Task 0: [34] Task 1: [66] Task 25: [56] Task 22: [98] 
+Machine 3: Task 3: [4] Task 6: [43] Task 13: [52] Task 11: [48] Task 5: [85] Task 29: [89] 
+Machine 4: Task 17: [6] Task 31: [10] Task 2: [27] Task 15: [56] Task 37: [77] Task 27: [74] 
+Machine 5: Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 32: [80] Task 21: [76] 
+Total completion time: 5578
+
+Current solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 2: [27] Task 18: [29] Task 34: [67] Task 37: [77] Task 32: [80] 
+Machine 1: Task 12: [5] Task 23: [7] Task 4: [23] Task 35: [31] Task 1: [66] Task 27: [74] Task 39: [96] 
+Machine 2: Task 9: [2] Task 10: [13] Task 19: [9] Task 16: [67] Task 28: [46] Task 29: [89] Task 5: [85] 
+Machine 3: Task 3: [4] Task 30: [2] Task 13: [52] Task 11: [48] Task 14: [67] Task 36: [82] 
+Machine 4: Task 17: [6] Task 33: [20] Task 20: [20] Task 0: [34] Task 6: [43] Task 21: [76] Task 22: [98] 
+Machine 5: Task 38: [18] Task 8: [8] Task 26: [33] Task 25: [56] Task 15: [56] Task 24: [90] 
+Total completion time: 5845
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 31: [10] Task 2: [27] Task 18: [29] Task 34: [67] Task 37: [77] Task 32: [80] 
+Machine 1: Task 12: [5] Task 23: [7] Task 4: [23] Task 35: [31] Task 1: [66] Task 27: [74] Task 39: [96] 
+Machine 2: Task 9: [2] Task 10: [13] Task 19: [9] Task 16: [67] Task 28: [46] Task 29: [89] Task 5: [85] 
+Machine 3: Task 3: [4] Task 30: [2] Task 13: [52] Task 11: [48] Task 14: [67] Task 36: [82] 
+Machine 4: Task 17: [6] Task 33: [20] Task 20: [20] Task 0: [34] Task 6: [43] Task 21: [76] Task 22: [98] 
+Machine 5: Task 38: [18] Task 8: [8] Task 26: [33] Task 25: [56] Task 15: [56] Task 24: [90] 
+Total completion time: 5845
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 2: [27] Task 18: [29] Task 34: [67] Task 37: [77] Task 32: [80] 
+Machine 1: Task 12: [5] Task 23: [7] Task 4: [23] Task 35: [31] Task 1: [66] Task 27: [74] Task 39: [96] 
+Machine 2: Task 9: [2] Task 10: [13] Task 19: [9] Task 16: [67] Task 28: [46] Task 29: [89] Task 5: [85] 
+Machine 3: Task 3: [4] Task 30: [2] Task 13: [52] Task 11: [48] Task 14: [67] Task 36: [82] 
+Machine 4: Task 17: [6] Task 33: [20] Task 20: [20] Task 0: [34] Task 6: [43] Task 21: [76] Task 22: [98] 
+Machine 5: Task 38: [18] Task 8: [8] Task 26: [33] Task 25: [56] Task 15: [56] Task 24: [90] 
+Total completion time: 5845
+
+Current solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 33: [20] Task 25: [56] Task 16: [67] Task 21: [76] Task 36: [82] 
+Machine 1: Task 12: [5] Task 19: [9] Task 30: [2] Task 2: [27] Task 15: [56] Task 14: [67] Task 29: [89] 
+Machine 2: Task 9: [2] Task 10: [13] Task 4: [23] Task 11: [48] Task 13: [52] Task 37: [77] Task 5: [85] 
+Machine 3: Task 3: [4] Task 23: [7] Task 28: [46] Task 34: [67] Task 1: [66] Task 27: [74] 
+Machine 4: Task 17: [6] Task 20: [20] Task 18: [29] Task 26: [33] Task 32: [80] Task 39: [96] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 0: [34] Task 6: [43] Task 24: [90] Task 22: [98] 
+Total completion time: 5928
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 31: [10] Task 33: [20] Task 25: [56] Task 16: [67] Task 21: [76] Task 36: [82] 
+Machine 1: Task 12: [5] Task 19: [9] Task 30: [2] Task 2: [27] Task 15: [56] Task 14: [67] Task 29: [89] 
+Machine 2: Task 9: [2] Task 10: [13] Task 4: [23] Task 11: [48] Task 13: [52] Task 37: [77] Task 5: [85] 
+Machine 3: Task 3: [4] Task 23: [7] Task 28: [46] Task 34: [67] Task 1: [66] Task 27: [74] 
+Machine 4: Task 17: [6] Task 20: [20] Task 18: [29] Task 26: [33] Task 32: [80] Task 39: [96] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 0: [34] Task 6: [43] Task 24: [90] Task 22: [98] 
+Total completion time: 5928
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 33: [20] Task 25: [56] Task 16: [67] Task 21: [76] Task 36: [82] 
+Machine 1: Task 12: [5] Task 19: [9] Task 30: [2] Task 2: [27] Task 15: [56] Task 14: [67] Task 29: [89] 
+Machine 2: Task 9: [2] Task 10: [13] Task 4: [23] Task 11: [48] Task 13: [52] Task 37: [77] Task 5: [85] 
+Machine 3: Task 3: [4] Task 23: [7] Task 28: [46] Task 34: [67] Task 1: [66] Task 27: [74] 
+Machine 4: Task 17: [6] Task 20: [20] Task 18: [29] Task 26: [33] Task 32: [80] Task 39: [96] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 0: [34] Task 6: [43] Task 24: [90] Task 22: [98] 
+Total completion time: 5928
+
+Current solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 33: [20] Task 25: [56] Task 4: [23] Task 1: [66] Task 39: [96] 
+Machine 1: Task 12: [5] Task 19: [9] Task 30: [2] Task 10: [13] Task 18: [29] Task 34: [67] Task 16: [67] Task 32: [80] 
+Machine 2: Task 9: [2] Task 2: [27] Task 0: [34] Task 28: [46] Task 36: [82] Task 22: [98] 
+Machine 3: Task 3: [4] Task 23: [7] Task 15: [56] Task 6: [43] Task 21: [76] Task 37: [77] 
+Machine 4: Task 17: [6] Task 20: [20] Task 26: [33] Task 11: [48] Task 27: [74] Task 24: [90] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 13: [52] Task 14: [67] Task 5: [85] Task 29: [89] 
+Total completion time: 5801
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 31: [10] Task 33: [20] Task 25: [56] Task 4: [23] Task 1: [66] Task 39: [96] 
+Machine 1: Task 12: [5] Task 19: [9] Task 30: [2] Task 10: [13] Task 18: [29] Task 34: [67] Task 16: [67] Task 32: [80] 
+Machine 2: Task 9: [2] Task 2: [27] Task 0: [34] Task 28: [46] Task 36: [82] Task 22: [98] 
+Machine 3: Task 3: [4] Task 23: [7] Task 15: [56] Task 6: [43] Task 21: [76] Task 37: [77] 
+Machine 4: Task 17: [6] Task 20: [20] Task 26: [33] Task 11: [48] Task 27: [74] Task 24: [90] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 13: [52] Task 14: [67] Task 5: [85] Task 29: [89] 
+Total completion time: 5801
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 33: [20] Task 25: [56] Task 4: [23] Task 1: [66] Task 39: [96] 
+Machine 1: Task 12: [5] Task 19: [9] Task 30: [2] Task 10: [13] Task 18: [29] Task 34: [67] Task 16: [67] Task 32: [80] 
+Machine 2: Task 0: [34] Task 2: [27] Task 9: [2] Task 28: [46] Task 36: [82] Task 22: [98] 
+Machine 3: Task 3: [4] Task 23: [7] Task 15: [56] Task 6: [43] Task 21: [76] Task 37: [77] 
+Machine 4: Task 17: [6] Task 20: [20] Task 26: [33] Task 11: [48] Task 27: [74] Task 24: [90] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 13: [52] Task 14: [67] Task 5: [85] Task 29: [89] 
+Total completion time: 5752
+
+Current solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 2: [27] Task 15: [56] Task 28: [46] Task 14: [67] Task 39: [96] 
+Machine 1: Task 12: [5] Task 30: [2] Task 19: [9] Task 18: [29] Task 11: [48] Task 16: [67] Task 32: [80] 
+Machine 2: Task 9: [2] Task 10: [13] Task 4: [23] Task 26: [33] Task 13: [52] Task 29: [89] Task 27: [74] 
+Machine 3: Task 3: [4] Task 6: [43] Task 23: [7] Task 25: [56] Task 34: [67] Task 22: [98] 
+Machine 4: Task 17: [6] Task 33: [20] Task 20: [20] Task 0: [34] Task 21: [76] Task 24: [90] Task 5: [85] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 1: [66] Task 37: [77] Task 36: [82] 
+Total completion time: 5751
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 31: [10] Task 2: [27] Task 15: [56] Task 28: [46] Task 14: [67] Task 39: [96] 
+Machine 1: Task 12: [5] Task 30: [2] Task 19: [9] Task 18: [29] Task 11: [48] Task 16: [67] Task 32: [80] 
+Machine 2: Task 9: [2] Task 10: [13] Task 4: [23] Task 26: [33] Task 13: [52] Task 29: [89] Task 27: [74] 
+Machine 3: Task 3: [4] Task 6: [43] Task 23: [7] Task 25: [56] Task 34: [67] Task 22: [98] 
+Machine 4: Task 17: [6] Task 33: [20] Task 20: [20] Task 0: [34] Task 21: [76] Task 24: [90] Task 5: [85] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 1: [66] Task 37: [77] Task 36: [82] 
+Total completion time: 5751
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 2: [27] Task 15: [56] Task 28: [46] Task 14: [67] Task 39: [96] 
+Machine 1: Task 12: [5] Task 30: [2] Task 19: [9] Task 18: [29] Task 11: [48] Task 16: [67] Task 32: [80] 
+Machine 2: Task 9: [2] Task 10: [13] Task 4: [23] Task 26: [33] Task 13: [52] Task 29: [89] Task 27: [74] 
+Machine 3: Task 3: [4] Task 6: [43] Task 23: [7] Task 25: [56] Task 34: [67] Task 22: [98] 
+Machine 4: Task 17: [6] Task 33: [20] Task 20: [20] Task 0: [34] Task 21: [76] Task 24: [90] Task 5: [85] 
+Machine 5: Task 38: [18] Task 8: [8] Task 35: [31] Task 1: [66] Task 37: [77] Task 36: [82] 
+Total completion time: 5751
+
+Current solution: 
+Machine 0: Task 7: [4] Task 30: [2] Task 23: [7] Task 4: [23] Task 28: [46] Task 14: [67] Task 24: [90] Task 27: [74] 
+Machine 1: Task 12: [5] Task 19: [9] Task 8: [8] Task 35: [31] Task 11: [48] Task 5: [85] Task 22: [98] 
+Machine 2: Task 9: [2] Task 10: [13] Task 6: [43] Task 26: [33] Task 32: [80] Task 37: [77] 
+Machine 3: Task 3: [4] Task 20: [20] Task 18: [29] Task 34: [67] Task 16: [67] Task 39: [96] 
+Machine 4: Task 17: [6] Task 31: [10] Task 2: [27] Task 0: [34] Task 1: [66] Task 36: [82] Task 21: [76] 
+Machine 5: Task 38: [18] Task 33: [20] Task 25: [56] Task 15: [56] Task 13: [52] Task 29: [89] 
+Total completion time: 5767
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 30: [2] Task 23: [7] Task 4: [23] Task 28: [46] Task 14: [67] Task 24: [90] Task 27: [74] 
+Machine 1: Task 12: [5] Task 19: [9] Task 8: [8] Task 35: [31] Task 11: [48] Task 5: [85] Task 22: [98] 
+Machine 2: Task 9: [2] Task 10: [13] Task 6: [43] Task 26: [33] Task 32: [80] Task 37: [77] 
+Machine 3: Task 3: [4] Task 20: [20] Task 18: [29] Task 34: [67] Task 16: [67] Task 39: [96] 
+Machine 4: Task 17: [6] Task 31: [10] Task 2: [27] Task 0: [34] Task 1: [66] Task 36: [82] Task 21: [76] 
+Machine 5: Task 38: [18] Task 33: [20] Task 25: [56] Task 15: [56] Task 13: [52] Task 29: [89] 
+Total completion time: 5767
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 30: [2] Task 23: [7] Task 4: [23] Task 28: [46] Task 14: [67] Task 24: [90] Task 27: [74] 
+Machine 1: Task 12: [5] Task 19: [9] Task 8: [8] Task 35: [31] Task 11: [48] Task 5: [85] Task 22: [98] 
+Machine 2: Task 9: [2] Task 10: [13] Task 6: [43] Task 26: [33] Task 32: [80] Task 37: [77] 
+Machine 3: Task 3: [4] Task 20: [20] Task 18: [29] Task 34: [67] Task 16: [67] Task 39: [96] 
+Machine 4: Task 17: [6] Task 31: [10] Task 2: [27] Task 0: [34] Task 1: [66] Task 36: [82] Task 21: [76] 
+Machine 5: Task 38: [18] Task 33: [20] Task 25: [56] Task 15: [56] Task 13: [52] Task 29: [89] 
+Total completion time: 5767
+
+Current solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 23: [7] Task 15: [56] Task 28: [46] Task 1: [66] Task 39: [96] 
+Machine 1: Task 12: [5] Task 19: [9] Task 4: [23] Task 11: [48] Task 27: [74] Task 29: [89] Task 22: [98] 
+Machine 2: Task 9: [2] Task 10: [13] Task 26: [33] Task 18: [29] Task 25: [56] Task 21: [76] Task 36: [82] 
+Machine 3: Task 3: [4] Task 30: [2] Task 35: [31] Task 6: [43] Task 13: [52] Task 5: [85] Task 37: [77] 
+Machine 4: Task 17: [6] Task 33: [20] Task 20: [20] Task 34: [67] Task 16: [67] Task 24: [90] 
+Machine 5: Task 38: [18] Task 8: [8] Task 2: [27] Task 0: [34] Task 14: [67] Task 32: [80] 
+Total completion time: 5750
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 31: [10] Task 23: [7] Task 15: [56] Task 28: [46] Task 1: [66] Task 39: [96] 
+Machine 1: Task 12: [5] Task 19: [9] Task 4: [23] Task 11: [48] Task 27: [74] Task 29: [89] Task 22: [98] 
+Machine 2: Task 9: [2] Task 10: [13] Task 26: [33] Task 18: [29] Task 25: [56] Task 21: [76] Task 36: [82] 
+Machine 3: Task 3: [4] Task 30: [2] Task 35: [31] Task 6: [43] Task 13: [52] Task 5: [85] Task 37: [77] 
+Machine 4: Task 17: [6] Task 33: [20] Task 20: [20] Task 34: [67] Task 16: [67] Task 24: [90] 
+Machine 5: Task 38: [18] Task 8: [8] Task 2: [27] Task 0: [34] Task 14: [67] Task 32: [80] 
+Total completion time: 5750
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 31: [10] Task 23: [7] Task 15: [56] Task 28: [46] Task 1: [66] Task 39: [96] 
+Machine 1: Task 12: [5] Task 19: [9] Task 4: [23] Task 11: [48] Task 27: [74] Task 29: [89] Task 22: [98] 
+Machine 2: Task 9: [2] Task 10: [13] Task 26: [33] Task 18: [29] Task 25: [56] Task 21: [76] Task 36: [82] 
+Machine 3: Task 3: [4] Task 30: [2] Task 35: [31] Task 6: [43] Task 13: [52] Task 5: [85] Task 37: [77] 
+Machine 4: Task 17: [6] Task 33: [20] Task 20: [20] Task 34: [67] Task 16: [67] Task 24: [90] 
+Machine 5: Task 38: [18] Task 8: [8] Task 2: [27] Task 0: [34] Task 14: [67] Task 32: [80] 
+Total completion time: 5750
+
+Current solution: 
+Machine 0: Task 7: [4] Task 23: [7] Task 19: [9] Task 4: [23] Task 11: [48] Task 15: [56] Task 34: [67] Task 29: [89] 
+Machine 1: Task 12: [5] Task 10: [13] Task 26: [33] Task 33: [20] Task 14: [67] Task 32: [80] Task 24: [90] 
+Machine 2: Task 9: [2] Task 2: [27] Task 0: [34] Task 20: [20] Task 5: [85] Task 39: [96] 
+Machine 3: Task 3: [4] Task 30: [2] Task 35: [31] Task 13: [52] Task 1: [66] Task 36: [82] Task 22: [98] 
+Machine 4: Task 17: [6] Task 31: [10] Task 28: [46] Task 18: [29] Task 16: [67] Task 27: [74] 
+Machine 5: Task 38: [18] Task 8: [8] Task 6: [43] Task 25: [56] Task 21: [76] Task 37: [77] 
+Total completion time: 6026
+
+Reinsertion intra solution:
+Machine 0: Task 7: [4] Task 23: [7] Task 19: [9] Task 4: [23] Task 11: [48] Task 15: [56] Task 34: [67] Task 29: [89] 
+Machine 1: Task 12: [5] Task 10: [13] Task 26: [33] Task 33: [20] Task 14: [67] Task 32: [80] Task 24: [90] 
+Machine 2: Task 9: [2] Task 2: [27] Task 20: [20] Task 0: [34] Task 5: [85] Task 39: [96] 
+Machine 3: Task 3: [4] Task 30: [2] Task 35: [31] Task 13: [52] Task 1: [66] Task 36: [82] Task 22: [98] 
+Machine 4: Task 17: [6] Task 31: [10] Task 28: [46] Task 18: [29] Task 16: [67] Task 27: [74] 
+Machine 5: Task 38: [18] Task 8: [8] Task 6: [43] Task 25: [56] Task 21: [76] Task 37: [77] 
+Total completion time: 5948
+
+Local search solution: 
+Machine 0: Task 7: [4] Task 23: [7] Task 19: [9] Task 4: [23] Task 11: [48] Task 15: [56] Task 34: [67] Task 29: [89] 
+Machine 1: Task 12: [5] Task 10: [13] Task 26: [33] Task 33: [20] Task 14: [67] Task 32: [80] Task 24: [90] 
+Machine 2: Task 9: [2] Task 2: [27] Task 20: [20] Task 0: [34] Task 5: [85] Task 39: [96] 
+Machine 3: Task 3: [4] Task 30: [2] Task 35: [31] Task 13: [52] Task 1: [66] Task 36: [82] Task 22: [98] 
+Machine 4: Task 17: [6] Task 31: [10] Task 28: [46] Task 18: [29] Task 16: [67] Task 27: [74] 
+Machine 5: Task 38: [18] Task 8: [8] Task 6: [43] Task 25: [56] Task 21: [76] Task 37: [77] 
+Total completion time: 5948
+
+Machine 0: Task 7: [4] Task 30: [2] Task 19: [9] Task 18: [29] Task 33: [20] Task 16: [67] Task 24: [90] Task 36: [82] 
+Machine 1: Task 12: [5] Task 23: [7] Task 4: [23] Task 28: [46] Task 34: [67] Task 14: [67] Task 39: [96] 
+Machine 2: Task 9: [2] Task 10: [13] Task 20: [20] Task 0: [34] Task 1: [66] Task 25: [56] Task 22: [98] 
+Machine 3: Task 3: [4] Task 6: [43] Task 13: [52] Task 11: [48] Task 5: [85] Task 29: [89] 
+Machine 4: Task 17: [6] Task 31: [10] Task 2: [27] Task 15: [56] Task 37: [77] Task 27: [74] 
+Machine 5: Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 32: [80] Task 21: [76] 
+Total completion time: 5578
+

@@ -1,0 +1,3 @@
+/home/raul/Practicas/DAdA-23-24/Practica7/build/CMakeFiles/ParallelMachineProblem.dir
+/home/raul/Practicas/DAdA-23-24/Practica7/build/CMakeFiles/edit_cache.dir
+/home/raul/Practicas/DAdA-23-24/Practica7/build/CMakeFiles/rebuild_cache.dir

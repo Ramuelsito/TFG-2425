@@ -1,0 +1,15 @@
+Con 100 iteraciones en GVNS y 100 en Grasp 
+#se obtiene un tiempo de ejecución de ~ 6 min 
+y una solucion de costo 13195
+
+Con 1000 iteraciones en GVNS y 1 en Grasp
+#se obtiene un tiempo de ejecución de ~ 1 min
+y una solucion de costo 13345
+
+Con 1000 iteraciones en GVNS y 10 en Grasp
+#se obtiene un tiempo de ejecución de ~ 3 min
+y una solucion de costo 13241
+
+I40j_6m_S1_1 Con 1000 iteraciones en GVNS y 10 en Grasp
+#se obtiene un tiempo de ejecución de ~ 4 min
+y una solucion de costo 5115
