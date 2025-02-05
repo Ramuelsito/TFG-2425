@@ -1,7 +1,6 @@
 CMakeFiles/ParallelMachineProblem.dir/src/Problem.cc.o: \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/Problem.cc \
- /usr/include/stdc-predef.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Problem.h \
+ /home/raul/Practicas/TFG-2425/src/Problem.cc /usr/include/stdc-predef.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Problem.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -156,8 +155,8 @@ CMakeFiles/ParallelMachineProblem.dir/src/Problem.cc.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Machine.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Tasks.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Machine.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Tasks.h \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/stl_algo.h \

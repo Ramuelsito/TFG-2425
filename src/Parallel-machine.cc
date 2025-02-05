@@ -39,54 +39,59 @@ int main(int argc, char* argv[]) {
         }
         return 0;
       } else {
+        int algorithmOption = AlgorithmMenu();
         std::string instance = argv[1];
         std::cout << "../Instances/" + instance + ".txt" << std::endl;
         Problem problem("../Instances/" + instance + ".txt");
-        int algorithmOption = AlgorithmMenu();
+
+        std::cout << "Problem: " << std::endl;
+        std::cout << problem << std::endl;
+
         Solution solution;
         std::string algorithm_name;
         std::chrono::seconds performance_time;
         double update_percentage;
-        switch (algorithmOption) {
-        case 1: {
-          algorithm_name = "Greedy";
-          Greedy greedy(problem);
-          auto start = std::chrono::steady_clock::now();
-          solution = greedy.Solve();
-          auto end = std::chrono::steady_clock::now();
-          performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-          break;
-        }
-        case 2: {
-          algorithm_name = "Grasp";
-          GRASPMin grasp_min(problem);
-          auto start = std::chrono::steady_clock::now();
-          solution = grasp_min.Solve();
-          auto end = std::chrono::steady_clock::now();
-          performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-          break;
-        }
-        case 3: {
-          algorithm_name = "GVNS";
-          MultiGVNS multigvns(problem);
-          auto start = std::chrono::steady_clock::now();
-          solution = multigvns.Solve();
-          update_percentage = multigvns.GetUpdatePercentage();
-          auto end = std::chrono::steady_clock::now();
-          performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-          break;
-        }
-        case 4:
-          return 0;
+      //   switch (algorithmOption) {
+      //   case 1: {
+      //     algorithm_name = "Greedy";
+      //     Greedy greedy(problem);
+      //     auto start = std::chrono::steady_clock::now();
+      //     solution = greedy.Solve();
+      //     auto end = std::chrono::steady_clock::now();
+      //     performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+      //     break;
+      //   }
+      //   case 2: {
+      //     algorithm_name = "Grasp";
+      //     GRASPMin grasp_min(problem);
+      //     auto start = std::chrono::steady_clock::now();
+      //     solution = grasp_min.Solve();
+      //     auto end = std::chrono::steady_clock::now();
+      //     performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+      //     break;
+      //   }
+      //   case 3: {
+      //     algorithm_name = "GVNS";
+      //     MultiGVNS multigvns(problem);
+      //     auto start = std::chrono::steady_clock::now();
+      //     solution = multigvns.Solve();
+      //     update_percentage = multigvns.GetUpdatePercentage();
+      //     auto end = std::chrono::steady_clock::now();
+      //     performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+      //     break;
+      //   }
+      //   case 4:
+      //     return 0;
     
-        default:
-          throw std::invalid_argument("Invalid option.");
-          break;
-        }
-        solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), problem.getTasksTimes().size());
-        std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
-      }
+      //   default:
+      //     throw std::invalid_argument("Invalid option.");
+      //     break;
+      //   }
+      //   solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), problem.getTasksTimes().size());
+      //   std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+      // }
     } 
+    }
   } catch (std::invalid_argument& e) {
     std::cerr << e.what() << std::endl;
   }

@@ -124,8 +124,6 @@ Solution GRASPMin::LocalSearch(const Solution& initial_solution) {
 }
 
 Solution GRASPMin::UpdateSolution(const Solution& actual_solution, const Solution& best_solution) {
-  if (actual_solution.GetTCT() < best_solution.GetTCT()) {
-    return actual_solution;
-  }
+  if (actual_solution.GetTCT() < best_solution.GetTCT()) { return actual_solution; }
   return best_solution;
 }

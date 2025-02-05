@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/raul/Practicas/DAdA-23-24/Practica7/headers
+CXX_INCLUDES = -I/home/raul/Practicas/TFG-2425/headers
 
 CXX_FLAGS = 
 

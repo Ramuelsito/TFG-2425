@@ -1,7 +1,7 @@
 CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/Parallel-machine.cc \
+ /home/raul/Practicas/TFG-2425/src/Parallel-machine.cc \
  /usr/include/stdc-predef.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Problem.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Problem.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -156,11 +156,11 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Machine.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Tasks.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Solution.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/Greedy.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/../Algorithm.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Machine.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Tasks.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Solution.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/Greedy.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Algorithm.h \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/stl_algo.h \
@@ -212,15 +212,15 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: \
  /usr/include/c++/11/pstl/glue_numeric_defs.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
  /usr/include/c++/11/bits/parse_numbers.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/GRASP-Algorithms/GRASP-min.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/GRASP-Algorithms/../GRASP.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/ReInsertionIntra.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/Environment.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/SwapIntra.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/ReInsertionInter.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/SwapInter.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Algorithms/MultiGVNS.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Util.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/GRASP-min.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../GRASP.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/ReInsertionIntra.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/Environment.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/SwapIntra.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/ReInsertionInter.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/SwapInter.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/MultiGVNS.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Util.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /usr/include/c++/11/filesystem /usr/include/c++/11/bits/fs_fwd.h \
  /usr/include/c++/11/bits/fs_path.h /usr/include/c++/11/locale \

@@ -27,6 +27,7 @@ class MultiGVNS : public Algorithm {
  private: 
   Solution Shaking(const Solution&, const int&);
   Solution LocalSearchByVND(const Solution&);
+  Solution LocalSearchByRandomVND(const Solution&);
   Solution UpdateSolution(const Solution&, const Solution&, const Solution&);
   bool MoveOrNot(const Solution&, const Solution&);
   

@@ -1,7 +1,6 @@
 CMakeFiles/ParallelMachineProblem.dir/src/Machine.cc.o: \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/Machine.cc \
- /usr/include/stdc-predef.h \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Machine.h \
+ /home/raul/Practicas/TFG-2425/src/Machine.cc /usr/include/stdc-predef.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Machine.h \
  /usr/include/c++/11/iostream \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
@@ -152,4 +151,4 @@ CMakeFiles/ParallelMachineProblem.dir/src/Machine.cc.o: \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc \
- /home/raul/Practicas/DAdA-23-24/Practica7/src/../Includes/Tasks.h
+ /home/raul/Practicas/TFG-2425/src/../Includes/Tasks.h
