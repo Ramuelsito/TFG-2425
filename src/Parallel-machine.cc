@@ -37,31 +37,30 @@ int main(int argc, char* argv[]) {
         }
         return 0;
       } else {
-        int algorithmOption = AlgorithmMenu();
+        // int algorithmOption = AlgorithmMenu();
         std::string instance = argv[1];
         std::cout << "../Instances/" + instance + ".txt" << std::endl;
         Problem problem("../Instances/" + instance + ".txt");
-
-        std::cout << "Problem: " << std::endl;
-        std::cout << problem << std::endl;
 
         Solution solution;
         std::string algorithm_name;
         std::chrono::seconds performance_time;
         double update_percentage;
 
-        ConstructionPhase construction_phase(problem);
-        Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-        std::cout << "Initial solution: " << std::endl;
-        std::cout << initial_solution << std::endl;
+        // ConstructionPhase construction_phase(problem);
+        // Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
+        // std::cout << "Initial solution: " << std::endl;
+        // std::cout << initial_solution << std::endl;
 
-        // algorithm_name = "GVNS";
-        // MultiGVNS multigvns(problem);
-        // auto start = std::chrono::steady_clock::now();
-        // solution = multigvns.Solve();
-        // update_percentage = multigvns.GetUpdatePercentage();
-        // auto end = std::chrono::steady_clock::now();
-        // performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+        algorithm_name = "GVNS";
+        MultiGVNS multigvns(problem);
+        auto start = std::chrono::steady_clock::now();
+        solution = multigvns.Solve();
+        update_percentage = multigvns.GetUpdatePercentage();
+        auto end = std::chrono::steady_clock::now();
+        performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+        std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
+            << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
 
       //   switch (algorithmOption) {
       //   case 1: {

@@ -19,12 +19,11 @@ Solution MultiGVNS::Solve() {
   Solution local_search_solution, shaked_solution, previous_best_solution;
   int iterations_without_improvement = 0;
   ConstructionPhase construction_phase(problem_);
-  for (int i = 0; i < 1000; ++i) {                                          // Multi-start
-    // Solution current_solution = GRASPMin(problem_).Solve();
-    
+  for (int i = 0; i < 1; ++i) {   
     // current_solution es S, tendremos que mantenerla y 
     // crear otra solucion S' para hacer la busqueda local
     // Entonces guardamos en un fichero S y S'.
+
     Solution current_solution = construction_phase.ConstructGreedyRandSolution();
     Solution initial_solution = current_solution;
     int k = 1;
