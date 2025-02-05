@@ -11,8 +11,6 @@
 
 #include "../Includes/Problem.h"
 #include "../Includes/Solution.h"
-#include "../Includes/Algorithms/Greedy.h"
-#include "../Includes/Algorithms/GRASP-Algorithms/GRASP-min.h"
 #include "../Includes/Algorithms/MultiGVNS.h"
 #include "../Includes/Util.h"
 #include <chrono>
@@ -51,6 +49,20 @@ int main(int argc, char* argv[]) {
         std::string algorithm_name;
         std::chrono::seconds performance_time;
         double update_percentage;
+
+        ConstructionPhase construction_phase(problem);
+        Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
+        std::cout << "Initial solution: " << std::endl;
+        std::cout << initial_solution << std::endl;
+
+        // algorithm_name = "GVNS";
+        // MultiGVNS multigvns(problem);
+        // auto start = std::chrono::steady_clock::now();
+        // solution = multigvns.Solve();
+        // update_percentage = multigvns.GetUpdatePercentage();
+        // auto end = std::chrono::steady_clock::now();
+        // performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+
       //   switch (algorithmOption) {
       //   case 1: {
       //     algorithm_name = "Greedy";

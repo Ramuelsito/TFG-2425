@@ -10,7 +10,12 @@
  */
 
 #pragma once
-#include "GRASP-Algorithms/GRASP-min.h"
+#include "../Algorithm.h"
+#include "ConstructionPhase.h"
+#include "../Environment/ReInsertionIntra.h"
+#include "../Environment/SwapIntra.h"
+#include "../Environment/ReInsertionInter.h"
+#include "../Environment/SwapInter.h"
 
 /**
  * @class MultiGVNS
@@ -18,7 +23,7 @@
  */
 class MultiGVNS : public Algorithm {
  public:
-  MultiGVNS(Problem problem) : problem_(problem) {
+  MultiGVNS(const Problem& problem) : problem_(problem) {
     best_solution_.AssignMaxTCT();
     update_percentage_ = 0;
   }
@@ -31,7 +36,7 @@ class MultiGVNS : public Algorithm {
   Solution UpdateSolution(const Solution&, const Solution&, const Solution&);
   bool MoveOrNot(const Solution&, const Solution&);
   
-  Problem problem_;
+  const Problem& problem_;
   Solution best_solution_;
   double update_percentage_;
 };

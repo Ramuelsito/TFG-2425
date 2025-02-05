@@ -71,15 +71,10 @@ Problem::Problem(std::string file_name) {
       throw std::invalid_argument("Invalid file format");
     }
   }
-  file.close();
-}
-
-/**
- * Sort the tasks by their processing time
- * @return - Void
- */
-void Problem::SortTasks() {
+  // Here we sort the tasks by their processing time, so the index 
+  // doesn't correspond to the task id in the tasks_times_ vector
   std::sort(tasks_times_.begin(), tasks_times_.end());
+  file.close();
 }
 
 /**

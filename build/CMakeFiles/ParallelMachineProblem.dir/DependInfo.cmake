@@ -8,9 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/raul/Practicas/TFG-2425/src/Algorithms/GRASP-min.cc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP-min.cc.o" "gcc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP-min.cc.o.d"
-  "/home/raul/Practicas/TFG-2425/src/Algorithms/GRASP.cc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP.cc.o" "gcc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP.cc.o.d"
-  "/home/raul/Practicas/TFG-2425/src/Algorithms/Greedy.cc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/Greedy.cc.o" "gcc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/Greedy.cc.o.d"
+  "/home/raul/Practicas/TFG-2425/src/Algorithms/ConstructionPhase.cc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.o" "gcc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.o.d"
   "/home/raul/Practicas/TFG-2425/src/Algorithms/MultiGVNS.cc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/MultiGVNS.cc.o" "gcc" "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/MultiGVNS.cc.o.d"
   "/home/raul/Practicas/TFG-2425/src/Environment/ReInsertionInter.cc" "CMakeFiles/ParallelMachineProblem.dir/src/Environment/ReInsertionInter.cc.o" "gcc" "CMakeFiles/ParallelMachineProblem.dir/src/Environment/ReInsertionInter.cc.o.d"
   "/home/raul/Practicas/TFG-2425/src/Environment/ReInsertionIntra.cc" "CMakeFiles/ParallelMachineProblem.dir/src/Environment/ReInsertionIntra.cc.o" "gcc" "CMakeFiles/ParallelMachineProblem.dir/src/Environment/ReInsertionIntra.cc.o.d"

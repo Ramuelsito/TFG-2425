@@ -16,21 +16,22 @@
  * @return The best solution found in i iterations
  */
 Solution MultiGVNS::Solve() {
-  Solution local_search_solution, new_solution, previous_best_solution;     // Initialize variables outside the loop
+  Solution local_search_solution, shaked_solution, previous_best_solution;
   int iterations_without_improvement = 0;
+  ConstructionPhase construction_phase(problem_);
   for (int i = 0; i < 1000; ++i) {                                          // Multi-start
     // Solution current_solution = GRASPMin(problem_).Solve();
     
     // current_solution es S, tendremos que mantenerla y 
     // crear otra solucion S' para hacer la busqueda local
     // Entonces guardamos en un fichero S y S'.
-    Solution current_solution = GRASPMin(problem_).ConstructGreedyRandSolution();
-    Solution grasp_solution = current_solution;
+    Solution current_solution = construction_phase.ConstructGreedyRandSolution();
+    Solution initial_solution = current_solution;
     int k = 1;
     previous_best_solution = best_solution_;
     while (k <= 6) {
-      new_solution = Shaking(current_solution, k);
-      local_search_solution = LocalSearchByVND(new_solution);
+      shaked_solution = Shaking(current_solution, k);
+      local_search_solution = LocalSearchByVND(shaked_solution);
       if (MoveOrNot(local_search_solution, current_solution)) {
         current_solution = local_search_solution;
         k = 1;
@@ -38,7 +39,7 @@ Solution MultiGVNS::Solve() {
         ++k;
       }
     }
-    best_solution_ = UpdateSolution(best_solution_, current_solution, grasp_solution);
+    best_solution_ = UpdateSolution(best_solution_, current_solution, initial_solution);
     if (best_solution_.GetTCT() == previous_best_solution.GetTCT()) {
       ++iterations_without_improvement;
     } else {
@@ -50,6 +51,8 @@ Solution MultiGVNS::Solve() {
   }
   return best_solution_;
 }
+
+
 
 /**
  * @brief Select a random solution from the enviorenment generated from 

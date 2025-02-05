@@ -30,7 +30,6 @@ class Problem {
   std::vector<Task> getTasksTimes() const { return tasks_times_; }
   std::vector<std::vector<int>> getSetupTimes() const { return setup_times_; }
 
-  void SortTasks();
   friend std::ostream& operator<<(std::ostream& os, const Problem& problem);
  private:
   std::vector<Machine> machines_;

@@ -159,7 +159,7 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: \
  /home/raul/Practicas/TFG-2425/src/../Includes/Machine.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Tasks.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Solution.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/Greedy.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/MultiGVNS.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Algorithm.h \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
@@ -212,14 +212,12 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: \
  /usr/include/c++/11/pstl/glue_numeric_defs.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
  /usr/include/c++/11/bits/parse_numbers.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/GRASP-min.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../GRASP.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/ReInsertionIntra.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/Environment.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/SwapIntra.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/ReInsertionInter.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/GRASP-Algorithms/../../Environment/SwapInter.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/MultiGVNS.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/ConstructionPhase.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/ReInsertionIntra.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/Environment.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/SwapIntra.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/ReInsertionInter.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/SwapInter.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Util.h \
  /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
  /usr/include/c++/11/filesystem /usr/include/c++/11/bits/fs_fwd.h \

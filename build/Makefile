@@ -129,77 +129,29 @@ ParallelMachineProblem/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/build
 .PHONY : ParallelMachineProblem/fast
 
-src/Algorithms/GRASP-min.o: src/Algorithms/GRASP-min.cc.o
-.PHONY : src/Algorithms/GRASP-min.o
+src/Algorithms/ConstructionPhase.o: src/Algorithms/ConstructionPhase.cc.o
+.PHONY : src/Algorithms/ConstructionPhase.o
 
 # target to build an object file
-src/Algorithms/GRASP-min.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP-min.cc.o
-.PHONY : src/Algorithms/GRASP-min.cc.o
+src/Algorithms/ConstructionPhase.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.o
+.PHONY : src/Algorithms/ConstructionPhase.cc.o
 
-src/Algorithms/GRASP-min.i: src/Algorithms/GRASP-min.cc.i
-.PHONY : src/Algorithms/GRASP-min.i
-
-# target to preprocess a source file
-src/Algorithms/GRASP-min.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP-min.cc.i
-.PHONY : src/Algorithms/GRASP-min.cc.i
-
-src/Algorithms/GRASP-min.s: src/Algorithms/GRASP-min.cc.s
-.PHONY : src/Algorithms/GRASP-min.s
-
-# target to generate assembly for a file
-src/Algorithms/GRASP-min.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP-min.cc.s
-.PHONY : src/Algorithms/GRASP-min.cc.s
-
-src/Algorithms/GRASP.o: src/Algorithms/GRASP.cc.o
-.PHONY : src/Algorithms/GRASP.o
-
-# target to build an object file
-src/Algorithms/GRASP.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP.cc.o
-.PHONY : src/Algorithms/GRASP.cc.o
-
-src/Algorithms/GRASP.i: src/Algorithms/GRASP.cc.i
-.PHONY : src/Algorithms/GRASP.i
+src/Algorithms/ConstructionPhase.i: src/Algorithms/ConstructionPhase.cc.i
+.PHONY : src/Algorithms/ConstructionPhase.i
 
 # target to preprocess a source file
-src/Algorithms/GRASP.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP.cc.i
-.PHONY : src/Algorithms/GRASP.cc.i
+src/Algorithms/ConstructionPhase.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.i
+.PHONY : src/Algorithms/ConstructionPhase.cc.i
 
-src/Algorithms/GRASP.s: src/Algorithms/GRASP.cc.s
-.PHONY : src/Algorithms/GRASP.s
-
-# target to generate assembly for a file
-src/Algorithms/GRASP.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP.cc.s
-.PHONY : src/Algorithms/GRASP.cc.s
-
-src/Algorithms/Greedy.o: src/Algorithms/Greedy.cc.o
-.PHONY : src/Algorithms/Greedy.o
-
-# target to build an object file
-src/Algorithms/Greedy.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/Greedy.cc.o
-.PHONY : src/Algorithms/Greedy.cc.o
-
-src/Algorithms/Greedy.i: src/Algorithms/Greedy.cc.i
-.PHONY : src/Algorithms/Greedy.i
-
-# target to preprocess a source file
-src/Algorithms/Greedy.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/Greedy.cc.i
-.PHONY : src/Algorithms/Greedy.cc.i
-
-src/Algorithms/Greedy.s: src/Algorithms/Greedy.cc.s
-.PHONY : src/Algorithms/Greedy.s
+src/Algorithms/ConstructionPhase.s: src/Algorithms/ConstructionPhase.cc.s
+.PHONY : src/Algorithms/ConstructionPhase.s
 
 # target to generate assembly for a file
-src/Algorithms/Greedy.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/Greedy.cc.s
-.PHONY : src/Algorithms/Greedy.cc.s
+src/Algorithms/ConstructionPhase.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.s
+.PHONY : src/Algorithms/ConstructionPhase.cc.s
 
 src/Algorithms/MultiGVNS.o: src/Algorithms/MultiGVNS.cc.o
 .PHONY : src/Algorithms/MultiGVNS.o
@@ -402,15 +354,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ParallelMachineProblem"
-	@echo "... src/Algorithms/GRASP-min.o"
-	@echo "... src/Algorithms/GRASP-min.i"
-	@echo "... src/Algorithms/GRASP-min.s"
-	@echo "... src/Algorithms/GRASP.o"
-	@echo "... src/Algorithms/GRASP.i"
-	@echo "... src/Algorithms/GRASP.s"
-	@echo "... src/Algorithms/Greedy.o"
-	@echo "... src/Algorithms/Greedy.i"
-	@echo "... src/Algorithms/Greedy.s"
+	@echo "... src/Algorithms/ConstructionPhase.o"
+	@echo "... src/Algorithms/ConstructionPhase.i"
+	@echo "... src/Algorithms/ConstructionPhase.s"
 	@echo "... src/Algorithms/MultiGVNS.o"
 	@echo "... src/Algorithms/MultiGVNS.i"
 	@echo "... src/Algorithms/MultiGVNS.s"

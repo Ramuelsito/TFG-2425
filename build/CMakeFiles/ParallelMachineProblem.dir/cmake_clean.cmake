@@ -1,10 +1,6 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP-min.cc.o"
-  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP-min.cc.o.d"
-  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP.cc.o"
-  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/GRASP.cc.o.d"
-  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/Greedy.cc.o"
-  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/Greedy.cc.o.d"
+  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.o"
+  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.o.d"
   "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/MultiGVNS.cc.o"
   "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/MultiGVNS.cc.o.d"
   "CMakeFiles/ParallelMachineProblem.dir/src/Environment/ReInsertionInter.cc.o"
