@@ -28,6 +28,7 @@ class Problem {
   
   std::vector<Machine> getMachines() const { return machines_; }
   std::vector<Task> getTasksTimes() const { return tasks_times_; }
+  int getSetupTimeIn(int i, int j) const { return setup_times_[i][j]; }
   std::vector<std::vector<int>> getSetupTimes() const { return setup_times_; }
 
   friend std::ostream& operator<<(std::ostream& os, const Problem& problem);

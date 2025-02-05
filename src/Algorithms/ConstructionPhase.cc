@@ -29,8 +29,8 @@ Solution ConstructionPhase::ConstructGreedyRandSolution() {
     int random_index = dist(engine);
     std::pair<Task, int> selected_task = candidates[random_index];
     int selected_machine_index = selected_task.second;
-    int tij = selected_task.first.GetTime() + problem_.getSetupTimes()
-        [machines_assigned_[selected_machine_index].GetLastTask().GetId() + 1][selected_task.first.GetId() + 1];
+    int tij = selected_task.first.GetTime() + problem_.getSetupTimeIn(
+        machines_assigned_[selected_machine_index].GetLastTask().GetId() + 1, selected_task.first.GetId() + 1);
     machines_assigned_[selected_machine_index].AddTask(selected_task.first, tij);
     tasks_assigned_.push_back(selected_task.first.GetId());
   }
