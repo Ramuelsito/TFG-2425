@@ -55,7 +55,7 @@ class Solution {
 
   friend std::ostream& operator<<(std::ostream& os, const Solution& solution) {
     for (int i = 0; i < solution.machines_.size(); i++) {
-      os << "Machine " << i << ": ";
+      os << "Machine " << i << ": taks assigned: " << solution.machines_[i].getTasksAssigned().size() << std::endl;
       for (int j = 0; j < solution.machines_[i].getTasksAssigned().size(); j++) {
         os << solution.machines_[i].getTasksAssigned()[j] << " ";
       }

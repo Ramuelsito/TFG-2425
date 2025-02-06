@@ -18,7 +18,7 @@ class ConstructionPhase {
   ConstructionPhase(const Problem& problem) : problem_(problem) {};
   Solution ConstructGreedyRandSolution();
  private:
-  void InitializingMachines(std::vector<Task>& tasks_to_assign);
+  void InitializingMachines(const std::vector<Task>& tasks_to_assign);
   std::vector<std::pair<Task, int>> MakeRandomCandidatesList(std::vector<Task>& tasks_to_assign);
 
   const Problem& problem_;

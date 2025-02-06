@@ -44,11 +44,12 @@ Solution ConstructionPhase::ConstructGreedyRandSolution() {
  * @brief Inicialización de las máquinas con una tarea
  * @param tasks_to_assign - Tareas a asignar
  */
-void ConstructionPhase::InitializingMachines(std::vector<Task>& tasks_to_assign) {
+void ConstructionPhase::InitializingMachines(const std::vector<Task>& tasks_to_assign) {
+  std::vector<Task> tasks_to_assign_init = tasks_to_assign;
   for (int i = 0; i < machines_assigned_.size(); i++) {
-    machines_assigned_[i].AddTask(tasks_to_assign[0], tasks_to_assign[0].GetTime());
-    tasks_assigned_.push_back(tasks_to_assign[0].GetId());
-    tasks_to_assign.erase(tasks_to_assign.begin());
+    machines_assigned_[i].AddTask(tasks_to_assign_init[0], tasks_to_assign_init[0].GetTime());
+    tasks_assigned_.push_back(tasks_to_assign_init[0].GetId());
+    tasks_to_assign_init.erase(tasks_to_assign_init.begin());
   }
 }
 
