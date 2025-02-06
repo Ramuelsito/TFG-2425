@@ -47,31 +47,31 @@ int main(int argc, char* argv[]) {
         std::chrono::seconds performance_time;
         double update_percentage;
 
-        ConstructionPhase construction_phase(problem);
-        Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-        std::cout << "Initial solution: " << std::endl;
-        std::cout << initial_solution << std::endl;
-        for (int i = 0; i < initial_solution.getMachines().size(); i++) {
-          initial_solution.getMachines()[i].RecalculateTotalCompletionTime(problem.getSetupTimes());
-        }
-        std::cout << initial_solution << std::endl;
+        // ConstructionPhase construction_phase(problem);
+        // Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
+        // std::cout << "Initial solution: " << std::endl;
+        // std::cout << initial_solution << std::endl;
+        // for (int i = 0; i < initial_solution.getMachines().size(); i++) {
+        //   initial_solution.getMachines()[i].RecalculateTotalCompletionTime(problem.getSetupTimes());
+        // }
+        // std::cout << initial_solution << std::endl;
         
 
-        // algorithm_name = "GVNS";
-        // MultiGVNS multigvns(problem);
-        // auto start = std::chrono::steady_clock::now();
-        // solution = multigvns.Solve();
-        // update_percentage = multigvns.GetUpdatePercentage();
-        // auto end = std::chrono::steady_clock::now();
-        // performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-        // std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
-        //     << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+        algorithm_name = "GVNS";
+        MultiGVNS multigvns(problem);
+        auto start = std::chrono::steady_clock::now();
+        solution = multigvns.Solve();
+        update_percentage = multigvns.GetUpdatePercentage();
+        auto end = std::chrono::steady_clock::now();
+        performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+        std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
+            << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
 
-        // for (int i = 0; i < solution.getMachines().size(); i++) {
-        //   solution.getMachines()[i].RecalculateTotalCompletionTime(problem.getSetupTimes());
-        //   std::cout << solution.getMachines()[i].GetTotalTime() << std::endl;
-        // }
-        // std::cout << solution << std::endl;
+        for (int i = 0; i < solution.getMachines().size(); i++) {
+          solution.getMachines()[i].RecalculateTotalCompletionTime(problem.getSetupTimes());
+          std::cout << solution.getMachines()[i].GetTotalTime() << std::endl;
+        }
+        std::cout << solution << std::endl;
 
       //   switch (algorithmOption) {
       //   case 1: {

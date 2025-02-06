@@ -25,6 +25,8 @@ Solution MultiGVNS::Solve() {
     // Entonces guardamos en un fichero S y S'.
 
     Solution current_solution = construction_phase.ConstructGreedyRandSolution();
+    std::cout << "Initial solution: " << std::endl;
+    std::cout << current_solution << std::endl;
     Solution initial_solution = current_solution;
     int k = 1;
     previous_best_solution = best_solution_;

@@ -34,7 +34,10 @@ Solution ConstructionPhase::ConstructGreedyRandSolution() {
     machines_assigned_[selected_machine_index].AddTask(selected_task.first, tij);
     tasks_assigned_.push_back(selected_task.first.GetId());
   }
-  return Solution(machines_assigned_);
+  Solution solution(machines_assigned_);
+  machines_assigned_.clear();
+  tasks_assigned_.clear();
+  return solution;
 }
 
 /**
