@@ -20,7 +20,7 @@
 class ReInsertionIntra : public Environment {
  public: 
   ReInsertionIntra() = default;
-  ReInsertionIntra(Solution initial_solution, Problem problem) : Environment(initial_solution, problem) {}
+  ReInsertionIntra(const Solution& initial_solution, const Problem& problem) : Environment(initial_solution, problem) {}
   
   Solution GenerateEnvironment() override;
 };

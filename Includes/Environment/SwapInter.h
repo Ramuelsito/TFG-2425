@@ -19,7 +19,7 @@
 class SwapInter : public Environment {
  public: 
   SwapInter() = default;
-  SwapInter(Solution initial_solution, Problem problem) : Environment(initial_solution, problem) {}
+  SwapInter(const Solution& initial_solution, const Problem& problem) : Environment(initial_solution, problem) {}
   
   Solution GenerateEnvironment() override;
 };

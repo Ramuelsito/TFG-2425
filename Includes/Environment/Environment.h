@@ -13,6 +13,7 @@
 #include <iostream>
 #include "../Solution.h"
 #include "../Problem.h"
+#include "Movement.h"
 
 /**
  * @class Environment
@@ -21,11 +22,11 @@
 class Environment{
  public: 
   Environment() = default;
-  Environment(Solution initial_solution, Problem problem) : initial_solution_{initial_solution}, problem_{problem} {}
+  Environment(const Solution& initial_solution, const Problem& problem) : initial_solution_{initial_solution}, problem_{problem} {}
   
   virtual Solution GenerateEnvironment() = 0;
  protected:
-  Problem problem_;
+  const Problem& problem_;
   Solution initial_solution_;
   std::vector<Solution> local_optimums_;
 };

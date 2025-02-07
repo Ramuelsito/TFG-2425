@@ -30,13 +30,14 @@ class Machine {
   
   int getId() const { return id_; }
   int GetTotalTime() const { return tc_time_; }
+  void SetTotalTime(int time) { tc_time_ = time; }
   Task GetLastTask() const { return tasks_assigned_.back(); }
   std::vector<Task> getTasksAssigned() const { return tasks_assigned_; }
   void AddTask(Task task, int task_time);
   void ReInsertTask(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times);
   void SwapTasks(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times);
-  void RemoveTask(const int& task_index, const std::vector<std::vector<int>>& setup_times);
-  void InsertTask(const Task& task, const int& task_index, const std::vector<std::vector<int>>& setup_times);
+  void RemoveTask(const int& task_index);
+  void InsertTask(const Task& task, const int& task_index);
   bool CheckTotalCompletionTime(int time_to_add, int min_time_got);
   void RecalculateTotalCompletionTime(const std::vector<std::vector<int>>& setup_times);
 

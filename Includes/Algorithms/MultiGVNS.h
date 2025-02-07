@@ -10,7 +10,6 @@
  */
 
 #pragma once
-#include "../Algorithm.h"
 #include "ConstructionPhase.h"
 #include "../Environment/ReInsertionIntra.h"
 #include "../Environment/SwapIntra.h"
@@ -21,13 +20,13 @@
  * @class MultiGVNS
  * @brief Class that represents the Multi-GVNS algorithm
  */
-class MultiGVNS : public Algorithm {
+class MultiGVNS {
  public:
   MultiGVNS(const Problem& problem) : problem_(problem) {
     best_solution_.AssignMaxTCT();
     update_percentage_ = 0;
-  }
-  Solution Solve() override;
+  } 
+  Solution Solve();
   double GetUpdatePercentage() const { return update_percentage_; }
  private: 
   Solution Shaking(const Solution&, const int&);
