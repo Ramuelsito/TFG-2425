@@ -51,6 +51,11 @@ int main(int argc, char* argv[]) {
         // Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
         // std::cout << "Initial solution: " << std::endl;
         // std::cout << initial_solution << std::endl;
+        // for (int i = 0; i < initial_solution.getMachines().size(); i++) {
+        //   initial_solution.getMachines()[i].RecalculateTotalCompletionTime(problem.getSetupTimes());
+        // }
+        // std::cout << initial_solution << std::endl;
+        
 
         algorithm_name = "GVNS";
         MultiGVNS multigvns(problem);
@@ -61,6 +66,12 @@ int main(int argc, char* argv[]) {
         performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
         std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
             << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+
+        for (int i = 0; i < solution.getMachines().size(); i++) {
+          solution.getMachines()[i].RecalculateTotalCompletionTime(problem.getSetupTimes());
+          std::cout << solution.getMachines()[i].GetTotalTime() << std::endl;
+        }
+        std::cout << solution << std::endl;
 
       //   switch (algorithmOption) {
       //   case 1: {
