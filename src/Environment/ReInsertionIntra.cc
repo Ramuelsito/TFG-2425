@@ -24,7 +24,6 @@ Solution ReInsertionIntra::GenerateEnvironment() {
     for (int j = 0; j < intial_machines[i].getTasksAssigned().size(); ++j) {
       for (int k = 0; k < intial_machines[i].getTasksAssigned().size(); ++k) {
         new_machines = intial_machines;
-        // new_machines[i].ReInsertTask(j, k, setup_times);
         Task task_to_insert = new_machines[i].getTasksAssigned()[j];
         new_machines[i].RemoveTask(j, setup_times);
         if (j < k && k > 0) {
@@ -33,9 +32,7 @@ Solution ReInsertionIntra::GenerateEnvironment() {
           new_machines[i].InsertTask(task_to_insert, k, setup_times);
         }
         Solution new_solution = new_machines;
-        if (new_solution.GetTCT() < local_optimum.GetTCT()) {
-          local_optimum = new_solution;
-        }
+        if (new_solution.GetTCT() < local_optimum.GetTCT()) { local_optimum = new_solution; }
       }
     }
   }

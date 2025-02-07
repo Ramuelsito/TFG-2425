@@ -57,7 +57,7 @@ void ConstructionPhase::InitializingMachines(std::vector<Task>& tasks_to_assign)
 std::vector<std::pair<Task, int>> ConstructionPhase::MakeRandomCandidatesList(std::vector<Task>& tasks_candidates) {
   std::vector<Task> tasks_to_assign = tasks_candidates;
   std::vector<std::pair<Task, int>> candidates;
-  for (int k = 0; k < 3; k++) {
+  for (int k = 0; k < 3; k++) {     // Seleccionamos k candidatos aleatorios
     int min_time = 9999999;
     int task_index = -1;
     int machine_to_assign = -1;

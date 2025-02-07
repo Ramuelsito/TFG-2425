@@ -20,8 +20,11 @@
 class ReInsertionInter : public Environment {
  public: 
   ReInsertionInter() = default;
-  ReInsertionInter(Solution initial_solution, Problem problem) : Environment(initial_solution, problem) {}
+  ReInsertionInter(const Solution& initial_solution, const Problem& problem) : Environment(initial_solution, problem) {}
   
   Solution GenerateEnvironment() override;
   Solution SelectRandomNeighbor();
+ private:
+  Movement EmulateMovement(const Solution&, const int&, const int&, const int&, const int&);
+  Solution ApplyMovement(const Solution&, const Movement&);
 };

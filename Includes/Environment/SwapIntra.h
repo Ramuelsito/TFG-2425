@@ -20,7 +20,7 @@
 class SwapIntra : public Environment {
  public: 
   SwapIntra() = default;
-  SwapIntra(Solution initial_solution, Problem problem) : Environment(initial_solution, problem) {}
+  SwapIntra(const Solution& initial_solution, const Problem& problem) : Environment(initial_solution, problem) {}
   
   Solution GenerateEnvironment() override;
 };

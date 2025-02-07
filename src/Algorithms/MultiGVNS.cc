@@ -10,6 +10,7 @@
  */
 
 #include "../../Includes/Algorithms/MultiGVNS.h"
+#include <random>
 
 /**
  * @brief Solve the problem using the Multi-GVNS algorithm
