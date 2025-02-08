@@ -24,7 +24,7 @@ class ExhaustedConstructionPhase {
   Solution ConstructGreedyRandSolution();
   void IncreaseRCLSize() { RCL_size_++; }
  private:
-  void InitializingMachines(const std::vector<Task>& tasks_to_assign);
+  void InitializingMachines(std::vector<Task>& tasks_to_assign);
   std::vector<Insertion> MakeRandomCandidatesList(const std::vector<Task>& tasks_to_assign, int machine_index);
 
   std::vector<Machine> machines_assigned_;
