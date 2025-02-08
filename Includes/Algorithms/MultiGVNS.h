@@ -10,7 +10,7 @@
  */
 
 #pragma once
-#include "ConstructionPhase.h"
+#include "ExhaustedConstructionPhase.h"
 #include "../Environment/ReInsertionIntra.h"
 #include "../Environment/SwapIntra.h"
 #include "../Environment/ReInsertionInter.h"
@@ -22,7 +22,7 @@
  */
 class MultiGVNS {
  public:
-  MultiGVNS(const Problem& problem) : problem_(problem) {
+  MultiGVNS() {
     best_solution_.AssignMaxTCT();
     update_percentage_ = 0;
   } 
@@ -35,7 +35,6 @@ class MultiGVNS {
   Solution UpdateSolution(const Solution&, const Solution&, const Solution&);
   bool MoveOrNot(const Solution&, const Solution&);
   
-  const Problem& problem_;
   Solution best_solution_;
   double update_percentage_;
 };

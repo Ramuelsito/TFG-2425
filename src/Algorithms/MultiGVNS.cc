@@ -19,7 +19,7 @@
 Solution MultiGVNS::Solve() {
   Solution local_search_solution, shaked_solution, previous_best_solution;
   int iterations_without_improvement = 0;
-  ConstructionPhase construction_phase(problem_);
+  ExhaustedConstructionPhase construction_phase;
   for (int i = 0; i < 10; ++i) {   
     // current_solution es S, tendremos que mantenerla y 
     // crear otra solucion S' para hacer la busqueda local
@@ -67,7 +67,7 @@ Solution MultiGVNS::Shaking(const Solution& initial_solution, const int& k) {
   Solution new_solution;
   Solution current_solution = initial_solution;
   for (int i = 0; i < k; ++i) {
-    ReInsertionInter reinsertion_inter(initial_solution, problem_);
+    ReInsertionInter reinsertion_inter(initial_solution);
     new_solution = reinsertion_inter.SelectRandomNeighbor();
     if (current_solution == new_solution) {        // If the new solution is the same as the current one repeat the selection
       new_solution = reinsertion_inter.SelectRandomNeighbor();
@@ -86,13 +86,13 @@ Solution MultiGVNS::LocalSearchByVND(const Solution& initial_solution) {
   Solution local_optimum = initial_solution;
   bool mejora = true;
   while (mejora) {
-    ReInsertionIntra reinsertion_intra = ReInsertionIntra(local_optimum, problem_);
+    ReInsertionIntra reinsertion_intra = ReInsertionIntra(local_optimum);
     Solution reinsertion_intra_solution = reinsertion_intra.GenerateEnvironment();
-    SwapInter swap_inter = SwapInter(reinsertion_intra_solution, problem_);
+    SwapInter swap_inter = SwapInter(reinsertion_intra_solution);
     Solution swap_inter_solution = swap_inter.GenerateEnvironment();
-    SwapIntra swap_intra = SwapIntra(swap_inter_solution, problem_);
+    SwapIntra swap_intra = SwapIntra(swap_inter_solution);
     Solution swap_intra_solution = swap_intra.GenerateEnvironment();
-    ReInsertionInter reinsertion_inter = ReInsertionInter(swap_intra_solution, problem_);
+    ReInsertionInter reinsertion_inter = ReInsertionInter(swap_intra_solution);
     Solution reinsertion_inter_solution = reinsertion_inter.GenerateEnvironment();
     if (reinsertion_inter_solution.GetTCT() < local_optimum.GetTCT()) {
       local_optimum = reinsertion_inter_solution;
@@ -125,22 +125,22 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution) {
       if (movements[random_index]) { movement = random_index; }
       switch (movement) {
         case 1: {
-          ReInsertionIntra reinsertion_intra = ReInsertionIntra(previous_solution, problem_);
+          ReInsertionIntra reinsertion_intra = ReInsertionIntra(previous_solution);
           previous_solution = reinsertion_intra.GenerateEnvironment();
           break;
         }
         case 2: {
-          SwapInter swap_inter = SwapInter(previous_solution, problem_);
+          SwapInter swap_inter = SwapInter(previous_solution);
           previous_solution = swap_inter.GenerateEnvironment();
           break;
         }
         case 3: {
-          SwapIntra swap_intra = SwapIntra(previous_solution, problem_);
+          SwapIntra swap_intra = SwapIntra(previous_solution);
           previous_solution = swap_intra.GenerateEnvironment();
           break;
         }
         case 4: {
-          ReInsertionInter reinsertion_inter = ReInsertionInter(previous_solution, problem_);
+          ReInsertionInter reinsertion_inter = ReInsertionInter(previous_solution);
           previous_solution = reinsertion_inter.GenerateEnvironment();
           break;
         }

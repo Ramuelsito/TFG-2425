@@ -18,8 +18,9 @@
  * @return Solución obtenida
  */
 Solution ConstructionPhase::ConstructGreedyRandSolution() {
-  std::vector<Task> tasks_to_assign = problem_.getTasksTimes();
-  machines_assigned_ = problem_.getMachines();
+  std::vector<Task> tasks_to_assign = Problem::getInstance().getTasksTimes();
+  machines_assigned_ = Problem::getInstance().getMachines();
+  std::vector<std::vector<int>> setup_times = Problem::getInstance().getSetupTimes();
   InitializingMachines(tasks_to_assign);
   std::random_device rd;
   std::mt19937 engine(rd());
@@ -29,9 +30,9 @@ Solution ConstructionPhase::ConstructGreedyRandSolution() {
     int random_index = dist(engine);
     std::pair<Task, int> selected_task = candidates[random_index];
     int selected_machine_index = selected_task.second;
-    int tij = selected_task.first.GetTime() + problem_.getSetupTimeIn(
-        machines_assigned_[selected_machine_index].GetLastTask().GetId() + 1, selected_task.first.GetId() + 1);
-    machines_assigned_[selected_machine_index].AddTask(selected_task.first, tij);
+    int tij = selected_task.first.GetTime() + setup_times[
+        machines_assigned_[selected_machine_index].GetLastTask().GetId() + 1][selected_task.first.GetId() + 1];
+    machines_assigned_[selected_machine_index].InsertTask(selected_task.first, machines_assigned_[selected_machine_index].getTasksAssigned().size(), tij);
     tasks_assigned_.push_back(selected_task.first.GetId());
   }
   Solution solution(machines_assigned_);
@@ -47,7 +48,7 @@ Solution ConstructionPhase::ConstructGreedyRandSolution() {
 void ConstructionPhase::InitializingMachines(const std::vector<Task>& tasks_to_assign) {
   std::vector<Task> tasks_to_assign_init = tasks_to_assign;
   for (int i = 0; i < machines_assigned_.size(); i++) {
-    machines_assigned_[i].AddTask(tasks_to_assign_init[0], tasks_to_assign_init[0].GetTime());
+    machines_assigned_[i].InsertTask(tasks_to_assign_init[0], machines_assigned_[i].getTasksAssigned().size(), tasks_to_assign_init[0].GetTime());
     tasks_assigned_.push_back(tasks_to_assign_init[0].GetId());
     tasks_to_assign_init.erase(tasks_to_assign_init.begin());
   }
@@ -69,7 +70,7 @@ std::vector<std::pair<Task, int>> ConstructionPhase::MakeRandomCandidatesList(st
     for (int i = 0; i < machines_assigned_.size(); i++) {
       int last_task_index = machines_assigned_[i].GetLastTask().GetId();
       for (int j = 0; j < tasks_to_assign.size(); j++) {
-        int actual_time = tasks_to_assign[j].GetTime() + problem_.getSetupTimes()[last_task_index + 1][tasks_to_assign[j].GetId() + 1] + machines_assigned_[i].GetTotalTime();
+        int actual_time = tasks_to_assign[j].GetTime() + Problem::getInstance().getSetupTimes()[last_task_index + 1][tasks_to_assign[j].GetId() + 1] + machines_assigned_[i].GetTotalTime();
         if (actual_time < min_time && std::find(tasks_assigned_.begin(), tasks_assigned_.end(), tasks_to_assign[j].GetId()) == tasks_assigned_.end()) {
           min_time = actual_time;
           task_index = j;

@@ -30,8 +30,8 @@ int main(int argc, char* argv[]) {
       if (std::string(argv[1]) == "-all") {
         Solution solution;
         for (const auto& entry : std::filesystem::directory_iterator(path)) {
-          Problem problem(entry.path().string());
-          MultiGVNS multigvns(problem);
+          Problem::getInstance(entry.path().string());
+          MultiGVNS multigvns;
           solution = multigvns.Solve();
           std::cout << solution << std::endl;
         }
@@ -40,38 +40,38 @@ int main(int argc, char* argv[]) {
         // int algorithmOption = AlgorithmMenu();
         std::string instance = argv[1];
         std::cout << "../Instances/" + instance + ".txt" << std::endl;
-        Problem problem("../Instances/" + instance + ".txt");
-
+        Problem::getInstance("../Instances/" + instance + ".txt");
+        std::cout << Problem::getInstance() << std::endl;
         Solution solution;
         std::string algorithm_name;
         std::chrono::seconds performance_time;
         double update_percentage;
 
-        // ConstructionPhase construction_phase(problem);
-        // Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-        // std::cout << "Initial solution: " << std::endl;
-        // std::cout << initial_solution << std::endl;
-        // for (int i = 0; i < initial_solution.getMachines().size(); i++) {
-        //   initial_solution.getMachines()[i].RecalculateTotalCompletionTime(problem.getSetupTimes());
-        // }
-        // std::cout << initial_solution << std::endl;
+        ExhaustedConstructionPhase construction_phase;
+        Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
+        std::cout << "Initial solution: " << std::endl;
+        std::cout << initial_solution << std::endl;
+        for (int i = 0; i < initial_solution.getMachines().size(); i++) {
+          initial_solution.getMachines()[i].RecalculateTotalCompletionTime(Problem::getInstance().getSetupTimes());
+        }
+        std::cout << initial_solution << std::endl;
         
 
-        algorithm_name = "GVNS";
-        MultiGVNS multigvns(problem);
-        auto start = std::chrono::steady_clock::now();
-        solution = multigvns.Solve();
-        update_percentage = multigvns.GetUpdatePercentage();
-        auto end = std::chrono::steady_clock::now();
-        performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-        std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
-            << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+        // algorithm_name = "GVNS";
+        // MultiGVNS multigvns;
+        // auto start = std::chrono::steady_clock::now();
+        // solution = multigvns.Solve();
+        // update_percentage = multigvns.GetUpdatePercentage();
+        // auto end = std::chrono::steady_clock::now();
+        // performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+        // std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
+        //     << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
 
-        for (int i = 0; i < solution.getMachines().size(); i++) {
-          solution.getMachines()[i].RecalculateTotalCompletionTime(problem.getSetupTimes());
-          std::cout << solution.getMachines()[i].GetTotalTime() << std::endl;
-        }
-        std::cout << solution << std::endl;
+        // for (int i = 0; i < solution.getMachines().size(); i++) {
+        //   solution.getMachines()[i].RecalculateTotalCompletionTime(Problem::getInstance().getSetupTimes());
+        //   std::cout << solution.getMachines()[i].GetTotalTime() << std::endl;
+        // }
+        // std::cout << solution << std::endl;
 
       //   switch (algorithmOption) {
       //   case 1: {

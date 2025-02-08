@@ -160,7 +160,15 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: \
  /home/raul/Practicas/TFG-2425/src/../Includes/Tasks.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Solution.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/MultiGVNS.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Algorithm.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/ExhaustedConstructionPhase.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Insertion.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/ReInsertionIntra.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/Environment.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/Movement.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/SwapIntra.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/ReInsertionInter.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/SwapInter.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Util.h \
  /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
  /usr/include/c++/11/bits/stl_relops.h \
  /usr/include/c++/11/bits/stl_algo.h \
@@ -211,17 +219,10 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: \
  /usr/include/c++/11/bits/stl_numeric.h /usr/include/c++/11/bit \
  /usr/include/c++/11/pstl/glue_numeric_defs.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/ctime \
- /usr/include/c++/11/bits/parse_numbers.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/ConstructionPhase.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/ReInsertionIntra.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/Environment.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/SwapIntra.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/ReInsertionInter.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/SwapInter.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Util.h \
- /usr/include/c++/11/sstream /usr/include/c++/11/bits/sstream.tcc \
- /usr/include/c++/11/filesystem /usr/include/c++/11/bits/fs_fwd.h \
- /usr/include/c++/11/bits/fs_path.h /usr/include/c++/11/locale \
+ /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/sstream \
+ /usr/include/c++/11/bits/sstream.tcc /usr/include/c++/11/filesystem \
+ /usr/include/c++/11/bits/fs_fwd.h /usr/include/c++/11/bits/fs_path.h \
+ /usr/include/c++/11/locale \
  /usr/include/c++/11/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/messages_members.h \

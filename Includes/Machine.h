@@ -21,11 +21,8 @@
 class Machine {
  public:
   Machine(int id, std::vector<Task> tasks_assigned, int tc_time = 0) :  id_(id), 
-  tasks_assigned_(tasks_assigned), tc_time_(tc_time), unitary_time_(0) {}
-  Machine(int id) : id_(id), tc_time_(0), unitary_time_(0) {
-    total_completion_times_.clear();
-    tasks_assigned_.clear();
-  }
+  tasks_assigned_(tasks_assigned), tc_time_(tc_time)  {}
+  Machine(int id) : id_(id), tc_time_(0) { tasks_assigned_.clear(); }
   ~Machine() = default;
   
   int getId() const { return id_; }
@@ -33,11 +30,11 @@ class Machine {
   void SetTotalTime(int time) { tc_time_ = time; }
   Task GetLastTask() const { return tasks_assigned_.back(); }
   std::vector<Task> getTasksAssigned() const { return tasks_assigned_; }
-  void AddTask(Task task, int task_time);
+  void InsertTask(const Task& task, int task_position, int tct_increment);
+
   void ReInsertTask(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times);
   void SwapTasks(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times);
-  void RemoveTask(const int& task_index);
-  void InsertTask(const Task& task, const int& task_index);
+  void RemoveTask(const int& task_index, int tct_decrement);
   bool CheckTotalCompletionTime(int time_to_add, int min_time_got);
   void RecalculateTotalCompletionTime(const std::vector<std::vector<int>>& setup_times);
 
@@ -56,7 +53,5 @@ class Machine {
  private:
   int id_;
   int tc_time_;
-  int unitary_time_;
   std::vector<Task> tasks_assigned_;
-  std::vector<int> total_completion_times_;
 };

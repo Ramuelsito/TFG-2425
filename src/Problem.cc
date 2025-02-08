@@ -12,11 +12,13 @@
 #include "../Includes/Problem.h"
 #include <algorithm>
 
+bool Problem::initialized = false;
+
 /**
- * Constructor with the input file's name
+ * Initialize the problem with the input file
  * @param file_name - Name of the file with the problem
  */
-Problem::Problem(std::string file_name) {
+void Problem::initialize(const std::string& file_name) {
   std::ifstream file(file_name);
   if (!file.is_open()) {
     throw std::invalid_argument("File not found");
@@ -76,6 +78,14 @@ Problem::Problem(std::string file_name) {
   std::sort(tasks_times_.begin(), tasks_times_.end());
   file.close();
 }
+
+/**
+ * Calculate the total setup time of the problem
+ * @param first_task - First task
+ * @param second_task - Second task
+ * @return - Total setup time
+ */
+int Problem::CalculateSij(int first_task, int second_task) const { return setup_times_[first_task][second_task]; }
 
 /**
   * Overload of the << operator to print the problem

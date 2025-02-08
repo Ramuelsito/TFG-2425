@@ -20,7 +20,7 @@
 class ReInsertionInter : public Environment {
  public: 
   ReInsertionInter() = default;
-  ReInsertionInter(const Solution& initial_solution, const Problem& problem) : Environment(initial_solution, problem) {}
+  ReInsertionInter(const Solution& initial_solution) : Environment(initial_solution) {}
   
   Solution GenerateEnvironment() override;
   Solution SelectRandomNeighbor();

@@ -22,17 +22,32 @@
  */
 class Problem {
  public:
-  Problem(std::string file_name);
-  Problem(std::vector<Machine> machines, std::vector<Task> tasks, std::vector<std::vector<int>> setup_times) :
-    machines_(machines), tasks_times_(tasks), setup_times_(setup_times) {}
+  static Problem& getInstance(const std::string& file_name = "") {
+    static Problem instance;
+    if (!initialized && !file_name.empty()) {
+      instance.initialize(file_name);
+      initialized = true;
+    }
+    return instance;
+  }
   
+
   std::vector<Machine> getMachines() const { return machines_; }
   std::vector<Task> getTasksTimes() const { return tasks_times_; }
   int getSetupTimeIn(int i, int j) const { return setup_times_[i][j]; }
   std::vector<std::vector<int>> getSetupTimes() const { return setup_times_; }
+  int CalculateSij(int first_task, int second_task) const;
 
   friend std::ostream& operator<<(std::ostream& os, const Problem& problem);
  private:
+  static bool initialized;
+
+  Problem() = default;
+  Problem(std::string file_name) { initialize(file_name); }
+  void initialize(const std::string& file_name);
+  Problem(const Problem&) = delete;
+  Problem& operator=(const Problem&) = delete;
+
   std::vector<Machine> machines_;
   std::vector<Task> tasks_times_;
   std::vector<std::vector<int>> setup_times_;
