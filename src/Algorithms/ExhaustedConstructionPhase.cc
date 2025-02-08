@@ -119,29 +119,27 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
           int new_t0i = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(0, current_candidates[i].GetId() + 1);
           int old_t01 = tasks_in_machine[0].GetTime() + Problem::getInstance().CalculateSij(0, tasks_in_machine[0].GetId() + 1);
           int new_tij = tasks_in_machine[0].GetTime() + Problem::getInstance().CalculateSij(current_candidates[i].GetId() + 1, tasks_in_machine[0].GetId() + 1);
-          tct_increment = (tasks_assigned_size + 1) * new_t0i + tasks_assigned_size * (new_tij - old_t01);
+          tct_increment = ((tasks_assigned_size + 1) * new_t0i) + (tasks_assigned_size * (new_tij - old_t01));
         } else if(1 <= q <= tasks_assigned_size - 1) {
           int other_t01 = tasks_in_machine[0].GetTime() + Problem::getInstance().CalculateSij(0, tasks_in_machine[0].GetId() + 1);
-          int new_tqi = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[q - 1].GetId() + 1, current_candidates[i].GetId() + 1);
-          int old_tij = tasks_in_machine[q].GetTime() + Problem::getInstance().CalculateSij(current_candidates[i].GetId() + 1, tasks_in_machine[q].GetId() + 1);
-          int aux_tij_1 = tasks_in_machine[q].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[q - 1].GetId() + 1, tasks_in_machine[q].GetId() + 1);
-          tct_increment += other_t01 + (tasks_assigned_size - q + 2) * new_tqi + (tasks_assigned_size - q + 1) * (old_tij - aux_tij_1);
+          tct_increment = other_t01;
           for (int l = 1; l < q - 1; l++) {
             int other_tij = tasks_in_machine[l].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[l - 1].GetId() + 1, tasks_in_machine[l].GetId() + 1);
-            int new_tij = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[q - 1].GetId() + 1, current_candidates[i].GetId() + 1);
-            int old_tij = tasks_in_machine[q].GetTime() + Problem::getInstance().CalculateSij(current_candidates[i].GetId() + 1, tasks_in_machine[q].GetId() + 1);
-            int aux_tij_1 = tasks_in_machine[q].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[q - 1].GetId() + 1, tasks_in_machine[q].GetId() + 1);
-            tct_increment += other_tij + (tasks_assigned_size - q + 2) * new_tij + (tasks_assigned_size - q + 1) * (old_tij - aux_tij_1);
+            tct_increment += other_tij;
           }
+          int new_tij = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[q - 1].GetId() + 1, current_candidates[i].GetId() + 1);
+          int old_tij = tasks_in_machine[q].GetTime() + Problem::getInstance().CalculateSij(current_candidates[i].GetId() + 1, tasks_in_machine[q].GetId() + 1);
+          int aux_tij = tasks_in_machine[q].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[q - 1].GetId() + 1, tasks_in_machine[q].GetId() + 1);
+          tct_increment += (tasks_assigned_size - q + 2) * new_tij + (tasks_assigned_size - q + 1) * (old_tij - aux_tij);
         } else if (q == tasks_assigned_size) {
           int other_t0l = tasks_in_machine[0].GetTime() + Problem::getInstance().CalculateSij(0, tasks_in_machine[0].GetId() + 1);
-          int new_tij = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[tasks_assigned_size - 1].GetId() + 1, current_candidates[i].GetId() + 1);
-          tct_increment += other_t0l + new_tij;
+          tct_increment = other_t0l;
           for (int l = 1; l < tasks_assigned_size; l++) {
             int other_tij = tasks_in_machine[l].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[l - 1].GetId() + 1, tasks_in_machine[l].GetId() + 1);
-            int new_tij = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[tasks_assigned_size - 1].GetId() + 1, current_candidates[i].GetId() + 1);
-            tct_increment += other_tij + new_tij;
+            tct_increment += other_tij;
           }
+          int new_tij = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[tasks_assigned_size].GetId() + 1, current_candidates[i].GetId() + 1);
+          tct_increment += new_tij;
         }
         if (tct_increment < best_tct_increment) {
           best_tct_increment = tct_increment;
