@@ -65,7 +65,6 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
     std::cout << "Selected task position: " << selected_task.dest_task_index << std::endl;
     std::cout << "Selected task increment TCT: " << selected_task.increment_tct << std::endl;
     machines_assigned_[machine_index_less_span].InsertTask(selected_task.task, selected_task.dest_task_index, selected_task.increment_tct);
-    // machines_assigned_[machine_index_less_span].RecalculateTotalCompletionTime(setup_times);
     tasks_assigned_.push_back(selected_task.task.GetId());
     tasks_to_assign.erase(std::remove(tasks_to_assign.begin(), tasks_to_assign.end(), selected_task.task));
   }
@@ -91,7 +90,6 @@ void ExhaustedConstructionPhase::InitializingMachines(std::vector<Task>& tasks_t
       }
     }
     machines_assigned_[i].InsertTask(tasks_to_assign[best_task_index], 0, best_time);
-    // machines_assigned_[i].RecalculateTotalCompletionTime(Problem::getInstance().getSetupTimes());
     tasks_assigned_.push_back(tasks_to_assign[best_task_index].GetId());
     tasks_to_assign.erase(tasks_to_assign.begin() + best_task_index);
   }
