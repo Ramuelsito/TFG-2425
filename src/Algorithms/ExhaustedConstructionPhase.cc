@@ -65,7 +65,7 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
     std::cout << "Selected task position: " << selected_task.dest_task_index << std::endl;
     std::cout << "Selected task increment TCT: " << selected_task.increment_tct << std::endl;
     machines_assigned_[machine_index_less_span].InsertTask(selected_task.task, selected_task.dest_task_index, selected_task.increment_tct);
-    machines_assigned_[machine_index_less_span].RecalculateTotalCompletionTime(setup_times);
+    // machines_assigned_[machine_index_less_span].RecalculateTotalCompletionTime(setup_times);
     tasks_assigned_.push_back(selected_task.task.GetId());
     tasks_to_assign.erase(std::remove(tasks_to_assign.begin(), tasks_to_assign.end(), selected_task.task));
   }
@@ -92,7 +92,7 @@ void ExhaustedConstructionPhase::InitializingMachines(std::vector<Task>& tasks_t
       }
     }
     machines_assigned_[i].InsertTask(tasks_to_assign[best_task_index], 0, t0j);
-    machines_assigned_[i].RecalculateTotalCompletionTime(Problem::getInstance().getSetupTimes());
+    // machines_assigned_[i].RecalculateTotalCompletionTime(Problem::getInstance().getSetupTimes());
     tasks_assigned_.push_back(tasks_to_assign[best_task_index].GetId());
     tasks_to_assign.erase(tasks_to_assign.begin() + best_task_index);
   }
@@ -107,15 +107,14 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
   std::vector<Task> tasks_in_machine = machines_assigned_[chosen_machine_index].getTasksAssigned();
   std::vector<Task> current_candidates = tasks_candidates;
   std::vector<Insertion> candidates;
-  int best_tct_increment = 0;
   int best_task_position = 0;
   int task_selected = 0;
   int tasks_assigned_size = tasks_in_machine.size();
   for (int k = 0; k < RCL_size_; k++) {
     if (current_candidates.empty()) { break; }
+    int best_tct_increment = 9999999;
     for (int i = 0; i < current_candidates.size(); i++) {
       for (int q = 0; q < tasks_in_machine.size(); q++) {       // q Es la posición de la tarea en la máquina
-        int current_best_tct = 9999999;
         int tct_increment = 0;
         if (q == 0) {
           int new_t0i = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(0, current_candidates[i].GetId() + 1);
@@ -123,6 +122,11 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
           int new_tij = tasks_in_machine[0].GetTime() + Problem::getInstance().CalculateSij(current_candidates[i].GetId() + 1, tasks_in_machine[0].GetId() + 1);
           tct_increment = (tasks_assigned_size + 1) * new_t0i + tasks_assigned_size * (new_tij - old_t01);
         } else if(1 <= q <= tasks_assigned_size - 1) {
+          int other_t01 = tasks_in_machine[0].GetTime() + Problem::getInstance().CalculateSij(0, tasks_in_machine[0].GetId() + 1);
+          int new_tqi = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[q - 1].GetId() + 1, current_candidates[i].GetId() + 1);
+          int old_tij = tasks_in_machine[q].GetTime() + Problem::getInstance().CalculateSij(current_candidates[i].GetId() + 1, tasks_in_machine[q].GetId() + 1);
+          int aux_tij_1 = tasks_in_machine[q].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[q - 1].GetId() + 1, tasks_in_machine[q].GetId() + 1);
+          tct_increment += other_t01 + (tasks_assigned_size - q + 2) * new_tqi + (tasks_assigned_size - q + 1) * (old_tij - aux_tij_1);
           for (int l = 1; l < q - 1; l++) {
             int other_tij = tasks_in_machine[l].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[l - 1].GetId() + 1, tasks_in_machine[l].GetId() + 1);
             int new_tij = current_candidates[i].GetTime() + Problem::getInstance().CalculateSij(tasks_in_machine[q - 1].GetId() + 1, current_candidates[i].GetId() + 1);
@@ -140,9 +144,8 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
             tct_increment += other_tij + new_tij;
           }
         }
-        if (tct_increment < current_best_tct) {
+        if (tct_increment < best_tct_increment) {
           best_tct_increment = tct_increment;
-          current_best_tct = tct_increment;
           best_task_position = q;
           task_selected = i;
         }

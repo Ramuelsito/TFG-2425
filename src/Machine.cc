@@ -30,15 +30,7 @@ void Machine::InsertTask(const Task& task, int task_position, int tct_increment)
 
 void Machine::RecalculateTotalCompletionTime(const std::vector<std::vector<int>>& setup_times) {
   tc_time_ = 0;
-  int unitary_time = 0;
-  int tij = 0;
-  for (int i = 0; i < tasks_assigned_.size(); i++) {
-    if (i == 0) {
-      tij = tasks_assigned_[i].GetTime() + setup_times[0][tasks_assigned_[i].GetId() + 1];
-    } else {
-      tij = tasks_assigned_[i].GetTime() + setup_times[tasks_assigned_[i - 1].GetId() + 1][tasks_assigned_[i].GetId() + 1];
-    }
-    tc_time_ += unitary_time + tij;
-    unitary_time += tij;
+  for (int i = 1; i < tasks_assigned_.size(); i++) {
+    tc_time_ += tasks_assigned_[i].GetTime() + setup_times[tasks_assigned_[i - 1].GetId()][tasks_assigned_[i].GetId()];
   }
 }
