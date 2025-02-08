@@ -26,6 +26,7 @@ void Machine::RemoveTask(const int& task_index, int tct_decrement) {
 void Machine::InsertTask(const Task& task, int task_position, int tct_increment) { 
   tasks_assigned_.insert(tasks_assigned_.begin() + task_position, task);
   tc_time_ += tct_increment;
+  last_task_time_ = tct_increment;
 }
 
 void Machine::RecalculateTotalCompletionTime(const std::vector<std::vector<int>>& setup_times) {

@@ -29,8 +29,9 @@ class Machine {
   int GetTotalTime() const { return tc_time_; }
   void SetTotalTime(int time) { tc_time_ = time; }
   Task GetLastTask() const { return tasks_assigned_.back(); }
+  int GetLastTaskTime() const { return last_task_time_; }
   std::vector<Task> getTasksAssigned() const { return tasks_assigned_; }
-  void InsertTask(const Task& task, int task_position, int tct_increment);
+  void InsertTask(const Task& task, int task_position, int tct_increment = 0);
 
   void ReInsertTask(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times);
   void SwapTasks(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times);
@@ -53,5 +54,6 @@ class Machine {
  private:
   int id_;
   int tc_time_;
+  int last_task_time_;
   std::vector<Task> tasks_assigned_;
 };

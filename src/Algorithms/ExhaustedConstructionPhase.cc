@@ -46,7 +46,7 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
     int machine_index_less_span = 0;
     int less_span = 999999;
     for (int i = 0; i < machines_assigned_.size(); i++) {
-      int span = machines_assigned_[i].GetTotalTime();
+      int span = machines_assigned_[i].GetLastTaskTime();
       std::cout << "Span: " << span << std::endl; 
       std::cout << "Machine index: " << machine_index_less_span << std::endl;
       if (span < less_span) {
@@ -80,18 +80,17 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
  * @param tasks_to_assign - Tareas a asignar
  */
 void ExhaustedConstructionPhase::InitializingMachines(std::vector<Task>& tasks_to_assign) { // Hay que modificar y añadir S0j
-  int t0j = 0;
-  int best_time = 999999;
-  int best_task_index = 0;
   for (int i = 0; i < machines_assigned_.size(); i++) {
+    int best_time = 999999;
+    int best_task_index = 0;
     for (int j = 0; j < tasks_to_assign.size(); j++) {
-      t0j = tasks_to_assign[j].GetTime() + Problem::getInstance().CalculateSij(0, tasks_to_assign[j].GetId() + 1);      
+      int t0j = tasks_to_assign[j].GetTime() + Problem::getInstance().CalculateSij(0, tasks_to_assign[j].GetId() + 1); 
       if (t0j < best_time) {
         best_time = t0j;
         best_task_index = j;
       }
     }
-    machines_assigned_[i].InsertTask(tasks_to_assign[best_task_index], 0, t0j);
+    machines_assigned_[i].InsertTask(tasks_to_assign[best_task_index], 0, best_time);
     // machines_assigned_[i].RecalculateTotalCompletionTime(Problem::getInstance().getSetupTimes());
     tasks_assigned_.push_back(tasks_to_assign[best_task_index].GetId());
     tasks_to_assign.erase(tasks_to_assign.begin() + best_task_index);
@@ -107,12 +106,12 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
   std::vector<Task> tasks_in_machine = machines_assigned_[chosen_machine_index].getTasksAssigned();
   std::vector<Task> current_candidates = tasks_candidates;
   std::vector<Insertion> candidates;
-  int best_task_position = 0;
-  int task_selected = 0;
-  int tasks_assigned_size = tasks_in_machine.size();
   for (int k = 0; k < RCL_size_; k++) {
     if (current_candidates.empty()) { break; }
     int best_tct_increment = 9999999;
+    int best_task_position = -1;
+    int task_selected = -1;
+    int tasks_assigned_size = tasks_in_machine.size();
     for (int i = 0; i < current_candidates.size(); i++) {
       for (int q = 0; q < tasks_in_machine.size(); q++) {       // q Es la posición de la tarea en la máquina
         int tct_increment = 0;
