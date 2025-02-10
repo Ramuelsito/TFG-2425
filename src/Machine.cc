@@ -36,8 +36,6 @@ void Machine::RecalculateTotalCompletionTime() {
   tc_time_ = k * tasks_assigned_[0].GetTime() + setup_times[0][tasks_assigned_[0].GetId() + 1]; 
   for (int i = 1; i < tasks_assigned_.size(); i++) {
     tc_time_ += (k - i) * tasks_assigned_[i].GetTime() + setup_times[tasks_assigned_[i - 1].GetId() + 1][tasks_assigned_[i].GetId() + 1];
-    std::cout << "Iteration " << i << " TCT: " << tc_time_ << std::endl;
   }
-  std::cout << "Machine " << id_ << " TCT: " << tc_time_ << std::endl;
   last_task_time_ = tasks_assigned_[tasks_assigned_.size() - 1].GetTime();
 }
