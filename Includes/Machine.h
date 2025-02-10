@@ -37,7 +37,7 @@ class Machine {
   void SwapTasks(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times);
   void RemoveTask(const int& task_index, int tct_decrement);
   bool CheckTotalCompletionTime(int time_to_add, int min_time_got);
-  void RecalculateTotalCompletionTime(const std::vector<std::vector<int>>& setup_times);
+  void RecalculateTotalCompletionTime();
 
   friend std::ostream& operator<<(std::ostream& os, const Machine& machine) {
     os << "Machine " << machine.id_ << ":\n";

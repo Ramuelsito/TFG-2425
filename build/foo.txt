@@ -72,487 +72,527 @@ Machine index: 0
 Tasks to assign size: 37
 Tasks to assign size: 37
 Candidates size: 2
-Selected task: 3
-Selected task position: 0
-Selected task increment TCT: 39
-Tasks to assign: 9 30 23 8 19 31 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 17 7 
-Machine 1: 3 12 
-Span: 32
-Machine index: 0
-Span: 39
-Machine index: 0
-Tasks to assign size: 36
-Tasks to assign size: 36
-Candidates size: 2
-Selected task: 30
-Selected task position: 0
-Selected task increment TCT: 82
-Tasks to assign: 9 23 8 19 31 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 30 17 7 
-Machine 1: 3 12 
-Span: 82
-Machine index: 0
-Span: 39
-Machine index: 0
-Tasks to assign size: 35
-Tasks to assign size: 35
-Candidates size: 2
-Selected task: 38
-Selected task position: 0
-Selected task increment TCT: 96
-Tasks to assign: 9 23 8 19 31 10 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 30 17 7 
-Machine 1: 38 3 12 
-Span: 82
-Machine index: 0
-Span: 96
-Machine index: 0
-Tasks to assign size: 34
-Tasks to assign size: 34
-Candidates size: 2
 Selected task: 9
 Selected task position: 0
-Selected task increment TCT: 44
-Tasks to assign: 23 8 19 31 10 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 17 7 
-Machine 1: 38 3 12 
-Span: 44
+Selected task increment TCT: 57
+Tasks to assign: 30 3 23 8 19 31 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 17 7 
+Machine 1: 9 12 
+Span: 32
 Machine index: 0
-Span: 96
+Span: 57
 Machine index: 0
-Tasks to assign size: 33
-Tasks to assign size: 33
+Tasks to assign size: 36
+Tasks to assign size: 36
+Candidates size: 2
+Selected task: 3
+Selected task position: 0
+Selected task increment TCT: 81
+Tasks to assign: 30 23 8 19 31 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 17 7 
+Machine 1: 9 12 
+Span: 81
+Machine index: 0
+Span: 57
+Machine index: 0
+Tasks to assign size: 35
+Tasks to assign size: 35
+Candidates size: 2
+Selected task: 30
+Selected task position: 1
+Selected task increment TCT: 64
+Tasks to assign: 23 8 19 31 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 17 7 
+Machine 1: 9 30 12 
+Span: 81
+Machine index: 0
+Span: 64
+Machine index: 0
+Tasks to assign size: 34
+Tasks to assign size: 34
 Candidates size: 2
 Selected task: 23
 Selected task position: 2
-Selected task increment TCT: 75
-Tasks to assign: 8 19 31 10 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 7 
-Machine 1: 38 3 12 
-Span: 75
+Selected task increment TCT: 102
+Tasks to assign: 8 19 31 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 17 7 
+Machine 1: 9 30 23 12 
+Span: 81
 Machine index: 0
-Span: 96
+Span: 102
 Machine index: 0
-Tasks to assign size: 32
-Tasks to assign size: 32
+Tasks to assign size: 33
+Tasks to assign size: 33
 Candidates size: 2
 Selected task: 31
-Selected task position: 4
-Selected task increment TCT: 151
-Tasks to assign: 8 19 10 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 7 
-Machine 1: 38 3 12 
-Span: 151
+Selected task position: 2
+Selected task increment TCT: 114
+Tasks to assign: 8 19 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 17 31 7 
+Machine 1: 9 30 23 12 
+Span: 114
 Machine index: 0
-Span: 96
+Span: 102
 Machine index: 0
-Tasks to assign size: 31
-Tasks to assign size: 31
-Candidates size: 2
-Selected task: 8
-Selected task position: 1
-Selected task increment TCT: 127
-Tasks to assign: 19 10 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 7 
-Machine 1: 38 8 3 12 
-Span: 151
-Machine index: 0
-Span: 127
-Machine index: 0
-Tasks to assign size: 30
-Tasks to assign size: 30
+Tasks to assign size: 32
+Tasks to assign size: 32
 Candidates size: 2
 Selected task: 10
-Selected task position: 2
-Selected task increment TCT: 47
-Tasks to assign: 19 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 7 
-Machine 1: 38 8 10 3 12 
-Span: 151
+Selected task position: 1
+Selected task increment TCT: 85
+Tasks to assign: 8 19 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 17 31 7 
+Machine 1: 9 10 30 23 12 
+Span: 114
 Machine index: 0
-Span: 47
+Span: 85
 Machine index: 0
-Tasks to assign size: 29
-Tasks to assign size: 29
+Tasks to assign size: 31
+Tasks to assign size: 31
 Candidates size: 2
 Selected task: 19
 Selected task position: 2
-Selected task increment TCT: 90
-Tasks to assign: 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 7 
-Machine 1: 38 8 19 10 3 12 
-Span: 151
+Selected task increment TCT: 99
+Tasks to assign: 8 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 17 31 7 
+Machine 1: 9 10 19 30 23 12 
+Span: 114
 Machine index: 0
-Span: 90
+Span: 99
 Machine index: 0
-Tasks to assign size: 28
-Tasks to assign size: 28
+Tasks to assign size: 30
+Tasks to assign size: 30
 Candidates size: 2
 Selected task: 4
-Selected task position: 4
-Selected task increment TCT: 140
-Tasks to assign: 20 33 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 7 
-Machine 1: 38 8 19 10 4 3 12 
-Span: 151
+Selected task position: 5
+Selected task increment TCT: 102
+Tasks to assign: 8 38 20 33 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 17 31 7 
+Machine 1: 9 10 19 30 23 4 12 
+Span: 114
 Machine index: 0
-Span: 140
+Span: 102
+Machine index: 0
+Tasks to assign size: 29
+Tasks to assign size: 29
+Candidates size: 2
+Selected task: 8
+Selected task position: 6
+Selected task increment TCT: 154
+Tasks to assign: 38 20 33 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 17 31 7 
+Machine 1: 9 10 19 30 23 4 8 12 
+Span: 114
+Machine index: 0
+Span: 154
+Machine index: 0
+Tasks to assign size: 28
+Tasks to assign size: 28
+Candidates size: 2
+Selected task: 20
+Selected task position: 1
+Selected task increment TCT: 142
+Tasks to assign: 38 33 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 17 31 7 
+Machine 1: 9 10 19 30 23 4 8 12 
+Span: 142
+Machine index: 0
+Span: 154
 Machine index: 0
 Tasks to assign size: 27
 Tasks to assign size: 27
 Candidates size: 2
-Selected task: 6
-Selected task position: 6
-Selected task increment TCT: 256
-Tasks to assign: 20 33 2 18 35 26 0 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 7 
-Machine 1: 38 8 19 10 4 3 6 12 
-Span: 151
+Selected task: 38
+Selected task position: 4
+Selected task increment TCT: 136
+Tasks to assign: 33 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 17 31 38 7 
+Machine 1: 9 10 19 30 23 4 8 12 
+Span: 136
 Machine index: 0
-Span: 256
+Span: 154
 Machine index: 0
 Tasks to assign size: 26
 Tasks to assign size: 26
 Candidates size: 2
 Selected task: 33
 Selected task position: 5
-Selected task increment TCT: 169
-Tasks to assign: 20 2 18 35 26 0 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 33 7 
-Machine 1: 38 8 19 10 4 3 6 12 
-Span: 169
+Selected task increment TCT: 155
+Tasks to assign: 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 17 31 38 33 7 
+Machine 1: 9 10 19 30 23 4 8 12 
+Span: 155
 Machine index: 0
-Span: 256
+Span: 154
 Machine index: 0
 Tasks to assign size: 25
 Tasks to assign size: 25
+Candidates size: 2
+Selected task: 35
+Selected task position: 7
+Selected task increment TCT: 164
+Tasks to assign: 2 18 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 17 31 38 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 12 
+Span: 155
+Machine index: 0
+Span: 164
+Machine index: 0
+Tasks to assign size: 24
+Tasks to assign size: 24
 Candidates size: 2
 Selected task: 2
-Selected task position: 5
-Selected task increment TCT: 255
-Tasks to assign: 20 18 35 26 0 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 33 7 
-Machine 1: 38 8 19 10 4 3 6 12 
-Span: 255
+Selected task position: 4
+Selected task increment TCT: 272
+Tasks to assign: 18 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 17 31 2 38 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 12 
+Span: 272
 Machine index: 0
-Span: 256
+Span: 164
 Machine index: 0
-Tasks to assign size: 24
-Tasks to assign size: 24
+Tasks to assign size: 23
+Tasks to assign size: 23
 Candidates size: 2
-Selected task: 18
-Selected task position: 6
-Selected task increment TCT: 201
-Tasks to assign: 20 35 26 0 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 18 33 7 
-Machine 1: 38 8 19 10 4 3 6 12 
-Span: 201
+Selected task: 6
+Selected task position: 8
+Selected task increment TCT: 283
+Tasks to assign: 18 26 0 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 17 31 2 38 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 12 
+Span: 272
 Machine index: 0
-Span: 256
+Span: 283
 Machine index: 0
-Tasks to assign size: 23
-Tasks to assign size: 23
+Tasks to assign size: 22
+Tasks to assign size: 22
 Candidates size: 2
 Selected task: 0
-Selected task position: 6
-Selected task increment TCT: 314
-Tasks to assign: 20 35 26 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 18 33 7 
-Machine 1: 38 8 19 10 4 3 6 12 
-Span: 314
+Selected task position: 5
+Selected task increment TCT: 278
+Tasks to assign: 18 26 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 17 31 2 0 38 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 12 
+Span: 278
 Machine index: 0
-Span: 256
-Machine index: 0
-Tasks to assign size: 22
-Tasks to assign size: 22
-Candidates size: 2
-Selected task: 20
-Selected task position: 4
-Selected task increment TCT: 183
-Tasks to assign: 35 26 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 18 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 12 
-Span: 314
-Machine index: 0
-Span: 183
+Span: 283
 Machine index: 0
 Tasks to assign size: 21
 Tasks to assign size: 21
 Candidates size: 2
 Selected task: 26
-Selected task position: 8
-Selected task increment TCT: 253
-Tasks to assign: 35 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 18 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 26 12 
-Span: 314
+Selected task position: 2
+Selected task increment TCT: 277
+Tasks to assign: 18 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 0 38 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 12 
+Span: 277
 Machine index: 0
-Span: 253
+Span: 283
 Machine index: 0
 Tasks to assign size: 20
 Tasks to assign size: 20
 Candidates size: 2
-Selected task: 13
+Selected task: 18
 Selected task position: 8
-Selected task increment TCT: 384
-Tasks to assign: 35 28 11 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 18 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 13 26 12 
-Span: 314
+Selected task increment TCT: 393
+Tasks to assign: 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 0 38 18 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 12 
+Span: 393
 Machine index: 0
-Span: 384
+Span: 283
 Machine index: 0
 Tasks to assign size: 19
 Tasks to assign size: 19
-Candidates size: 2
-Selected task: 11
-Selected task position: 8
-Selected task increment TCT: 390
-Tasks to assign: 35 28 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 18 11 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 13 26 12 
-Span: 390
-Machine index: 0
-Span: 384
-Machine index: 0
-Tasks to assign size: 18
-Tasks to assign size: 18
-Candidates size: 2
-Selected task: 14
-Selected task position: 9
-Selected task increment TCT: 465
-Tasks to assign: 35 28 15 25 1 16 34 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 18 11 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 13 14 26 12 
-Span: 390
-Machine index: 0
-Span: 465
-Machine index: 0
-Tasks to assign size: 17
-Tasks to assign size: 17
-Candidates size: 2
-Selected task: 35
-Selected task position: 7
-Selected task increment TCT: 425
-Tasks to assign: 28 15 25 1 16 34 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 18 11 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 13 14 26 12 
-Span: 425
-Machine index: 0
-Span: 465
-Machine index: 0
-Tasks to assign size: 16
-Tasks to assign size: 16
-Candidates size: 2
-Selected task: 32
-Selected task position: 8
-Selected task increment TCT: 504
-Tasks to assign: 28 15 25 1 16 34 27 21 37 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 18 11 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 13 14 26 12 
-Span: 504
-Machine index: 0
-Span: 465
-Machine index: 0
-Tasks to assign size: 15
-Tasks to assign size: 15
 Candidates size: 2
 Selected task: 1
-Selected task position: 8
-Selected task increment TCT: 566
-Tasks to assign: 28 15 25 16 34 27 21 37 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 18 11 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 12 
-Span: 504
+Selected task position: 9
+Selected task increment TCT: 350
+Tasks to assign: 28 11 13 15 25 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 0 38 18 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 1 12 
+Span: 393
 Machine index: 0
-Span: 566
+Span: 350
 Machine index: 0
-Tasks to assign size: 14
-Tasks to assign size: 14
+Tasks to assign size: 18
+Tasks to assign size: 18
 Candidates size: 2
 Selected task: 28
 Selected task position: 9
-Selected task increment TCT: 576
-Tasks to assign: 15 25 16 34 27 21 37 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 12 
-Span: 576
+Selected task increment TCT: 368
+Tasks to assign: 11 13 15 25 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 0 38 18 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 28 1 12 
+Span: 393
 Machine index: 0
-Span: 566
+Span: 368
+Machine index: 0
+Tasks to assign size: 17
+Tasks to assign size: 17
+Candidates size: 2
+Selected task: 25
+Selected task position: 9
+Selected task increment TCT: 423
+Tasks to assign: 11 13 15 16 34 14 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 0 38 18 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 25 28 1 12 
+Span: 393
+Machine index: 0
+Span: 423
+Machine index: 0
+Tasks to assign size: 16
+Tasks to assign size: 16
+Candidates size: 2
+Selected task: 14
+Selected task position: 7
+Selected task increment TCT: 501
+Tasks to assign: 11 13 15 16 34 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 0 14 38 18 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 25 28 1 12 
+Span: 501
+Machine index: 0
+Span: 423
+Machine index: 0
+Tasks to assign size: 15
+Tasks to assign size: 15
+Candidates size: 2
+Selected task: 11
+Selected task position: 10
+Selected task increment TCT: 535
+Tasks to assign: 13 15 16 34 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 0 14 38 18 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 25 11 28 1 12 
+Span: 501
+Machine index: 0
+Span: 535
+Machine index: 0
+Tasks to assign size: 14
+Tasks to assign size: 14
+Candidates size: 2
+Selected task: 15
+Selected task position: 6
+Selected task increment TCT: 582
+Tasks to assign: 13 16 34 27 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 25 11 28 1 12 
+Span: 582
+Machine index: 0
+Span: 535
 Machine index: 0
 Tasks to assign size: 13
 Tasks to assign size: 13
 Candidates size: 2
 Selected task: 27
-Selected task position: 12
-Selected task increment TCT: 646
-Tasks to assign: 15 25 16 34 21 37 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 27 12 
-Span: 576
-Machine index: 0
-Span: 646
-Machine index: 0
-Tasks to assign size: 12
-Tasks to assign size: 12
-Candidates size: 2
-Selected task: 25
 Selected task position: 13
-Selected task increment TCT: 662
-Tasks to assign: 15 16 34 21 37 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 27 12 
-Span: 662
+Selected task increment TCT: 611
+Tasks to assign: 13 16 34 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 25 11 28 1 27 12 
+Span: 582
 Machine index: 0
-Span: 646
+Span: 611
 Machine index: 0
-Tasks to assign size: 11
-Tasks to assign size: 11
-Candidates size: 2
-Selected task: 15
-Selected task position: 12
-Selected task increment TCT: 706
-Tasks to assign: 16 34 21 37 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 15 27 12 
-Span: 662
-Machine index: 0
-Span: 706
-Machine index: 0
-Tasks to assign size: 10
-Tasks to assign size: 10
-Candidates size: 2
-Selected task: 34
-Selected task position: 14
-Selected task increment TCT: 719
-Tasks to assign: 16 21 37 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 34 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 15 27 12 
-Span: 719
-Machine index: 0
-Span: 706
-Machine index: 0
-Tasks to assign size: 9
-Tasks to assign size: 9
+Tasks to assign size: 12
+Tasks to assign size: 12
 Candidates size: 2
 Selected task: 16
-Selected task position: 12
-Selected task increment TCT: 729
-Tasks to assign: 21 37 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 34 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 16 15 27 12 
-Span: 719
+Selected task position: 11
+Selected task increment TCT: 649
+Tasks to assign: 13 34 21 37 32 36 5 29 24 39 22 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 16 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 25 11 28 1 27 12 
+Span: 649
 Machine index: 0
-Span: 729
+Span: 611
+Machine index: 0
+Tasks to assign size: 11
+Tasks to assign size: 11
+Candidates size: 2
+Selected task: 24
+Selected task position: 11
+Selected task increment TCT: 741
+Tasks to assign: 13 34 21 37 32 36 5 29 39 22 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 16 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 25 11 24 28 1 27 12 
+Span: 649
+Machine index: 0
+Span: 741
+Machine index: 0
+Tasks to assign size: 10
+Tasks to assign size: 10
+Candidates size: 2
+Selected task: 21
+Selected task position: 11
+Selected task increment TCT: 669
+Tasks to assign: 13 34 37 32 36 5 29 39 22 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 21 16 33 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 25 11 24 28 1 27 12 
+Span: 669
+Machine index: 0
+Span: 741
+Machine index: 0
+Tasks to assign size: 9
+Tasks to assign size: 9
+Candidates size: 2
+Selected task: 37
+Selected task position: 14
+Selected task increment TCT: 807
+Tasks to assign: 13 34 32 36 5 29 39 22 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 21 16 33 37 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 25 11 24 28 1 27 12 
+Span: 807
+Machine index: 0
+Span: 741
 Machine index: 0
 Tasks to assign size: 8
 Tasks to assign size: 8
 Candidates size: 2
-Selected task: 21
-Selected task position: 14
-Selected task increment TCT: 812
-Tasks to assign: 37 36 5 29 24 39 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 21 34 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 16 15 27 12 
-Span: 812
+Selected task: 13
+Selected task position: 9
+Selected task increment TCT: 728
+Tasks to assign: 34 32 36 5 29 39 22 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 21 16 33 37 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 13 25 11 24 28 1 27 12 
+Span: 807
 Machine index: 0
-Span: 729
+Span: 728
 Machine index: 0
 Tasks to assign size: 7
 Tasks to assign size: 7
 Candidates size: 2
 Selected task: 39
-Selected task position: 14
-Selected task increment TCT: 887
-Tasks to assign: 37 36 5 29 24 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 21 34 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 16 15 39 27 12 
-Span: 812
-Machine index: 0
-Span: 887
-Machine index: 0
-Tasks to assign size: 6
-Tasks to assign size: 6
-Candidates size: 2
-Selected task: 37
 Selected task position: 16
-Selected task increment TCT: 899
-Tasks to assign: 36 5 29 24 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 21 34 37 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 16 15 39 27 12 
-Span: 899
+Selected task increment TCT: 923
+Tasks to assign: 34 32 36 5 29 22 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 21 16 33 37 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 13 25 11 24 28 1 27 39 12 
+Span: 807
 Machine index: 0
-Span: 887
+Span: 923
+Machine index: 0
+Tasks to assign size: 6
+Tasks to assign size: 6
+Candidates size: 2
+Selected task: 34
+Selected task position: 15
+Selected task increment TCT: 894
+Tasks to assign: 32 36 5 29 22 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 21 16 33 37 34 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 13 25 11 24 28 1 27 39 12 
+Span: 894
+Machine index: 0
+Span: 923
 Machine index: 0
 Tasks to assign size: 5
 Tasks to assign size: 5
 Candidates size: 2
-Selected task: 36
-Selected task position: 15
-Selected task increment TCT: 1006
-Tasks to assign: 5 29 24 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 21 34 37 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 16 15 39 36 27 12 
-Span: 899
+Selected task: 22
+Selected task position: 16
+Selected task increment TCT: 952
+Tasks to assign: 32 36 5 29 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 21 16 33 37 34 22 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 13 25 11 24 28 1 27 39 12 
+Span: 952
 Machine index: 0
-Span: 1006
+Span: 923
 Machine index: 0
 Tasks to assign size: 4
 Tasks to assign size: 4
 Candidates size: 2
 Selected task: 29
 Selected task position: 17
-Selected task increment TCT: 1009
-Tasks to assign: 5 24 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 21 34 37 29 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 16 15 39 36 27 12 
-Span: 1009
+Selected task increment TCT: 1014
+Tasks to assign: 32 36 5 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 21 16 33 37 34 22 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 13 25 11 24 28 1 27 39 29 12 
+Span: 952
 Machine index: 0
-Span: 1006
+Span: 1014
 Machine index: 0
 Tasks to assign size: 3
 Tasks to assign size: 3
 Candidates size: 2
-Selected task: 24
-Selected task position: 15
-Selected task increment TCT: 1128
-Tasks to assign: 5 22 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 21 34 37 29 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 16 15 39 24 36 27 12 
-Span: 1009
+Selected task: 32
+Selected task position: 17
+Selected task increment TCT: 1084
+Tasks to assign: 36 5 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 21 16 33 37 34 22 32 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 13 25 11 24 28 1 27 39 29 12 
+Span: 1084
 Machine index: 0
-Span: 1128
+Span: 1014
 Machine index: 0
 Tasks to assign size: 2
 Tasks to assign size: 2
 Candidates size: 2
-Selected task: 22
+Selected task: 5
 Selected task position: 18
-Selected task increment TCT: 1100
-Tasks to assign: 5 
-Machine 0: 9 30 23 17 31 2 0 35 32 28 18 11 33 25 21 34 37 29 22 7 
-Machine 1: 38 8 19 10 20 4 3 6 1 13 14 26 16 15 39 24 36 27 12 
-Span: 1100
+Selected task increment TCT: 1130
+Tasks to assign: 36 
+Machine 0: 3 20 26 17 31 2 15 0 14 38 18 21 16 33 37 34 22 32 7 
+Machine 1: 9 10 19 30 23 4 8 35 6 13 25 11 24 28 1 27 39 29 5 12 
+Span: 1084
 Machine index: 0
-Span: 1128
+Span: 1130
 Machine index: 0
 Tasks to assign size: 1
 Tasks to assign size: 1
 Candidates size: 1
-Selected task: 5
-Selected task position: 14
-Selected task increment TCT: 1187
+Selected task: 36
+Selected task position: 18
+Selected task increment TCT: 1084
 Initial solution: 
-Machine 0: taks assigned: 21
-Task 9: [2] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 0: [34] Task 35: [31] Task 32: [80] Task 28: [46] Task 18: [29] Task 11: [48] Task 33: [20] Task 25: [56] Task 5: [85] Task 21: [76] Task 34: [67] Task 37: [77] Task 29: [89] Task 22: [98] Task 7: [4] 
-Machine 1: taks assigned: 19
-Task 38: [18] Task 8: [8] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 3: [4] Task 6: [43] Task 1: [66] Task 13: [52] Task 14: [67] Task 26: [33] Task 16: [67] Task 15: [56] Task 39: [96] Task 24: [90] Task 36: [82] Task 27: [74] Task 12: [5] 
-Total completion time: 17367
+Machine 0: taks assigned: 20
+Task 3: [4] Task 20: [20] Task 26: [33] Task 17: [6] Task 31: [10] Task 2: [27] Task 15: [56] Task 0: [34] Task 14: [67] Task 38: [18] Task 18: [29] Task 21: [76] Task 16: [67] Task 33: [20] Task 37: [77] Task 34: [67] Task 22: [98] Task 32: [80] Task 36: [82] Task 7: [4] 
+Machine 1: taks assigned: 20
+Task 9: [2] Task 10: [13] Task 19: [9] Task 30: [2] Task 23: [7] Task 4: [23] Task 8: [8] Task 35: [31] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 1: [66] Task 27: [74] Task 39: [96] Task 29: [89] Task 5: [85] Task 12: [5] 
+Total completion time: 17048
 
-Machine 0: taks assigned: 21
-Task 9: [2] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 0: [34] Task 35: [31] Task 32: [80] Task 28: [46] Task 18: [29] Task 11: [48] Task 33: [20] Task 25: [56] Task 5: [85] Task 21: [76] Task 34: [67] Task 37: [77] Task 29: [89] Task 22: [98] Task 7: [4] 
-Machine 1: taks assigned: 19
-Task 38: [18] Task 8: [8] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 3: [4] Task 6: [43] Task 1: [66] Task 13: [52] Task 14: [67] Task 26: [33] Task 16: [67] Task 15: [56] Task 39: [96] Task 24: [90] Task 36: [82] Task 27: [74] Task 12: [5] 
-Total completion time: 17367
+Iteration 1 TCT: 486
+Iteration 2 TCT: 1085
+Iteration 3 TCT: 1192
+Iteration 4 TCT: 1359
+Iteration 5 TCT: 1766
+Iteration 6 TCT: 2554
+Iteration 7 TCT: 3002
+Iteration 8 TCT: 3815
+Iteration 9 TCT: 4017
+Iteration 10 TCT: 4319
+Iteration 11 TCT: 5005
+Iteration 12 TCT: 5545
+Iteration 13 TCT: 5686
+Iteration 14 TCT: 6159
+Iteration 15 TCT: 6539
+Iteration 16 TCT: 6945
+Iteration 17 TCT: 7193
+Iteration 18 TCT: 7359
+Iteration 19 TCT: 7386
+Machine 0 TCT: 7386
+Iteration 1 TCT: 301
+Iteration 2 TCT: 483
+Iteration 3 TCT: 527
+Iteration 4 TCT: 642
+Iteration 5 TCT: 994
+Iteration 6 TCT: 1108
+Iteration 7 TCT: 1512
+Iteration 8 TCT: 2038
+Iteration 9 TCT: 2614
+Iteration 10 TCT: 3186
+Iteration 11 TCT: 3620
+Iteration 12 TCT: 4347
+Iteration 13 TCT: 4670
+Iteration 14 TCT: 5068
+Iteration 15 TCT: 5449
+Iteration 16 TCT: 5841
+Iteration 17 TCT: 6113
+Iteration 18 TCT: 6312
+Iteration 19 TCT: 6360
+Machine 1 TCT: 6360
+Machine 0: taks assigned: 20
+Task 3: [4] Task 20: [20] Task 26: [33] Task 17: [6] Task 31: [10] Task 2: [27] Task 15: [56] Task 0: [34] Task 14: [67] Task 38: [18] Task 18: [29] Task 21: [76] Task 16: [67] Task 33: [20] Task 37: [77] Task 34: [67] Task 22: [98] Task 32: [80] Task 36: [82] Task 7: [4] 
+Machine 1: taks assigned: 20
+Task 9: [2] Task 10: [13] Task 19: [9] Task 30: [2] Task 23: [7] Task 4: [23] Task 8: [8] Task 35: [31] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 1: [66] Task 27: [74] Task 39: [96] Task 29: [89] Task 5: [85] Task 12: [5] 
+Total completion time: 13746
 

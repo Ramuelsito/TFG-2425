@@ -51,9 +51,7 @@ int main(int argc, char* argv[]) {
         Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
         std::cout << "Initial solution: " << std::endl;
         std::cout << initial_solution << std::endl;
-        for (int i = 0; i < initial_solution.getMachines().size(); i++) {
-          initial_solution.getMachines()[i].RecalculateTotalCompletionTime(Problem::getInstance().getSetupTimes());
-        }
+        initial_solution.RecalculateTotalCompletionTime();
         std::cout << initial_solution << std::endl;
         
 
@@ -68,7 +66,7 @@ int main(int argc, char* argv[]) {
         //     << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
 
         // for (int i = 0; i < solution.getMachines().size(); i++) {
-        //   solution.getMachines()[i].RecalculateTotalCompletionTime(Problem::getInstance().getSetupTimes());
+        //   solution.getMachines()[i].RecalculateTotalCompletionTime();
         //   std::cout << solution.getMachines()[i].GetTotalTime() << std::endl;
         // }
         // std::cout << solution << std::endl;

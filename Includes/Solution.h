@@ -34,6 +34,13 @@ class Solution {
     Machine max_tct_machine = Machine(0, std::vector<Task>(), 999999);
     machines_.push_back(max_tct_machine);
   }
+  
+  void RecalculateTotalCompletionTime() {
+    for (int i = 0; i < machines_.size(); i++) {
+      machines_[i].RecalculateTotalCompletionTime();
+    }
+  }
+
   void PrintStudiedSolution(const std::string& filename, const std::string& algorithm_name, const double& time, const int& number_tasks) {
     std::ofstream file;
     std::string true_filename = "../SolutionTables/SolutionTable" + algorithm_name + ".md";

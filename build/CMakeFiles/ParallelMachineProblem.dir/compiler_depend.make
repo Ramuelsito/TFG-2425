@@ -1762,7 +1762,13 @@ CMakeFiles/ParallelMachineProblem.dir/src/Machine.cc.o: ../src/Machine.cc \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  ../Includes/Tasks.h
+  ../Includes/Tasks.h \
+  ../Includes/Problem.h \
+  /usr/include/c++/11/fstream \
+  /usr/include/c++/11/bits/codecvt.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/basic_file.h \
+  /usr/include/x86_64-linux-gnu/c++/11/bits/c++io.h \
+  /usr/include/c++/11/bits/fstream.tcc
 
 CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: ../src/Parallel-machine.cc \
   /usr/include/stdc-predef.h \
