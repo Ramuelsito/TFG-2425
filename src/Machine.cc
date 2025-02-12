@@ -26,6 +26,7 @@ void Machine::RemoveTask(const int& task_index, int tct_decrement) {
 
 void Machine::InsertTask(const Task& task, int task_position, int tct_increment) { 
   tasks_assigned_.insert(tasks_assigned_.begin() + task_position, task);
+  std::cout << "TCT: " << tc_time_ << " + " << tct_increment << " = " << tc_time_ + tct_increment << std::endl;
   tc_time_ += tct_increment;
   last_task_time_ = tct_increment;
 }

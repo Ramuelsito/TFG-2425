@@ -102,7 +102,7 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
   for (int k = 0; k < RCL_size_; k++) {
     if (current_candidates.empty()) { break; }
     int best_tct_increment = 9999999;
-    int best_task_position = -1;
+    int best_position_to_insert = -1;
     int task_selected = -1;
     int tasks_assigned_size = tasks_in_machine.size();
     for (int i = 0; i < current_candidates.size(); i++) {
@@ -131,17 +131,17 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
             int other_tij = tasks_in_machine[l].GetTime() + problem_->CalculateSij(tasks_in_machine[l - 1].GetId() + 1, tasks_in_machine[l].GetId() + 1);
             tct_increment += other_tij;
           }
-          int new_tij = current_candidates[i].GetTime() + problem_->CalculateSij(tasks_in_machine[q - 1].GetId() + 1, current_candidates[i].GetId() + 1);
+          int new_tij = current_candidates[i].GetTime() + problem_->CalculateSij(tasks_in_machine[tasks_assigned_size - 1].GetId() + 1, current_candidates[i].GetId() + 1);
           tct_increment += new_tij;
         }
         if (tct_increment < best_tct_increment) {
           best_tct_increment = tct_increment;
-          best_task_position = q;
+          best_position_to_insert = q;
           task_selected = i;
         }
       }
     }
-    candidates.push_back(Insertion{current_candidates[task_selected], best_task_position, best_tct_increment});
+    candidates.push_back(Insertion{current_candidates[task_selected], best_position_to_insert, best_tct_increment});
     current_candidates.erase(current_candidates.begin() + task_selected);
   }
   return candidates;
