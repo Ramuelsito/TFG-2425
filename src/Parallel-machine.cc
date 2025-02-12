@@ -49,10 +49,13 @@ int main(int argc, char* argv[]) {
 
         ExhaustedConstructionPhase construction_phase;
         Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
+        int diference = initial_solution.GetTCT();
         std::cout << "Initial solution: " << std::endl;
         std::cout << initial_solution << std::endl;
         initial_solution.RecalculateTotalCompletionTime();
+        diference = diference - initial_solution.GetTCT();
         std::cout << initial_solution << std::endl;
+        std::cout << "Diference: " << diference << std::endl;
         
 
         // algorithm_name = "GVNS";

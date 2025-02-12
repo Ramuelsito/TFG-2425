@@ -18,6 +18,7 @@
 class ExhaustedConstructionPhase {
  public:
   ExhaustedConstructionPhase() {
+    problem_ = &Problem::getInstance();
     machines_assigned_.clear();
     tasks_assigned_.clear();
   };
@@ -27,6 +28,7 @@ class ExhaustedConstructionPhase {
   void InitializingMachines(std::vector<Task>& tasks_to_assign);
   std::vector<Insertion> MakeRandomCandidatesList(const std::vector<Task>& tasks_to_assign, int machine_index);
 
+  Problem* problem_;
   std::vector<Machine> machines_assigned_;
   std::vector<int> tasks_assigned_;
   int RCL_size_ = 2;

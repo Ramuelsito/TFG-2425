@@ -33,9 +33,8 @@ void Machine::InsertTask(const Task& task, int task_position, int tct_increment)
 void Machine::RecalculateTotalCompletionTime() {
   std::vector<std::vector<int>> setup_times = Problem::getInstance().getSetupTimes();
   int k = tasks_assigned_.size();
-  tc_time_ = k * tasks_assigned_[0].GetTime() + setup_times[0][tasks_assigned_[0].GetId() + 1]; 
+  tc_time_ = k * (tasks_assigned_[0].GetTime() + setup_times[0][tasks_assigned_[0].GetId() + 1]); 
   for (int i = 1; i < tasks_assigned_.size(); i++) {
-    tc_time_ += (k - i) * tasks_assigned_[i].GetTime() + setup_times[tasks_assigned_[i - 1].GetId() + 1][tasks_assigned_[i].GetId() + 1];
+    tc_time_ += (k - i) * (tasks_assigned_[i].GetTime() + setup_times[tasks_assigned_[i - 1].GetId() + 1][tasks_assigned_[i].GetId() + 1]);
   }
-  last_task_time_ = tasks_assigned_[tasks_assigned_.size() - 1].GetTime();
 }
