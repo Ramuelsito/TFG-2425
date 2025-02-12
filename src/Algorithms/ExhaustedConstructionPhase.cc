@@ -123,7 +123,7 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
           int new_tij = current_candidates[i].GetTime() + problem_->CalculateSij(tasks_in_machine[q - 1].GetId() + 1, current_candidates[i].GetId() + 1);
           int new_tiq = tasks_in_machine[q].GetTime() + problem_->CalculateSij(current_candidates[i].GetId() + 1, tasks_in_machine[q].GetId() + 1);
           int aux_tij = tasks_in_machine[q].GetTime() + problem_->CalculateSij(tasks_in_machine[q - 1].GetId() + 1, tasks_in_machine[q].GetId() + 1);
-          tct_increment += (tasks_assigned_size - q + 2 + 1) * new_tij + (tasks_assigned_size - q + 1 + 1) * (new_tiq - aux_tij);
+          tct_increment += (tasks_assigned_size - (q + 1) + 2) * new_tij + (tasks_assigned_size - (q + 1) + 1) * (new_tiq - aux_tij);
         } else if (q == tasks_assigned_size) { // Tenemos que tener cuidado porque si q = tasks_assigned_size, tasks_in_machine[q] no existe
           int other_t01 = tasks_in_machine[0].GetTime() + problem_->CalculateSij(0, tasks_in_machine[0].GetId() + 1);
           tct_increment = other_t01;
