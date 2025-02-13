@@ -47,26 +47,26 @@ int main(int argc, char* argv[]) {
         std::chrono::seconds performance_time;
         double update_percentage;
 
-        ExhaustedConstructionPhase construction_phase;
-        Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-        int diference = initial_solution.GetTCT();
-        std::cout << "Initial solution: " << std::endl;
-        std::cout << initial_solution << std::endl;
-        initial_solution.RecalculateTotalCompletionTime();
-        diference = diference - initial_solution.GetTCT();
-        std::cout << initial_solution << std::endl;
-        std::cout << "Diference: " << diference << std::endl;
+        // ExhaustedConstructionPhase construction_phase;
+        // Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
+        // int diference = initial_solution.GetTCT();
+        // std::cout << "Initial solution: " << std::endl;
+        // std::cout << initial_solution << std::endl;
+        // initial_solution.RecalculateTotalCompletionTime();
+        // diference = diference - initial_solution.GetTCT();
+        // std::cout << initial_solution << std::endl;
+        // std::cout << "Diference: " << diference << std::endl;
         
 
-        // algorithm_name = "GVNS";
-        // MultiGVNS multigvns;
-        // auto start = std::chrono::steady_clock::now();
-        // solution = multigvns.Solve();
-        // update_percentage = multigvns.GetUpdatePercentage();
-        // auto end = std::chrono::steady_clock::now();
-        // performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-        // std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
-        //     << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+        algorithm_name = "GVNS";
+        MultiGVNS multigvns;
+        auto start = std::chrono::steady_clock::now();
+        solution = multigvns.Solve();
+        auto end = std::chrono::steady_clock::now();
+        update_percentage = multigvns.GetUpdatePercentage();
+        performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+        std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
+            << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
 
         // for (int i = 0; i < solution.getMachines().size(); i++) {
         //   solution.getMachines()[i].RecalculateTotalCompletionTime();

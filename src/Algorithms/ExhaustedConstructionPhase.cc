@@ -42,25 +42,25 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
   std::random_device rd;
   std::mt19937 engine(rd());
   while(tasks_to_assign.size() > 0) {
-    PrintState(tasks_to_assign, machines_assigned_);
+    // PrintState(tasks_to_assign, machines_assigned_);
     int machine_index_less_span = 0;
     int less_span = 999999;
     for (int i = 0; i < machines_assigned_.size(); i++) {
       int span = machines_assigned_[i].GetLastTaskTime();
-      std::cout << "Span: " << span << std::endl; 
+      // std::cout << "Span: " << span << std::endl; 
       if (span < less_span) {
         less_span = span;
         machine_index_less_span = i;
       } 
     }
-    std::cout << "Machine index: " << machine_index_less_span << std::endl;
+    // std::cout << "Machine index: " << machine_index_less_span << std::endl;
     std::vector<Insertion> candidates = MakeRandomCandidatesList(tasks_to_assign, machine_index_less_span);
     std::uniform_int_distribution<> dist(0, candidates.size() - 1);
     int random_index = dist(engine);
     Insertion selected_task = candidates[random_index];
-    std::cout << "Selected task: " << selected_task.task.GetId() << std::endl;
-    std::cout << "Selected task position: " << selected_task.dest_task_index << std::endl;
-    std::cout << "Selected task increment TCT: " << selected_task.increment_tct << std::endl;
+    // std::cout << "Selected task: " << selected_task.task.GetId() << std::endl;
+    // std::cout << "Selected task position: " << selected_task.dest_task_index << std::endl;
+    // std::cout << "Selected task increment TCT: " << selected_task.increment_tct << std::endl;
     machines_assigned_[machine_index_less_span].InsertTask(selected_task.task, selected_task.dest_task_index, selected_task.increment_tct);
     tasks_assigned_.push_back(selected_task.task.GetId());
     tasks_to_assign.erase(std::remove(tasks_to_assign.begin(), tasks_to_assign.end(), selected_task.task));

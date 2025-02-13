@@ -20,7 +20,7 @@ Solution MultiGVNS::Solve() {
   Solution local_search_solution, shaked_solution, previous_best_solution;
   int iterations_without_improvement = 0;
   ExhaustedConstructionPhase construction_phase;
-  for (int i = 0; i < 10; ++i) {   
+  for (int i = 0; i < 1000; ++i) {   
     // current_solution es S, tendremos que mantenerla y 
     // crear otra solucion S' para hacer la busqueda local
     // Entonces guardamos en un fichero S y S'.
@@ -122,7 +122,10 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution) {
       // Vector booleano para desactivar temporalmente el entorno
       std::uniform_int_distribution<> dis(0, movements.size() - 1);
       int random_index = dis(gen);
-      if (movements[random_index]) { movement = random_index; }
+      // for () {
+
+      // }
+      movement = movements[random_index];
       switch (movement) {
         case 1: {
           ReInsertionIntra reinsertion_intra = ReInsertionIntra(previous_solution);

@@ -48,400 +48,1187 @@ Setup times: [41 x 41]
 15 19 41 37 26 30 47 40 11 7 26 20 29 38 49 25 38 17 43 12 18 38 1 42 37 3 22 49 41 44 13 35 20 25 1 8 6 6 39 0 10 
 13 32 10 32 2 3 44 25 4 41 15 40 5 11 8 14 32 21 38 36 35 47 3 41 11 12 41 34 4 10 5 5 31 48 25 8 10 18 2 35 0 
 
-TCT: 0 + 6 = 6
-TCT: 0 + 7 = 7
 
-Tasks to assign: 9 30 3 17 23 8 19 31 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 
-Machine 1: 12 
-Span: 6
-Span: 7
-Machine index: 0
-Selected task: 23
-Selected task position: 1
-Selected task increment TCT: 15
-TCT: 6 + 15 = 21
-Tasks to assign: 9 30 3 17 8 19 31 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 
-Machine 1: 12 
-Span: 15
-Span: 7
-Machine index: 1
-Selected task: 30
-Selected task position: 1
-Selected task increment TCT: 12
-TCT: 7 + 12 = 19
-Tasks to assign: 9 3 17 8 19 31 10 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 
-Machine 1: 12 30 
-Span: 15
-Span: 12
-Machine index: 1
-Selected task: 10
-Selected task position: 2
-Selected task increment TCT: 28
-TCT: 19 + 28 = 47
-Tasks to assign: 9 3 17 8 19 31 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 
-Machine 1: 12 30 10 
-Span: 15
-Span: 28
-Machine index: 0
-Selected task: 17
-Selected task position: 2
-Selected task increment TCT: 30
-TCT: 21 + 30 = 51
-Tasks to assign: 9 3 8 19 31 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 
-Machine 1: 12 30 10 
-Span: 30
-Span: 28
-Machine index: 1
-Selected task: 3
-Selected task position: 3
-Selected task increment TCT: 48
-TCT: 47 + 48 = 95
-Tasks to assign: 9 8 19 31 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 
-Machine 1: 12 30 10 3 
-Span: 30
-Span: 48
-Machine index: 0
-Selected task: 9
-Selected task position: 3
-Selected task increment TCT: 54
-TCT: 51 + 54 = 105
-Tasks to assign: 8 19 31 38 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 9 
-Machine 1: 12 30 10 3 
-Span: 54
-Span: 48
-Machine index: 1
-Selected task: 38
-Selected task position: 4
-Selected task increment TCT: 73
-TCT: 95 + 73 = 168
-Tasks to assign: 8 19 31 20 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 9 
-Machine 1: 12 30 10 3 38 
-Span: 54
-Span: 73
-Machine index: 0
-Selected task: 20
-Selected task position: 3
-Selected task increment TCT: 84
-TCT: 105 + 84 = 189
-Tasks to assign: 8 19 31 33 4 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 20 9 
-Machine 1: 12 30 10 3 38 
-Span: 84
-Span: 73
-Machine index: 1
-Selected task: 4
-Selected task position: 3
-Selected task increment TCT: 93
-TCT: 168 + 93 = 261
-Tasks to assign: 8 19 31 33 2 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 20 9 
-Machine 1: 12 30 10 4 3 38 
-Span: 84
-Span: 93
-Machine index: 0
-Selected task: 2
-Selected task position: 5
-Selected task increment TCT: 110
-TCT: 189 + 110 = 299
-Tasks to assign: 8 19 31 33 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 20 9 2 
-Machine 1: 12 30 10 4 3 38 
-Span: 110
-Span: 93
-Machine index: 1
-Selected task: 8
-Selected task position: 6
-Selected task increment TCT: 106
-TCT: 261 + 106 = 367
-Tasks to assign: 19 31 33 18 35 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 20 9 2 
-Machine 1: 12 30 10 4 3 38 8 
-Span: 110
-Span: 106
-Machine index: 1
-Selected task: 35
-Selected task position: 7
-Selected task increment TCT: 138
-TCT: 367 + 138 = 505
-Tasks to assign: 19 31 33 18 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 20 9 2 
-Machine 1: 12 30 10 4 3 38 8 35 
-Span: 110
-Span: 138
-Machine index: 0
-Selected task: 33
-Selected task position: 3
-Selected task increment TCT: 121
-TCT: 299 + 121 = 420
-Tasks to assign: 19 31 18 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 
-Machine 1: 12 30 10 4 3 38 8 35 
-Span: 121
-Span: 138
-Machine index: 0
-Selected task: 31
-Selected task position: 7
-Selected task increment TCT: 165
-TCT: 420 + 165 = 585
-Tasks to assign: 19 18 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 31 
-Machine 1: 12 30 10 4 3 38 8 35 
-Span: 165
-Span: 138
-Machine index: 1
-Selected task: 19
-Selected task position: 1
-Selected task increment TCT: 176
-TCT: 505 + 176 = 681
-Tasks to assign: 18 26 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 31 
-Machine 1: 12 19 30 10 4 3 38 8 35 
-Span: 165
-Span: 176
-Machine index: 0
-Selected task: 26
-Selected task position: 8
-Selected task increment TCT: 211
-TCT: 585 + 211 = 796
-Tasks to assign: 18 0 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 31 26 
-Machine 1: 12 19 30 10 4 3 38 8 35 
-Span: 211
-Span: 176
-Machine index: 1
-Selected task: 0
-Selected task position: 9
-Selected task increment TCT: 208
-TCT: 681 + 208 = 889
-Tasks to assign: 18 6 28 11 13 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 31 26 
-Machine 1: 12 19 30 10 4 3 38 8 35 0 
-Span: 211
-Span: 208
-Machine index: 1
-Selected task: 13
-Selected task position: 9
-Selected task increment TCT: 263
-TCT: 889 + 263 = 1152
-Tasks to assign: 18 6 28 11 15 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 31 26 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 
-Span: 211
-Span: 263
-Machine index: 0
-Selected task: 15
-Selected task position: 7
-Selected task increment TCT: 265
-TCT: 796 + 265 = 1061
-Tasks to assign: 18 6 28 11 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 
-Span: 265
-Span: 263
-Machine index: 1
-Selected task: 18
-Selected task position: 11
-Selected task increment TCT: 315
-TCT: 1152 + 315 = 1467
-Tasks to assign: 6 28 11 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 
-Span: 265
-Span: 315
-Machine index: 0
-Selected task: 11
-Selected task position: 10
-Selected task increment TCT: 311
-TCT: 1061 + 311 = 1372
-Tasks to assign: 6 28 25 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 11 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 
-Span: 311
-Span: 315
-Machine index: 0
-Selected task: 25
-Selected task position: 10
-Selected task increment TCT: 377
-TCT: 1372 + 377 = 1749
-Tasks to assign: 6 28 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 
-Span: 377
-Span: 315
-Machine index: 1
-Selected task: 6
-Selected task position: 12
-Selected task increment TCT: 368
-TCT: 1467 + 368 = 1835
-Tasks to assign: 28 1 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 
-Span: 377
-Span: 368
-Machine index: 1
-Selected task: 1
-Selected task position: 13
-Selected task increment TCT: 436
-TCT: 1835 + 436 = 2271
-Tasks to assign: 28 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 
-Span: 377
-Span: 436
-Machine index: 0
-Selected task: 28
-Selected task position: 12
-Selected task increment TCT: 437
-TCT: 1749 + 437 = 2186
-Tasks to assign: 16 34 14 27 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 28 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 
-Span: 437
-Span: 436
-Machine index: 1
-Selected task: 27
-Selected task position: 14
-Selected task increment TCT: 521
-TCT: 2271 + 521 = 2792
-Tasks to assign: 16 34 14 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 28 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 
-Span: 437
-Span: 521
-Machine index: 0
-Selected task: 34
-Selected task position: 13
-Selected task increment TCT: 509
-TCT: 2186 + 509 = 2695
-Tasks to assign: 16 14 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 28 34 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 
-Span: 509
-Span: 521
-Machine index: 0
-Selected task: 16
-Selected task position: 12
-Selected task increment TCT: 581
-TCT: 2695 + 581 = 3276
-Tasks to assign: 14 21 37 32 36 5 29 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 
-Span: 581
-Span: 521
-Machine index: 1
-Selected task: 29
-Selected task position: 15
-Selected task increment TCT: 616
-TCT: 2792 + 616 = 3408
-Tasks to assign: 14 21 37 32 36 5 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 29 
-Span: 581
-Span: 616
-Machine index: 0
-Selected task: 37
-Selected task position: 15
-Selected task increment TCT: 673
-TCT: 3276 + 673 = 3949
-Tasks to assign: 14 21 32 36 5 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 37 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 29 
-Span: 673
-Span: 616
-Machine index: 1
-Selected task: 14
-Selected task position: 16
-Selected task increment TCT: 702
-TCT: 3408 + 702 = 4110
-Tasks to assign: 21 32 36 5 24 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 37 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 29 14 
-Span: 673
-Span: 702
-Machine index: 0
-Selected task: 24
-Selected task position: 16
-Selected task increment TCT: 769
-TCT: 3949 + 769 = 4718
-Tasks to assign: 21 32 36 5 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 37 24 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 29 14 
-Span: 769
-Span: 702
-Machine index: 1
-Selected task: 32
-Selected task position: 16
-Selected task increment TCT: 775
-TCT: 4110 + 775 = 4885
-Tasks to assign: 21 36 5 39 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 37 24 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 29 32 14 
-Span: 769
-Span: 775
-Machine index: 0
-Selected task: 39
-Selected task position: 15
-Selected task increment TCT: 846
-TCT: 4718 + 846 = 5564
-Tasks to assign: 21 36 5 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 39 37 24 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 29 32 14 
-Span: 846
-Span: 775
-Machine index: 1
-Selected task: 5
-Selected task position: 18
-Selected task increment TCT: 882
-TCT: 4885 + 882 = 5767
-Tasks to assign: 21 36 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 39 37 24 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 29 32 14 5 
-Span: 846
-Span: 882
-Machine index: 0
-Selected task: 36
-Selected task position: 18
-Selected task increment TCT: 962
-TCT: 5564 + 962 = 6526
-Tasks to assign: 21 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 39 37 24 36 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 29 32 14 5 
-Span: 962
-Span: 882
-Machine index: 1
-Selected task: 21
-Selected task position: 19
-Selected task increment TCT: 959
-TCT: 5767 + 959 = 6726
-Tasks to assign: 22 
-Machine 0: 7 23 17 33 20 9 2 15 31 26 25 11 16 28 34 39 37 24 36 
-Machine 1: 12 19 30 10 4 3 38 8 35 13 0 18 6 1 27 29 32 14 5 21 
-Span: 962
-Span: 959
-Machine index: 1
-Selected task: 22
-Selected task position: 20
-Selected task increment TCT: 1090
-TCT: 6726 + 1090 = 7816
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 4: [23] Task 26: [33] Task 11: [48] Task 0: [34] Task 1: [66] Task 13: [52] Task 37: [77] Task 14: [67] Task 5: [85] Task 21: [76] Task 32: [80] Task 29: [89] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 19: [9] Task 10: [13] Task 20: [20] Task 18: [29] Task 6: [43] Task 25: [56] Task 28: [46] Task 34: [67] Task 16: [67] Task 15: [56] Task 39: [96] Task 27: [74] Task 24: [90] Task 22: [98] Task 36: [82] 
+Total completion time: 13993
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 8: [8] Task 26: [33] Task 9: [2] Task 13: [52] Task 0: [34] Task 14: [67] Task 11: [48] Task 16: [67] Task 15: [56] Task 37: [77] Task 21: [76] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 38: [18] Task 35: [31] Task 4: [23] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 39: [96] Task 34: [67] Task 5: [85] 
+Total completion time: 14377
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 19: [9] Task 4: [23] Task 26: [33] Task 11: [48] Task 6: [43] Task 28: [46] Task 15: [56] Task 0: [34] Task 14: [67] Task 27: [74] Task 29: [89] Task 37: [77] Task 39: [96] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 17: [6] Task 33: [20] Task 20: [20] Task 18: [29] Task 8: [8] Task 35: [31] Task 13: [52] Task 1: [66] Task 38: [18] Task 34: [67] Task 25: [56] Task 5: [85] Task 21: [76] Task 32: [80] Task 36: [82] Task 16: [67] Task 24: [90] 
+Total completion time: 14316
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 33: [20] Task 25: [56] Task 28: [46] Task 34: [67] Task 0: [34] Task 1: [66] Task 37: [77] Task 24: [90] Task 27: [74] Task 29: [89] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 26: [33] Task 35: [31] Task 6: [43] Task 13: [52] Task 11: [48] Task 14: [67] Task 16: [67] Task 15: [56] Task 5: [85] Task 21: [76] Task 32: [80] Task 39: [96] 
+Total completion time: 13811
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 33: [20] Task 25: [56] Task 28: [46] Task 15: [56] Task 0: [34] Task 1: [66] Task 13: [52] Task 34: [67] Task 39: [96] Task 14: [67] Task 5: [85] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 26: [33] Task 6: [43] Task 38: [18] Task 35: [31] Task 37: [77] Task 16: [67] Task 11: [48] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] Task 21: [76] 
+Total completion time: 13874
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 18: [29] Task 19: [9] Task 4: [23] Task 26: [33] Task 6: [43] Task 13: [52] Task 11: [48] Task 16: [67] Task 28: [46] Task 32: [80] Task 36: [82] Task 5: [85] Task 14: [67] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 8: [8] Task 35: [31] Task 33: [20] Task 25: [56] Task 0: [34] Task 2: [27] Task 21: [76] Task 15: [56] Task 39: [96] Task 34: [67] Task 1: [66] Task 27: [74] Task 29: [89] Task 37: [77] 
+Total completion time: 14886
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 9: [2] Task 2: [27] Task 19: [9] Task 4: [23] Task 26: [33] Task 18: [29] Task 34: [67] Task 33: [20] Task 25: [56] Task 11: [48] Task 16: [67] Task 15: [56] Task 37: [77] Task 29: [89] Task 32: [80] Task 5: [85] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 10: [13] Task 20: [20] Task 17: [6] Task 31: [10] Task 28: [46] Task 35: [31] Task 6: [43] Task 13: [52] Task 0: [34] Task 14: [67] Task 1: [66] Task 27: [74] Task 39: [96] Task 21: [76] Task 24: [90] Task 36: [82] 
+Total completion time: 14287
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 32: [80] Task 19: [9] Task 18: [29] Task 0: [34] Task 14: [67] Task 26: [33] Task 16: [67] Task 13: [52] Task 11: [48] Task 22: [98] Task 21: [76] Task 36: [82] Task 39: [96] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 2: [27] Task 8: [8] Task 35: [31] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 27: [74] Task 5: [85] Task 15: [56] Task 37: [77] Task 24: [90] Task 34: [67] Task 29: [89] 
+Total completion time: 14159
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 33: [20] Task 20: [20] Task 26: [33] Task 9: [2] Task 0: [34] Task 14: [67] Task 38: [18] Task 8: [8] Task 35: [31] Task 15: [56] Task 18: [29] Task 11: [48] Task 27: [74] Task 29: [89] Task 32: [80] Task 39: [96] Task 37: [77] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 31: [10] Task 2: [27] Task 4: [23] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 13: [52] Task 34: [67] Task 16: [67] Task 21: [76] Task 36: [82] Task 5: [85] Task 24: [90] 
+Total completion time: 14520
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 20: [20] Task 26: [33] Task 35: [31] Task 13: [52] Task 11: [48] Task 24: [90] Task 28: [46] Task 34: [67] Task 14: [67] Task 5: [85] Task 15: [56] Task 27: [74] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 4: [23] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 6: [43] Task 1: [66] Task 25: [56] Task 21: [76] Task 32: [80] Task 16: [67] Task 29: [89] Task 37: [77] Task 39: [96] Task 36: [82] 
+Total completion time: 14010
+
+
 Initial solution: 
 Machine 0: taks assigned: 19
-Task 7: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 9: [2] Task 2: [27] Task 15: [56] Task 31: [10] Task 26: [33] Task 25: [56] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 36: [82] 
+Task 7: [4] Task 23: [7] Task 9: [2] Task 3: [4] Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 33: [20] Task 25: [56] Task 0: [34] Task 1: [66] Task 13: [52] Task 34: [67] Task 37: [77] Task 24: [90] Task 22: [98] Task 32: [80] Task 36: [82] 
 Machine 1: taks assigned: 21
-Task 12: [5] Task 19: [9] Task 30: [2] Task 10: [13] Task 4: [23] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 13: [52] Task 0: [34] Task 18: [29] Task 6: [43] Task 1: [66] Task 27: [74] Task 29: [89] Task 32: [80] Task 14: [67] Task 5: [85] Task 21: [76] Task 22: [98] 
-Total completion time: 14342
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 6: [43] Task 28: [46] Task 18: [29] Task 11: [48] Task 16: [67] Task 15: [56] Task 14: [67] Task 27: [74] Task 39: [96] Task 29: [89] Task 21: [76] Task 5: [85] 
+Total completion time: 14063
 
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 26: [33] Task 31: [10] Task 38: [18] Task 35: [31] Task 0: [34] Task 1: [66] Task 25: [56] Task 28: [46] Task 34: [67] Task 39: [96] Task 21: [76] Task 36: [82] Task 22: [98] Task 5: [85] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 4: [23] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 6: [43] Task 13: [52] Task 11: [48] Task 16: [67] Task 15: [56] Task 14: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 32: [80] Task 37: [77] 
+Total completion time: 13943
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 26: [33] Task 17: [6] Task 33: [20] Task 4: [23] Task 35: [31] Task 13: [52] Task 32: [80] Task 18: [29] Task 11: [48] Task 27: [74] Task 14: [67] Task 5: [85] Task 24: [90] Task 22: [98] Task 36: [82] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 6: [43] Task 9: [2] Task 2: [27] Task 15: [56] Task 0: [34] Task 31: [10] Task 28: [46] Task 1: [66] Task 25: [56] Task 21: [76] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 29: [89] 
+Total completion time: 14121
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 13: [52] Task 0: [34] Task 1: [66] Task 28: [46] Task 34: [67] Task 39: [96] Task 14: [67] Task 21: [76] Task 32: [80] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 9: [2] Task 3: [4] Task 38: [18] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 6: [43] Task 25: [56] Task 11: [48] Task 27: [74] Task 5: [85] Task 15: [56] Task 37: [77] Task 16: [67] Task 24: [90] Task 29: [89] 
+Total completion time: 14213
+
+
+Initial solution: 
 Machine 0: taks assigned: 19
-Task 7: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 9: [2] Task 2: [27] Task 15: [56] Task 31: [10] Task 26: [33] Task 25: [56] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 36: [82] 
+Task 7: [4] Task 23: [7] Task 9: [2] Task 3: [4] Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 33: [20] Task 0: [34] Task 13: [52] Task 11: [48] Task 16: [67] Task 15: [56] Task 39: [96] Task 34: [67] Task 5: [85] Task 24: [90] Task 29: [89] 
 Machine 1: taks assigned: 21
-Task 12: [5] Task 19: [9] Task 30: [2] Task 10: [13] Task 4: [23] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 13: [52] Task 0: [34] Task 18: [29] Task 6: [43] Task 1: [66] Task 27: [74] Task 29: [89] Task 32: [80] Task 14: [67] Task 5: [85] Task 21: [76] Task 22: [98] 
-Total completion time: 14342
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 17: [6] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 4: [23] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 27: [74] Task 14: [67] Task 21: [76] Task 32: [80] Task 36: [82] Task 22: [98] Task 37: [77] 
+Total completion time: 14190
 
-Diference: 0
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 0: [34] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 32: [80] Task 36: [82] Task 27: [74] Task 29: [89] Task 21: [76] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 18: [29] Task 19: [9] Task 4: [23] Task 26: [33] Task 20: [20] Task 5: [85] Task 15: [56] Task 14: [67] Task 1: [66] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 22: [98] 
+Total completion time: 14341
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 17: [6] Task 7: [4] Task 30: [2] Task 23: [7] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 20: [20] Task 31: [10] Task 11: [48] Task 6: [43] Task 13: [52] Task 25: [56] Task 28: [46] Task 32: [80] Task 36: [82] Task 5: [85] Task 21: [76] Task 39: [96] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 38: [18] Task 34: [67] Task 0: [34] Task 1: [66] Task 16: [67] Task 15: [56] Task 14: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 37: [77] 
+Total completion time: 14393
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 9: [2] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 37: [77] Task 14: [67] Task 32: [80] Task 36: [82] Task 22: [98] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 33: [20] Task 8: [8] Task 35: [31] Task 13: [52] Task 0: [34] Task 1: [66] Task 6: [43] Task 25: [56] Task 21: [76] Task 15: [56] Task 39: [96] Task 27: [74] Task 29: [89] Task 5: [85] 
+Total completion time: 13888
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 26: [33] Task 9: [2] Task 3: [4] Task 38: [18] Task 33: [20] Task 0: [34] Task 2: [27] Task 15: [56] Task 18: [29] Task 34: [67] Task 39: [96] Task 11: [48] Task 27: [74] Task 24: [90] Task 32: [80] Task 36: [82] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 8: [8] Task 35: [31] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 13: [52] Task 37: [77] Task 14: [67] Task 16: [67] Task 29: [89] Task 22: [98] Task 21: [76] 
+Total completion time: 14310
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 9: [2] Task 2: [27] Task 4: [23] Task 6: [43] Task 28: [46] Task 35: [31] Task 33: [20] Task 14: [67] Task 1: [66] Task 13: [52] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 5: [85] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 26: [33] Task 25: [56] Task 11: [48] Task 16: [67] Task 15: [56] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] Task 21: [76] 
+Total completion time: 14694
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 20: [20] Task 18: [29] Task 19: [9] Task 21: [76] Task 15: [56] Task 0: [34] Task 14: [67] Task 28: [46] Task 32: [80] Task 36: [82] Task 27: [74] Task 29: [89] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 6: [43] Task 9: [2] Task 10: [13] Task 4: [23] Task 2: [27] Task 8: [8] Task 26: [33] Task 35: [31] Task 13: [52] Task 1: [66] Task 25: [56] Task 11: [48] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 5: [85] 
+Total completion time: 14024
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 9: [2] Task 4: [23] Task 6: [43] Task 38: [18] Task 35: [31] Task 13: [52] Task 0: [34] Task 14: [67] Task 16: [67] Task 15: [56] Task 39: [96] Task 34: [67] Task 22: [98] Task 5: [85] Task 21: [76] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 33: [20] Task 25: [56] Task 11: [48] Task 28: [46] Task 1: [66] Task 37: [77] Task 26: [33] Task 32: [80] Task 36: [82] Task 27: [74] Task 24: [90] Task 29: [89] 
+Total completion time: 14446
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 4: [23] Task 8: [8] Task 35: [31] Task 6: [43] Task 13: [52] Task 0: [34] Task 1: [66] Task 28: [46] Task 32: [80] Task 36: [82] Task 15: [56] Task 14: [67] Task 5: [85] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 26: [33] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 38: [18] Task 34: [67] Task 25: [56] Task 11: [48] Task 16: [67] Task 27: [74] Task 29: [89] Task 37: [77] Task 39: [96] Task 21: [76] Task 22: [98] 
+Total completion time: 14290
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 4: [23] Task 26: [33] Task 31: [10] Task 2: [27] Task 15: [56] Task 0: [34] Task 1: [66] Task 13: [52] Task 11: [48] Task 16: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 37: [77] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 19: [9] Task 18: [29] Task 8: [8] Task 35: [31] Task 6: [43] Task 38: [18] Task 34: [67] Task 25: [56] Task 28: [46] Task 32: [80] Task 36: [82] Task 5: [85] Task 21: [76] Task 39: [96] Task 14: [67] 
+Total completion time: 14034
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 0: [34] Task 6: [43] Task 38: [18] Task 18: [29] Task 34: [67] Task 28: [46] Task 15: [56] Task 14: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 37: [77] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 9: [2] Task 11: [48] Task 19: [9] Task 4: [23] Task 26: [33] Task 16: [67] Task 33: [20] Task 25: [56] Task 5: [85] Task 21: [76] Task 36: [82] Task 13: [52] Task 1: [66] Task 32: [80] Task 39: [96] 
+Total completion time: 14499
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 9: [2] Task 10: [13] Task 19: [9] Task 18: [29] Task 26: [33] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 21: [76] Task 32: [80] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 38: [18] Task 33: [20] Task 20: [20] Task 4: [23] Task 8: [8] Task 35: [31] Task 6: [43] Task 13: [52] Task 0: [34] Task 1: [66] Task 25: [56] Task 15: [56] Task 14: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 36: [82] Task 5: [85] 
+Total completion time: 14151
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 6: [43] Task 28: [46] Task 1: [66] Task 16: [67] Task 15: [56] Task 27: [74] Task 29: [89] Task 5: [85] Task 21: [76] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 17: [6] Task 33: [20] Task 20: [20] Task 4: [23] Task 26: [33] Task 35: [31] Task 13: [52] Task 25: [56] Task 11: [48] Task 14: [67] Task 38: [18] Task 34: [67] Task 39: [96] Task 37: [77] Task 32: [80] Task 36: [82] Task 22: [98] 
+Total completion time: 13908
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 10: [13] Task 20: [20] Task 18: [29] Task 0: [34] Task 6: [43] Task 38: [18] Task 34: [67] Task 39: [96] Task 13: [52] Task 37: [77] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 11: [48] Task 19: [9] Task 4: [23] Task 26: [33] Task 35: [31] Task 33: [20] Task 25: [56] Task 28: [46] Task 1: [66] Task 16: [67] Task 15: [56] Task 14: [67] Task 5: [85] Task 21: [76] Task 24: [90] Task 22: [98] 
+Total completion time: 14006
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 38: [18] Task 33: [20] Task 4: [23] Task 28: [46] Task 34: [67] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 37: [77] Task 24: [90] Task 22: [98] Task 36: [82] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 35: [31] Task 6: [43] Task 13: [52] Task 0: [34] Task 1: [66] Task 16: [67] Task 11: [48] Task 27: [74] Task 29: [89] Task 32: [80] Task 5: [85] Task 39: [96] 
+Total completion time: 13816
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 9: [2] Task 3: [4] Task 6: [43] Task 8: [8] Task 26: [33] Task 35: [31] Task 13: [52] Task 1: [66] Task 25: [56] Task 11: [48] Task 16: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 32: [80] Task 37: [77] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 20: [20] Task 4: [23] Task 2: [27] Task 15: [56] Task 18: [29] Task 0: [34] Task 14: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 21: [76] Task 36: [82] Task 22: [98] Task 5: [85] 
+Total completion time: 14009
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 35: [31] Task 9: [2] Task 2: [27] Task 6: [43] Task 26: [33] Task 11: [48] Task 16: [67] Task 13: [52] Task 1: [66] Task 37: [77] Task 27: [74] Task 29: [89] Task 34: [67] Task 22: [98] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 8: [8] Task 19: [9] Task 18: [29] Task 33: [20] Task 25: [56] Task 28: [46] Task 15: [56] Task 0: [34] Task 14: [67] Task 32: [80] Task 36: [82] Task 5: [85] Task 21: [76] Task 24: [90] Task 39: [96] 
+Total completion time: 14445
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 3: [4] Task 19: [9] Task 18: [29] Task 21: [76] Task 2: [27] Task 15: [56] Task 14: [67] Task 1: [66] Task 13: [52] Task 37: [77] Task 16: [67] Task 29: [89] Task 32: [80] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 33: [20] Task 0: [34] Task 6: [43] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 34: [67] Task 39: [96] Task 27: [74] Task 22: [98] Task 5: [85] 
+Total completion time: 14154
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 26: [33] Task 35: [31] Task 33: [20] Task 25: [56] Task 28: [46] Task 34: [67] Task 19: [9] Task 5: [85] Task 15: [56] Task 14: [67] Task 24: [90] Task 27: [74] Task 39: [96] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 6: [43] Task 38: [18] Task 18: [29] Task 0: [34] Task 1: [66] Task 13: [52] Task 11: [48] Task 16: [67] Task 21: [76] Task 32: [80] Task 36: [82] Task 29: [89] Task 37: [77] 
+Total completion time: 13927
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 35: [31] Task 9: [2] Task 10: [13] Task 20: [20] Task 18: [29] Task 33: [20] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 36: [82] Task 22: [98] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 4: [23] Task 8: [8] Task 26: [33] Task 2: [27] Task 6: [43] Task 13: [52] Task 0: [34] Task 14: [67] Task 1: [66] Task 16: [67] Task 15: [56] Task 27: [74] Task 29: [89] Task 21: [76] Task 32: [80] 
+Total completion time: 14419
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 4: [23] Task 3: [4] Task 6: [43] Task 26: [33] Task 35: [31] Task 13: [52] Task 11: [48] Task 16: [67] Task 15: [56] Task 37: [77] Task 27: [74] Task 24: [90] Task 22: [98] Task 5: [85] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 0: [34] Task 1: [66] Task 18: [29] Task 25: [56] Task 28: [46] Task 34: [67] Task 14: [67] Task 21: [76] Task 32: [80] Task 36: [82] Task 39: [96] Task 29: [89] 
+Total completion time: 14403
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 6: [43] Task 9: [2] Task 2: [27] Task 15: [56] Task 4: [23] Task 28: [46] Task 34: [67] Task 33: [20] Task 25: [56] Task 21: [76] Task 32: [80] Task 36: [82] Task 16: [67] Task 39: [96] Task 37: [77] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 26: [33] Task 35: [31] Task 13: [52] Task 0: [34] Task 1: [66] Task 18: [29] Task 11: [48] Task 27: [74] Task 29: [89] Task 14: [67] Task 5: [85] Task 24: [90] Task 22: [98] 
+Total completion time: 14206
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 31: [10] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 2: [27] Task 19: [9] Task 18: [29] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 16: [67] Task 27: [74] Task 14: [67] Task 21: [76] Task 32: [80] Task 36: [82] Task 29: [89] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 30: [2] Task 17: [6] Task 33: [20] Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 15: [56] Task 0: [34] Task 1: [66] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 22: [98] Task 5: [85] 
+Total completion time: 14326
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 19: [9] Task 18: [29] Task 9: [2] Task 2: [27] Task 15: [56] Task 14: [67] Task 1: [66] Task 16: [67] Task 11: [48] Task 28: [46] Task 34: [67] Task 5: [85] Task 32: [80] Task 37: [77] Task 29: [89] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 8: [8] Task 26: [33] Task 35: [31] Task 33: [20] Task 0: [34] Task 6: [43] Task 13: [52] Task 25: [56] Task 21: [76] Task 36: [82] Task 39: [96] Task 27: [74] Task 24: [90] Task 22: [98] 
+Total completion time: 14503
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 11: [48] Task 6: [43] Task 28: [46] Task 1: [66] Task 27: [74] Task 24: [90] Task 32: [80] Task 36: [82] Task 5: [85] Task 39: [96] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 33: [20] Task 0: [34] Task 31: [10] Task 35: [31] Task 13: [52] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 16: [67] Task 34: [67] Task 37: [77] Task 29: [89] Task 22: [98] 
+Total completion time: 14297
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 38: [18] Task 34: [67] Task 0: [34] Task 6: [43] Task 13: [52] Task 11: [48] Task 27: [74] Task 24: [90] Task 22: [98] Task 32: [80] Task 36: [82] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 26: [33] Task 18: [29] Task 19: [9] Task 21: [76] Task 28: [46] Task 1: [66] Task 25: [56] Task 15: [56] Task 14: [67] Task 16: [67] Task 39: [96] Task 37: [77] Task 29: [89] 
+Total completion time: 14105
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 4: [23] Task 8: [8] Task 26: [33] Task 35: [31] Task 6: [43] Task 13: [52] Task 11: [48] Task 0: [34] Task 14: [67] Task 5: [85] Task 21: [76] Task 15: [56] Task 39: [96] Task 37: [77] Task 24: [90] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 38: [18] Task 34: [67] Task 25: [56] Task 28: [46] Task 1: [66] Task 16: [67] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] 
+Total completion time: 14176
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 33: [20] Task 0: [34] Task 26: [33] Task 25: [56] Task 28: [46] Task 15: [56] Task 14: [67] Task 1: [66] Task 37: [77] Task 39: [96] Task 34: [67] Task 5: [85] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 9: [2] Task 4: [23] Task 8: [8] Task 35: [31] Task 6: [43] Task 38: [18] Task 21: [76] Task 16: [67] Task 13: [52] Task 11: [48] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] Task 24: [90] 
+Total completion time: 14532
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 2: [27] Task 19: [9] Task 18: [29] Task 11: [48] Task 6: [43] Task 28: [46] Task 35: [31] Task 13: [52] Task 1: [66] Task 37: [77] Task 39: [96] Task 21: [76] Task 32: [80] Task 34: [67] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 26: [33] Task 16: [67] Task 33: [20] Task 25: [56] Task 15: [56] Task 0: [34] Task 14: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 36: [82] Task 22: [98] Task 5: [85] 
+Total completion time: 14261
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 4: [23] Task 6: [43] Task 28: [46] Task 35: [31] Task 13: [52] Task 1: [66] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 29: [89] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 26: [33] Task 20: [20] Task 25: [56] Task 11: [48] Task 27: [74] Task 15: [56] Task 14: [67] Task 5: [85] Task 21: [76] Task 24: [90] Task 32: [80] 
+Total completion time: 14520
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 6: [43] Task 9: [2] Task 4: [23] Task 26: [33] Task 11: [48] Task 16: [67] Task 13: [52] Task 37: [77] Task 14: [67] Task 24: [90] Task 34: [67] Task 22: [98] Task 5: [85] Task 39: [96] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 35: [31] Task 33: [20] Task 25: [56] Task 28: [46] Task 32: [80] Task 15: [56] Task 1: [66] Task 27: [74] Task 29: [89] Task 21: [76] Task 36: [82] 
+Total completion time: 14128
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 2: [27] Task 19: [9] Task 18: [29] Task 6: [43] Task 25: [56] Task 15: [56] Task 31: [10] Task 11: [48] Task 27: [74] Task 14: [67] Task 5: [85] Task 32: [80] Task 37: [77] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 17: [6] Task 33: [20] Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 13: [52] Task 0: [34] Task 1: [66] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 21: [76] Task 36: [82] Task 22: [98] Task 29: [89] 
+Total completion time: 14065
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 21: [76] Task 15: [56] Task 0: [34] Task 1: [66] Task 13: [52] Task 37: [77] Task 14: [67] Task 24: [90] Task 27: [74] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 17: [6] Task 33: [20] Task 4: [23] Task 6: [43] Task 25: [56] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] 
+Total completion time: 13347
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 3: [4] Task 38: [18] Task 33: [20] Task 17: [6] Task 8: [8] Task 35: [31] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 27: [74] Task 29: [89] Task 15: [56] Task 14: [67] Task 21: [76] Task 32: [80] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 26: [33] Task 11: [48] Task 16: [67] Task 13: [52] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 22: [98] Task 5: [85] 
+Total completion time: 14029
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 26: [33] Task 31: [10] Task 2: [27] Task 6: [43] Task 9: [2] Task 13: [52] Task 1: [66] Task 25: [56] Task 28: [46] Task 34: [67] Task 22: [98] Task 32: [80] Task 36: [82] Task 27: [74] Task 39: [96] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 4: [23] Task 3: [4] Task 38: [18] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 35: [31] Task 16: [67] Task 11: [48] Task 14: [67] Task 5: [85] Task 21: [76] Task 15: [56] Task 37: [77] Task 24: [90] Task 29: [89] 
+Total completion time: 13897
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 26: [33] Task 18: [29] Task 34: [67] Task 28: [46] Task 1: [66] Task 16: [67] Task 21: [76] Task 24: [90] Task 27: [74] Task 39: [96] Task 36: [82] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 6: [43] Task 9: [2] Task 11: [48] Task 33: [20] Task 25: [56] Task 15: [56] Task 0: [34] Task 13: [52] Task 37: [77] Task 14: [67] Task 5: [85] Task 32: [80] Task 29: [89] Task 22: [98] 
+Total completion time: 14005
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 26: [33] Task 32: [80] Task 6: [43] Task 13: [52] Task 11: [48] Task 27: [74] Task 15: [56] Task 14: [67] Task 5: [85] Task 21: [76] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 35: [31] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 25: [56] Task 28: [46] Task 1: [66] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 29: [89] Task 36: [82] Task 22: [98] 
+Total completion time: 14029
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 4: [23] Task 6: [43] Task 28: [46] Task 35: [31] Task 1: [66] Task 16: [67] Task 15: [56] Task 14: [67] Task 32: [80] Task 37: [77] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 31: [10] Task 38: [18] Task 33: [20] Task 25: [56] Task 11: [48] Task 27: [74] Task 0: [34] Task 13: [52] Task 34: [67] Task 39: [96] Task 21: [76] Task 36: [82] Task 5: [85] Task 29: [89] 
+Total completion time: 14472
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 0: [34] Task 6: [43] Task 38: [18] Task 21: [76] Task 28: [46] Task 1: [66] Task 16: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 32: [80] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 17: [6] Task 33: [20] Task 20: [20] Task 4: [23] Task 8: [8] Task 26: [33] Task 35: [31] Task 13: [52] Task 25: [56] Task 11: [48] Task 27: [74] Task 5: [85] Task 15: [56] Task 24: [90] Task 34: [67] Task 36: [82] Task 29: [89] 
+Total completion time: 13924
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 13: [52] Task 0: [34] Task 1: [66] Task 38: [18] Task 34: [67] Task 39: [96] Task 11: [48] Task 27: [74] Task 29: [89] Task 37: [77] Task 21: [76] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 17: [6] Task 33: [20] Task 20: [20] Task 3: [4] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 16: [67] Task 6: [43] Task 25: [56] Task 28: [46] Task 15: [56] Task 14: [67] Task 32: [80] Task 36: [82] Task 22: [98] Task 5: [85] 
+Total completion time: 13837
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 35: [31] Task 6: [43] Task 28: [46] Task 1: [66] Task 27: [74] Task 29: [89] Task 15: [56] Task 5: [85] Task 32: [80] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 25: [56] Task 11: [48] Task 0: [34] Task 13: [52] Task 37: [77] Task 14: [67] Task 16: [67] Task 39: [96] Task 21: [76] Task 24: [90] Task 34: [67] 
+Total completion time: 14308
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 9: [2] Task 3: [4] Task 38: [18] Task 33: [20] Task 4: [23] Task 2: [27] Task 8: [8] Task 35: [31] Task 13: [52] Task 0: [34] Task 14: [67] Task 1: [66] Task 16: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 31: [10] Task 26: [33] Task 18: [29] Task 6: [43] Task 25: [56] Task 11: [48] Task 28: [46] Task 32: [80] Task 15: [56] Task 39: [96] Task 21: [76] Task 34: [67] Task 37: [77] Task 5: [85] 
+Total completion time: 14399
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 26: [33] Task 18: [29] Task 0: [34] Task 6: [43] Task 13: [52] Task 11: [48] Task 36: [82] Task 5: [85] Task 21: [76] Task 32: [80] Task 1: [66] Task 37: [77] Task 22: [98] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 9: [2] Task 3: [4] Task 38: [18] Task 33: [20] Task 25: [56] Task 28: [46] Task 34: [67] Task 14: [67] Task 16: [67] Task 15: [56] Task 39: [96] Task 27: [74] Task 24: [90] Task 29: [89] 
+Total completion time: 13777
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 6: [43] Task 9: [2] Task 4: [23] Task 26: [33] Task 11: [48] Task 33: [20] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 16: [67] Task 27: [74] Task 22: [98] Task 5: [85] Task 39: [96] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 1: [66] Task 38: [18] Task 35: [31] Task 13: [52] Task 32: [80] Task 28: [46] Task 34: [67] Task 37: [77] Task 24: [90] Task 36: [82] Task 29: [89] 
+Total completion time: 14269
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 20: [20] Task 26: [33] Task 35: [31] Task 6: [43] Task 25: [56] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 21: [76] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 1: [66] Task 13: [52] Task 11: [48] Task 16: [67] Task 15: [56] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 5: [85] 
+Total completion time: 13902
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 4: [23] Task 2: [27] Task 15: [56] Task 0: [34] Task 35: [31] Task 13: [52] Task 25: [56] Task 11: [48] Task 27: [74] Task 29: [89] Task 14: [67] Task 39: [96] Task 21: [76] Task 24: [90] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 34: [67] Task 8: [8] Task 19: [9] Task 18: [29] Task 6: [43] Task 28: [46] Task 1: [66] Task 16: [67] Task 26: [33] Task 32: [80] Task 36: [82] Task 22: [98] Task 5: [85] Task 37: [77] 
+Total completion time: 14467
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 2: [27] Task 6: [43] Task 0: [34] Task 18: [29] Task 34: [67] Task 25: [56] Task 28: [46] Task 1: [66] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 3: [4] Task 30: [2] Task 17: [6] Task 33: [20] Task 38: [18] Task 8: [8] Task 19: [9] Task 4: [23] Task 26: [33] Task 35: [31] Task 13: [52] Task 11: [48] Task 16: [67] Task 15: [56] Task 14: [67] Task 5: [85] Task 39: [96] Task 37: [77] Task 21: [76] Task 24: [90] 
+Total completion time: 14269
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 3: [4] Task 38: [18] Task 33: [20] Task 17: [6] Task 31: [10] Task 2: [27] Task 18: [29] Task 0: [34] Task 1: [66] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 21: [76] Task 32: [80] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 19: [9] Task 30: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 8: [8] Task 26: [33] Task 35: [31] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 27: [74] Task 14: [67] Task 5: [85] Task 15: [56] Task 37: [77] Task 24: [90] Task 29: [89] 
+Total completion time: 13906
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 0: [34] Task 14: [67] Task 6: [43] Task 13: [52] Task 28: [46] Task 34: [67] Task 16: [67] Task 39: [96] Task 21: [76] Task 36: [82] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 17: [6] Task 15: [56] Task 4: [23] Task 26: [33] Task 25: [56] Task 11: [48] Task 27: [74] Task 29: [89] Task 32: [80] Task 1: [66] Task 37: [77] Task 24: [90] Task 22: [98] 
+Total completion time: 13932
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 9: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 31: [10] Task 38: [18] Task 33: [20] Task 0: [34] Task 18: [29] Task 11: [48] Task 16: [67] Task 13: [52] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 27: [74] Task 29: [89] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 4: [23] Task 8: [8] Task 35: [31] Task 6: [43] Task 2: [27] Task 15: [56] Task 14: [67] Task 1: [66] Task 25: [56] Task 28: [46] Task 36: [82] Task 5: [85] Task 21: [76] Task 32: [80] Task 22: [98] 
+Total completion time: 14150
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 26: [33] Task 9: [2] Task 2: [27] Task 4: [23] Task 6: [43] Task 28: [46] Task 18: [29] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 16: [67] Task 29: [89] Task 21: [76] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 15: [56] Task 31: [10] Task 38: [18] Task 8: [8] Task 19: [9] Task 35: [31] Task 13: [52] Task 0: [34] Task 1: [66] Task 25: [56] Task 11: [48] Task 36: [82] Task 5: [85] Task 32: [80] Task 27: [74] Task 22: [98] 
+Total completion time: 14747
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 19: [9] Task 18: [29] Task 0: [34] Task 1: [66] Task 4: [23] Task 28: [46] Task 34: [67] Task 16: [67] Task 11: [48] Task 27: [74] Task 24: [90] Task 22: [98] Task 36: [82] Task 29: [89] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 20: [20] Task 26: [33] Task 6: [43] Task 13: [52] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 5: [85] Task 32: [80] Task 39: [96] Task 37: [77] 
+Total completion time: 14292
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 35: [31] Task 17: [6] Task 33: [20] Task 0: [34] Task 18: [29] Task 6: [43] Task 13: [52] Task 1: [66] Task 25: [56] Task 5: [85] Task 21: [76] Task 15: [56] Task 37: [77] Task 24: [90] Task 32: [80] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 38: [18] Task 19: [9] Task 4: [23] Task 26: [33] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 14: [67] Task 27: [74] Task 39: [96] Task 29: [89] Task 36: [82] Task 22: [98] 
+Total completion time: 14633
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 19: [9] Task 18: [29] Task 4: [23] Task 2: [27] Task 6: [43] Task 28: [46] Task 1: [66] Task 16: [67] Task 11: [48] Task 36: [82] Task 22: [98] Task 5: [85] Task 39: [96] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 30: [2] Task 35: [31] Task 13: [52] Task 0: [34] Task 14: [67] Task 33: [20] Task 25: [56] Task 21: [76] Task 15: [56] Task 27: [74] Task 29: [89] Task 32: [80] Task 34: [67] Task 37: [77] 
+Total completion time: 14344
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 33: [20] Task 25: [56] Task 28: [46] Task 34: [67] Task 0: [34] Task 1: [66] Task 27: [74] Task 29: [89] Task 37: [77] Task 21: [76] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 9: [2] Task 3: [4] Task 19: [9] Task 18: [29] Task 4: [23] Task 2: [27] Task 6: [43] Task 13: [52] Task 11: [48] Task 16: [67] Task 15: [56] Task 14: [67] Task 5: [85] Task 32: [80] Task 36: [82] Task 39: [96] 
+Total completion time: 14261
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 20: [20] Task 9: [2] Task 6: [43] Task 38: [18] Task 34: [67] Task 16: [67] Task 28: [46] Task 15: [56] Task 14: [67] Task 32: [80] Task 36: [82] Task 5: [85] Task 39: [96] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 4: [23] Task 26: [33] Task 18: [29] Task 0: [34] Task 1: [66] Task 13: [52] Task 25: [56] Task 11: [48] Task 27: [74] Task 29: [89] Task 37: [77] Task 21: [76] Task 24: [90] Task 22: [98] 
+Total completion time: 14234
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 26: [33] Task 35: [31] Task 13: [52] Task 11: [48] Task 14: [67] Task 16: [67] Task 37: [77] Task 21: [76] Task 24: [90] Task 22: [98] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 15: [56] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 25: [56] Task 6: [43] Task 28: [46] Task 34: [67] Task 39: [96] Task 1: [66] Task 27: [74] Task 29: [89] Task 32: [80] Task 5: [85] 
+Total completion time: 13974
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 9: [2] Task 3: [4] Task 38: [18] Task 33: [20] Task 0: [34] Task 1: [66] Task 13: [52] Task 32: [80] Task 18: [29] Task 11: [48] Task 27: [74] Task 29: [89] Task 37: [77] Task 39: [96] Task 24: [90] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 26: [33] Task 35: [31] Task 6: [43] Task 25: [56] Task 28: [46] Task 34: [67] Task 14: [67] Task 16: [67] Task 15: [56] Task 5: [85] Task 21: [76] Task 36: [82] Task 22: [98] 
+Total completion time: 14067
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 0: [34] Task 2: [27] Task 19: [9] Task 18: [29] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 1: [66] Task 37: [77] Task 21: [76] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 8: [8] Task 26: [33] Task 35: [31] Task 6: [43] Task 13: [52] Task 25: [56] Task 15: [56] Task 14: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 32: [80] Task 5: [85] 
+Total completion time: 14144
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 9: [2] Task 13: [52] Task 0: [34] Task 6: [43] Task 38: [18] Task 18: [29] Task 21: [76] Task 28: [46] Task 34: [67] Task 16: [67] Task 27: [74] Task 29: [89] Task 22: [98] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 26: [33] Task 11: [48] Task 33: [20] Task 25: [56] Task 15: [56] Task 14: [67] Task 1: [66] Task 37: [77] Task 24: [90] Task 32: [80] Task 36: [82] Task 39: [96] 
+Total completion time: 14091
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 10: [13] Task 20: [20] Task 26: [33] Task 35: [31] Task 13: [52] Task 11: [48] Task 27: [74] Task 5: [85] Task 21: [76] Task 15: [56] Task 39: [96] Task 34: [67] Task 22: [98] Task 29: [89] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 16: [67] Task 37: [77] Task 14: [67] Task 32: [80] Task 36: [82] Task 24: [90] 
+Total completion time: 14197
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 4: [23] Task 3: [4] Task 38: [18] Task 8: [8] Task 19: [9] Task 18: [29] Task 35: [31] Task 6: [43] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 16: [67] Task 29: [89] Task 32: [80] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 30: [2] Task 17: [6] Task 33: [20] Task 20: [20] Task 26: [33] Task 31: [10] Task 2: [27] Task 15: [56] Task 0: [34] Task 1: [66] Task 13: [52] Task 25: [56] Task 11: [48] Task 27: [74] Task 24: [90] Task 36: [82] Task 5: [85] Task 21: [76] 
+Total completion time: 13978
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 20: [20] Task 34: [67] Task 6: [43] Task 28: [46] Task 1: [66] Task 16: [67] Task 11: [48] Task 36: [82] Task 5: [85] Task 21: [76] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 4: [23] Task 2: [27] Task 19: [9] Task 18: [29] Task 0: [34] Task 14: [67] Task 26: [33] Task 13: [52] Task 25: [56] Task 15: [56] Task 27: [74] Task 29: [89] Task 32: [80] Task 39: [96] Task 37: [77] 
+Total completion time: 14087
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 3: [4] Task 6: [43] Task 8: [8] Task 26: [33] Task 35: [31] Task 0: [34] Task 1: [66] Task 16: [67] Task 11: [48] Task 14: [67] Task 5: [85] Task 21: [76] Task 24: [90] Task 22: [98] Task 39: [96] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 19: [9] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 37: [77] Task 2: [27] Task 15: [56] Task 18: [29] Task 25: [56] Task 28: [46] Task 34: [67] Task 13: [52] Task 32: [80] Task 36: [82] Task 27: [74] Task 29: [89] 
+Total completion time: 14256
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 17: [6] Task 31: [10] Task 2: [27] Task 15: [56] Task 4: [23] Task 6: [43] Task 13: [52] Task 37: [77] Task 14: [67] Task 1: [66] Task 16: [67] Task 39: [96] Task 21: [76] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 19: [9] Task 18: [29] Task 33: [20] Task 25: [56] Task 28: [46] Task 34: [67] Task 0: [34] Task 35: [31] Task 11: [48] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] Task 24: [90] 
+Total completion time: 13675
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 20: [20] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 35: [31] Task 15: [56] Task 14: [67] Task 25: [56] Task 21: [76] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 9: [2] Task 3: [4] Task 38: [18] Task 8: [8] Task 33: [20] Task 0: [34] Task 6: [43] Task 13: [52] Task 11: [48] Task 24: [90] Task 28: [46] Task 1: [66] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 5: [85] 
+Total completion time: 14539
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 35: [31] Task 33: [20] Task 0: [34] Task 1: [66] Task 13: [52] Task 11: [48] Task 16: [67] Task 15: [56] Task 5: [85] Task 32: [80] Task 36: [82] Task 22: [98] Task 29: [89] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 18: [29] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 26: [33] Task 6: [43] Task 25: [56] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 24: [90] Task 27: [74] Task 21: [76] 
+Total completion time: 14426
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 17: [6] Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 33: [20] Task 4: [23] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 16: [67] Task 15: [56] Task 37: [77] Task 21: [76] Task 36: [82] Task 22: [98] Task 24: [90] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 31: [10] Task 38: [18] Task 35: [31] Task 0: [34] Task 1: [66] Task 28: [46] Task 34: [67] Task 14: [67] Task 27: [74] Task 29: [89] Task 32: [80] Task 5: [85] Task 39: [96] 
+Total completion time: 14384
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 10: [13] Task 15: [56] Task 18: [29] Task 33: [20] Task 25: [56] Task 28: [46] Task 34: [67] Task 39: [96] Task 11: [48] Task 16: [67] Task 21: [76] Task 32: [80] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 4: [23] Task 26: [33] Task 20: [20] Task 0: [34] Task 6: [43] Task 38: [18] Task 35: [31] Task 13: [52] Task 1: [66] Task 37: [77] Task 14: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 5: [85] 
+Total completion time: 14391
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 33: [20] Task 0: [34] Task 1: [66] Task 25: [56] Task 28: [46] Task 34: [67] Task 14: [67] Task 21: [76] Task 32: [80] Task 36: [82] Task 22: [98] Task 29: [89] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 2: [27] Task 19: [9] Task 18: [29] Task 6: [43] Task 13: [52] Task 11: [48] Task 16: [67] Task 15: [56] Task 39: [96] Task 37: [77] Task 27: [74] Task 5: [85] Task 24: [90] 
+Total completion time: 14124
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 19: [9] Task 18: [29] Task 0: [34] Task 6: [43] Task 13: [52] Task 26: [33] Task 11: [48] Task 28: [46] Task 1: [66] Task 27: [74] Task 24: [90] Task 29: [89] Task 32: [80] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 22: [98] Task 5: [85] 
+Total completion time: 14416
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 10: [13] Task 4: [23] Task 26: [33] Task 32: [80] Task 38: [18] Task 34: [67] Task 0: [34] Task 1: [66] Task 13: [52] Task 37: [77] Task 24: [90] Task 27: [74] Task 22: [98] Task 5: [85] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 11: [48] Task 19: [9] Task 18: [29] Task 33: [20] Task 20: [20] Task 6: [43] Task 25: [56] Task 28: [46] Task 35: [31] Task 21: [76] Task 15: [56] Task 14: [67] Task 16: [67] Task 39: [96] Task 29: [89] Task 36: [82] 
+Total completion time: 14162
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 10: [13] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 1: [66] Task 38: [18] Task 21: [76] Task 15: [56] Task 4: [23] Task 13: [52] Task 11: [48] Task 16: [67] Task 24: [90] Task 22: [98] Task 5: [85] Task 32: [80] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 31: [10] Task 26: [33] Task 35: [31] Task 6: [43] Task 25: [56] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 27: [74] Task 29: [89] Task 36: [82] 
+Total completion time: 14146
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 23: [7] Task 17: [6] Task 20: [20] Task 3: [4] Task 38: [18] Task 33: [20] Task 31: [10] Task 26: [33] Task 18: [29] Task 19: [9] Task 21: [76] Task 28: [46] Task 34: [67] Task 25: [56] Task 15: [56] Task 14: [67] Task 24: [90] Task 27: [74] Task 22: [98] Task 37: [77] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 30: [2] Task 10: [13] Task 9: [2] Task 2: [27] Task 8: [8] Task 35: [31] Task 4: [23] Task 6: [43] Task 13: [52] Task 0: [34] Task 1: [66] Task 16: [67] Task 11: [48] Task 36: [82] Task 5: [85] Task 32: [80] Task 39: [96] Task 29: [89] 
+Total completion time: 14364
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 17: [6] Task 7: [4] Task 30: [2] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 31: [10] Task 33: [20] Task 0: [34] Task 6: [43] Task 13: [52] Task 25: [56] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 27: [74] Task 29: [89] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 38: [18] Task 18: [29] Task 9: [2] Task 2: [27] Task 4: [23] Task 8: [8] Task 26: [33] Task 35: [31] Task 1: [66] Task 16: [67] Task 11: [48] Task 14: [67] Task 5: [85] Task 21: [76] Task 15: [56] Task 32: [80] Task 36: [82] Task 22: [98] 
+Total completion time: 14495
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 33: [20] Task 17: [6] Task 18: [29] Task 0: [34] Task 6: [43] Task 13: [52] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 16: [67] Task 22: [98] Task 32: [80] Task 36: [82] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 4: [23] Task 26: [33] Task 31: [10] Task 28: [46] Task 35: [31] Task 1: [66] Task 11: [48] Task 27: [74] Task 29: [89] Task 37: [77] Task 24: [90] Task 34: [67] Task 39: [96] 
+Total completion time: 14290
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 19: [9] Task 10: [13] Task 20: [20] Task 9: [2] Task 13: [52] Task 11: [48] Task 0: [34] Task 14: [67] Task 16: [67] Task 34: [67] Task 37: [77] Task 29: [89] Task 32: [80] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 4: [23] Task 26: [33] Task 18: [29] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 27: [74] Task 15: [56] Task 39: [96] Task 21: [76] Task 36: [82] Task 5: [85] Task 24: [90] 
+Total completion time: 14347
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 31: [10] Task 26: [33] Task 18: [29] Task 33: [20] Task 4: [23] Task 6: [43] Task 25: [56] Task 21: [76] Task 16: [67] Task 34: [67] Task 37: [77] Task 14: [67] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 9: [2] Task 2: [27] Task 15: [56] Task 0: [34] Task 17: [6] Task 13: [52] Task 11: [48] Task 28: [46] Task 1: [66] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 5: [85] Task 39: [96] 
+Total completion time: 14561
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 3: [4] Task 19: [9] Task 18: [29] Task 21: [76] Task 2: [27] Task 15: [56] Task 14: [67] Task 1: [66] Task 28: [46] Task 32: [80] Task 36: [82] Task 5: [85] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 33: [20] Task 0: [34] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 16: [67] Task 27: [74] Task 29: [89] Task 37: [77] Task 39: [96] Task 34: [67] 
+Total completion time: 14275
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 3: [4] Task 38: [18] Task 35: [31] Task 13: [52] Task 31: [10] Task 26: [33] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 32: [80] Task 36: [82] Task 5: [85] Task 21: [76] Task 14: [67] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 6: [43] Task 1: [66] Task 16: [67] Task 15: [56] Task 39: [96] Task 34: [67] Task 37: [77] Task 27: [74] Task 29: [89] Task 22: [98] 
+Total completion time: 14027
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 9: [2] Task 6: [43] Task 38: [18] Task 33: [20] Task 25: [56] Task 11: [48] Task 16: [67] Task 28: [46] Task 32: [80] Task 36: [82] Task 5: [85] Task 21: [76] Task 24: [90] Task 29: [89] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 26: [33] Task 18: [29] Task 19: [9] Task 15: [56] Task 0: [34] Task 1: [66] Task 13: [52] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 27: [74] Task 22: [98] 
+Total completion time: 14272
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 38: [18] Task 8: [8] Task 35: [31] Task 6: [43] Task 13: [52] Task 1: [66] Task 25: [56] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 5: [85] Task 21: [76] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 26: [33] Task 11: [48] Task 16: [67] Task 15: [56] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] Task 24: [90] 
+Total completion time: 14230
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 10: [13] Task 9: [2] Task 0: [34] Task 14: [67] Task 26: [33] Task 18: [29] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 38: [18] Task 33: [20] Task 20: [20] Task 4: [23] Task 8: [8] Task 19: [9] Task 35: [31] Task 6: [43] Task 13: [52] Task 1: [66] Task 25: [56] Task 5: [85] Task 21: [76] Task 15: [56] Task 27: [74] Task 24: [90] Task 29: [89] Task 32: [80] 
+Total completion time: 14577
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 35: [31] Task 17: [6] Task 18: [29] Task 0: [34] Task 4: [23] Task 26: [33] Task 32: [80] Task 6: [43] Task 13: [52] Task 25: [56] Task 34: [67] Task 14: [67] Task 5: [85] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 33: [20] Task 31: [10] Task 11: [48] Task 19: [9] Task 21: [76] Task 28: [46] Task 1: [66] Task 16: [67] Task 15: [56] Task 27: [74] Task 29: [89] Task 37: [77] Task 39: [96] Task 36: [82] 
+Total completion time: 14173
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 33: [20] Task 20: [20] Task 9: [2] Task 10: [13] Task 15: [56] Task 19: [9] Task 18: [29] Task 4: [23] Task 28: [46] Task 1: [66] Task 25: [56] Task 21: [76] Task 32: [80] Task 16: [67] Task 39: [96] Task 37: [77] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 31: [10] Task 2: [27] Task 8: [8] Task 26: [33] Task 35: [31] Task 13: [52] Task 0: [34] Task 14: [67] Task 6: [43] Task 38: [18] Task 34: [67] Task 11: [48] Task 27: [74] Task 29: [89] Task 22: [98] Task 36: [82] Task 5: [85] 
+Total completion time: 14407
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 33: [20] Task 4: [23] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 27: [74] Task 29: [89] Task 32: [80] Task 37: [77] Task 5: [85] Task 21: [76] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 17: [6] Task 31: [10] Task 38: [18] Task 35: [31] Task 0: [34] Task 1: [66] Task 16: [67] Task 28: [46] Task 36: [82] Task 15: [56] Task 14: [67] Task 24: [90] Task 34: [67] Task 39: [96] 
+Total completion time: 14354
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 6: [43] Task 9: [2] Task 4: [23] Task 28: [46] Task 35: [31] Task 13: [52] Task 14: [67] Task 38: [18] Task 34: [67] Task 39: [96] Task 37: [77] Task 16: [67] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 18: [29] Task 19: [9] Task 33: [20] Task 25: [56] Task 15: [56] Task 0: [34] Task 1: [66] Task 27: [74] Task 11: [48] Task 5: [85] Task 21: [76] Task 32: [80] Task 36: [82] Task 29: [89] 
+Total completion time: 14523
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 3: [4] Task 19: [9] Task 18: [29] Task 6: [43] Task 26: [33] Task 25: [56] Task 11: [48] Task 27: [74] Task 14: [67] Task 16: [67] Task 29: [89] Task 32: [80] Task 37: [77] Task 5: [85] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 0: [34] Task 1: [66] Task 13: [52] Task 2: [27] Task 15: [56] Task 24: [90] Task 28: [46] Task 34: [67] Task 39: [96] Task 21: [76] Task 36: [82] Task 22: [98] 
+Total completion time: 14394
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 4: [23] Task 2: [27] Task 6: [43] Task 13: [52] Task 1: [66] Task 25: [56] Task 15: [56] Task 27: [74] Task 29: [89] Task 32: [80] Task 39: [96] Task 37: [77] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 18: [29] Task 19: [9] Task 21: [76] Task 28: [46] Task 34: [67] Task 0: [34] Task 14: [67] Task 16: [67] Task 11: [48] Task 36: [82] Task 22: [98] Task 5: [85] Task 24: [90] 
+Total completion time: 14136
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 17: [6] Task 31: [10] Task 26: [33] Task 35: [31] Task 33: [20] Task 25: [56] Task 15: [56] Task 18: [29] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 27: [74] Task 22: [98] Task 36: [82] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 6: [43] Task 9: [2] Task 2: [27] Task 4: [23] Task 28: [46] Task 29: [89] Task 0: [34] Task 1: [66] Task 13: [52] Task 11: [48] Task 14: [67] Task 16: [67] Task 21: [76] Task 32: [80] Task 5: [85] 
+Total completion time: 14312
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 10: [13] Task 4: [23] Task 28: [46] Task 35: [31] Task 0: [34] Task 1: [66] Task 16: [67] Task 34: [67] Task 39: [96] Task 29: [89] Task 37: [77] Task 24: [90] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 38: [18] Task 33: [20] Task 20: [20] Task 26: [33] Task 9: [2] Task 11: [48] Task 19: [9] Task 18: [29] Task 6: [43] Task 13: [52] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 27: [74] Task 5: [85] Task 32: [80] Task 22: [98] 
+Total completion time: 14062
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 0: [34] Task 1: [66] Task 25: [56] Task 11: [48] Task 27: [74] Task 29: [89] Task 32: [80] Task 15: [56] Task 5: [85] Task 21: [76] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 33: [20] Task 20: [20] Task 4: [23] Task 8: [8] Task 26: [33] Task 35: [31] Task 6: [43] Task 28: [46] Task 34: [67] Task 16: [67] Task 13: [52] Task 37: [77] Task 14: [67] Task 24: [90] Task 36: [82] Task 39: [96] 
+Total completion time: 13711
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 17: [6] Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 31: [10] Task 11: [48] Task 24: [90] Task 28: [46] Task 1: [66] Task 16: [67] Task 34: [67] Task 39: [96] Task 27: [74] Task 29: [89] Task 32: [80] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 25: [56] Task 6: [43] Task 13: [52] Task 0: [34] Task 14: [67] Task 5: [85] Task 21: [76] Task 15: [56] Task 37: [77] Task 36: [82] Task 22: [98] 
+Total completion time: 13880
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 4: [23] Task 26: [33] Task 18: [29] Task 0: [34] Task 1: [66] Task 13: [52] Task 37: [77] Task 14: [67] Task 5: [85] Task 21: [76] Task 15: [56] Task 24: [90] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 9: [2] Task 2: [27] Task 6: [43] Task 25: [56] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] 
+Total completion time: 14161
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 4: [23] Task 26: [33] Task 18: [29] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 37: [77] Task 14: [67] Task 21: [76] Task 15: [56] Task 24: [90] Task 22: [98] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 13: [52] Task 0: [34] Task 38: [18] Task 34: [67] Task 19: [9] Task 16: [67] Task 11: [48] Task 27: [74] Task 29: [89] Task 32: [80] Task 5: [85] Task 39: [96] 
+Total completion time: 14298
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 26: [33] Task 35: [31] Task 33: [20] Task 25: [56] Task 11: [48] Task 0: [34] Task 13: [52] Task 32: [80] Task 16: [67] Task 15: [56] Task 39: [96] Task 27: [74] Task 24: [90] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 30: [2] Task 19: [9] Task 18: [29] Task 4: [23] Task 2: [27] Task 6: [43] Task 28: [46] Task 34: [67] Task 14: [67] Task 1: [66] Task 37: [77] Task 29: [89] Task 22: [98] Task 5: [85] Task 21: [76] 
+Total completion time: 14882
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 17: [6] Task 7: [4] Task 30: [2] Task 23: [7] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 20: [20] Task 0: [34] Task 31: [10] Task 28: [46] Task 1: [66] Task 25: [56] Task 21: [76] Task 32: [80] Task 36: [82] Task 22: [98] Task 16: [67] Task 29: [89] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 6: [43] Task 9: [2] Task 10: [13] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 14: [67] Task 38: [18] Task 34: [67] Task 13: [52] Task 11: [48] Task 27: [74] Task 5: [85] Task 15: [56] Task 39: [96] Task 37: [77] Task 24: [90] 
+Total completion time: 14396
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 35: [31] Task 4: [23] Task 6: [43] Task 13: [52] Task 0: [34] Task 14: [67] Task 1: [66] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 30: [2] Task 19: [9] Task 18: [29] Task 11: [48] Task 33: [20] Task 25: [56] Task 28: [46] Task 15: [56] Task 2: [27] Task 21: [76] Task 32: [80] Task 36: [82] Task 27: [74] Task 29: [89] Task 5: [85] 
+Total completion time: 14380
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 33: [20] Task 20: [20] Task 4: [23] Task 26: [33] Task 32: [80] Task 18: [29] Task 34: [67] Task 28: [46] Task 1: [66] Task 16: [67] Task 24: [90] Task 27: [74] Task 39: [96] Task 29: [89] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 2: [27] Task 19: [9] Task 30: [2] Task 35: [31] Task 13: [52] Task 0: [34] Task 6: [43] Task 25: [56] Task 15: [56] Task 14: [67] Task 11: [48] Task 5: [85] Task 21: [76] Task 36: [82] Task 22: [98] Task 37: [77] 
+Total completion time: 14488
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 26: [33] Task 31: [10] Task 38: [18] Task 18: [29] Task 11: [48] Task 16: [67] Task 13: [52] Task 32: [80] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 5: [85] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 2: [27] Task 8: [8] Task 35: [31] Task 17: [6] Task 33: [20] Task 4: [23] Task 6: [43] Task 0: [34] Task 1: [66] Task 25: [56] Task 21: [76] Task 15: [56] Task 27: [74] Task 24: [90] Task 22: [98] Task 36: [82] Task 29: [89] 
+Total completion time: 14134
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 20: [20] Task 26: [33] Task 25: [56] Task 11: [48] Task 16: [67] Task 15: [56] Task 39: [96] Task 37: [77] Task 29: [89] Task 21: [76] Task 24: [90] Task 34: [67] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 9: [2] Task 3: [4] Task 38: [18] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 6: [43] Task 28: [46] Task 1: [66] Task 13: [52] Task 32: [80] Task 36: [82] Task 5: [85] Task 14: [67] Task 27: [74] Task 22: [98] 
+Total completion time: 14131
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 20: [20] Task 26: [33] Task 35: [31] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 16: [67] Task 15: [56] Task 27: [74] Task 5: [85] Task 21: [76] Task 32: [80] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 19: [9] Task 4: [23] Task 8: [8] Task 33: [20] Task 38: [18] Task 18: [29] Task 0: [34] Task 1: [66] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 24: [90] Task 22: [98] Task 29: [89] 
+Total completion time: 14508
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 31: [10] Task 2: [27] Task 15: [56] Task 4: [23] Task 26: [33] Task 35: [31] Task 13: [52] Task 18: [29] Task 11: [48] Task 27: [74] Task 14: [67] Task 21: [76] Task 34: [67] Task 39: [96] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 17: [6] Task 9: [2] Task 3: [4] Task 38: [18] Task 8: [8] Task 16: [67] Task 33: [20] Task 0: [34] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 37: [77] Task 24: [90] Task 22: [98] Task 5: [85] Task 32: [80] Task 29: [89] 
+Total completion time: 14463
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 33: [20] Task 20: [20] Task 9: [2] Task 2: [27] Task 4: [23] Task 8: [8] Task 26: [33] Task 18: [29] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 32: [80] Task 15: [56] Task 27: [74] Task 22: [98] Task 5: [85] Task 39: [96] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 31: [10] Task 38: [18] Task 35: [31] Task 6: [43] Task 13: [52] Task 0: [34] Task 14: [67] Task 1: [66] Task 16: [67] Task 34: [67] Task 37: [77] Task 29: [89] Task 21: [76] Task 36: [82] 
+Total completion time: 14648
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 8: [8] Task 26: [33] Task 11: [48] Task 33: [20] Task 0: [34] Task 14: [67] Task 1: [66] Task 16: [67] Task 34: [67] Task 32: [80] Task 36: [82] Task 22: [98] Task 5: [85] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 9: [2] Task 3: [4] Task 38: [18] Task 35: [31] Task 6: [43] Task 13: [52] Task 25: [56] Task 28: [46] Task 18: [29] Task 21: [76] Task 15: [56] Task 39: [96] Task 37: [77] Task 24: [90] Task 27: [74] Task 29: [89] 
+Total completion time: 14252
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 10: [13] Task 20: [20] Task 26: [33] Task 9: [2] Task 1: [66] Task 38: [18] Task 18: [29] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 14: [67] Task 21: [76] Task 24: [90] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 4: [23] Task 8: [8] Task 35: [31] Task 33: [20] Task 0: [34] Task 6: [43] Task 13: [52] Task 25: [56] Task 15: [56] Task 27: [74] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] Task 5: [85] 
+Total completion time: 14243
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 4: [23] Task 26: [33] Task 11: [48] Task 6: [43] Task 28: [46] Task 34: [67] Task 0: [34] Task 24: [90] Task 16: [67] Task 39: [96] Task 37: [77] Task 36: [82] Task 5: [85] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 38: [18] Task 35: [31] Task 13: [52] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 1: [66] Task 27: [74] Task 29: [89] Task 32: [80] Task 22: [98] 
+Total completion time: 14231
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 17: [6] Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 33: [20] Task 31: [10] Task 26: [33] Task 35: [31] Task 13: [52] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 29: [89] Task 32: [80] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 6: [43] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 1: [66] Task 27: [74] Task 24: [90] Task 36: [82] Task 5: [85] 
+Total completion time: 13916
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 9: [2] Task 13: [52] Task 0: [34] Task 26: [33] Task 16: [67] Task 33: [20] Task 14: [67] Task 1: [66] Task 37: [77] Task 27: [74] Task 29: [89] Task 32: [80] Task 5: [85] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 4: [23] Task 6: [43] Task 38: [18] Task 18: [29] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 36: [82] Task 15: [56] Task 39: [96] Task 21: [76] Task 34: [67] Task 22: [98] 
+Total completion time: 14411
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 18: [29] Task 4: [23] Task 26: [33] Task 6: [43] Task 25: [56] Task 28: [46] Task 32: [80] Task 15: [56] Task 14: [67] Task 24: [90] Task 34: [67] Task 22: [98] Task 5: [85] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 19: [9] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 0: [34] Task 1: [66] Task 16: [67] Task 13: [52] Task 11: [48] Task 27: [74] Task 29: [89] Task 37: [77] Task 39: [96] Task 21: [76] Task 36: [82] 
+Total completion time: 13929
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 4: [23] Task 26: [33] Task 6: [43] Task 38: [18] Task 34: [67] Task 0: [34] Task 13: [52] Task 32: [80] Task 14: [67] Task 5: [85] Task 21: [76] Task 15: [56] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 18: [29] Task 30: [2] Task 35: [31] Task 33: [20] Task 25: [56] Task 11: [48] Task 28: [46] Task 1: [66] Task 16: [67] Task 27: [74] Task 29: [89] Task 37: [77] Task 39: [96] Task 36: [82] 
+Total completion time: 14681
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 33: [20] Task 0: [34] Task 18: [29] Task 11: [48] Task 16: [67] Task 15: [56] Task 14: [67] Task 5: [85] Task 21: [76] Task 32: [80] Task 36: [82] Task 37: [77] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 6: [43] Task 9: [2] Task 4: [23] Task 26: [33] Task 35: [31] Task 13: [52] Task 25: [56] Task 28: [46] Task 34: [67] Task 39: [96] Task 1: [66] Task 27: [74] Task 24: [90] Task 22: [98] Task 29: [89] 
+Total completion time: 13996
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 38: [18] Task 8: [8] Task 19: [9] Task 18: [29] Task 33: [20] Task 25: [56] Task 11: [48] Task 28: [46] Task 15: [56] Task 0: [34] Task 14: [67] Task 5: [85] Task 21: [76] Task 32: [80] Task 36: [82] Task 29: [89] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 6: [43] Task 9: [2] Task 4: [23] Task 26: [33] Task 35: [31] Task 13: [52] Task 1: [66] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 27: [74] Task 22: [98] 
+Total completion time: 14103
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 9: [2] Task 2: [27] Task 8: [8] Task 35: [31] Task 33: [20] Task 25: [56] Task 11: [48] Task 27: [74] Task 0: [34] Task 14: [67] Task 16: [67] Task 15: [56] Task 5: [85] Task 24: [90] Task 22: [98] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 18: [29] Task 19: [9] Task 4: [23] Task 26: [33] Task 32: [80] Task 6: [43] Task 28: [46] Task 1: [66] Task 13: [52] Task 34: [67] Task 39: [96] Task 37: [77] Task 29: [89] Task 21: [76] 
+Total completion time: 14355
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 4: [23] Task 3: [4] Task 6: [43] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 14: [67] Task 26: [33] Task 11: [48] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 32: [80] Task 36: [82] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 30: [2] Task 17: [6] Task 33: [20] Task 20: [20] Task 31: [10] Task 2: [27] Task 15: [56] Task 38: [18] Task 35: [31] Task 13: [52] Task 25: [56] Task 28: [46] Task 1: [66] Task 27: [74] Task 29: [89] Task 22: [98] Task 5: [85] Task 21: [76] 
+Total completion time: 13891
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 0: [34] Task 6: [43] Task 13: [52] Task 25: [56] Task 11: [48] Task 16: [67] Task 39: [96] Task 34: [67] Task 5: [85] Task 32: [80] Task 36: [82] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 30: [2] Task 19: [9] Task 18: [29] Task 21: [76] Task 4: [23] Task 2: [27] Task 15: [56] Task 14: [67] Task 24: [90] Task 28: [46] Task 1: [66] Task 37: [77] Task 27: [74] Task 29: [89] Task 22: [98] 
+Total completion time: 14549
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 20: [20] Task 26: [33] Task 9: [2] Task 1: [66] Task 38: [18] Task 18: [29] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 5: [85] Task 21: [76] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 19: [9] Task 4: [23] Task 8: [8] Task 35: [31] Task 33: [20] Task 25: [56] Task 15: [56] Task 6: [43] Task 13: [52] Task 0: [34] Task 14: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 32: [80] Task 22: [98] 
+Total completion time: 14613
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 17: [6] Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 38: [18] Task 33: [20] Task 0: [34] Task 14: [67] Task 6: [43] Task 28: [46] Task 1: [66] Task 16: [67] Task 15: [56] Task 39: [96] Task 37: [77] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 35: [31] Task 13: [52] Task 25: [56] Task 11: [48] Task 27: [74] Task 29: [89] Task 21: [76] Task 32: [80] Task 36: [82] Task 5: [85] Task 34: [67] 
+Total completion time: 14084
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 35: [31] Task 13: [52] Task 0: [34] Task 14: [67] Task 6: [43] Task 21: [76] Task 32: [80] Task 39: [96] Task 34: [67] Task 22: [98] Task 5: [85] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 20: [20] Task 3: [4] Task 15: [56] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 1: [66] Task 16: [67] Task 27: [74] Task 29: [89] Task 37: [77] Task 36: [82] 
+Total completion time: 13782
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 25: [56] Task 15: [56] Task 0: [34] Task 1: [66] Task 13: [52] Task 34: [67] Task 39: [96] Task 37: [77] Task 21: [76] Task 24: [90] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 20: [20] Task 4: [23] Task 2: [27] Task 19: [9] Task 18: [29] Task 11: [48] Task 6: [43] Task 28: [46] Task 14: [67] Task 26: [33] Task 32: [80] Task 16: [67] Task 27: [74] Task 29: [89] Task 36: [82] Task 5: [85] 
+Total completion time: 14196
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 3: [4] Task 9: [2] Task 2: [27] Task 15: [56] Task 4: [23] Task 26: [33] Task 11: [48] Task 28: [46] Task 1: [66] Task 37: [77] Task 24: [90] Task 27: [74] Task 29: [89] Task 34: [67] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 0: [34] Task 18: [29] Task 6: [43] Task 13: [52] Task 25: [56] Task 21: [76] Task 16: [67] Task 14: [67] Task 32: [80] Task 36: [82] Task 5: [85] Task 39: [96] 
+Total completion time: 14610
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 10: [13] Task 9: [2] Task 2: [27] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 4: [23] Task 6: [43] Task 25: [56] Task 28: [46] Task 34: [67] Task 16: [67] Task 11: [48] Task 36: [82] Task 27: [74] Task 24: [90] Task 29: [89] Task 37: [77] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 31: [10] Task 26: [33] Task 35: [31] Task 13: [52] Task 1: [66] Task 38: [18] Task 21: [76] Task 15: [56] Task 14: [67] Task 5: [85] Task 32: [80] Task 39: [96] Task 22: [98] 
+Total completion time: 14159
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 23: [7] Task 19: [9] Task 10: [13] Task 20: [20] Task 3: [4] Task 6: [43] Task 9: [2] Task 2: [27] Task 15: [56] Task 4: [23] Task 26: [33] Task 18: [29] Task 34: [67] Task 28: [46] Task 36: [82] Task 5: [85] Task 14: [67] Task 29: [89] Task 37: [77] Task 24: [90] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 35: [31] Task 33: [20] Task 25: [56] Task 11: [48] Task 0: [34] Task 1: [66] Task 13: [52] Task 32: [80] Task 16: [67] Task 27: [74] Task 39: [96] Task 21: [76] Task 22: [98] 
+Total completion time: 14078
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 4: [23] Task 26: [33] Task 35: [31] Task 9: [2] Task 13: [52] Task 25: [56] Task 11: [48] Task 14: [67] Task 5: [85] Task 21: [76] Task 15: [56] Task 37: [77] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 34: [67] Task 8: [8] Task 19: [9] Task 18: [29] Task 0: [34] Task 2: [27] Task 6: [43] Task 28: [46] Task 1: [66] Task 16: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 32: [80] Task 39: [96] 
+Total completion time: 14569
+
+
+Initial solution: 
+Machine 0: taks assigned: 19
+Task 7: [4] Task 23: [7] Task 17: [6] Task 20: [20] Task 31: [10] Task 2: [27] Task 8: [8] Task 35: [31] Task 13: [52] Task 0: [34] Task 6: [43] Task 28: [46] Task 1: [66] Task 16: [67] Task 34: [67] Task 39: [96] Task 37: [77] Task 29: [89] Task 22: [98] 
+Machine 1: taks assigned: 21
+Task 12: [5] Task 30: [2] Task 10: [13] Task 9: [2] Task 3: [4] Task 38: [18] Task 18: [29] Task 19: [9] Task 4: [23] Task 26: [33] Task 11: [48] Task 33: [20] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 32: [80] Task 36: [82] Task 27: [74] Task 5: [85] Task 24: [90] 
+Total completion time: 14102
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 9: [2] Task 2: [27] Task 4: [23] Task 26: [33] Task 35: [31] Task 6: [43] Task 25: [56] Task 28: [46] Task 34: [67] Task 14: [67] Task 1: [66] Task 37: [77] Task 29: [89] Task 32: [80] Task 5: [85] Task 21: [76] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 31: [10] Task 38: [18] Task 8: [8] Task 19: [9] Task 18: [29] Task 33: [20] Task 0: [34] Task 13: [52] Task 11: [48] Task 16: [67] Task 15: [56] Task 39: [96] Task 27: [74] Task 24: [90] Task 22: [98] Task 36: [82] 
+Total completion time: 14523
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 31: [10] Task 2: [27] Task 8: [8] Task 33: [20] Task 20: [20] Task 18: [29] Task 0: [34] Task 6: [43] Task 25: [56] Task 21: [76] Task 15: [56] Task 14: [67] Task 1: [66] Task 27: [74] Task 29: [89] Task 32: [80] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 9: [2] Task 10: [13] Task 19: [9] Task 4: [23] Task 26: [33] Task 35: [31] Task 13: [52] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 24: [90] Task 22: [98] Task 36: [82] 
+Total completion time: 14136
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 9: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 2: [27] Task 6: [43] Task 38: [18] Task 0: [34] Task 1: [66] Task 13: [52] Task 37: [77] Task 16: [67] Task 15: [56] Task 39: [96] Task 27: [74] Task 29: [89] Task 21: [76] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 19: [9] Task 18: [29] Task 8: [8] Task 35: [31] Task 33: [20] Task 4: [23] Task 26: [33] Task 25: [56] Task 11: [48] Task 24: [90] Task 28: [46] Task 34: [67] Task 14: [67] Task 32: [80] Task 36: [82] Task 22: [98] Task 5: [85] 
+Total completion time: 14295
+
+
+Initial solution: 
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 10: [13] Task 20: [20] Task 31: [10] Task 2: [27] Task 8: [8] Task 19: [9] Task 38: [18] Task 33: [20] Task 25: [56] Task 11: [48] Task 6: [43] Task 28: [46] Task 34: [67] Task 37: [77] Task 14: [67] Task 5: [85] Task 21: [76] Task 32: [80] Task 36: [82] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 23: [7] Task 17: [6] Task 9: [2] Task 4: [23] Task 26: [33] Task 18: [29] Task 0: [34] Task 35: [31] Task 13: [52] Task 1: [66] Task 16: [67] Task 15: [56] Task 39: [96] Task 27: [74] Task 24: [90] Task 22: [98] Task 29: [89] 
+Total completion time: 14611
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 18: [29] Task 8: [8] Task 35: [31] Task 6: [43] Task 25: [56] Task 28: [46] Task 1: [66] Task 13: [52] Task 34: [67] Task 37: [77] Task 16: [67] Task 21: [76] Task 24: [90] Task 29: [89] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 31: [10] Task 38: [18] Task 19: [9] Task 4: [23] Task 26: [33] Task 2: [27] Task 15: [56] Task 0: [34] Task 14: [67] Task 27: [74] Task 11: [48] Task 36: [82] Task 22: [98] Task 5: [85] Task 32: [80] Task 39: [96] 
+Total completion time: 14612
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 38: [18] Task 8: [8] Task 35: [31] Task 0: [34] Task 1: [66] Task 25: [56] Task 28: [46] Task 32: [80] Task 36: [82] Task 15: [56] Task 37: [77] Task 27: [74] Task 29: [89] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 9: [2] Task 10: [13] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 4: [23] Task 26: [33] Task 6: [43] Task 13: [52] Task 11: [48] Task 16: [67] Task 39: [96] Task 34: [67] Task 14: [67] Task 5: [85] Task 21: [76] Task 24: [90] 
+Total completion time: 14540
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 23: [7] Task 17: [6] Task 33: [20] Task 20: [20] Task 3: [4] Task 38: [18] Task 19: [9] Task 18: [29] Task 4: [23] Task 35: [31] Task 13: [52] Task 25: [56] Task 11: [48] Task 14: [67] Task 39: [96] Task 21: [76] Task 32: [80] Task 36: [82] Task 22: [98] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 30: [2] Task 10: [13] Task 9: [2] Task 2: [27] Task 8: [8] Task 26: [33] Task 31: [10] Task 28: [46] Task 34: [67] Task 0: [34] Task 6: [43] Task 1: [66] Task 16: [67] Task 15: [56] Task 27: [74] Task 29: [89] Task 37: [77] Task 24: [90] Task 5: [85] 
+Total completion time: 14267
+
+
+Initial solution: 
+Machine 0: taks assigned: 20
+Task 7: [4] Task 30: [2] Task 17: [6] Task 31: [10] Task 38: [18] Task 33: [20] Task 20: [20] Task 26: [33] Task 35: [31] Task 13: [52] Task 32: [80] Task 18: [29] Task 0: [34] Task 14: [67] Task 1: [66] Task 16: [67] Task 24: [90] Task 27: [74] Task 29: [89] Task 36: [82] 
+Machine 1: taks assigned: 20
+Task 12: [5] Task 3: [4] Task 23: [7] Task 9: [2] Task 10: [13] Task 2: [27] Task 19: [9] Task 4: [23] Task 8: [8] Task 6: [43] Task 25: [56] Task 11: [48] Task 28: [46] Task 34: [67] Task 39: [96] Task 37: [77] Task 21: [76] Task 15: [56] Task 22: [98] Task 5: [85] 
+Total completion time: 13776
+
+Machine 0: taks assigned: 21
+Task 7: [4] Task 30: [2] Task 23: [7] Task 9: [2] Task 10: [13] Task 20: [20] Task 26: [33] Task 31: [10] Task 2: [27] Task 19: [9] Task 18: [29] Task 21: [76] Task 15: [56] Task 0: [34] Task 1: [66] Task 13: [52] Task 37: [77] Task 14: [67] Task 24: [90] Task 27: [74] Task 5: [85] 
+Machine 1: taks assigned: 19
+Task 12: [5] Task 3: [4] Task 38: [18] Task 8: [8] Task 35: [31] Task 17: [6] Task 33: [20] Task 4: [23] Task 6: [43] Task 25: [56] Task 11: [48] Task 16: [67] Task 28: [46] Task 34: [67] Task 39: [96] Task 29: [89] Task 32: [80] Task 36: [82] Task 22: [98] 
+Total completion time: 13347
+
+Performance time: 0 seconds
+Update percentage: 0%
