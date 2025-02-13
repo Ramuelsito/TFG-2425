@@ -60,16 +60,15 @@ int Machine::EmulateRemoval(const int& i) {
     int new_tij = tasks_assigned_[i + 1].GetTime() + problem->CalculateSij(tasks_assigned_[i - 1].GetId() + 1, tasks_assigned_[i + 1].GetId() + 1);
     int old_tij = tasks_assigned_[i + 1].GetTime() + problem->CalculateSij(tasks_assigned_[i].GetId() + 1, tasks_assigned_[i + 1].GetId() + 1);
     int tij = tasks_assigned_[i].GetTime() + problem->CalculateSij(tasks_assigned_[i - 1].GetId() + 1, tasks_assigned_[i].GetId() + 1);
-    tct_decrement = (tasks_assigned_size - (i + 1)) * (new_tij - old_tij) - (tasks_assigned_size - (i + 1) + 1) * tij;
     int current_til = tasks_assigned_[0].GetTime() + problem->CalculateSij(0, tasks_assigned_[0].GetId() + 1);
     for (int l = 1; l <= i - 1; l++) {
       int til = tasks_assigned_[l].GetTime() + problem->CalculateSij(tasks_assigned_[l - 1].GetId() + 1, tasks_assigned_[l].GetId() + 1);
       current_til += til;
     }
-    tct_decrement -= current_til;
+    tct_decrement = (tasks_assigned_size - (i + 1)) * (new_tij - old_tij) - (tasks_assigned_size - (i + 1) + 1) * tij - current_til;
   } else if (i == tasks_assigned_size - 1) {
     int other_t01 = tasks_assigned_[0].GetTime() + problem->CalculateSij(0, tasks_assigned_[0].GetId() + 1);
-    tct_decrement = tasks_assigned_[i].GetTime() + problem->CalculateSij(tasks_assigned_[i].GetId() + 1, 0) - other_t01;
+    tct_decrement = other_t01;
     for (int l = 1; l < tasks_assigned_size; l++) {
       int til = tasks_assigned_[l].GetTime() + problem->CalculateSij(tasks_assigned_[l - 1].GetId() + 1, tasks_assigned_[l].GetId() + 1);
       tct_decrement += til;
@@ -81,7 +80,7 @@ int Machine::EmulateRemoval(const int& i) {
 
 void Machine::RemoveTask(const int& task_index, int tct_decrement) {
   tasks_assigned_.erase(tasks_assigned_.begin() + task_index);
-  tc_time_ -= tct_decrement;
+  tc_time_ += tct_decrement;
 }
 
 void Machine::InsertTask(const Task& task, int task_position, int tct_increment) { 

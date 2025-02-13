@@ -52,17 +52,22 @@ int main(int argc, char* argv[]) {
         // ReInsertionInter reinsertion_inter(initial_solution);
         // initial_solution = reinsertion_inter.GenerateEnvironment();
         std::cout << "Initial solution: " << std::endl;
-        std::vector<Machine> machines = initial_solution.getMachines();
         std::cout << initial_solution << std::endl;
-        int tct_decrement = machines[0].EmulateRemoval(2);
-        machines[0].RemoveTask(2, tct_decrement);
-        Solution new_solution(machines);
-        int diference = new_solution.GetTCT();
-        std::cout << new_solution << std::endl;
-        new_solution.RecalculateTotalCompletionTime();
-        diference = diference - new_solution.GetTCT();
-        std::cout << new_solution << std::endl;
-        std::cout << "Diference: " << diference << std::endl;
+
+        // for (int i = 0; i < initial_solution.getMachines()[0].getTasksAssigned().size(); i++) {
+        //   std::vector<Machine> machines = initial_solution.getMachines();
+        //   std::cout << initial_solution << std::endl;
+        //   std::cout << "Task to remove: " << machines[0].getTasksAssigned()[i] << std::endl;
+        //   int tct_decrement = machines[0].EmulateRemoval(i);
+        //   machines[0].RemoveTask(i, tct_decrement);
+        //   Solution new_solution(machines);
+        //   int diference = new_solution.GetTCT();
+        //   std::cout << new_solution << std::endl;
+        //   new_solution.RecalculateTotalCompletionTime();
+        //   diference = diference - new_solution.GetTCT();
+        //   std::cout << new_solution << std::endl;
+        //   std::cout << "Diference: " << diference << std::endl;
+        // }
         
         // algorithm_name = "GVNS";
         // MultiGVNS multigvns;
