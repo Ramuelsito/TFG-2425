@@ -49,9 +49,11 @@ int main(int argc, char* argv[]) {
 
         ExhaustedConstructionPhase construction_phase;
         Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-        // ReInsertionInter reinsertion_inter(initial_solution);
-        // initial_solution = reinsertion_inter.GenerateEnvironment();
         std::cout << "Initial solution: " << std::endl;
+        std::cout << initial_solution << std::endl;
+        ReInsertionInter reinsertion_inter(initial_solution);
+        initial_solution = reinsertion_inter.GenerateEnvironment();
+        std::cout << "Reinsertion solution: " << std::endl;
         std::cout << initial_solution << std::endl;
 
         // for (int i = 0; i < initial_solution.getMachines()[0].getTasksAssigned().size(); i++) {

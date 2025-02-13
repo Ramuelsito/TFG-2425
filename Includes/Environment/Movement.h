@@ -11,11 +11,20 @@
 
 #pragma once
 
-struct Movement
-{
+/**
+ * @struct Movement
+ * @brief Struct that represents a movement in the environment
+ * @param orig_machine_index - Original machine index
+ * @param orig_task_index - Original task index, in the original machine
+ * @param dest_machine_index - Destination machine index
+ * @param dest_task_index - Destination task index, in the destination machine
+ * @param tct_increment - Increment of the total completion time
+ * @param tct_decrement - Decrement of the total completion time
+ */
+struct Movement {
   int orig_machine_index;
-  int dest_machine_index;
   int orig_task_index;
+  int dest_machine_index;
   int dest_task_index;
   int tct_increment;
   int tct_decrement;
