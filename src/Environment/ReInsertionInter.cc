@@ -13,32 +13,10 @@
 #include <random>
 
 Solution ReInsertionInter::GenerateEnvironment() {
-  std::vector<Machine> intial_machines = initial_solution_.getMachines();
   std::vector<Machine> new_machines;
-  Solution local_optimum = initial_solution_;
-  // std::vector<std::vector<int>> setup_times;
-  // for (int i = 0; i < intial_machines.size(); i++) {
-  //   for (int j = 0; j < intial_machines[i].getTasksAssigned().size(); ++j) {
-  //     for (int k = 0; k < intial_machines.size(); ++k) {
-  //       if (i == k) continue;
-  //       for (int l = 0; l < intial_machines[k].getTasksAssigned().size(); ++l) {
-  //         new_machines = intial_machines;
-  //         setup_times = problem_.getSetupTimes();
-  //         Task task_to_insert = new_machines[i].getTasksAssigned()[j];
-  //         new_machines[i].RemoveTask(j);
-  //         new_machines[i].RecalculateTotalCompletionTime(setup_times);
-  //         new_machines[k].InsertTask(task_to_insert, l);
-  //         new_machines[k].RecalculateTotalCompletionTime(setup_times);
-  //         Solution new_solution = new_machines;
-  //         if (new_solution.GetTCT() < local_optimum.GetTCT()) {
-  //           local_optimum = new_solution;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-  // local_optimums_.push_back(local_optimum);
-  return local_optimum;
+  Solution final_solution = initial_solution_;
+  
+  return final_solution;
 }
 
 /**
@@ -81,27 +59,33 @@ Solution ReInsertionInter::SelectRandomNeighbor() {
 /**
  * @brief Emulates the movement calculating only the TCT
  * @param solution The current solution
- * @param first_machine_index The index of the first machine
- * @param second_machine_index The index of the second machine
- * @param first_task_index The index of the first task
- * @param second_task_index The index of the second task
  * @return The best movement found
  */
-Movement ReInsertionInter::EmulateMovement(const Solution& solution, const int& first_machine_index, const int& second_machine_index, const int& first_task_index, const int& second_task_index) {
-  // std::vector<Machine> intial_machines = solution.getMachines();
-  // std::vector<Machine> new_machines = intial_machines;
-  // std::vector<std::vector<int>> setup_times = problem_.getSetupTimes();
-  // Task task_to_insert = new_machines[first_machine_index].getTasksAssigned()[first_task_index];
-  // new_machines[first_machine_index].RemoveTask(first_task_index, setup_times);
-  // new_machines[first_machine_index].RecalculateTotalCompletionTime(setup_times);
-  // new_machines[second_machine_index].InsertTask(task_to_insert, second_task_index, setup_times);
-  // Solution new_solution = new_machines;
-  // Movement movement;
-  // movement.orig_machine_index = first_machine_index;
-  // movement.dest_machine_index = second_machine_index;
-  // movement.task = task_to_insert;
-  // movement.tct = new_solution.GetTCT();
-  // return movement;
+Movement ReInsertionInter::EmulateMovements(const Solution& solution) {
+  std::vector<Machine> initial_machines = initial_solution_.getMachines();
+  int best_tct_movement = 0;
+  Movement best_movement;
+  for (int m1 = 0; m1 < initial_machines.size(); m1++) {
+    int tasks_assigned_machine1 = initial_machines[m1].getTasksAssigned().size();
+    for (int i = 0; i < initial_machines[m1].getTasksAssigned().size(); ++i) {
+      int tct_extraction = initial_machines[m1].EmulateRemoval(i);
+      for (int m2 = 0; m2 < initial_machines.size(); ++m2) {
+        int tasks_assigned_machine2 = initial_machines[m2].getTasksAssigned().size();
+        if (m1 == m2) continue;
+        for (int j = 0; j < initial_machines[m2].getTasksAssigned().size(); ++j) {
+          // Dentro de estos for, tengo que calcular el TCT de la nueva solución
+          // y quedarme con la mejor
+          int tct_movement = 0;
+          int tct_insertion = 0;
+          if (tct_movement < best_tct_movement) {
+            best_tct_movement = tct_movement;
+            best_movement = {m1, m2, i, j, tct_movement, 0};
+          }
+        }
+      }
+    }
+  }
+  return best_movement;
 }
 
 /**

@@ -107,33 +107,7 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
     int tasks_assigned_size = tasks_in_machine.size();
     for (int i = 0; i < current_candidates.size(); i++) {
       for (int q = 0; q <= tasks_assigned_size; q++) {       // q Es la posición de la tarea en la máquina
-        int tct_increment = 0;
-        if (q == 0) {
-          int new_t0i = current_candidates[i].GetTime() + problem_->CalculateSij(0, current_candidates[i].GetId() + 1);
-          int old_t01 = tasks_in_machine[0].GetTime() + problem_->CalculateSij(0, tasks_in_machine[0].GetId() + 1);
-          int new_tij = tasks_in_machine[0].GetTime() + problem_->CalculateSij(current_candidates[i].GetId() + 1, tasks_in_machine[0].GetId() + 1);
-          tct_increment = (tasks_assigned_size + 1) * new_t0i + tasks_assigned_size * (new_tij - old_t01);
-        } else if((1 <= q) && (q < tasks_assigned_size)) {
-          int other_t01 = tasks_in_machine[0].GetTime() + problem_->CalculateSij(0, tasks_in_machine[0].GetId() + 1);
-          tct_increment = other_t01;
-          for (int l = 1; l <= q - 1; l++) {
-            int other_tij = tasks_in_machine[l].GetTime() + problem_->CalculateSij(tasks_in_machine[l - 1].GetId() + 1, tasks_in_machine[l].GetId() + 1);
-            tct_increment += other_tij;
-          }
-          int new_tij = current_candidates[i].GetTime() + problem_->CalculateSij(tasks_in_machine[q - 1].GetId() + 1, current_candidates[i].GetId() + 1);
-          int new_tiq = tasks_in_machine[q].GetTime() + problem_->CalculateSij(current_candidates[i].GetId() + 1, tasks_in_machine[q].GetId() + 1);
-          int aux_tij = tasks_in_machine[q].GetTime() + problem_->CalculateSij(tasks_in_machine[q - 1].GetId() + 1, tasks_in_machine[q].GetId() + 1);
-          tct_increment += (tasks_assigned_size - (q + 1) + 2) * new_tij + (tasks_assigned_size - (q + 1) + 1) * (new_tiq - aux_tij);
-        } else if (q == tasks_assigned_size) { // Tenemos que tener cuidado porque si q = tasks_assigned_size, tasks_in_machine[q] no existe
-          int other_t01 = tasks_in_machine[0].GetTime() + problem_->CalculateSij(0, tasks_in_machine[0].GetId() + 1);
-          tct_increment = other_t01;
-          for (int l = 1; l < tasks_assigned_size; l++) {
-            int other_tij = tasks_in_machine[l].GetTime() + problem_->CalculateSij(tasks_in_machine[l - 1].GetId() + 1, tasks_in_machine[l].GetId() + 1);
-            tct_increment += other_tij;
-          }
-          int new_tij = current_candidates[i].GetTime() + problem_->CalculateSij(tasks_in_machine[tasks_assigned_size - 1].GetId() + 1, current_candidates[i].GetId() + 1);
-          tct_increment += new_tij;
-        }
+        int tct_increment = machines_assigned_[chosen_machine_index].EmulateInsertion(current_candidates[i], q);
         if (tct_increment < best_tct_increment) {
           best_tct_increment = tct_increment;
           best_position_to_insert = q;

@@ -3,20 +3,80 @@
 #include "../Includes/Machine.h"
 #include "../Includes/Problem.h"
 
-
-void Machine::ReInsertTask(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times) {
-  Task task = tasks_assigned_[task_index]; // Task to reinsert
-  tasks_assigned_.erase(tasks_assigned_.begin() + task_index);
-  tasks_assigned_.insert(tasks_assigned_.begin() + new_task_position, task);
-  RecalculateTotalCompletionTime();
+/**
+ * @brief Given a task and a position, emulates the insertion of the task in the machine
+ * @param task The task to insert
+ * @param q The position where the task is going to be inserted
+ * @return The increment of the total completion time
+ */
+int Machine::EmulateInsertion(const Task& task, int q) {
+  int tasks_assigned_size = tasks_assigned_.size();
+  Problem* problem = &Problem::getInstance();
+  int tct_increment = 0;
+  if (q == 0) {
+    int new_t0i = task.GetTime() + problem->CalculateSij(0, task.GetId() + 1);
+    int old_t01 = tasks_assigned_[0].GetTime() + problem->CalculateSij(0, tasks_assigned_[0].GetId() + 1);
+    int new_tij = tasks_assigned_[0].GetTime() + problem->CalculateSij(task.GetId() + 1, tasks_assigned_[0].GetId() + 1);
+    tct_increment = (tasks_assigned_size + 1) * new_t0i + tasks_assigned_size * (new_tij - old_t01);
+  } else if((1 <= q) && (q < tasks_assigned_size)) {
+    int other_t01 = tasks_assigned_[0].GetTime() + problem->CalculateSij(0, tasks_assigned_[0].GetId() + 1);
+    tct_increment = other_t01;
+    for (int l = 1; l <= q - 1; l++) {
+      int other_tij = tasks_assigned_[l].GetTime() + problem->CalculateSij(tasks_assigned_[l - 1].GetId() + 1, tasks_assigned_[l].GetId() + 1);
+      tct_increment += other_tij;
+    }
+    int new_tij = task.GetTime() + problem->CalculateSij(tasks_assigned_[q - 1].GetId() + 1, task.GetId() + 1);
+    int new_tiq = tasks_assigned_[q].GetTime() + problem->CalculateSij(task.GetId() + 1, tasks_assigned_[q].GetId() + 1);
+    int aux_tij = tasks_assigned_[q].GetTime() + problem->CalculateSij(tasks_assigned_[q - 1].GetId() + 1, tasks_assigned_[q].GetId() + 1);
+    tct_increment += (tasks_assigned_size - (q + 1) + 2) * new_tij + (tasks_assigned_size - (q + 1) + 1) * (new_tiq - aux_tij);
+  } else if (q == tasks_assigned_size) { // Tenemos que tener cuidado porque si q = tasks_assigned_size, tasks_assigned_[q] no existe
+    int other_t01 = tasks_assigned_[0].GetTime() + problem->CalculateSij(0, tasks_assigned_[0].GetId() + 1);
+    tct_increment = other_t01;
+    for (int l = 1; l < tasks_assigned_size; l++) {
+      int other_tij = tasks_assigned_[l].GetTime() + problem->CalculateSij(tasks_assigned_[l - 1].GetId() + 1, tasks_assigned_[l].GetId() + 1);
+      tct_increment += other_tij;
+    }
+    int new_tij = task.GetTime() + problem->CalculateSij(tasks_assigned_[tasks_assigned_size - 1].GetId() + 1, task.GetId() + 1);
+    tct_increment += new_tij;
+  }
+  return tct_increment;
 }
 
-void Machine::SwapTasks(const int& task_index, const int& other_task_index, const std::vector<std::vector<int>>& setup_times) {
-  Task first_task = tasks_assigned_[task_index]; // Task to reinsert
-  Task second_task = tasks_assigned_[other_task_index];
-  tasks_assigned_[task_index] = second_task;
-  tasks_assigned_[other_task_index] = first_task;
-  RecalculateTotalCompletionTime();
+/**
+ * @brief Given a task index, emulates the removal of the task in the machine
+ * @param task_index The index of the task to remove
+ * @return The decrement of the total completion time
+ */
+int Machine::EmulateRemoval(const int& i) {
+  int tasks_assigned_size = tasks_assigned_.size();
+  Problem* problem = &Problem::getInstance();
+  int tct_decrement = 0;
+  if (i == 0) {
+    int new_t0j = tasks_assigned_[i + 1].GetTime() + problem->CalculateSij(0, tasks_assigned_[i + 1].GetId() + 1);
+    int old_tij = tasks_assigned_[i + 1].GetTime() + problem->CalculateSij(tasks_assigned_[i].GetId() + 1, tasks_assigned_[i + 1].GetId() + 1);
+    int t0i = tasks_assigned_[i].GetTime() + problem->CalculateSij(0, tasks_assigned_[i].GetId() + 1);
+    tct_decrement = (tasks_assigned_size - 1) * (new_t0j - old_tij) - tasks_assigned_size * t0i;
+  } else if((1 <= i) && (i < tasks_assigned_size - 1)) {
+    int new_tij = tasks_assigned_[i + 1].GetTime() + problem->CalculateSij(tasks_assigned_[i - 1].GetId() + 1, tasks_assigned_[i + 1].GetId() + 1);
+    int old_tij = tasks_assigned_[i + 1].GetTime() + problem->CalculateSij(tasks_assigned_[i].GetId() + 1, tasks_assigned_[i + 1].GetId() + 1);
+    int tij = tasks_assigned_[i].GetTime() + problem->CalculateSij(tasks_assigned_[i - 1].GetId() + 1, tasks_assigned_[i].GetId() + 1);
+    tct_decrement = (tasks_assigned_size - (i + 1)) * (new_tij - old_tij) - (tasks_assigned_size - (i + 1) + 1) * tij;
+    int current_til = tasks_assigned_[0].GetTime() + problem->CalculateSij(0, tasks_assigned_[0].GetId() + 1);
+    for (int l = 1; l <= i - 1; l++) {
+      int til = tasks_assigned_[l].GetTime() + problem->CalculateSij(tasks_assigned_[l - 1].GetId() + 1, tasks_assigned_[l].GetId() + 1);
+      current_til += til;
+    }
+    tct_decrement -= current_til;
+  } else if (i == tasks_assigned_size - 1) {
+    int other_t01 = tasks_assigned_[0].GetTime() + problem->CalculateSij(0, tasks_assigned_[0].GetId() + 1);
+    tct_decrement = tasks_assigned_[i].GetTime() + problem->CalculateSij(tasks_assigned_[i].GetId() + 1, 0) - other_t01;
+    for (int l = 1; l < tasks_assigned_size; l++) {
+      int til = tasks_assigned_[l].GetTime() + problem->CalculateSij(tasks_assigned_[l - 1].GetId() + 1, tasks_assigned_[l].GetId() + 1);
+      tct_decrement += til;
+    }
+    tct_decrement *= -1;
+  }
+  return tct_decrement;
 }
 
 void Machine::RemoveTask(const int& task_index, int tct_decrement) {

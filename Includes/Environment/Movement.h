@@ -17,5 +17,6 @@ struct Movement
   int dest_machine_index;
   int orig_task_index;
   int dest_task_index;
-  int new_tct;
+  int tct_increment;
+  int tct_decrement;
 };

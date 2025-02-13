@@ -47,26 +47,34 @@ int main(int argc, char* argv[]) {
         std::chrono::seconds performance_time;
         double update_percentage;
 
-        // ExhaustedConstructionPhase construction_phase;
-        // Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-        // int diference = initial_solution.GetTCT();
-        // std::cout << "Initial solution: " << std::endl;
-        // std::cout << initial_solution << std::endl;
-        // initial_solution.RecalculateTotalCompletionTime();
-        // diference = diference - initial_solution.GetTCT();
-        // std::cout << initial_solution << std::endl;
-        // std::cout << "Diference: " << diference << std::endl;
+        ExhaustedConstructionPhase construction_phase;
+        Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
+        // ReInsertionInter reinsertion_inter(initial_solution);
+        // initial_solution = reinsertion_inter.GenerateEnvironment();
+        std::cout << "Initial solution: " << std::endl;
+        std::vector<Machine> machines = initial_solution.getMachines();
+        std::cout << initial_solution << std::endl;
+        int tct_decrement = machines[0].EmulateRemoval(2);
+        machines[0].RemoveTask(2, tct_decrement);
+        Solution new_solution(machines);
+        int diference = new_solution.GetTCT();
+        std::cout << new_solution << std::endl;
+        new_solution.RecalculateTotalCompletionTime();
+        diference = diference - new_solution.GetTCT();
+        std::cout << new_solution << std::endl;
+        std::cout << "Diference: " << diference << std::endl;
         
+        // algorithm_name = "GVNS";
+        // MultiGVNS multigvns;
+        // auto start = std::chrono::steady_clock::now();
+        // solution = multigvns.Solve();
+        // auto end = std::chrono::steady_clock::now();
+        // update_percentage = multigvns.GetUpdatePercentage();
+        // performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+        // std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
+        //     << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
 
-        algorithm_name = "GVNS";
-        MultiGVNS multigvns;
-        auto start = std::chrono::steady_clock::now();
-        solution = multigvns.Solve();
-        auto end = std::chrono::steady_clock::now();
-        update_percentage = multigvns.GetUpdatePercentage();
-        performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-        std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
-            << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+
 
         // for (int i = 0; i < solution.getMachines().size(); i++) {
         //   solution.getMachines()[i].RecalculateTotalCompletionTime();

@@ -31,12 +31,11 @@ class Machine {
   Task GetLastTask() const { return tasks_assigned_.back(); }
   int GetLastTaskTime() const { return last_task_time_; }
   std::vector<Task> getTasksAssigned() const { return tasks_assigned_; }
-  void InsertTask(const Task& task, int task_position, int tct_increment = 0);
 
-  void ReInsertTask(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times);
-  void SwapTasks(const int& task_index, const int& new_task_position, const std::vector<std::vector<int>>& setup_times);
+  int EmulateInsertion(const Task& task, int task_position);
+  int EmulateRemoval(const int& task_index);
+  void InsertTask(const Task& task, int task_position, int tct_increment = 0);
   void RemoveTask(const int& task_index, int tct_decrement);
-  bool CheckTotalCompletionTime(int time_to_add, int min_time_got);
   void RecalculateTotalCompletionTime();
 
   friend std::ostream& operator<<(std::ostream& os, const Machine& machine) {
