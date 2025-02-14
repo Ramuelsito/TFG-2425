@@ -27,4 +27,6 @@ class ReInsertionInter : public Environment {
  private:
   Movement EmulateMovements(const Solution&);
   void ApplyMovement(Solution&, const Movement&);
+
+  Solution best_solution_;
 };

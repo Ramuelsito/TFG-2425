@@ -14,11 +14,25 @@
 
 Solution ReInsertionInter::GenerateEnvironment() {
   // Saturar
-  std::vector<Machine> new_machines;
+  bool mejora = true;
   Solution final_solution = initial_solution_;
-  Movement best_movement = EmulateMovements(final_solution);
-  // std::cout << "Best movement: " << best_movement.orig_machine_index << " " << best_movement.orig_task_index << " " << best_movement.dest_machine_index << " " << best_movement.dest_task_index << " " << best_movement.tct_increment << " " << best_movement.tct_decrement << std::endl;
-  ApplyMovement(final_solution, best_movement);
+  best_solution_ = initial_solution_;
+  while (mejora) {
+    Movement best_movement = EmulateMovements(final_solution);
+    // std::cout << "Best movement: " << best_movement.orig_machine_index << " " << best_movement.orig_task_index << " " << best_movement.dest_machine_index << " " << best_movement.dest_task_index << " " << best_movement.tct_increment << " " << best_movement.tct_decrement << std::endl;
+    ApplyMovement(final_solution, best_movement);
+    std::cout << "Final solution: " << final_solution << std::endl;
+    int diference = final_solution.GetTCT();
+    final_solution.RecalculateTotalCompletionTime();
+    diference -= final_solution.GetTCT();
+    std::cout << "Diference: " << diference << std::endl;
+    if (best_solution_.GetTCT() <= final_solution.GetTCT()) {
+      final_solution = best_solution_;
+      mejora = false;
+    } else {
+      best_solution_ = final_solution;
+    }
+  }
   return final_solution;
 }
 
