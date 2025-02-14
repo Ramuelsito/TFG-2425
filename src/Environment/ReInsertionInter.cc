@@ -13,6 +13,7 @@
 #include <random>
 
 Solution ReInsertionInter::GenerateEnvironment() {
+  // Saturar
   std::vector<Machine> new_machines;
   Solution final_solution = initial_solution_;
   Movement best_movement = EmulateMovements(final_solution);
