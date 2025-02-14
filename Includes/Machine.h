@@ -21,22 +21,20 @@
 class Machine {
  public:
   Machine(int id, std::vector<Task> tasks_assigned, int tc_time = 0) :  id_(id), 
-  tasks_assigned_(tasks_assigned), tc_time_(tc_time)  {}
-  Machine(int id) : id_(id), tc_time_(0) { tasks_assigned_.clear(); }
+  tasks_assigned_(tasks_assigned) {}
+  Machine(int id) : id_(id) { tasks_assigned_.clear(); }
   ~Machine() = default;
   
   int getId() const { return id_; }
-  int GetTotalTime() const { return tc_time_; }
-  void SetTotalTime(int time) { tc_time_ = time; }
   Task GetLastTask() const { return tasks_assigned_.back(); }
   int GetLastTaskTime() const { return last_task_time_; }
   std::vector<Task> getTasksAssigned() const { return tasks_assigned_; }
 
-  int EmulateInsertion(const Task& task, int task_position);
-  int EmulateRemoval(const int& task_index);
+  int EmulateInsertion(const Task& task, int task_position) const;
+  int EmulateRemoval(const int& task_index) const;
   void InsertTask(const Task& task, int task_position, int tct_increment = 0);
   void RemoveTask(const int& task_index, int tct_decrement);
-  void RecalculateTotalCompletionTime();
+  int RecalculateTotalCompletionTime();
 
   friend std::ostream& operator<<(std::ostream& os, const Machine& machine) {
     os << "Machine " << machine.id_ << ":\n";
@@ -47,12 +45,10 @@ class Machine {
       }
       os << "\n";
     }
-    if (machine.tc_time_ != 0)  os << "Total completion time: " << machine.tc_time_ << "\n";
     return os;
   }
  private:
   int id_;
-  int tc_time_;
   int last_task_time_;
   std::vector<Task> tasks_assigned_;
 };

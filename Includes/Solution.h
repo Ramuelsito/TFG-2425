@@ -20,57 +20,31 @@
 class Solution {
  public:
   Solution() = default;
-  Solution(std::vector<Machine> machines) : machines_{machines} {}
+  Solution(std::vector<Machine> machines) : machines_{machines} { total_completion_time_ = 0; }
 
   std::vector<Machine> getMachines() const { return machines_; }
-  int GetTCT() const {
-    int tct = 0;
-    for (int i = 0; i < machines_.size(); i++) {
-      tct += machines_[i].GetTotalTime();
-    }
-    return tct;
-  }
-  void AssignMaxTCT() {
-    Machine max_tct_machine = Machine(0, std::vector<Task>(), 999999);
-    machines_.push_back(max_tct_machine);
-  }
+  int GetTCT() const { return total_completion_time_; }
+  void AddTCT(const int& tct) { total_completion_time_ += tct; }
   
-  void RecalculateTotalCompletionTime() {
-    for (int i = 0; i < machines_.size(); i++) {
-      machines_[i].RecalculateTotalCompletionTime();
-    }
-  }
-
-  void PrintStudiedSolution(const std::string& filename, const std::string& algorithm_name, const double& time, const int& number_tasks) {
-    std::ofstream file;
-    std::string true_filename = "../SolutionTables/SolutionTable" + algorithm_name + ".md";
-    file.open(true_filename, std::ios::app);
-    file << "| " << filename << " | " << machines_.size() << " | " << number_tasks <<  " | " << GetTCT() << " | " << time << " |" << std::endl; 
-    file.close();
-  }
-
-  bool operator==(const Solution& solution) const {
-    if (machines_.size() != solution.machines_.size()) return false;
-    for (int i = 0; i < machines_.size(); i++) {
-      if (machines_[i].getTasksAssigned().size() != solution.machines_[i].getTasksAssigned().size()) return false;
-      for (int j = 0; j < machines_[i].getTasksAssigned().size(); j++) {
-        if (machines_[i].getTasksAssigned()[j] != solution.machines_[i].getTasksAssigned()[j]) return false;
-      }
-    }
-    return true;
-  }
+  void RecalculateTotalCompletionTime();
+  void InsertTask(const Task& task, const int& machine_id, const int& task_position, const int& tct_increment = 0);
+  void RemoveTask(const int& machine_id, const int& task_index, const int& tct_decrement = 0);
+  void PrintStudiedSolution(const std::string& filename, const std::string& algorithm_name, const double& time, const int& number_tasks);
+  bool operator==(const Solution& solution) const;
+  const Machine& operator[](int i) { return machines_[i]; }
 
   friend std::ostream& operator<<(std::ostream& os, const Solution& solution) {
     for (int i = 0; i < solution.machines_.size(); i++) {
-      os << "Machine " << i << ": taks assigned: " << solution.machines_[i].getTasksAssigned().size() << std::endl;
+      os << "Machine " << i << ": taks assigned: " << solution.machines_[i].getTasksAssigned().size() << "\n";
       for (int j = 0; j < solution.machines_[i].getTasksAssigned().size(); j++) {
         os << solution.machines_[i].getTasksAssigned()[j] << " ";
       }
       os << std::endl;
     }
-    os << "Total completion time: " << solution.GetTCT() << "\n";
+    os << "Total completion time: " << solution.total_completion_time_ << "\n";
     return os;
   }
  private:
   std::vector<Machine> machines_;
+  int total_completion_time_;
 };

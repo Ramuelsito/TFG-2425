@@ -129,30 +129,6 @@ ParallelMachineProblem/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/build
 .PHONY : ParallelMachineProblem/fast
 
-src/Algorithms/ConstructionPhase.o: src/Algorithms/ConstructionPhase.cc.o
-.PHONY : src/Algorithms/ConstructionPhase.o
-
-# target to build an object file
-src/Algorithms/ConstructionPhase.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.o
-.PHONY : src/Algorithms/ConstructionPhase.cc.o
-
-src/Algorithms/ConstructionPhase.i: src/Algorithms/ConstructionPhase.cc.i
-.PHONY : src/Algorithms/ConstructionPhase.i
-
-# target to preprocess a source file
-src/Algorithms/ConstructionPhase.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.i
-.PHONY : src/Algorithms/ConstructionPhase.cc.i
-
-src/Algorithms/ConstructionPhase.s: src/Algorithms/ConstructionPhase.cc.s
-.PHONY : src/Algorithms/ConstructionPhase.s
-
-# target to generate assembly for a file
-src/Algorithms/ConstructionPhase.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.s
-.PHONY : src/Algorithms/ConstructionPhase.cc.s
-
 src/Algorithms/ExhaustedConstructionPhase.o: src/Algorithms/ExhaustedConstructionPhase.cc.o
 .PHONY : src/Algorithms/ExhaustedConstructionPhase.o
 
@@ -369,6 +345,30 @@ src/Problem.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Problem.cc.s
 .PHONY : src/Problem.cc.s
 
+src/Solution.o: src/Solution.cc.o
+.PHONY : src/Solution.o
+
+# target to build an object file
+src/Solution.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o
+.PHONY : src/Solution.cc.o
+
+src/Solution.i: src/Solution.cc.i
+.PHONY : src/Solution.i
+
+# target to preprocess a source file
+src/Solution.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.i
+.PHONY : src/Solution.cc.i
+
+src/Solution.s: src/Solution.cc.s
+.PHONY : src/Solution.s
+
+# target to generate assembly for a file
+src/Solution.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.s
+.PHONY : src/Solution.cc.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -378,9 +378,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ParallelMachineProblem"
-	@echo "... src/Algorithms/ConstructionPhase.o"
-	@echo "... src/Algorithms/ConstructionPhase.i"
-	@echo "... src/Algorithms/ConstructionPhase.s"
 	@echo "... src/Algorithms/ExhaustedConstructionPhase.o"
 	@echo "... src/Algorithms/ExhaustedConstructionPhase.i"
 	@echo "... src/Algorithms/ExhaustedConstructionPhase.s"
@@ -408,6 +405,9 @@ help:
 	@echo "... src/Problem.o"
 	@echo "... src/Problem.i"
 	@echo "... src/Problem.s"
+	@echo "... src/Solution.o"
+	@echo "... src/Solution.i"
+	@echo "... src/Solution.s"
 .PHONY : help
 
 

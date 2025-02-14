@@ -19,8 +19,7 @@ class ExhaustedConstructionPhase {
  public:
   ExhaustedConstructionPhase() {
     problem_ = &Problem::getInstance();
-    machines_assigned_.clear();
-    tasks_assigned_.clear();
+    final_solution_ = Solution();
   };
   Solution ConstructGreedyRandSolution();
   void IncreaseRCLSize() { RCL_size_++; }
@@ -29,7 +28,6 @@ class ExhaustedConstructionPhase {
   std::vector<Insertion> MakeRandomCandidatesList(const std::vector<Task>& tasks_to_assign, int machine_index);
 
   Problem* problem_;
-  std::vector<Machine> machines_assigned_;
-  std::vector<int> tasks_assigned_;
+  Solution final_solution_;
   int RCL_size_ = 2;
 };

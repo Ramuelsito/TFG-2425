@@ -1,6 +1,4 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.o"
-  "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ConstructionPhase.cc.o.d"
   "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ExhaustedConstructionPhase.cc.o"
   "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ExhaustedConstructionPhase.cc.o.d"
   "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/MultiGVNS.cc.o"
@@ -19,6 +17,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o.d"
   "CMakeFiles/ParallelMachineProblem.dir/src/Problem.cc.o"
   "CMakeFiles/ParallelMachineProblem.dir/src/Problem.cc.o.d"
+  "CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o"
+  "CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o.d"
   "ParallelMachineProblem"
   "ParallelMachineProblem.pdb"
 )

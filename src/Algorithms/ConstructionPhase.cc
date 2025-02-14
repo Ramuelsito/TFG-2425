@@ -70,7 +70,7 @@ std::vector<std::pair<Task, int>> ConstructionPhase::MakeRandomCandidatesList(st
     for (int i = 0; i < machines_assigned_.size(); i++) {
       int last_task_index = machines_assigned_[i].GetLastTask().GetId();
       for (int j = 0; j < tasks_to_assign.size(); j++) {
-        int actual_time = tasks_to_assign[j].GetTime() + Problem::getInstance().getSetupTimes()[last_task_index + 1][tasks_to_assign[j].GetId() + 1] + machines_assigned_[i].GetTotalTime();
+        int actual_time = tasks_to_assign[j].GetTime() + Problem::getInstance().getSetupTimes()[last_task_index + 1][tasks_to_assign[j].GetId() + 1] + machines_assigned_[i];
         if (actual_time < min_time && std::find(tasks_assigned_.begin(), tasks_assigned_.end(), tasks_to_assign[j].GetId()) == tasks_assigned_.end()) {
           min_time = actual_time;
           task_index = j;

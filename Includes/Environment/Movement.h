@@ -19,7 +19,6 @@
  * @param dest_machine_index - Destination machine index
  * @param dest_task_index - Destination task index, in the destination machine
  * @param tct_increment - Increment of the total completion time
- * @param tct_decrement - Decrement of the total completion time
  */
 struct Movement {
   int orig_machine_index;
@@ -27,5 +26,4 @@ struct Movement {
   int dest_machine_index;
   int dest_task_index;
   int tct_increment;
-  int tct_decrement;
 };

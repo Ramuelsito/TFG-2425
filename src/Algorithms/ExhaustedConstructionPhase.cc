@@ -35,9 +35,9 @@ void PrintState(const std::vector<Task>& tasks_to_assign, const std::vector<Mach
  */
 Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
   std::vector<Task> tasks_to_assign = problem_->getTasksTimes();
-  machines_assigned_ = problem_->getMachines();
-  std::vector<std::vector<int>> setup_times = problem_->getSetupTimes();
+  final_solution_ = problem_->getMachines();
   InitializingMachines(tasks_to_assign);
+  // machines_assigned_ = final_solution_.getMachines();
   std::cout << std::endl;
   std::random_device rd;
   std::mt19937 engine(rd());
@@ -45,8 +45,8 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
     // PrintState(tasks_to_assign, machines_assigned_);
     int machine_index_less_span = 0;
     int less_span = 999999;
-    for (int i = 0; i < machines_assigned_.size(); i++) {
-      int span = machines_assigned_[i].GetLastTaskTime();
+    for (int i = 0; i < final_solution_.getMachines().size(); i++) {
+      int span = final_solution_[i].GetLastTaskTime();
       // std::cout << "Span: " << span << std::endl; 
       if (span < less_span) {
         less_span = span;
@@ -61,12 +61,11 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
     // std::cout << "Selected task: " << selected_task.task.GetId() << std::endl;
     // std::cout << "Selected task position: " << selected_task.dest_task_index << std::endl;
     // std::cout << "Selected task increment TCT: " << selected_task.increment_tct << std::endl;
-    machines_assigned_[machine_index_less_span].InsertTask(selected_task.task, selected_task.dest_task_index, selected_task.increment_tct);
-    tasks_assigned_.push_back(selected_task.task.GetId());
+    // machines_assigned_[machine_index_less_span].InsertTask(selected_task.task, selected_task.dest_task_index, selected_task.increment_tct);
+    final_solution_.InsertTask(selected_task.task, machine_index_less_span, selected_task.dest_task_index, selected_task.increment_tct);
     tasks_to_assign.erase(std::remove(tasks_to_assign.begin(), tasks_to_assign.end(), selected_task.task));
   }
-  Solution solution(machines_assigned_);
-  return solution;
+  return final_solution_;
 }
 
 /**
@@ -74,7 +73,7 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
  * @param tasks_to_assign - Tareas a asignar
  */
 void ExhaustedConstructionPhase::InitializingMachines(std::vector<Task>& tasks_to_assign) { // Hay que modificar y añadir S0j
-  for (int i = 0; i < machines_assigned_.size(); i++) {
+  for (int i = 0; i < final_solution_.getMachines().size(); i++) {
     int best_time = 999999;
     int best_task_index = 0;
     for (int j = 0; j < tasks_to_assign.size(); j++) {
@@ -84,8 +83,7 @@ void ExhaustedConstructionPhase::InitializingMachines(std::vector<Task>& tasks_t
         best_task_index = j;
       }
     }
-    machines_assigned_[i].InsertTask(tasks_to_assign[best_task_index], 0, best_time);
-    tasks_assigned_.push_back(tasks_to_assign[best_task_index].GetId());
+    final_solution_.InsertTask(tasks_to_assign[best_task_index], i, 0, best_time);
     tasks_to_assign.erase(tasks_to_assign.begin() + best_task_index);
   }
 }
@@ -96,7 +94,7 @@ void ExhaustedConstructionPhase::InitializingMachines(std::vector<Task>& tasks_t
  * @return Lista de candidatos
  */
 std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(const std::vector<Task>& tasks_candidates, int chosen_machine_index) {
-  std::vector<Task> tasks_in_machine = machines_assigned_[chosen_machine_index].getTasksAssigned();
+  std::vector<Task> tasks_in_machine = final_solution_[chosen_machine_index].getTasksAssigned();
   std::vector<Task> current_candidates = tasks_candidates;
   std::vector<Insertion> candidates;
   for (int k = 0; k < RCL_size_; k++) {
@@ -107,7 +105,7 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
     int tasks_assigned_size = tasks_in_machine.size();
     for (int i = 0; i < current_candidates.size(); i++) {
       for (int q = 0; q <= tasks_assigned_size; q++) {       // q Es la posición de la tarea en la máquina
-        int tct_increment = machines_assigned_[chosen_machine_index].EmulateInsertion(current_candidates[i], q);
+        int tct_increment = final_solution_[chosen_machine_index].EmulateInsertion(current_candidates[i], q);
         if (tct_increment < best_tct_increment) {
           best_tct_increment = tct_increment;
           best_position_to_insert = q;

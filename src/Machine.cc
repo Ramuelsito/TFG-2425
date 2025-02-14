@@ -9,7 +9,7 @@
  * @param q The position where the task is going to be inserted
  * @return The increment of the total completion time
  */
-int Machine::EmulateInsertion(const Task& task, int q) {
+int Machine::EmulateInsertion(const Task& task, int q) const {
   int tasks_assigned_size = tasks_assigned_.size();
   Problem* problem = &Problem::getInstance();
   int tct_increment = 0;
@@ -47,7 +47,7 @@ int Machine::EmulateInsertion(const Task& task, int q) {
  * @param task_index The index of the task to remove
  * @return The decrement of the total completion time
  */
-int Machine::EmulateRemoval(const int& i) {
+int Machine::EmulateRemoval(const int& i) const {
   int tasks_assigned_size = tasks_assigned_.size();
   Problem* problem = &Problem::getInstance();
   int tct_decrement = 0;
@@ -80,21 +80,20 @@ int Machine::EmulateRemoval(const int& i) {
 
 void Machine::RemoveTask(const int& task_index, int tct_decrement) {
   tasks_assigned_.erase(tasks_assigned_.begin() + task_index);
-  tc_time_ += tct_decrement;
 }
 
 void Machine::InsertTask(const Task& task, int task_position, int tct_increment) { 
   tasks_assigned_.insert(tasks_assigned_.begin() + task_position, task);
   // std::cout << "TCT: " << tc_time_ << " + " << tct_increment << " = " << tc_time_ + tct_increment << std::endl;
-  tc_time_ += tct_increment;
   last_task_time_ = tct_increment;
 }
 
-void Machine::RecalculateTotalCompletionTime() {
+int Machine::RecalculateTotalCompletionTime() {
   std::vector<std::vector<int>> setup_times = Problem::getInstance().getSetupTimes();
   int k = tasks_assigned_.size();
-  tc_time_ = k * (tasks_assigned_[0].GetTime() + setup_times[0][tasks_assigned_[0].GetId() + 1]); 
+  int tc_time = k * (tasks_assigned_[0].GetTime() + setup_times[0][tasks_assigned_[0].GetId() + 1]); 
   for (int i = 1; i < tasks_assigned_.size(); i++) {
-    tc_time_ += (k - i) * (tasks_assigned_[i].GetTime() + setup_times[tasks_assigned_[i - 1].GetId() + 1][tasks_assigned_[i].GetId() + 1]);
+    tc_time += (k - i) * (tasks_assigned_[i].GetTime() + setup_times[tasks_assigned_[i - 1].GetId() + 1][tasks_assigned_[i].GetId() + 1]);
   }
+  return tc_time;
 }

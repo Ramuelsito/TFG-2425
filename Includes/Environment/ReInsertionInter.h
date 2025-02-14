@@ -26,5 +26,5 @@ class ReInsertionInter : public Environment {
   Solution SelectRandomNeighbor();
  private:
   Movement EmulateMovements(const Solution&);
-  Solution ApplyMovement(const Solution&, const Movement&);
+  void ApplyMovement(Solution&, const Movement&);
 };

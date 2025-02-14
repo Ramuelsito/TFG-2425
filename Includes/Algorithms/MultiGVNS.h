@@ -23,7 +23,8 @@
 class MultiGVNS {
  public:
   MultiGVNS() {
-    best_solution_.AssignMaxTCT();
+    best_solution_ = Solution();
+    best_solution_.AddTCT(999999);
     update_percentage_ = 0;
   } 
   Solution Solve();
