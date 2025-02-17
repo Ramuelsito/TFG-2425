@@ -96,17 +96,16 @@ void ExhaustedConstructionPhase::InitializingMachines(std::vector<Task>& tasks_t
  * @return Lista de candidatos
  */
 std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(const std::vector<Task>& tasks_candidates, int chosen_machine_index) {
-  std::vector<Task> tasks_in_machine = final_solution_[chosen_machine_index].getTasksAssigned();
   std::vector<Task> current_candidates = tasks_candidates;
   std::vector<Insertion> candidates;
+  int tasks_assigned = final_solution_[chosen_machine_index].getTasksAssigned().size();
   for (int k = 0; k < RCL_size_; k++) {
     if (current_candidates.empty()) { break; }
     int best_tct_increment = 9999999;
     int best_position_to_insert = -1;
     int task_selected = -1;
-    int tasks_assigned_size = tasks_in_machine.size();
     for (int i = 0; i < current_candidates.size(); i++) {
-      for (int q = 0; q <= tasks_assigned_size; q++) {       // q Es la posición de la tarea en la máquina
+      for (int q = 0; q <= tasks_assigned; q++) {       // q Es la posición de la tarea en la máquina
         int tct_increment = final_solution_[chosen_machine_index].EmulateInsertion(current_candidates[i], q);
         if (tct_increment < best_tct_increment) {
           best_tct_increment = tct_increment;
