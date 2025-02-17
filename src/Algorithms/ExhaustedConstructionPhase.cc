@@ -12,6 +12,7 @@
 #include "../../Includes/Algorithms/ExhaustedConstructionPhase.h"
 #include <random>
 #include <algorithm>
+#include <set>
 
 void PrintState(const std::vector<Task>& tasks_to_assign, const std::vector<Machine>& machines_assigned) {
   std::cout << "Tasks to assign: ";
@@ -54,10 +55,11 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
       } 
     }
     // std::cout << "Machine index: " << machine_index_less_span << std::endl;
-    std::vector<Insertion> candidates = MakeRandomCandidatesList(tasks_to_assign, machine_index_less_span);
+    std::vector<Insertion> candidates = MakeRandomCandidatesListWithRange(tasks_to_assign, machine_index_less_span);
     std::uniform_int_distribution<> dist(0, candidates.size() - 1);
     int random_index = dist(engine);
     Insertion selected_task = candidates[random_index];
+    std::cout << "Candidates size: " << candidates.size() << std::endl;
     // std::cout << "Selected task: " << selected_task.task.GetId() << std::endl;
     // std::cout << "Selected task position: " << selected_task.dest_task_index << std::endl;
     // std::cout << "Selected task increment TCT: " << selected_task.increment_tct << std::endl;
@@ -115,6 +117,43 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
     }
     candidates.push_back(Insertion{current_candidates[task_selected], best_position_to_insert, best_tct_increment});
     current_candidates.erase(current_candidates.begin() + task_selected);
+  }
+  return candidates;
+}
+
+/**
+ * @brief Creación de una lista de candidatos aleatorizada usando un 
+ *        alpha que marca el rango de candidatos
+ * @param tasks_candidates - Tareas candidatas
+ * @param chosen_machine_index - Índice de la máquina elegida
+ * @param alpha - Rango de candidatos
+ * @return Lista de candidatos
+ */
+std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesListWithRange(const std::vector<Task>& tasks_candidates, int chosen_machine_index) {
+  std::vector<Insertion> candidates;
+  std::vector<Insertion> RCL;
+  int best_tct_increment = 9999999;
+  int worst_tct_increment = -1;
+  int tasks_assigned = final_solution_[chosen_machine_index].getTasksAssigned().size();
+  for (int i = 0; i < tasks_candidates.size(); i++) {
+    int best_i_tct = 9999999;
+    int best_qi = -1;
+    for (int q = 0; q <= tasks_assigned; q++) {       // q Es la posición de la tarea en la máquina
+      int tct_increment = final_solution_[chosen_machine_index].EmulateInsertion(tasks_candidates[i], q);
+      best_tct_increment = best_tct_increment < tct_increment ? best_tct_increment : tct_increment;
+      worst_tct_increment = worst_tct_increment > tct_increment ? worst_tct_increment : tct_increment;
+      if (tct_increment < best_i_tct) {
+        best_i_tct = tct_increment;
+        best_qi = q;
+      }
+    }
+    RCL.push_back(Insertion{tasks_candidates[i], best_qi, best_i_tct});
+  }
+  int range = best_tct_increment + alpha_ * (worst_tct_increment - best_tct_increment);
+  for (const auto& insertion : RCL) {
+    if (insertion.increment_tct < range) { 
+      candidates.push_back(insertion);
+    }
   }
   return candidates;
 }

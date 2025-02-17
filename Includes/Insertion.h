@@ -16,4 +16,9 @@ struct Insertion {
   Task task;
   int dest_task_index;
   int increment_tct;
+
+  bool operator==(const Insertion& other) const {
+    return task == other.task && dest_task_index == other.dest_task_index && increment_tct == other.increment_tct;
+  }
+  bool operator<(const Insertion& other) const { return increment_tct < other.increment_tct; }
 };

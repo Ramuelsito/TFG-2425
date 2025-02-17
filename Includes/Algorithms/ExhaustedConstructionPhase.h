@@ -23,11 +23,14 @@ class ExhaustedConstructionPhase {
   };
   Solution ConstructGreedyRandSolution();
   void IncreaseRCLSize() { RCL_size_++; }
+  void IncreaseAlpha() { alpha_ += 0.1; }
  private:
   void InitializingMachines(std::vector<Task>& tasks_to_assign);
   std::vector<Insertion> MakeRandomCandidatesList(const std::vector<Task>& tasks_to_assign, int machine_index);
-
+  std::vector<Insertion> MakeRandomCandidatesListWithRange(const std::vector<Task>& tasks_candidates, int chosen_machine_index);
   Problem* problem_;
   Solution final_solution_;
+
+  float alpha_ = 0.1;
   int RCL_size_ = 2;
 };
