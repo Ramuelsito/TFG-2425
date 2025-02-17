@@ -20,7 +20,7 @@ Solution MultiGVNS::Solve() {
   Solution local_search_solution, shaked_solution, previous_best_solution;
   int iterations_without_improvement = 0;
   ExhaustedConstructionPhase construction_phase;
-  for (int i = 0; i < 1000; ++i) {   
+  for (int i = 0; i < number_jobs_ * number_jobs_; ++i) {   
     // current_solution es S, tendremos que mantenerla y 
     // crear otra solucion S' para hacer la busqueda local
     // Entonces guardamos en un fichero S y S'.
@@ -35,6 +35,11 @@ Solution MultiGVNS::Solve() {
     while (k <= 6) {
       shaked_solution = Shaking(current_solution, k);
       local_search_solution = LocalSearchByVND(shaked_solution);
+      // int diference = local_search_solution.GetTCT();
+      // local_search_solution.RecalculateTotalCompletionTime();
+      // diference -= local_search_solution.GetTCT();
+      // std::cout << "Diference: " << diference << std::endl;
+
       if (MoveOrNot(local_search_solution, current_solution)) {
         current_solution = local_search_solution;
         k = 1;
@@ -67,7 +72,7 @@ Solution MultiGVNS::Shaking(const Solution& initial_solution, const int& k) {
   Solution new_solution;
   Solution current_solution = initial_solution;
   for (int i = 0; i < k; ++i) {
-    ReInsertionInter reinsertion_inter(initial_solution);
+    ReInsertionInter reinsertion_inter(current_solution);
     new_solution = reinsertion_inter.SelectRandomNeighbor();
     if (current_solution == new_solution) {        // If the new solution is the same as the current one repeat the selection
       new_solution = reinsertion_inter.SelectRandomNeighbor();
@@ -84,18 +89,19 @@ Solution MultiGVNS::Shaking(const Solution& initial_solution, const int& k) {
  */
 Solution MultiGVNS::LocalSearchByVND(const Solution& initial_solution) {
   Solution local_optimum = initial_solution;
+  Solution current_solution = local_optimum;
   bool mejora = true;
   while (mejora) {
-    ReInsertionIntra reinsertion_intra = ReInsertionIntra(local_optimum);
-    Solution reinsertion_intra_solution = reinsertion_intra.GenerateEnvironment();
-    SwapInter swap_inter = SwapInter(reinsertion_intra_solution);
-    Solution swap_inter_solution = swap_inter.GenerateEnvironment();
-    SwapIntra swap_intra = SwapIntra(swap_inter_solution);
-    Solution swap_intra_solution = swap_intra.GenerateEnvironment();
-    ReInsertionInter reinsertion_inter = ReInsertionInter(swap_intra_solution);
-    Solution reinsertion_inter_solution = reinsertion_inter.GenerateEnvironment();
-    if (reinsertion_inter_solution.GetTCT() < local_optimum.GetTCT()) {
-      local_optimum = reinsertion_inter_solution;
+    ReInsertionIntra reinsertion_intra = ReInsertionIntra(current_solution);
+    current_solution = reinsertion_intra.GenerateEnvironment();
+    SwapInter swap_inter = SwapInter(current_solution);
+    current_solution = swap_inter.GenerateEnvironment();
+    SwapIntra swap_intra = SwapIntra(current_solution);
+    current_solution = swap_intra.GenerateEnvironment();
+    ReInsertionInter reinsertion_inter = ReInsertionInter(current_solution);
+    current_solution = reinsertion_inter.GenerateEnvironment();
+    if (current_solution.GetTCT() < local_optimum.GetTCT()) {
+      local_optimum = current_solution;
     } else {
       mejora = false;
     }

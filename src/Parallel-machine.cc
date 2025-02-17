@@ -31,7 +31,7 @@ int main(int argc, char* argv[]) {
       Solution solution;
       for (const auto& entry : std::filesystem::directory_iterator(path)) {
         Problem::getInstance(entry.path().string());
-        MultiGVNS multigvns;
+        MultiGVNS multigvns(40);
         solution = multigvns.Solve();
         std::cout << solution << std::endl;
       }
@@ -46,16 +46,18 @@ int main(int argc, char* argv[]) {
       std::string algorithm_name;
       std::chrono::seconds performance_time;
       double update_percentage;
-      for (int i = 0; i < 100; i++) {
-        ExhaustedConstructionPhase construction_phase;
-        Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-        std::cout << "Construction phase solution: " << std::endl;
-        std::cout << initial_solution << std::endl;
-        SwapInter swap_inter(initial_solution);
-        initial_solution = swap_inter.GenerateEnvironment();
-        std::cout << "Swap intra solution: " << std::endl;
-        std::cout << initial_solution << std::endl;
-      }
+
+      // for (int i = 0; i < 100; i++) {
+      //   ExhaustedConstructionPhase construction_phase;
+      //   Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
+      //   std::cout << "Construction phase solution: " << std::endl;
+      //   std::cout << initial_solution << std::endl;
+      //   ReInsertionInter reinsert_intra(initial_solution);
+      //   initial_solution = reinsert_intra.SelectRandomNeighbor();
+      //   std::cout << "Reinsert inter solution: " << std::endl;
+      //   std::cout << initial_solution << std::endl;
+      // }
+
       // ExhaustedConstructionPhase construction_phase;
       // Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
       // std::cout << "Initial solution: " << std::endl;
@@ -65,18 +67,17 @@ int main(int argc, char* argv[]) {
       // std::cout << "Reinsertion solution: " << std::endl;
       // std::cout << initial_solution << std::endl;
       
-      // algorithm_name = "GVNS";
-      // MultiGVNS multigvns;
-      // auto start = std::chrono::steady_clock::now();
-      // solution = multigvns.Solve();
-      // auto end = std::chrono::steady_clock::now();
-      // update_percentage = multigvns.GetUpdatePercentage();
-      // performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-      // std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
-      //     << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
-      //   solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), problem.getTasksTimes().size());
-      //   std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
-      // }
+      algorithm_name = "GVNS";
+      MultiGVNS multigvns(40);
+      auto start = std::chrono::steady_clock::now();
+      solution = multigvns.Solve();
+      auto end = std::chrono::steady_clock::now();
+      update_percentage = multigvns.GetUpdatePercentage();
+      performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+      std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
+          << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+        solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
+        std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
 
       // for (int i = 0; i < initial_solution.getMachines()[0].getTasksAssigned().size(); i++) {
       //   std::vector<Machine> machines = initial_solution.getMachines();

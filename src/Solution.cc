@@ -114,6 +114,36 @@ int Solution::EmulateSwapInter(const int& machine_id1, const int& i, const int& 
   return delta_tct;
 }
 
+/**
+ * @brief Emulate the re-insertion movement, without modifying the solution
+ * @param machine_id - Machine id
+ * @param i - Task index
+ * @return Delta TCT
+ */
+int Solution::EmulateReInsertion(const int& machine_id, const int& i) const {
+  int tasks_assigned = machines_[machine_id].size();
+  int new_tij1 = 0;
+  int old_tij1 = 0;
+  if (i == 0) {
+    new_tij1 = machines_[machine_id][i + 1].GetTime() + Problem::getInstance().CalculateSij(0, machines_[machine_id][i + 1].GetId() + 1);
+    old_tij1 = machines_[machine_id][i].GetTime() + Problem::getInstance().CalculateSij(0, machines_[machine_id][i].GetId() + 1);
+  } else {
+    new_tij1 = machines_[machine_id][i + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i - 1].GetId() + 1, machines_[machine_id][i + 1].GetId() + 1);
+    old_tij1 = machines_[machine_id][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i - 1].GetId() + 1, machines_[machine_id][i].GetId() + 1);
+  }
+  int new_tij2 = machines_[machine_id][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i + 1].GetId() + 1, machines_[machine_id][i].GetId() + 1);
+  int old_tij2 = machines_[machine_id][i + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i].GetId() + 1, machines_[machine_id][i + 1].GetId() + 1); 
+  
+  int new_tij3 = 0;
+  int old_tij3 = 0;
+  if (i != tasks_assigned - 2) {
+    new_tij3 = machines_[machine_id][i + 2].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i].GetId() + 1, machines_[machine_id][i + 2].GetId() + 1);
+    old_tij3 = machines_[machine_id][i + 2].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i + 1].GetId() + 1, machines_[machine_id][i + 2].GetId() + 1);
+  }
+  int delta_tct = (tasks_assigned - (i + 1) + 1) * (new_tij1 - old_tij1) + (tasks_assigned - (i + 1)) * (new_tij2 - old_tij2) + (tasks_assigned - (i + 1) - 1) * (new_tij3 - old_tij3);
+  return delta_tct;
+}
+
 void Solution::InsertTask(const Task& task, const int& machine_id, const int& task_position, const int& tct_increment) {
   machines_[machine_id].InsertTask(task, task_position, tct_increment);
   total_completion_time_ += tct_increment;

@@ -32,6 +32,7 @@ class Solution {
   void ExchangeTasks(const int& machine_id, const int& i, const int& j) { machines_[machine_id].ExchangeTasks(i, j); }
   int EmulateSwapIntra(const int& machine_id, const int& task_index1, const int& task_index2) const;
   int EmulateSwapInter(const int& machine_id1, const int& task_index1, const int& machine_id2, const int& task_index2) const;
+  int EmulateReInsertion(const int& machine_id, const int& task_index) const;
   void PrintStudiedSolution(const std::string& filename, const std::string& algorithm_name, const double& time, const int& number_tasks);
   bool operator==(const Solution& solution) const;
   const Machine& operator[](int i) const { return machines_[i]; }

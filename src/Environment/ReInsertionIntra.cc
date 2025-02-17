@@ -11,31 +11,57 @@
 
 #include "../../Includes/Environment/ReInsertionIntra.h"
 
-/**
- * @brief Generate a new environment
- * @return Solution - The new environment
- */
 Solution ReInsertionIntra::GenerateEnvironment() {
-  std::vector<Machine> intial_machines = initial_solution_.getMachines();
-  std::vector<Machine> new_machines;
-  Solution local_optimum = initial_solution_;
-  // std::vector<std::vector<int>> setup_times = problem_.getSetupTimes();
-  // for (int i = 0; i < intial_machines.size(); ++i) {
-  //   for (int j = 0; j < intial_machines[i].getTasksAssigned().size(); ++j) {
-  //     for (int k = 0; k < intial_machines[i].getTasksAssigned().size(); ++k) {
-  //       new_machines = intial_machines;
-  //       Task task_to_insert = new_machines[i].getTasksAssigned()[j];
-  //       new_machines[i].RemoveTask(j, setup_times);
-  //       if (j < k && k > 0) {
-  //         new_machines[i].InsertTask(task_to_insert, k - 1, setup_times);
-  //       } else {
-  //         new_machines[i].InsertTask(task_to_insert, k, setup_times);
-  //       }
-  //       Solution new_solution = new_machines;
-  //       if (new_solution.GetTCT() < local_optimum.GetTCT()) { local_optimum = new_solution; }
-  //     }
-  //   }
-  // }
-  // local_optimums_.push_back(local_optimum);
-  return local_optimum;
+  bool mejora = true;
+  Solution final_solution = initial_solution_;
+  best_solution_ = initial_solution_;
+  while (mejora) {
+    Movement best_movement = EmulateMovements(final_solution);
+    // std::cout << "Best movement: " << best_movement.orig_machine_index << " " << best_movement.orig_task_index << " " << best_movement.dest_machine_index << " " << best_movement.dest_task_index << " " << best_movement.tct_increment << std::endl;
+    ApplyMovement(final_solution, best_movement);
+    // std::cout << "Final solution: \n" << final_solution << std::endl;
+    // int diference = final_solution.GetTCT();
+    // final_solution.RecalculateTotalCompletionTime();
+    // diference -= final_solution.GetTCT();
+    // std::cout << "Diference: " << diference << std::endl;
+    if (best_solution_.GetTCT() <= final_solution.GetTCT()) {
+      final_solution = best_solution_;
+      mejora = false;
+    } else {
+      best_solution_ = final_solution;
+    }
+  }
+  return final_solution;
+}
+
+/**
+ * @brief Emulates the movement calculating only the TCT
+ * @param solution The current solution
+ * @return The best movement found
+ */
+Movement ReInsertionIntra::EmulateMovements(const Solution& solution) {
+  int best_tct_movement = 9999999;
+  Movement best_movement{-1, -1, -1, -1, -1};
+  int machines = solution.getMachines().size();
+  for (int m = 0; m < machines; m++) {
+    for (int i = 0; i < solution[m].size() - 1; ++i) {
+      int delta_tct = solution.EmulateReInsertion(m, i);
+      if (delta_tct < best_tct_movement) {
+        best_tct_movement = delta_tct;
+        best_movement = {m, i, m, i + 1, delta_tct};
+      }
+    }
+  }
+  return best_movement;
+}
+
+/**
+ * @brief Apply the movement to the solution
+ * @param solution The solution where the movement is going to be applied
+ * @param movement The movement to apply
+ * @return void
+ */
+void ReInsertionIntra::ApplyMovement(Solution& solution, const Movement& movement) {
+  solution.ExchangeTasks(movement.orig_machine_index, movement.orig_task_index, movement.dest_task_index);
+  solution.AddTCT(movement.tct_increment);
 }

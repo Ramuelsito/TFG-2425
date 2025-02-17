@@ -22,7 +22,7 @@
  */
 class MultiGVNS {
  public:
-  MultiGVNS() {
+  MultiGVNS(const int& max_iterations) : number_jobs_(max_iterations) {
     best_solution_ = Solution();
     best_solution_.AddTCT(999999);
     update_percentage_ = 0;
@@ -38,4 +38,5 @@ class MultiGVNS {
   
   Solution best_solution_;
   double update_percentage_;
+  int number_jobs_;
 };

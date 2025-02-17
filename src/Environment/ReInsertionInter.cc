@@ -20,11 +20,11 @@ Solution ReInsertionInter::GenerateEnvironment() {
     Movement best_movement = EmulateMovements(final_solution);
     // std::cout << "Best movement: " << best_movement.orig_machine_index << " " << best_movement.orig_task_index << " " << best_movement.dest_machine_index << " " << best_movement.dest_task_index << " " << best_movement.tct_increment << " " << best_movement.tct_decrement << std::endl;
     ApplyMovement(final_solution, best_movement);
-    std::cout << "Final solution: " << final_solution << std::endl;
-    int diference = final_solution.GetTCT();
-    final_solution.RecalculateTotalCompletionTime();
-    diference -= final_solution.GetTCT();
-    std::cout << "Diference: " << diference << std::endl;
+    // std::cout << "Final solution: " << final_solution << std::endl;
+    // int diference = final_solution.GetTCT();
+    // final_solution.RecalculateTotalCompletionTime();
+    // diference -= final_solution.GetTCT();
+    // std::cout << "Diference: " << diference << std::endl;
     if (best_solution_.GetTCT() <= final_solution.GetTCT()) {
       final_solution = best_solution_;
       mejora = false;
@@ -40,9 +40,10 @@ Solution ReInsertionInter::GenerateEnvironment() {
  * @return The new solution
  */
 Solution ReInsertionInter::SelectRandomNeighbor() {
-  Solution new_solution = initial_solution_.getMachines();
+  Solution new_solution = initial_solution_;
   std::random_device rd;
   std::mt19937 engine(rd());
+
   int number_of_machines = new_solution.getMachines().size();
   std::uniform_int_distribution<> dist(0, number_of_machines - 1);
   int first_machine_index = dist(engine);                                           //  Obtain a random machine index
@@ -55,9 +56,9 @@ Solution ReInsertionInter::SelectRandomNeighbor() {
   std::uniform_int_distribution<> dist3(0, new_solution[second_machine_index].getTasksAssigned().size() - 1);
   int second_task_index = dist3(engine);                                           // Obtain another random task index
   int tct_decrement = new_solution[first_machine_index].EmulateRemoval(first_task_index);
-  Task task_to_insert = new_solution[first_machine_index].getTasksAssigned()[first_task_index];
+  Task task_to_insert = new_solution[first_machine_index][first_task_index];
   int tct_increment = new_solution[second_machine_index].EmulateInsertion(task_to_insert, second_task_index);
-  Movement movement = {first_machine_index, first_task_index, second_machine_index, second_task_index, tct_increment + tct_decrement};
+  Movement movement = {first_machine_index, first_task_index, second_machine_index, second_task_index, (tct_increment + tct_decrement)};
   ApplyMovement(new_solution, movement);  
   return new_solution;
 }
@@ -99,7 +100,7 @@ Movement ReInsertionInter::EmulateMovements(const Solution& solution) {
  * @return void
  */
 void ReInsertionInter::ApplyMovement(Solution& solution, const Movement& movement) {
-  Task task_to_insert = solution[movement.orig_machine_index].getTasksAssigned()[movement.orig_task_index];
+  Task task_to_insert = solution[movement.orig_machine_index][movement.orig_task_index];
   solution.RemoveTask(movement.orig_machine_index, movement.orig_task_index);
   solution.InsertTask(task_to_insert, movement.dest_machine_index, movement.dest_task_index);
   solution.AddTCT(movement.tct_increment);
