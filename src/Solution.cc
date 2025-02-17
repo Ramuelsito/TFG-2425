@@ -30,14 +30,28 @@ int Solution::EmulateSwapIntra(const int& machine_id, const int& i, const int& j
     old_tij1 = machines_[machine_id][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i - 1].GetId() + 1, machines_[machine_id][i].GetId() + 1);
     new_tij1 = machines_[machine_id][j].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i - 1].GetId() + 1, machines_[machine_id][j].GetId() + 1);
   }
-  int new_tij2 = machines_[machine_id][i + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][j].GetId() + 1, machines_[machine_id][i + 1].GetId() + 1);
-  int old_tij2 = machines_[machine_id][i + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i].GetId() + 1, machines_[machine_id][i + 1].GetId() + 1);
+  int new_tij2 = 0; 
+  int old_tij2 = 0; 
+  if (i == tasks_assigned - 1) {
+    new_tij2 = machines_[machine_id][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][j].GetId() + 1, machines_[machine_id][i].GetId() + 1);
+    old_tij2 = machines_[machine_id][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i - 1].GetId() + 1, machines_[machine_id][i].GetId() + 1);
+  } else {
+    new_tij2 = machines_[machine_id][i + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][j].GetId() + 1, machines_[machine_id][i + 1].GetId() + 1);
+    old_tij2 = machines_[machine_id][i + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i].GetId() + 1, machines_[machine_id][i + 1].GetId() + 1);
+  }
   int new_tij3 = machines_[machine_id][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][j - 1].GetId() + 1, machines_[machine_id][i].GetId() + 1);
   int old_tij3 = machines_[machine_id][j].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][j - 1].GetId() + 1, machines_[machine_id][j].GetId() + 1);
-  std::cout << "Va a petar" << std::endl;
-  int new_tij4 = machines_[machine_id][j + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i].GetId() + 1, machines_[machine_id][j + 1].GetId() + 1);
-  std::cout << "No peto, numero de tareas: " << tasks_assigned << " j: " << j << std::endl;
-  int old_tij4 = machines_[machine_id][j + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][j].GetId() + 1, machines_[machine_id][j + 1].GetId() + 1);
+  // std::cout << "Va a petar, numero de tareas: " << tasks_assigned << " j: " << j << std::endl;
+  int new_tij4 = 0;
+  int old_tij4 = 0;
+  if (j >= tasks_assigned - 1) {
+    new_tij4 = machines_[machine_id][tasks_assigned - 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i].GetId() + 1, machines_[machine_id][tasks_assigned - 1].GetId() + 1);
+    old_tij4 = machines_[machine_id][tasks_assigned - 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][tasks_assigned - 2].GetId() + 1, machines_[machine_id][tasks_assigned - 1].GetId() + 1);
+  } else {
+    new_tij4 = machines_[machine_id][j + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][i].GetId() + 1, machines_[machine_id][j + 1].GetId() + 1);
+    old_tij4 = machines_[machine_id][j + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id][j].GetId() + 1, machines_[machine_id][j + 1].GetId() + 1);
+  }
+  // std::cout << "No peto" << std::endl; 
   int delta_tct = (tasks_assigned - (i + 1) + 1) * (new_tij1 - old_tij1) + (tasks_assigned - (i + 1)) * (new_tij2 - old_tij2) + (tasks_assigned - (j + 1) + 1) * (new_tij3 - old_tij3) + (tasks_assigned - (j + 1)) * (new_tij4 - old_tij4);
   return delta_tct;
 }

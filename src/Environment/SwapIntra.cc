@@ -16,11 +16,10 @@ Solution SwapIntra::GenerateEnvironment() {
   Solution final_solution = initial_solution_;
   best_solution_ = initial_solution_;
   while (mejora) {
-    std::cout << "Calculating best movement..." << std::endl;
     Movement best_movement = EmulateMovements(final_solution);
     std::cout << "Best movement: " << best_movement.orig_machine_index << " " << best_movement.orig_task_index << " " << best_movement.dest_machine_index << " " << best_movement.dest_task_index << " " << best_movement.tct_increment << std::endl;
     ApplyMovement(final_solution, best_movement);
-    std::cout << "Final solution: " << final_solution << std::endl;
+    std::cout << "Final solution: \n" << final_solution << std::endl;
     int diference = final_solution.GetTCT();
     final_solution.RecalculateTotalCompletionTime();
     diference -= final_solution.GetTCT();
@@ -42,8 +41,9 @@ Movement SwapIntra::EmulateMovements(const Solution& solution) {
     int tasks_assigned_size = solution[m].getTasksAssigned().size();
     for (int i = 0; i < tasks_assigned_size; i++) {
       for (int j = i + 2; j < tasks_assigned_size; j++) {
-        std::cout << "Machine: " << m << " Task i: " << i << " Task j: " << j << std::endl;
+        // std::cout << "Machine: " << m << " Task i: " << i << " Task j: " << j << std::endl;
         int delta_tct = solution.EmulateSwapIntra(m, i, j);
+        // std::cout << "Delta TCT: " << delta_tct << std::endl;
         if (delta_tct < best_tct_movement) {
           best_tct_movement = delta_tct;
           best_movement = {m, i, m, j, delta_tct};
