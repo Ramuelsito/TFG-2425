@@ -19,6 +19,13 @@ void Solution::RecalculateTotalCompletionTime() {
   }
 }
 
+/**
+ * @brief Emulate the swap intra movement, without modifying the solution
+ * @param machine_id - Machine id
+ * @param i - Task index 1
+ * @param j - Task index 2
+ * @return Delta TCT
+ */
 int Solution::EmulateSwapIntra(const int& machine_id, const int& i, const int& j) const {
   int tasks_assigned = machines_[machine_id].size();
   int new_tij1 = 0;
@@ -53,6 +60,57 @@ int Solution::EmulateSwapIntra(const int& machine_id, const int& i, const int& j
   }
   // std::cout << "No peto" << std::endl; 
   int delta_tct = (tasks_assigned - (i + 1) + 1) * (new_tij1 - old_tij1) + (tasks_assigned - (i + 1)) * (new_tij2 - old_tij2) + (tasks_assigned - (j + 1) + 1) * (new_tij3 - old_tij3) + (tasks_assigned - (j + 1)) * (new_tij4 - old_tij4);
+  return delta_tct;
+}
+
+/**
+ * @brief Emulate the swap inter movement, without modifying the solution 
+ * @param machine_id1 - Machine id associated to task 1
+ * @param i - Task index 1
+ * @param machine_id2 - Machine id associated to task 2
+ * @param j - Task index 2
+ * @return Delta TCT
+ */
+int Solution::EmulateSwapInter(const int& machine_id1, const int& i, const int& machine_id2, const int& j) const {
+  int first_machine_size = machines_[machine_id1].size();
+  int second_machine_size = machines_[machine_id2].size();
+  int new_tij1 = 0;
+  int old_tij1 = 0;
+  if (i == 0) {
+    new_tij1 = machines_[machine_id2][j].GetTime() + Problem::getInstance().CalculateSij(0, machines_[machine_id2][j].GetId() + 1);
+    old_tij1 = machines_[machine_id1][i].GetTime() + Problem::getInstance().CalculateSij(0, machines_[machine_id1][i].GetId() + 1);
+  } else {
+    new_tij1 = machines_[machine_id2][j].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id1][i - 1].GetId() + 1, machines_[machine_id2][j].GetId() + 1);
+    old_tij1 = machines_[machine_id1][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id1][i - 1].GetId() + 1, machines_[machine_id1][i].GetId() + 1);
+  }
+  int new_tij2 = 0; 
+  int old_tij2 = 0; 
+  if (i == first_machine_size - 1) {
+    new_tij2 = machines_[machine_id1][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id2][j].GetId() + 1, machines_[machine_id1][i].GetId() + 1);
+    old_tij2 = machines_[machine_id1][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id1][i - 1].GetId() + 1, machines_[machine_id1][i].GetId() + 1);
+  } else {
+    new_tij2 = machines_[machine_id1][i + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id2][j].GetId() + 1, machines_[machine_id1][i + 1].GetId() + 1);
+    old_tij2 = machines_[machine_id1][i + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id1][i].GetId() + 1, machines_[machine_id1][i + 1].GetId() + 1);
+  }
+  int new_tij3 = 0;
+  int old_tij3 = 0;
+  if (j == 0){
+    new_tij3 = machines_[machine_id1][i].GetTime() + Problem::getInstance().CalculateSij(0, machines_[machine_id1][i].GetId() + 1);
+    old_tij3 = machines_[machine_id2][j].GetTime() + Problem::getInstance().CalculateSij(0, machines_[machine_id2][j].GetId() + 1);
+  } else {
+    new_tij3 = machines_[machine_id1][i].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id2][j - 1].GetId() + 1, machines_[machine_id1][i].GetId() + 1);
+    old_tij3 = machines_[machine_id2][j].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id2][j - 1].GetId() + 1, machines_[machine_id2][j].GetId() + 1);
+  }
+  int new_tij4 = 0;
+  int old_tij4 = 0;
+  if (j == second_machine_size - 1) {
+    new_tij4 = machines_[machine_id2][j].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id1][i].GetId() + 1, machines_[machine_id2][j].GetId() + 1);
+    old_tij4 = machines_[machine_id2][j].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id2][j - 1].GetId() + 1, machines_[machine_id2][j].GetId() + 1);
+  } else {
+    new_tij4 = machines_[machine_id2][j + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id1][i].GetId() + 1, machines_[machine_id2][j + 1].GetId() + 1);
+    old_tij4 = machines_[machine_id2][j + 1].GetTime() + Problem::getInstance().CalculateSij(machines_[machine_id2][j].GetId() + 1, machines_[machine_id2][j + 1].GetId() + 1);
+  }
+  int delta_tct = (first_machine_size - (i + 1) + 1) * (new_tij1 - old_tij1) + (first_machine_size - (i + 1)) * (new_tij2 - old_tij2) + (second_machine_size - (j + 1) + 1) * (new_tij3 - old_tij3) + (second_machine_size - (j + 1)) * (new_tij4 - old_tij4);
   return delta_tct;
 }
 

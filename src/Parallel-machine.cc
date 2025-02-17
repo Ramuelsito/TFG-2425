@@ -51,8 +51,8 @@ int main(int argc, char* argv[]) {
         Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
         std::cout << "Construction phase solution: " << std::endl;
         std::cout << initial_solution << std::endl;
-        SwapIntra swap_intra(initial_solution);
-        initial_solution = swap_intra.GenerateEnvironment();
+        SwapInter swap_inter(initial_solution);
+        initial_solution = swap_inter.GenerateEnvironment();
         std::cout << "Swap intra solution: " << std::endl;
         std::cout << initial_solution << std::endl;
       }
