@@ -47,15 +47,14 @@ int main(int argc, char* argv[]) {
       std::chrono::seconds performance_time;
       double update_percentage;
       for (int i = 0; i < 100; i++) {
-      ExhaustedConstructionPhase construction_phase;
-      Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-      int diference = initial_solution.GetTCT();
-      std::cout << "Initial solution: " << std::endl;
-      std::cout << initial_solution << std::endl; 
-      initial_solution.RecalculateTotalCompletionTime();
-      diference -= initial_solution.GetTCT();
-      std::cout << initial_solution << std::endl;
-      std::cout << "Diference: " << diference << std::endl;
+        ExhaustedConstructionPhase construction_phase;
+        Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
+        std::cout << "Construction phase solution: " << std::endl;
+        std::cout << initial_solution << std::endl;
+        SwapIntra swap_intra(initial_solution);
+        initial_solution = swap_intra.GenerateEnvironment();
+        std::cout << "Swap intra solution: " << std::endl;
+        std::cout << initial_solution << std::endl;
       }
       // ExhaustedConstructionPhase construction_phase;
       // Solution initial_solution = construction_phase.ConstructGreedyRandSolution();

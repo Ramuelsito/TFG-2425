@@ -29,9 +29,11 @@ class Solution {
   void RecalculateTotalCompletionTime();
   void InsertTask(const Task& task, const int& machine_id, const int& task_position, const int& tct_increment = 0);
   void RemoveTask(const int& machine_id, const int& task_index, const int& tct_decrement = 0);
+  void ExchangeTasks(const int& machine_id, const int& i, const int& j) { machines_[machine_id].ExchangeTasks(i, j); }
+  int EmulateSwapIntra(const int& machine_id, const int& task_index1, const int& task_index2) const;
   void PrintStudiedSolution(const std::string& filename, const std::string& algorithm_name, const double& time, const int& number_tasks);
   bool operator==(const Solution& solution) const;
-  const Machine& operator[](int i) { return machines_[i]; }
+  const Machine& operator[](int i) const { return machines_[i]; }
 
   friend std::ostream& operator<<(std::ostream& os, const Solution& solution) {
     for (int i = 0; i < solution.machines_.size(); i++) {

@@ -25,8 +25,8 @@ class Machine {
   Machine(int id) : id_(id) { tasks_assigned_.clear(); }
   ~Machine() = default;
   
+  int size() const { return tasks_assigned_.size(); }
   int getId() const { return id_; }
-  Task GetLastTask() const { return tasks_assigned_.back(); }
   int GetLastTaskTime() const { return last_task_time_; }
   std::vector<Task> getTasksAssigned() const { return tasks_assigned_; }
 
@@ -34,8 +34,10 @@ class Machine {
   int EmulateRemoval(const int& task_index) const;
   void InsertTask(const Task& task, int task_position, int tct_increment = 0);
   void RemoveTask(const int& task_index, int tct_decrement);
+  void ExchangeTasks(const int& i, const int& j);
   int RecalculateTotalCompletionTime();
 
+  const Task& operator[](int i) const { return tasks_assigned_[i]; }
   friend std::ostream& operator<<(std::ostream& os, const Machine& machine) {
     os << "Machine " << machine.id_ << ":\n";
     if (machine.tasks_assigned_.size() != 0) {

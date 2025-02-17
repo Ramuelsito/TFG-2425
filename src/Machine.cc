@@ -88,6 +88,18 @@ void Machine::InsertTask(const Task& task, int task_position, int tct_increment)
   last_task_time_ = tct_increment;
 }
 
+/**
+ * @brief Given two indexes, exchanges the tasks in the machine
+ * @param i The first task index
+ * @param j The second task index
+ * @return void
+ */
+void Machine::ExchangeTasks(const int& i, const int& j) {
+  Task aux = tasks_assigned_[i];
+  tasks_assigned_[i] = tasks_assigned_[j];
+  tasks_assigned_[j] = aux;
+}
+
 int Machine::RecalculateTotalCompletionTime() {
   std::vector<std::vector<int>> setup_times = Problem::getInstance().getSetupTimes();
   int k = tasks_assigned_.size();

@@ -59,7 +59,7 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
     std::uniform_int_distribution<> dist(0, candidates.size() - 1);
     int random_index = dist(engine);
     Insertion selected_task = candidates[random_index];
-    std::cout << "Candidates size: " << candidates.size() << std::endl;
+    // std::cout << "Candidates size: " << candidates.size() << std::endl;
     // std::cout << "Selected task: " << selected_task.task.GetId() << std::endl;
     // std::cout << "Selected task position: " << selected_task.dest_task_index << std::endl;
     // std::cout << "Selected task increment TCT: " << selected_task.increment_tct << std::endl;
@@ -125,7 +125,6 @@ std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesList(cons
  *        alpha que marca el rango de candidatos
  * @param tasks_candidates - Tareas candidatas
  * @param chosen_machine_index - Índice de la máquina elegida
- * @param alpha - Rango de candidatos
  * @return Lista de candidatos
  */
 std::vector<Insertion> ExhaustedConstructionPhase::MakeRandomCandidatesListWithRange(const std::vector<Task>& tasks_candidates, int chosen_machine_index) {

@@ -23,4 +23,9 @@ class SwapIntra : public Environment {
   SwapIntra(const Solution& initial_solution) : Environment(initial_solution) {}
   
   Solution GenerateEnvironment() override;
+ private:
+  Movement EmulateMovements(const Solution&);
+  void ApplyMovement(Solution&, const Movement&);
+
+  Solution best_solution_;
 };

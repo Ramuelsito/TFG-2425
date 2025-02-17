@@ -13,7 +13,6 @@
 #include <random>
 
 Solution ReInsertionInter::GenerateEnvironment() {
-  // Saturar
   bool mejora = true;
   Solution final_solution = initial_solution_;
   best_solution_ = initial_solution_;

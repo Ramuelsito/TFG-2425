@@ -2220,7 +2220,8 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
   /usr/include/c++/11/bits/vector.tcc \
-  ../Includes/Tasks.h
+  ../Includes/Tasks.h \
+  ../Includes/Problem.h
 
 
 ../src/Problem.cc:
