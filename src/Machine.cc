@@ -13,6 +13,10 @@ int Machine::EmulateInsertion(const Task& task, int q) const {
   int tasks_assigned_size = tasks_assigned_.size();
   Problem* problem = &Problem::getInstance();
   int tct_increment = 0;
+  if (tasks_assigned_size == 0) { 
+    tct_increment = task.GetTime() + problem->CalculateSij(0, task.GetId() + 1);
+    return tct_increment;
+  } 
   if (q == 0) {
     int new_t0i = task.GetTime() + problem->CalculateSij(0, task.GetId() + 1);
     int old_t01 = tasks_assigned_[0].GetTime() + problem->CalculateSij(0, tasks_assigned_[0].GetId() + 1);

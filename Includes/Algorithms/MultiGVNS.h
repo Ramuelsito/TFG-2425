@@ -33,8 +33,8 @@ class MultiGVNS {
   Solution Shaking(const Solution&, const int&);
   Solution LocalSearchByVND(const Solution&);
   Solution LocalSearchByRandomVND(const Solution&);
-  Solution UpdateSolution(const Solution&, const Solution&, const Solution&);
-  bool MoveOrNot(const Solution&, const Solution&);
+  void UpdateSolution(const Solution&, const Solution&);
+  // bool MoveOrNot(const Solution&, const Solution&);
   
   Solution best_solution_;
   double update_percentage_;

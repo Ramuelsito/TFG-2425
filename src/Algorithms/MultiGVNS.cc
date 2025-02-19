@@ -26,9 +26,9 @@ Solution MultiGVNS::Solve() {
     // Entonces guardamos en un fichero S y S'.
     Solution current_solution = construction_phase.ConstructGreedyRandSolution();
     
+    Solution initial_solution = current_solution;
     std::cout << "Initial solution: " << std::endl;
     std::cout << current_solution << std::endl;
-    Solution initial_solution = current_solution;
 
     int k = 1;
     previous_best_solution = best_solution_;
@@ -39,27 +39,23 @@ Solution MultiGVNS::Solve() {
       // local_search_solution.RecalculateTotalCompletionTime();
       // diference -= local_search_solution.GetTCT();
       // std::cout << "Diference: " << diference << std::endl;
-
-      if (MoveOrNot(local_search_solution, current_solution)) {
+      if (local_search_solution.GetTCT() < current_solution.GetTCT()) {
         current_solution = local_search_solution;
         k = 1;
       } else {
         ++k;
       }
     }
-    best_solution_ = UpdateSolution(best_solution_, current_solution, initial_solution);
+    UpdateSolution(current_solution, initial_solution);
     if (best_solution_.GetTCT() == previous_best_solution.GetTCT()) {
       ++iterations_without_improvement;
     } else {
       iterations_without_improvement = 0;
     }
-    if (iterations_without_improvement == 100) {
-      break;
-    }
+    if (iterations_without_improvement == 100) { break; }
   }
   return best_solution_;
 }
-
 
 
 /**
@@ -69,14 +65,12 @@ Solution MultiGVNS::Solve() {
  * @return The new solution
  */
 Solution MultiGVNS::Shaking(const Solution& initial_solution, const int& k) {
-  Solution new_solution;
+  Solution new_solution = initial_solution;
   Solution current_solution = initial_solution;
   for (int i = 0; i < k; ++i) {
-    ReInsertionInter reinsertion_inter(current_solution);
+    ReInsertionInter reinsertion_inter(new_solution);
     new_solution = reinsertion_inter.SelectRandomNeighbor();
-    if (current_solution == new_solution) {        // If the new solution is the same as the current one repeat the selection
-      new_solution = reinsertion_inter.SelectRandomNeighbor();
-    }
+    if (current_solution == new_solution) { new_solution = reinsertion_inter.SelectRandomNeighbor(); } // If the new solution is the same as the current one repeat the selection
     current_solution = new_solution;
   }
   return new_solution;
@@ -98,6 +92,7 @@ Solution MultiGVNS::LocalSearchByVND(const Solution& initial_solution) {
     current_solution = swap_inter.GenerateEnvironment();
     SwapIntra swap_intra = SwapIntra(current_solution);
     current_solution = swap_intra.GenerateEnvironment();
+    // Esta en el reinsert inter
     ReInsertionInter reinsertion_inter = ReInsertionInter(current_solution);
     current_solution = reinsertion_inter.GenerateEnvironment();
     if (current_solution.GetTCT() < local_optimum.GetTCT()) {
@@ -164,17 +159,16 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution) {
   return local_optimum;
 }
 
-Solution MultiGVNS::UpdateSolution(const Solution& current_solution, const Solution& new_solution, const Solution& grasp_solution) {
-  if (new_solution.GetTCT() < current_solution.GetTCT()) {
+void MultiGVNS::UpdateSolution(const Solution& new_solution, const Solution& grasp_solution) {
+  if (new_solution.GetTCT() < best_solution_.GetTCT()) {
     update_percentage_ = 100 * (grasp_solution.GetTCT() - new_solution.GetTCT()) / grasp_solution.GetTCT();
-    return new_solution;
+    best_solution_ = new_solution;
   }
-  return current_solution;
 }
 
-bool MultiGVNS::MoveOrNot(const Solution& current_solution, const Solution& best_solution) {
-  if (current_solution.GetTCT() < best_solution.GetTCT()) {
-    return true;
-  }
-  return false;
-}
+// bool MultiGVNS::MoveOrNot(const Solution& current_solution, const Solution& best_solution) {
+//   if (current_solution.GetTCT() < best_solution.GetTCT()) {
+//     return true;
+//   }
+//   return false;
+// }

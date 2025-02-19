@@ -74,8 +74,7 @@ int main(int argc, char* argv[]) {
       auto end = std::chrono::steady_clock::now();
       update_percentage = multigvns.GetUpdatePercentage();
       performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-      std::cout << solution << std::endl << "Performance time: " << performance_time.count() 
-          << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+      std::cout << solution << std::endl << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
         solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
         std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
 
