@@ -35,10 +35,6 @@ Solution MultiGVNS::Solve() {
     while (k <= 6) {
       shaked_solution = Shaking(current_solution, k);
       local_search_solution = LocalSearchByVND(shaked_solution);
-      // int diference = local_search_solution.GetTCT();
-      // local_search_solution.RecalculateTotalCompletionTime();
-      // diference -= local_search_solution.GetTCT();
-      // std::cout << "Diference: " << diference << std::endl;
       if (local_search_solution.GetTCT() < current_solution.GetTCT()) {
         current_solution = local_search_solution;
         k = 1;
@@ -54,6 +50,10 @@ Solution MultiGVNS::Solve() {
     }
     if (iterations_without_improvement == 100) { break; }
   }
+  int diference = best_solution_.GetTCT();
+  best_solution_.RecalculateTotalCompletionTime();
+  diference -= best_solution_.GetTCT();
+  std::cout << "Diference: " << diference << std::endl;
   return best_solution_;
 }
 
