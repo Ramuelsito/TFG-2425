@@ -15,6 +15,8 @@
 #include "../Environment/SwapIntra.h"
 #include "../Environment/ReInsertionInter.h"
 #include "../Environment/SwapInter.h"
+#include <unordered_map>
+
 
 /**
  * @class MultiGVNS
@@ -27,14 +29,13 @@ class MultiGVNS {
     best_solution_.AddTCT(999999);
     update_percentage_ = 0;
   } 
-  Solution Solve();
+  Solution Solve(std::unordered_map<Solution, Solution, int>&);
   double GetUpdatePercentage() const { return update_percentage_; }
  private: 
   Solution Shaking(const Solution&, const int&);
   Solution LocalSearchByVND(const Solution&);
   Solution LocalSearchByRandomVND(const Solution&);
   void UpdateSolution(const Solution&, const Solution&);
-  // bool MoveOrNot(const Solution&, const Solution&);
   
   Solution best_solution_;
   double update_percentage_;

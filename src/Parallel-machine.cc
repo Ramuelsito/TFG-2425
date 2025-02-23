@@ -27,12 +27,13 @@ int main(int argc, char* argv[]) {
       Usage();
       return 0;
     }
+    std::unordered_map<Solution, Solution, int> data_bank;
     if (std::string(argv[1]) == "-all") {
       Solution solution;
       for (const auto& entry : std::filesystem::directory_iterator(path)) {
         Problem::getInstance(entry.path().string());
         MultiGVNS multigvns(40);
-        solution = multigvns.Solve();
+        solution = multigvns.Solve(data_bank);
         std::cout << solution << std::endl;
       }
       return 0;
@@ -70,7 +71,7 @@ int main(int argc, char* argv[]) {
       algorithm_name = "GVNS";
       MultiGVNS multigvns(40);
       auto start = std::chrono::steady_clock::now();
-      solution = multigvns.Solve();
+      solution = multigvns.Solve(data_bank);
       auto end = std::chrono::steady_clock::now();
       update_percentage = multigvns.GetUpdatePercentage();
       performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
