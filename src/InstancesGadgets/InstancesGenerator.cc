@@ -9,7 +9,7 @@
  * @see {https://github.com/alu0101471136}
  */
 
-#include "../Includes/InstancesGenerator/InstancesGenerator.h"
+#include "../Includes/InstancesGadgets/InstancesGenerator.h"
 
 #include <iostream>
 #include <fstream>
