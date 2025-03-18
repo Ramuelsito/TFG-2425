@@ -22,7 +22,7 @@
  */
 class Problem {
  public:
-  static Problem& getInstance(const std::string& file_name = "") {
+  static Problem& getInstance(const std::string& file_name = "") { //TODO: Debería cambiarlo a un puntero
     static Problem instance;
     if (!initialized && !file_name.empty()) {
       instance.initialize(file_name);
@@ -50,5 +50,5 @@ class Problem {
 
   std::vector<Machine> machines_;
   std::vector<Task> tasks_times_;
-  std::vector<std::vector<int>> setup_times_;
+  std::vector<std::vector<int>> setup_times_; //TODO: Debería ser una matriz de nxn
 };

@@ -9,7 +9,7 @@
  * @see {https://github.com/alu0101471136}
  */
 
-#include "../Includes/FLA/InstancesGenerator.h"
+#include "../../Includes/FLA/InstancesGenerator.h"
 #include <fstream>
 
 void InstancesGenerator::GenerateInstance() {

@@ -19,11 +19,14 @@ class Matrix {
   Matrix(unsigned rows, unsigned cols) {
     rows_ = rows;
     cols_ = cols;
-    data_.reserve(rows * cols);
+    data_.resize(rows * cols);
   }
+  Matrix() = default;
 
   int& operator()(unsigned row, unsigned col) { return data_[row * cols_ + col]; }
   const int& operator()(unsigned row, unsigned col) const { return data_[row * cols_ + col]; }
+  double CalculateVariance(const double& mean) const;
+  int CalculateMedian() const;
 
   friend std::ostream& operator<<(std::ostream& os, const Matrix& matrix) {
     for (int i = 0; i < matrix.rows_; ++i) {

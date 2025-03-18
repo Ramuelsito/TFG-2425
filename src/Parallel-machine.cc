@@ -13,88 +13,65 @@
 #include "../Includes/Solution.h"
 #include "../Includes/Algorithms/MultiGVNS.h"
 #include "../Includes/Util.h"
+#include "../Includes/FLA/InstanceData.h"
 #include <chrono>
 #include <filesystem>
 
 int main(int argc, char* argv[]) {
-  try {
-    const std::string path = "../Instances/";
-    if (!std::filesystem::exists(path)) {
-      throw std::runtime_error("Directory [" + path + "] does not exist.");
-    }
-    if (argc <= 1) { return -1; }
-    if (std::string(argv[1]) == "-h") {
-      Usage();
-      return 0;
-    }
-    std::unordered_map<Solution, Solution, int> data_bank;
-    if (std::string(argv[1]) == "-all") {
-      Solution solution;
-      for (const auto& entry : std::filesystem::directory_iterator(path)) {
-        Problem::getInstance(entry.path().string());
-        MultiGVNS multigvns(40);
-        solution = multigvns.Solve(data_bank);
-        std::cout << solution << std::endl;
-      }
-      return 0;
-    } else {
-      // int algorithmOption = AlgorithmMenu();
-      std::string instance = argv[1];
-      std::cout << "../Instances/" + instance + ".txt" << std::endl;
-      Problem::getInstance("../Instances/" + instance + ".txt");
-      std::cout << Problem::getInstance() << std::endl;
-      Solution solution;
-      std::string algorithm_name;
-      std::chrono::seconds performance_time;
-      double update_percentage;
-
-      // for (int i = 0; i < 100; i++) {
-      //   ExhaustedConstructionPhase construction_phase;
-      //   Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-      //   std::cout << "Construction phase solution: " << std::endl;
-      //   std::cout << initial_solution << std::endl;
-      //   ReInsertionInter reinsert_intra(initial_solution);
-      //   initial_solution = reinsert_intra.SelectRandomNeighbor();
-      //   std::cout << "Reinsert inter solution: " << std::endl;
-      //   std::cout << initial_solution << std::endl;
-      // }
-
-      // ExhaustedConstructionPhase construction_phase;
-      // Solution initial_solution = construction_phase.ConstructGreedyRandSolution();
-      // std::cout << "Initial solution: " << std::endl;
-      // std::cout << initial_solution << std::endl; 
-      // ReInsertionInter reinsertion_inter(initial_solution);
-      // initial_solution = reinsertion_inter.GenerateEnvironment();
-      // std::cout << "Reinsertion solution: " << std::endl;
-      // std::cout << initial_solution << std::endl;
-      
-      algorithm_name = "GVNS";
+  const std::string path = "../Instances/";
+  if (!std::filesystem::exists(path)) {
+    throw std::runtime_error("Directory [" + path + "] does not exist.");
+  }
+  if (argc <= 1) { return -1; }
+  if (std::string(argv[1]) == "-h") {
+    Usage();
+    return 0;
+  }
+  std::unordered_map<Solution, Solution, int> data_bank;
+  if (std::string(argv[1]) == "-all") {
+    Solution solution;
+    for (const auto& entry : std::filesystem::directory_iterator(path)) {
+      Problem::getInstance(entry.path().string());
       MultiGVNS multigvns(40);
-      auto start = std::chrono::steady_clock::now();
       solution = multigvns.Solve(data_bank);
-      auto end = std::chrono::steady_clock::now();
-      update_percentage = multigvns.GetUpdatePercentage();
-      performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-      solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
-      std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
-
-      // for (int i = 0; i < initial_solution.getMachines()[0].getTasksAssigned().size(); i++) {
-      //   std::vector<Machine> machines = initial_solution.getMachines();
-      //   std::cout << initial_solution << std::endl;
-      //   std::cout << "Task to remove: " << machines[0].getTasksAssigned()[i] << std::endl;
-      //   int tct_decrement = machines[0].EmulateRemoval(i);
-      //   machines[0].RemoveTask(i, tct_decrement);
-      //   Solution new_solution(machines);
-      //   int diference = new_solution.GetTCT();
-      //   std::cout << new_solution << std::endl;
-      //   new_solution.RecalculateTotalCompletionTime();
-      //   diference = diference - new_solution.GetTCT();
-      //   std::cout << new_solution << std::endl;
-      //   std::cout << "Diference: " << diference << std::endl;
-      // }
+      std::cout << solution << std::endl;
     }
-  } catch (std::invalid_argument& e) {
-    std::cerr << e.what() << std::endl;
+    return 0;
+  } else {
+    // int algorithmOption = AlgorithmMenu();
+    std::string instance = argv[1];
+    std::cout << "../Instances/" + instance + ".txt" << std::endl;
+    Problem& problem = Problem::getInstance("../Instances/" + instance + ".txt");
+    std::cout << problem << std::endl;
+    InstanceData data;
+    std::cout << data << std::endl;
+    // Solution solution;
+    // std::string algorithm_name;
+    // std::chrono::seconds performance_time;
+    // double update_percentage;
+    // algorithm_name = "GVNS";
+    // MultiGVNS multigvns(40);
+    // auto start = std::chrono::steady_clock::now();
+    // solution = multigvns.Solve(data_bank);
+    // auto end = std::chrono::steady_clock::now();
+    // update_percentage = multigvns.GetUpdatePercentage();
+    // performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+    // solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
+    // std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+    // for (int i = 0; i < initial_solution.getMachines()[0].getTasksAssigned().size(); i++) {
+    //   std::vector<Machine> machines = initial_solution.getMachines();
+    //   std::cout << initial_solution << std::endl;
+    //   std::cout << "Task to remove: " << machines[0].getTasksAssigned()[i] << std::endl;
+    //   int tct_decrement = machines[0].EmulateRemoval(i);
+    //   machines[0].RemoveTask(i, tct_decrement);
+    //   Solution new_solution(machines);
+    //   int diference = new_solution.GetTCT();
+    //   std::cout << new_solution << std::endl;
+    //   new_solution.RecalculateTotalCompletionTime();
+    //   diference = diference - new_solution.GetTCT();
+    //   std::cout << new_solution << std::endl;
+    //   std::cout << "Diference: " << diference << std::endl;
+    // }
   }
   return 0;
 }

@@ -75,7 +75,7 @@ void Problem::initialize(const std::string& file_name) {
   }
   // Here we sort the tasks by their processing time, so the index 
   // doesn't correspond to the task id in the tasks_times_ vector
-  std::sort(tasks_times_.begin(), tasks_times_.end());
+  // std::sort(tasks_times_.begin(), tasks_times_.end());
   file.close();
 }
 
