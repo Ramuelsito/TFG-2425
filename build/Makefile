@@ -273,54 +273,6 @@ src/Environment/SwapIntra.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Environment/SwapIntra.cc.s
 .PHONY : src/Environment/SwapIntra.cc.s
 
-src/FLA/InstanceData.o: src/FLA/InstanceData.cc.o
-.PHONY : src/FLA/InstanceData.o
-
-# target to build an object file
-src/FLA/InstanceData.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o
-.PHONY : src/FLA/InstanceData.cc.o
-
-src/FLA/InstanceData.i: src/FLA/InstanceData.cc.i
-.PHONY : src/FLA/InstanceData.i
-
-# target to preprocess a source file
-src/FLA/InstanceData.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.i
-.PHONY : src/FLA/InstanceData.cc.i
-
-src/FLA/InstanceData.s: src/FLA/InstanceData.cc.s
-.PHONY : src/FLA/InstanceData.s
-
-# target to generate assembly for a file
-src/FLA/InstanceData.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.s
-.PHONY : src/FLA/InstanceData.cc.s
-
-src/FLA/InstancesGenerator.o: src/FLA/InstancesGenerator.cc.o
-.PHONY : src/FLA/InstancesGenerator.o
-
-# target to build an object file
-src/FLA/InstancesGenerator.cc.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o
-.PHONY : src/FLA/InstancesGenerator.cc.o
-
-src/FLA/InstancesGenerator.i: src/FLA/InstancesGenerator.cc.i
-.PHONY : src/FLA/InstancesGenerator.i
-
-# target to preprocess a source file
-src/FLA/InstancesGenerator.cc.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.i
-.PHONY : src/FLA/InstancesGenerator.cc.i
-
-src/FLA/InstancesGenerator.s: src/FLA/InstancesGenerator.cc.s
-.PHONY : src/FLA/InstancesGenerator.s
-
-# target to generate assembly for a file
-src/FLA/InstancesGenerator.cc.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.s
-.PHONY : src/FLA/InstancesGenerator.cc.s
-
 src/FLA/Matrix.o: src/FLA/Matrix.cc.o
 .PHONY : src/FLA/Matrix.o
 
@@ -344,6 +296,54 @@ src/FLA/Matrix.s: src/FLA/Matrix.cc.s
 src/FLA/Matrix.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/Matrix.cc.s
 .PHONY : src/FLA/Matrix.cc.s
+
+src/Instances/Instance.o: src/Instances/Instance.cc.o
+.PHONY : src/Instances/Instance.o
+
+# target to build an object file
+src/Instances/Instance.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o
+.PHONY : src/Instances/Instance.cc.o
+
+src/Instances/Instance.i: src/Instances/Instance.cc.i
+.PHONY : src/Instances/Instance.i
+
+# target to preprocess a source file
+src/Instances/Instance.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.i
+.PHONY : src/Instances/Instance.cc.i
+
+src/Instances/Instance.s: src/Instances/Instance.cc.s
+.PHONY : src/Instances/Instance.s
+
+# target to generate assembly for a file
+src/Instances/Instance.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.s
+.PHONY : src/Instances/Instance.cc.s
+
+src/Instances/InstanceData.o: src/Instances/InstanceData.cc.o
+.PHONY : src/Instances/InstanceData.o
+
+# target to build an object file
+src/Instances/InstanceData.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o
+.PHONY : src/Instances/InstanceData.cc.o
+
+src/Instances/InstanceData.i: src/Instances/InstanceData.cc.i
+.PHONY : src/Instances/InstanceData.i
+
+# target to preprocess a source file
+src/Instances/InstanceData.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.i
+.PHONY : src/Instances/InstanceData.cc.i
+
+src/Instances/InstanceData.s: src/Instances/InstanceData.cc.s
+.PHONY : src/Instances/InstanceData.s
+
+# target to generate assembly for a file
+src/Instances/InstanceData.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.s
+.PHONY : src/Instances/InstanceData.cc.s
 
 src/Machine.o: src/Machine.cc.o
 .PHONY : src/Machine.o
@@ -468,15 +468,15 @@ help:
 	@echo "... src/Environment/SwapIntra.o"
 	@echo "... src/Environment/SwapIntra.i"
 	@echo "... src/Environment/SwapIntra.s"
-	@echo "... src/FLA/InstanceData.o"
-	@echo "... src/FLA/InstanceData.i"
-	@echo "... src/FLA/InstanceData.s"
-	@echo "... src/FLA/InstancesGenerator.o"
-	@echo "... src/FLA/InstancesGenerator.i"
-	@echo "... src/FLA/InstancesGenerator.s"
 	@echo "... src/FLA/Matrix.o"
 	@echo "... src/FLA/Matrix.i"
 	@echo "... src/FLA/Matrix.s"
+	@echo "... src/Instances/Instance.o"
+	@echo "... src/Instances/Instance.i"
+	@echo "... src/Instances/Instance.s"
+	@echo "... src/Instances/InstanceData.o"
+	@echo "... src/Instances/InstanceData.i"
+	@echo "... src/Instances/InstanceData.s"
 	@echo "... src/Machine.o"
 	@echo "... src/Machine.i"
 	@echo "... src/Machine.s"

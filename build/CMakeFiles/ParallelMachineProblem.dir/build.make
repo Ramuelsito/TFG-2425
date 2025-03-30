@@ -139,33 +139,33 @@ CMakeFiles/ParallelMachineProblem.dir/src/FLA/Matrix.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ParallelMachineProblem.dir/src/FLA/Matrix.cc.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raul/Practicas/TFG-2425/src/FLA/Matrix.cc -o CMakeFiles/ParallelMachineProblem.dir/src/FLA/Matrix.cc.s
 
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o: CMakeFiles/ParallelMachineProblem.dir/flags.make
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o: ../src/FLA/InstanceData.cc
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o: CMakeFiles/ParallelMachineProblem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raul/Practicas/TFG-2425/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o -MF CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o.d -o CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o -c /home/raul/Practicas/TFG-2425/src/FLA/InstanceData.cc
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o: CMakeFiles/ParallelMachineProblem.dir/flags.make
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o: ../src/Instances/InstanceData.cc
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o: CMakeFiles/ParallelMachineProblem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raul/Practicas/TFG-2425/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o -MF CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o.d -o CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o -c /home/raul/Practicas/TFG-2425/src/Instances/InstanceData.cc
 
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raul/Practicas/TFG-2425/src/FLA/InstanceData.cc > CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.i
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raul/Practicas/TFG-2425/src/Instances/InstanceData.cc > CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.i
 
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raul/Practicas/TFG-2425/src/FLA/InstanceData.cc -o CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.s
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raul/Practicas/TFG-2425/src/Instances/InstanceData.cc -o CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.s
 
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o: CMakeFiles/ParallelMachineProblem.dir/flags.make
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o: ../src/FLA/InstancesGenerator.cc
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o: CMakeFiles/ParallelMachineProblem.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raul/Practicas/TFG-2425/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o -MF CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o.d -o CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o -c /home/raul/Practicas/TFG-2425/src/FLA/InstancesGenerator.cc
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o: CMakeFiles/ParallelMachineProblem.dir/flags.make
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o: ../src/Instances/Instance.cc
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o: CMakeFiles/ParallelMachineProblem.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/raul/Practicas/TFG-2425/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o -MF CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o.d -o CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o -c /home/raul/Practicas/TFG-2425/src/Instances/Instance.cc
 
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raul/Practicas/TFG-2425/src/FLA/InstancesGenerator.cc > CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.i
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/raul/Practicas/TFG-2425/src/Instances/Instance.cc > CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.i
 
-CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raul/Practicas/TFG-2425/src/FLA/InstancesGenerator.cc -o CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.s
+CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/raul/Practicas/TFG-2425/src/Instances/Instance.cc -o CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.s
 
 CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ExhaustedConstructionPhase.cc.o: CMakeFiles/ParallelMachineProblem.dir/flags.make
 CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ExhaustedConstructionPhase.cc.o: ../src/Algorithms/ExhaustedConstructionPhase.cc
@@ -258,8 +258,8 @@ ParallelMachineProblem_OBJECTS = \
 "CMakeFiles/ParallelMachineProblem.dir/src/Problem.cc.o" \
 "CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o" \
 "CMakeFiles/ParallelMachineProblem.dir/src/FLA/Matrix.cc.o" \
-"CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o" \
-"CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o" \
+"CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o" \
+"CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o" \
 "CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ExhaustedConstructionPhase.cc.o" \
 "CMakeFiles/ParallelMachineProblem.dir/src/Environment/ReInsertionIntra.cc.o" \
 "CMakeFiles/ParallelMachineProblem.dir/src/Environment/SwapIntra.cc.o" \
@@ -275,8 +275,8 @@ ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/Machine.cc.o
 ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/Problem.cc.o
 ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o
 ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/FLA/Matrix.cc.o
-ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstanceData.cc.o
-ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/FLA/InstancesGenerator.cc.o
+ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/Instances/InstanceData.cc.o
+ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/Instances/Instance.cc.o
 ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/ExhaustedConstructionPhase.cc.o
 ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/Environment/ReInsertionIntra.cc.o
 ParallelMachineProblem: CMakeFiles/ParallelMachineProblem.dir/src/Environment/SwapIntra.cc.o
