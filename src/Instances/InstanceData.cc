@@ -9,7 +9,7 @@
  * @see {https://github.com/alu0101471136}
  */
 
-#include "../../Includes/FLA/InstanceData.h"
+#include "../../Includes/Instances/InstanceData.h"
 #include "../../Includes/Problem.h"
 #include <cmath>
 

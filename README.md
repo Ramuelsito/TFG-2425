@@ -8,6 +8,10 @@
 - Puntero a problem sin getInstance()
 - Discriminamos el S' con mismo TCT que otra.
 - Posible mejora del rendimiento, tener ya la matriz completa de todos los tij -> Sij + Pij
-- Primero tener un generador que haga instancias que podemas clusterizar de alguna forma
+- Hay un error que no considera el primer archivo de una instancia
 - Luego, Sacar la información propia de varias instancias, generando asi un benchmark
 - Seguiría, analizar las diferentes medidas propuestas que tenian que ver con la aplicación de los distintos entornos, para completar con ello la información necesaria para clasificar que entornos van mejor para cada tipo de instancia, y ademas generar el clasificador a partir de ahi.
+
+# Done But Not Commented
+- Primero tener un generador que haga instancias que podamos clusterizar de alguna forma.
+

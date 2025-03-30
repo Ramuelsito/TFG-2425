@@ -13,7 +13,8 @@
 #include "../Includes/Solution.h"
 #include "../Includes/Algorithms/MultiGVNS.h"
 #include "../Includes/Util.h"
-#include "../Includes/FLA/InstanceData.h"
+#include "../Includes/Instances/InstanceData.h"
+#include "../Includes/Instances/Instance.h"
 #include <chrono>
 #include <filesystem>
 
@@ -37,10 +38,18 @@ int main(int argc, char* argv[]) {
       std::cout << solution << std::endl;
     }
     return 0;
+  } else if (std::string(argv[1]) == "-gen") {
+    int number_of_tasks = std::stoi(argv[2]);
+    int number_of_machines = std::stoi(argv[3]);
+    std::string tasks_distribution = argv[4];
+    std::string setup_distribution = argv[5];
+    Instance instance(number_of_tasks, number_of_machines, tasks_distribution, setup_distribution);
+    instance.GenerateInstance(4, 0.7);
+    std::cout << "Generating instance..." << std::endl;
+    instance.SaveInstance(); 
   } else {
     // int algorithmOption = AlgorithmMenu();
     std::string instance = argv[1];
-    std::cout << "../Instances/" + instance + ".txt" << std::endl;
     Problem& problem = Problem::getInstance("../Instances/" + instance + ".txt");
     std::cout << problem << std::endl;
     InstanceData data;

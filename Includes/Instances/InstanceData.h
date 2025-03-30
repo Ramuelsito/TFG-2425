@@ -11,7 +11,7 @@
 
 #pragma once
 
-#include "Matrix.h"
+#include "../FLA/Matrix.h"
 
 class InstanceData {
  public:
