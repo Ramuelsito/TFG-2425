@@ -70,11 +70,12 @@ void Instance::GenerateInstance(int k, double correlation) {
         if (i / cluster_size == j / cluster_size) {
           setup_times_(i, j) = dis(gen) / 2; // In-cluster setup times are smaller
         } else {
-          setup_times_(i, j) = dis(gen) * 1.5; // Out-of-cluster setup times are larger
+          setup_times_(i, j) = dis(gen) * 2; // Out-of-cluster setup times are larger
+          setup_times_(i, j) = std::max(limits_.min_setup_time, std::min(limits_.max_setup_time, setup_times_(i, j))); // Ensure setup time is within limits
         }
       }
     }
-  } else if (setup_distribution_== "correlated") { // * Bigger task times --> bigger setup times
+  } else if (setup_distribution_== "weighted") { // * Bigger task times --> bigger setup times
     std::uniform_int_distribution<int> dis(limits_.min_setup_time, limits_.max_setup_time);
     for (int i = 0; i < number_of_tasks_ + 1; i++) {
       for (int j = 0; j < number_of_tasks_ + 1; j++) {
@@ -98,7 +99,7 @@ void Instance::SaveInstance() {
   if (!std::filesystem::exists(path)) {
     throw std::runtime_error("Directory [" + path + "] does not exist.");
   }
-  char number_of_instance = '1';
+  char number_of_instance = '0';
   std::string filename = "I" + std::to_string(number_of_tasks_) + "j_" + std::to_string(number_of_machines_) + "m_" + static_cast<char>(toupper(tasks_distribution_[0]))  
                           + "_" + static_cast<char>(toupper(setup_distribution_[0])) + "_" + number_of_instance + ".txt";
   for (const auto& entry : std::filesystem::directory_iterator(path)) { 
@@ -107,7 +108,6 @@ void Instance::SaveInstance() {
       number_of_instance = existing_file.rbegin()[4];
     }
   }
-  std::cout << "Number of instance: " << number_of_instance << std::endl;
   number_of_instance = static_cast<char>(number_of_instance + 1);
   filename = "I" + std::to_string(number_of_tasks_) + "j_" + std::to_string(number_of_machines_) + "m_" + static_cast<char>(toupper(tasks_distribution_[0]))  
                           + "_" + static_cast<char>(toupper(setup_distribution_[0])) + "_" + number_of_instance + ".txt";

@@ -45,7 +45,6 @@ int main(int argc, char* argv[]) {
     std::string setup_distribution = argv[5];
     Instance instance(number_of_tasks, number_of_machines, tasks_distribution, setup_distribution);
     instance.GenerateInstance(4, 0.7);
-    std::cout << "Generating instance..." << std::endl;
     instance.SaveInstance(); 
   } else {
     // int algorithmOption = AlgorithmMenu();
