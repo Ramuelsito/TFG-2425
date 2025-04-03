@@ -18,34 +18,33 @@
  * @return The best solution found in i iterations
  */
 Solution MultiGVNS::Solve() {
-  Solution local_search_solution, shaked_solution, previous_best_solution;
+  std::shared_ptr<Solution> local_search_solution, shaked_solution, previous_best_solution;
   int iterations_without_improvement = 0;
   ExhaustedConstructionPhase construction_phase;
+  
   for (int alpha_inc = 0; alpha_inc < 5; alpha_inc++) {        //! 5 iteraciones
     for (int i = 0; i < number_jobs_ * number_jobs_; ++i) {    //! n^2 iteraciones
-      // current_solution es S, tendremos que mantenerla y 
-      // crear otra solucion S' para hacer la busqueda local
-      // Entonces guardamos en un fichero S y S'.
-      Solution current_solution = construction_phase.ConstructGreedyRandSolution();
-      
-      Solution initial_solution = current_solution;
-      // std::cout << "Initial solution: " << std::endl;
-      // std::cout << current_solution << std::endl;
-  
+      int difference = 0;
+      int size_of_walk = 0;
+      std::shared_ptr<Solution> current_solution = std::make_shared<Solution>(construction_phase.ConstructGreedyRandSolution());
+      std::shared_ptr<Solution> initial_solution = current_solution;
+
       int k = 1;
-      previous_best_solution = best_solution_;
+      previous_best_solution = std::make_shared<Solution>(best_solution_);
       while (k <= 6) {
-        shaked_solution = Shaking(current_solution, k);
-        local_search_solution = LocalSearchByRandomVND(shaked_solution);
-        if (local_search_solution.GetTCT() < current_solution.GetTCT()) {
+        shaked_solution = std::make_shared<Solution>(Shaking(*current_solution, k));
+        local_search_solution = std::make_shared<Solution>(LocalSearchByRandomVND(*shaked_solution, size_of_walk));
+        if (local_search_solution->GetTCT() < current_solution->GetTCT()) {
           current_solution = local_search_solution;
           k = 1;
         } else {
           ++k;
         }
       }
-      UpdateSolution(current_solution, initial_solution);
-      if (best_solution_.GetTCT() == previous_best_solution.GetTCT()) {
+      UpdateSolution(*current_solution, *initial_solution);
+      difference = abs(current_solution.get()->GetTCT() - initial_solution.get()->GetTCT());
+      solution_data_table_.AddSolutionData(current_solution, difference, size_of_walk);
+      if (best_solution_.GetTCT() == previous_best_solution->GetTCT()) {
         ++iterations_without_improvement;
       } else {
         iterations_without_improvement = 0;
@@ -53,14 +52,49 @@ Solution MultiGVNS::Solve() {
       if (iterations_without_improvement == 100) { break; }
     }
     construction_phase.IncreaseAlpha();
-
-    // int diference = best_solution_.GetTCT();
-    // best_solution_.RecalculateTotalCompletionTime();
-    // diference -= best_solution_.GetTCT();
-    // std::cout << "Diference: " << diference << std::endl;
   }
   return best_solution_;
 }
+
+// Solution MultiGVNS::Solve() {
+//   Solution local_search_solution, shaked_solution, previous_best_solution;
+//   int iterations_without_improvement = 0;
+//   ExhaustedConstructionPhase construction_phase;
+//   for (int alpha_inc = 0; alpha_inc < 5; alpha_inc++) {        //! 5 iteraciones
+//     for (int i = 0; i < number_jobs_ * number_jobs_; ++i) {    //! n^2 iteraciones
+//       // current_solution es S, tendremos que mantenerla y 
+//       // crear otra solucion S' para hacer la busqueda local
+//       // Entonces guardamos en un fichero S y S'.
+//       Solution current_solution = construction_phase.ConstructGreedyRandSolution();
+      
+//       Solution initial_solution = current_solution;
+//       // std::cout << "Initial solution: " << std::endl;
+//       // std::cout << current_solution << std::endl;
+  
+//       int k = 1;
+//       previous_best_solution = best_solution_;
+//       while (k <= 6) {
+//         shaked_solution = Shaking(current_solution, k);
+//         local_search_solution = LocalSearchByRandomVND(shaked_solution);
+//         if (local_search_solution.GetTCT() < current_solution.GetTCT()) {
+//           current_solution = local_search_solution;
+//           k = 1;
+//         } else {
+//           ++k;
+//         }
+//       }
+//       UpdateSolution(current_solution, initial_solution);
+//       if (best_solution_.GetTCT() == previous_best_solution.GetTCT()) {
+//         ++iterations_without_improvement;
+//       } else {
+//         iterations_without_improvement = 0;
+//       }
+//       if (iterations_without_improvement == 100) { break; }
+//     }
+//     construction_phase.IncreaseAlpha();
+//   }
+//   return best_solution_;
+// }
 
 
 /**
@@ -114,7 +148,7 @@ Solution MultiGVNS::LocalSearchByVND(const Solution& initial_solution) {
  * @param initial_solution The initial solution
  * @return The local optimum solution
  */
-Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution) {
+Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution, int& size_of_walk) {
   Solution local_optimum = initial_solution;
   bool mejora = true;
   std::vector<int> available_movements = {0, 1, 2, 3};
@@ -163,6 +197,7 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution) {
       if (previous_movement != -1) { neighborhood_data_.UpdateTimesImprovedConditioned(previous_movement, movement); }
       local_optimum = previous_solution;
       available_movements = {0, 1, 2, 3};
+      size_of_walk++;
     } else {
       neighborhood_data_.UpdateTimesUsed(movement);
       if (previous_movement != -1) { neighborhood_data_.UpdateTimesUsedConditioned(previous_movement, movement); }

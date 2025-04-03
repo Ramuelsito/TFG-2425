@@ -68,6 +68,8 @@ int main(int argc, char* argv[]) {
     std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
     std::cout << "Neighborhood data: " << std::endl;
     std::cout << multigvns.GetNeighborhoodData() << std::endl;
+    std::cout << "Solution data table: " << std::endl;
+    multigvns.GetSolutionDataTable().PrintTable();
   }
   return 0;
 }

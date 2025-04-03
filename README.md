@@ -19,3 +19,6 @@
 # Done But Not Commented
 - Primero tener un generador que haga instancias que podamos clusterizar de alguna forma.
 
+# Implementación
+
+El uso de punteros inteligentes se debe a que estamos usando punteros de forma dinámica, por lo que este tipo de punteros se gestionan solos y nos permiten tener mayor flexibilidad.
