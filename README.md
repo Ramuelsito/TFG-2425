@@ -17,7 +17,7 @@
 - Seguiría, analizar las diferentes medidas propuestas que tenian que ver con la aplicación de los distintos entornos, para completar con ello la información necesaria para clasificar que entornos van mejor para cada tipo de instancia, y ademas generar el clasificador a partir de ahi.
 
 # Done But Not Commented
-- Al comparar las soluciones, no son exactamente iguales pero tienen mismo TCT, comentarlo
+- Al comparar las soluciones, no son exactamente iguales pero tienen mismo TCT, comentarlo. Lo que se puede hacer es comprobar si la distancia es mayor a un limite, y si tienen menos de cierta distancia y mismo TCT son iguales.
 
 # Implementación
 
