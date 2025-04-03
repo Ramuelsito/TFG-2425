@@ -17,7 +17,7 @@
 - Seguiría, analizar las diferentes medidas propuestas que tenian que ver con la aplicación de los distintos entornos, para completar con ello la información necesaria para clasificar que entornos van mejor para cada tipo de instancia, y ademas generar el clasificador a partir de ahi.
 
 # Done But Not Commented
-- Primero tener un generador que haga instancias que podamos clusterizar de alguna forma.
+- Al comparar las soluciones, no son exactamente iguales pero tienen mismo TCT, comentarlo
 
 # Implementación
 
