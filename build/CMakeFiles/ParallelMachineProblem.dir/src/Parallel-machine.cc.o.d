@@ -168,26 +168,29 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: \
  /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/SwapIntra.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/ReInsertionInter.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../Environment/SwapInter.h \
- /usr/include/c++/11/unordered_map \
- /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/bits/hashtable.h \
- /usr/include/c++/11/bits/hashtable_policy.h /usr/include/c++/11/tuple \
- /usr/include/c++/11/utility /usr/include/c++/11/bits/stl_relops.h \
- /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
- /usr/include/c++/11/bits/invoke.h \
- /usr/include/c++/11/bits/enable_special_members.h \
- /usr/include/c++/11/bits/node_handle.h \
- /usr/include/c++/11/bits/unordered_map.h \
- /usr/include/c++/11/bits/erase_if.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../FLA/NeighborhoodData.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/Algorithms/../FLA/Matrix.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Util.h \
- /usr/include/c++/11/algorithm /usr/include/c++/11/bits/stl_algo.h \
+ /usr/include/c++/11/algorithm /usr/include/c++/11/utility \
+ /usr/include/c++/11/bits/stl_relops.h \
+ /usr/include/c++/11/bits/stl_algo.h \
  /usr/include/c++/11/bits/algorithmfwd.h \
  /usr/include/c++/11/bits/stl_heap.h \
  /usr/include/c++/11/bits/stl_tempbuf.h \
  /usr/include/c++/11/bits/uniform_int_dist.h \
  /usr/include/c++/11/pstl/glue_algorithm_defs.h \
- /usr/include/c++/11/functional /usr/include/c++/11/bits/refwrap.h \
+ /usr/include/c++/11/functional /usr/include/c++/11/tuple \
+ /usr/include/c++/11/array /usr/include/c++/11/bits/uses_allocator.h \
+ /usr/include/c++/11/bits/invoke.h /usr/include/c++/11/bits/refwrap.h \
  /usr/include/c++/11/bits/std_function.h \
+ /usr/include/c++/11/unordered_map \
+ /usr/include/c++/11/ext/aligned_buffer.h \
+ /usr/include/c++/11/bits/hashtable.h \
+ /usr/include/c++/11/bits/hashtable_policy.h \
+ /usr/include/c++/11/bits/enable_special_members.h \
+ /usr/include/c++/11/bits/node_handle.h \
+ /usr/include/c++/11/bits/unordered_map.h \
+ /usr/include/c++/11/bits/erase_if.h \
  /usr/include/c++/11/pstl/execution_defs.h /usr/include/c++/11/random \
  /usr/include/c++/11/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
@@ -221,8 +224,9 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: \
  /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/sstream \
  /usr/include/c++/11/bits/sstream.tcc \
  /home/raul/Practicas/TFG-2425/src/../Includes/Instances/InstanceData.h \
- /home/raul/Practicas/TFG-2425/src/../Includes/Instances/../FLA/Matrix.h \
  /home/raul/Practicas/TFG-2425/src/../Includes/Instances/Instance.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/FLA/StudiedSolution.h \
+ /home/raul/Practicas/TFG-2425/src/../Includes/FLA/SolutionData.h \
  /usr/include/c++/11/filesystem /usr/include/c++/11/bits/fs_fwd.h \
  /usr/include/c++/11/bits/fs_path.h /usr/include/c++/11/locale \
  /usr/include/c++/11/bits/locale_facets_nonio.h \

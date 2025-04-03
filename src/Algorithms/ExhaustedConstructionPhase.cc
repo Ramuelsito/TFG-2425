@@ -39,7 +39,7 @@ Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
   final_solution_ = problem_->getMachines();
   InitializingMachines(tasks_to_assign);
   // machines_assigned_ = final_solution_.getMachines();
-  std::cout << std::endl;
+  // std::cout << std::endl;
   std::random_device rd;
   std::mt19937 engine(rd());
   while(tasks_to_assign.size() > 0) {

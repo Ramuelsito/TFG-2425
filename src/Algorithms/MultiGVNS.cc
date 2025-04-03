@@ -17,7 +17,7 @@
  * @brief Solve the problem using the Multi-GVNS algorithm
  * @return The best solution found in i iterations
  */
-Solution MultiGVNS::Solve(std::unordered_map<Solution, Solution, int>& data_bank) {
+Solution MultiGVNS::Solve() {
   Solution local_search_solution, shaked_solution, previous_best_solution;
   int iterations_without_improvement = 0;
   ExhaustedConstructionPhase construction_phase;
@@ -29,8 +29,8 @@ Solution MultiGVNS::Solve(std::unordered_map<Solution, Solution, int>& data_bank
       Solution current_solution = construction_phase.ConstructGreedyRandSolution();
       
       Solution initial_solution = current_solution;
-      std::cout << "Initial solution: " << std::endl;
-      std::cout << current_solution << std::endl;
+      // std::cout << "Initial solution: " << std::endl;
+      // std::cout << current_solution << std::endl;
   
       int k = 1;
       previous_best_solution = best_solution_;
@@ -54,10 +54,10 @@ Solution MultiGVNS::Solve(std::unordered_map<Solution, Solution, int>& data_bank
     }
     construction_phase.IncreaseAlpha();
 
-    int diference = best_solution_.GetTCT();
-    best_solution_.RecalculateTotalCompletionTime();
-    diference -= best_solution_.GetTCT();
-    std::cout << "Diference: " << diference << std::endl;
+    // int diference = best_solution_.GetTCT();
+    // best_solution_.RecalculateTotalCompletionTime();
+    // diference -= best_solution_.GetTCT();
+    // std::cout << "Diference: " << diference << std::endl;
   }
   return best_solution_;
 }
@@ -122,45 +122,54 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution) {
   std::random_device rd;
   std::mt19937 gen(rd());
   int movement = 0;
+  int previous_movement = -1;
   while (mejora) {
     previous_solution = local_optimum;
     std::uniform_int_distribution<> dis(0, available_movements.size() - 1);
     int index = dis(gen);
     movement = available_movements[index];
-
     switch (movement) {
       case 0: {
-        std::cout << "Movement Reinsertion intra ";
+        // std::cout << "Movement Reinsertion intra ";
         ReInsertionIntra reinsertion_intra = ReInsertionIntra(previous_solution);
         previous_solution = reinsertion_intra.GenerateEnvironment();
         break;
       }
       case 1: {
-        std::cout << "Movement Swap inter ";
+        // std::cout << "Movement Swap inter ";
         SwapInter swap_inter = SwapInter(previous_solution);
         previous_solution = swap_inter.GenerateEnvironment();
         break;
       }
       case 2: {
-        std::cout << "Movement Swap intra ";
+        // std::cout << "Movement Swap intra ";
         SwapIntra swap_intra = SwapIntra(previous_solution);
         previous_solution = swap_intra.GenerateEnvironment();
         break;
       }
       case 3: {
-        std::cout << "Movement Reinsertion inter ";
+        // std::cout << "Movement Reinsertion inter ";
         ReInsertionInter reinsertion_inter = ReInsertionInter(previous_solution);
         previous_solution = reinsertion_inter.GenerateEnvironment();
         break;
       }
     }
-    if (previous_solution.GetTCT() < local_optimum.GetTCT()) {
+    // * Cuando se usa un movimiento por primera vez, no se almacena en las matrices condicionadas
+    // * Lo que puede dar lugar a que no coincida las veces que se usa un movimiento con las veces que se usa condicionado
+    if (previous_solution.GetTCT() < local_optimum.GetTCT()) { // Si mejora
+      neighborhood_data_.UpdateTimesImproved(movement);
+      neighborhood_data_.UpdateTimesUsed(movement);
+      if (previous_movement != -1) { neighborhood_data_.UpdateTimesUsedConditioned(previous_movement, movement); }
+      if (previous_movement != -1) { neighborhood_data_.UpdateTimesImprovedConditioned(previous_movement, movement); }
       local_optimum = previous_solution;
       available_movements = {0, 1, 2, 3};
     } else {
+      neighborhood_data_.UpdateTimesUsed(movement);
+      if (previous_movement != -1) { neighborhood_data_.UpdateTimesUsedConditioned(previous_movement, movement); }
       available_movements.erase(available_movements.begin() + index);
       if (available_movements.empty()) { mejora = false; }
     }
+    previous_movement = movement;
   }
   return local_optimum;
 }

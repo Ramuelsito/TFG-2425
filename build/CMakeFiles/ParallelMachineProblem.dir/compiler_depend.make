@@ -463,20 +463,8 @@ CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/MultiGVNS.cc.o: ../src/Algo
   ../Includes/Environment/SwapIntra.h \
   ../Includes/Environment/ReInsertionInter.h \
   ../Includes/Environment/SwapInter.h \
-  /usr/include/c++/11/unordered_map \
-  /usr/include/c++/11/ext/aligned_buffer.h \
-  /usr/include/c++/11/bits/hashtable.h \
-  /usr/include/c++/11/bits/hashtable_policy.h \
-  /usr/include/c++/11/tuple \
-  /usr/include/c++/11/utility \
-  /usr/include/c++/11/bits/stl_relops.h \
-  /usr/include/c++/11/array \
-  /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/invoke.h \
-  /usr/include/c++/11/bits/enable_special_members.h \
-  /usr/include/c++/11/bits/node_handle.h \
-  /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/c++/11/bits/erase_if.h \
+  ../Includes/FLA/NeighborhoodData.h \
+  ../Includes/FLA/Matrix.h \
   /usr/include/c++/11/random \
   /usr/include/c++/11/cmath \
   /usr/include/math.h \
@@ -513,14 +501,28 @@ CMakeFiles/ParallelMachineProblem.dir/src/Algorithms/MultiGVNS.cc.o: ../src/Algo
   /usr/include/c++/11/pstl/glue_numeric_defs.h \
   /usr/include/c++/11/pstl/execution_defs.h \
   /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
   /usr/include/c++/11/bits/stl_algo.h \
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
   /usr/include/c++/11/bits/stl_tempbuf.h \
   /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   /usr/include/c++/11/functional \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/refwrap.h \
-  /usr/include/c++/11/bits/std_function.h
+  /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h
 
 CMakeFiles/ParallelMachineProblem.dir/src/Environment/ReInsertionInter.cc.o: ../src/Environment/ReInsertionInter.cc \
   /usr/include/stdc-predef.h \
@@ -2441,22 +2443,12 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: ../src/Parallel
   ../Includes/Environment/SwapIntra.h \
   ../Includes/Environment/ReInsertionInter.h \
   ../Includes/Environment/SwapInter.h \
-  /usr/include/c++/11/unordered_map \
-  /usr/include/c++/11/ext/aligned_buffer.h \
-  /usr/include/c++/11/bits/hashtable.h \
-  /usr/include/c++/11/bits/hashtable_policy.h \
-  /usr/include/c++/11/tuple \
-  /usr/include/c++/11/utility \
-  /usr/include/c++/11/bits/stl_relops.h \
-  /usr/include/c++/11/array \
-  /usr/include/c++/11/bits/uses_allocator.h \
-  /usr/include/c++/11/bits/invoke.h \
-  /usr/include/c++/11/bits/enable_special_members.h \
-  /usr/include/c++/11/bits/node_handle.h \
-  /usr/include/c++/11/bits/unordered_map.h \
-  /usr/include/c++/11/bits/erase_if.h \
+  ../Includes/FLA/NeighborhoodData.h \
+  ../Includes/FLA/Matrix.h \
   ../Includes/Util.h \
   /usr/include/c++/11/algorithm \
+  /usr/include/c++/11/utility \
+  /usr/include/c++/11/bits/stl_relops.h \
   /usr/include/c++/11/bits/stl_algo.h \
   /usr/include/c++/11/bits/algorithmfwd.h \
   /usr/include/c++/11/bits/stl_heap.h \
@@ -2464,8 +2456,20 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: ../src/Parallel
   /usr/include/c++/11/bits/uniform_int_dist.h \
   /usr/include/c++/11/pstl/glue_algorithm_defs.h \
   /usr/include/c++/11/functional \
+  /usr/include/c++/11/tuple \
+  /usr/include/c++/11/array \
+  /usr/include/c++/11/bits/uses_allocator.h \
+  /usr/include/c++/11/bits/invoke.h \
   /usr/include/c++/11/bits/refwrap.h \
   /usr/include/c++/11/bits/std_function.h \
+  /usr/include/c++/11/unordered_map \
+  /usr/include/c++/11/ext/aligned_buffer.h \
+  /usr/include/c++/11/bits/hashtable.h \
+  /usr/include/c++/11/bits/hashtable_policy.h \
+  /usr/include/c++/11/bits/enable_special_members.h \
+  /usr/include/c++/11/bits/node_handle.h \
+  /usr/include/c++/11/bits/unordered_map.h \
+  /usr/include/c++/11/bits/erase_if.h \
   /usr/include/c++/11/pstl/execution_defs.h \
   /usr/include/c++/11/random \
   /usr/include/c++/11/cmath \
@@ -2507,8 +2511,9 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: ../src/Parallel
   /usr/include/c++/11/sstream \
   /usr/include/c++/11/bits/sstream.tcc \
   ../Includes/Instances/InstanceData.h \
-  ../Includes/FLA/Matrix.h \
   ../Includes/Instances/Instance.h \
+  ../Includes/FLA/StudiedSolution.h \
+  ../Includes/FLA/SolutionData.h \
   /usr/include/c++/11/filesystem \
   /usr/include/c++/11/bits/fs_fwd.h \
   /usr/include/c++/11/bits/fs_path.h \
@@ -2947,6 +2952,8 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
 
 ../src/Problem.cc:
 
+../Includes/FLA/SolutionData.h:
+
 ../Includes/Util.h:
 
 ../Includes/Instances/InstanceData.h:
@@ -2985,8 +2992,6 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
 
 ../Includes/Instances/Instance.h:
 
-../Includes/FLA/Matrix.h:
-
 ../src/FLA/Matrix.cc:
 
 ../src/Environment/SwapIntra.cc:
@@ -2996,6 +3001,10 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
 ../src/Environment/ReInsertionIntra.cc:
 
 ../src/Environment/ReInsertionInter.cc:
+
+../Includes/FLA/Matrix.h:
+
+../Includes/FLA/NeighborhoodData.h:
 
 ../Includes/Environment/SwapInter.h:
 
@@ -3058,6 +3067,8 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
 ../Includes/Tasks.h:
 
 /usr/include/pthread.h:
+
+../Includes/FLA/StudiedSolution.h:
 
 /usr/include/x86_64-linux-gnu/c++/11/bits/gthr-default.h:
 
