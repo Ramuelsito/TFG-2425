@@ -51,8 +51,8 @@ int main(int argc, char* argv[]) {
     std::string instance = argv[1];
     Problem& problem = Problem::getInstance("../Instances/" + instance + ".txt");
     std::cout << problem << std::endl;
-    // InstanceData data;
-    // std::cout << data << std::endl;
+    InstanceData data;
+    std::cout << data << std::endl;
     Solution solution;
     std::string algorithm_name;
     std::chrono::seconds performance_time;

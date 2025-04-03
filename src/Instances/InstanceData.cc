@@ -22,11 +22,11 @@ InstanceData::InstanceData() {
   int mean = 0; 
   for (int i = 0; i < number_of_tasks; i++) {
     for (int j = 0; j < number_of_tasks; j++) {
-      if (i == j || j == 0) {
+      if (i == j || j == 0 || i == 0) {
         compiled_times_(i, j) = problem.getSetupTimes()[i][j];
-        continue;
+      } else {
+        compiled_times_(i, j) = problem.getSetupTimeIn(i, j) + problem.getTasksTimes()[j - 1].GetTime();
       }
-      compiled_times_(i, j) = problem.getSetupTimeIn(i, j) + problem.getTasksTimes()[j - 1].GetTime();
       mean += compiled_times_(i, j);
       if (compiled_times_(i, j) > max_time) {
         max_time = compiled_times_(i, j);

@@ -8,6 +8,7 @@
 - Puntero a problem sin getInstance()
 - Discriminamos el S' con mismo TCT que otra.
 - Posible mejora del rendimiento, tener ya la matriz completa de todos los tij -> Sij + Pij
+
 - Almacenar correctamente lo de los entornos, y con ello lo de las soluciones. 
 - 3 rangos de valores para las tareas, 6 combinaciones, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
 
