@@ -21,8 +21,8 @@ Solution MultiGVNS::Solve() {
   Solution local_search_solution, shaked_solution, previous_best_solution;
   int iterations_without_improvement = 0;
   ExhaustedConstructionPhase construction_phase;
-  for (int alpha_inc = 0; alpha_inc < 5; alpha_inc++) {
-    for (int i = 0; i < number_jobs_ * number_jobs_; ++i) {   
+  for (int alpha_inc = 0; alpha_inc < 5; alpha_inc++) {        //! 5 iteraciones
+    for (int i = 0; i < number_jobs_ * number_jobs_; ++i) {    //! n^2 iteraciones
       // current_solution es S, tendremos que mantenerla y 
       // crear otra solucion S' para hacer la busqueda local
       // Entonces guardamos en un fichero S y S'.
