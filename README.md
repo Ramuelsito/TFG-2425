@@ -10,6 +10,9 @@
 - Posible mejora del rendimiento, tener ya la matriz completa de todos los tij -> Sij + Pij
 
 - Almacenar correctamente lo de los entornos, y con ello lo de las soluciones. 
+- Con las soluciones globales, calcular: el nº de optimos locales obtenidos, min/max/mean global para dif y size
+- Intentar aplicar multihilos, para acelerar las ejecuciones
+- Forma de igualdad, con distancias
 - 3 rangos de valores para las tareas, 6 combinaciones, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
 
 - Preparar el programa para lanzar distintos hilos con cada instancia.
