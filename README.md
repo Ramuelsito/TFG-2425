@@ -11,10 +11,10 @@
 
 - Almacenar correctamente lo de los entornos, y con ello lo de las soluciones. 
 - Con las soluciones globales, calcular: el nº de optimos locales obtenidos, min/max/mean global para dif y size
-- Intentar aplicar multihilos, para acelerar las ejecuciones
 - Forma de igualdad, con distancias
 - 3 rangos de valores para las tareas, 6 combinaciones, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
 
+- Intentar aplicar multihilos, para acelerar las ejecuciones
 - Preparar el programa para lanzar distintos hilos con cada instancia.
 - Luego, Sacar la información propia de varias instancias, generando asi un benchmark
 - Seguiría, analizar las diferentes medidas propuestas que tenian que ver con la aplicación de los distintos entornos, para completar con ello la información necesaria para clasificar que entornos van mejor para cada tipo de instancia, y ademas generar el clasificador a partir de ahi.

@@ -166,22 +166,18 @@ void Solution::PrintStudiedSolution(const std::string& filename, const std::stri
 }
 
 bool Solution::operator==(const Solution& solution) const {
-  if (machines_.size() != solution.machines_.size()) return false;
-  for (int i = 0; i < machines_.size(); i++) {
-    if (machines_[i].getTasksAssigned().size() != solution.machines_[i].getTasksAssigned().size()) return false;
-    for (int j = 0; j < machines_[i].getTasksAssigned().size(); j++) {
-      if (machines_[i].getTasksAssigned()[j] != solution.machines_[i].getTasksAssigned()[j]) return false;
-    }
-  }
+  if (total_completion_time_ != solution.total_completion_time_) return false;
   return true;
 }
 
 //TODO: Implement this method
 int Solution::CalculateDistance(const Solution& solution) const {
-  int distance = 0;
+  int distance = Problem::getInstance().getTasksTimes().size();
+  // Tenemos que comparar dos maquinas, que tengan más tareas en común
+  // las tareas que son iguales, las restamos
   for (int i = 0; i < machines_.size(); i++) {
     for (int j = 0; j < machines_[i].getTasksAssigned().size(); j++) {
-      if (machines_[i].getTasksAssigned()[j] != solution.machines_[i].getTasksAssigned()[j]) distance++;
+      if (machines_[i].getTasksAssigned()[j] != solution.machines_[i].getTasksAssigned()[j]) distance--;
     }
   }
   return distance;

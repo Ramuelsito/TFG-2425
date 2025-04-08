@@ -22,14 +22,14 @@ class SolutionDataTable {
  public:
   // Agregar una nueva entrada a la tabla
   void AddSolutionData(std::shared_ptr<Solution> solution, int difference, int size_of_walk) {
-    auto& data = table_[solution];
+    auto& data = table_[*solution];
     data.Update(difference, size_of_walk);
   }
 
     // Imprimir la tabla
   void PrintTable() const {
     for (const auto& [solution, data] : table_) {
-      std::cout << "Solution: " << *solution << std::endl;
+      std::cout << "Solution: " << solution << std::endl;
       std::cout << "  Impacts: " << data.impacts_ << std::endl;
       std::cout << "  Max Differences: " << data.max_differences_objective_function_ << std::endl;
       std::cout << "  Min Differences: " << data.min_differences_objective_function_ << std::endl;
@@ -41,5 +41,5 @@ class SolutionDataTable {
     }
   }
  private:
-  std::unordered_map<std::shared_ptr<Solution>, SolutionData> table_;
+  std::unordered_map<Solution, SolutionData> table_;
 };

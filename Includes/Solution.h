@@ -12,6 +12,7 @@
 #pragma once
 #include <fstream>
 #include "Machine.h"
+#include <functional>
 
 /**
  * @class Solution
@@ -53,3 +54,12 @@ class Solution {
   std::vector<Machine> machines_;
   int total_completion_time_;
 };
+
+namespace std {
+  template <>
+  struct hash<Solution> {
+    size_t operator()(const Solution& solution) const {
+      return std::hash<int>()(solution.GetTCT()); // * Usar TCT como base del hash
+    }
+  };
+}
