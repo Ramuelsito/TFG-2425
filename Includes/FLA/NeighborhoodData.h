@@ -46,6 +46,23 @@ class NeighborhoodData {
     os << neighborhood_data.times_improved_condicioned_ << std::endl;
     return os;
   }
+
+  void WriteToStream(std::ostream& os) const {
+    for (int i = 0; i < times_used_.size(); ++i) {
+      os << times_used_[i] << " ";
+    }
+    os << ",";
+    for (int i = 0; i < times_improved_.size(); ++i) {
+      os << times_improved_[i] << " ";
+    }
+    os << ",\"" 
+       << times_used_condicioned_;
+    // times_used_condicioned_.WriteInline(os);
+    os << "\",\""
+       << times_improved_condicioned_;
+    // times_improved_condicioned_.WriteInline(os);
+    os << "\"";
+  }
  private:
   std::vector<int> times_used_;
   std::vector<int> times_improved_;

@@ -297,6 +297,54 @@ src/FLA/Matrix.cc.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/Matrix.cc.s
 .PHONY : src/FLA/Matrix.cc.s
 
+src/FLA/SolutionDataTable.o: src/FLA/SolutionDataTable.cc.o
+.PHONY : src/FLA/SolutionDataTable.o
+
+# target to build an object file
+src/FLA/SolutionDataTable.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/SolutionDataTable.cc.o
+.PHONY : src/FLA/SolutionDataTable.cc.o
+
+src/FLA/SolutionDataTable.i: src/FLA/SolutionDataTable.cc.i
+.PHONY : src/FLA/SolutionDataTable.i
+
+# target to preprocess a source file
+src/FLA/SolutionDataTable.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/SolutionDataTable.cc.i
+.PHONY : src/FLA/SolutionDataTable.cc.i
+
+src/FLA/SolutionDataTable.s: src/FLA/SolutionDataTable.cc.s
+.PHONY : src/FLA/SolutionDataTable.s
+
+# target to generate assembly for a file
+src/FLA/SolutionDataTable.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/SolutionDataTable.cc.s
+.PHONY : src/FLA/SolutionDataTable.cc.s
+
+src/FLA/StudiedSolution.o: src/FLA/StudiedSolution.cc.o
+.PHONY : src/FLA/StudiedSolution.o
+
+# target to build an object file
+src/FLA/StudiedSolution.cc.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/StudiedSolution.cc.o
+.PHONY : src/FLA/StudiedSolution.cc.o
+
+src/FLA/StudiedSolution.i: src/FLA/StudiedSolution.cc.i
+.PHONY : src/FLA/StudiedSolution.i
+
+# target to preprocess a source file
+src/FLA/StudiedSolution.cc.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/StudiedSolution.cc.i
+.PHONY : src/FLA/StudiedSolution.cc.i
+
+src/FLA/StudiedSolution.s: src/FLA/StudiedSolution.cc.s
+.PHONY : src/FLA/StudiedSolution.s
+
+# target to generate assembly for a file
+src/FLA/StudiedSolution.cc.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/ParallelMachineProblem.dir/build.make CMakeFiles/ParallelMachineProblem.dir/src/FLA/StudiedSolution.cc.s
+.PHONY : src/FLA/StudiedSolution.cc.s
+
 src/Instances/Instance.o: src/Instances/Instance.cc.o
 .PHONY : src/Instances/Instance.o
 
@@ -471,6 +519,12 @@ help:
 	@echo "... src/FLA/Matrix.o"
 	@echo "... src/FLA/Matrix.i"
 	@echo "... src/FLA/Matrix.s"
+	@echo "... src/FLA/SolutionDataTable.o"
+	@echo "... src/FLA/SolutionDataTable.i"
+	@echo "... src/FLA/SolutionDataTable.s"
+	@echo "... src/FLA/StudiedSolution.o"
+	@echo "... src/FLA/StudiedSolution.i"
+	@echo "... src/FLA/StudiedSolution.s"
 	@echo "... src/Instances/Instance.o"
 	@echo "... src/Instances/Instance.i"
 	@echo "... src/Instances/Instance.s"

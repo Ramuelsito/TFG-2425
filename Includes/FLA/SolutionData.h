@@ -35,13 +35,6 @@ struct SolutionData {
     mean_size_of_walk_ += size_of_walk; // Acumular la suma
   }
 
-  // Obtener el promedio de las diferencias
-  double GetMeanDifferences() const {
-    return impacts_ > 0 ? static_cast<double>(mean_differences_objective_function_) / impacts_ : 0.0;
-  }
-
-  // Obtener el promedio del tamaño del recorrido
-  double GetMeanSizeOfWalk() const {
-    return impacts_ > 0 ? static_cast<double>(mean_size_of_walk_) / impacts_ : 0.0;
-  }
+  double GetMeanDifferences() const { return impacts_ > 0 ? static_cast<double>(mean_differences_objective_function_) / impacts_ : 0.0; }
+  double GetMeanSizeOfWalk() const { return impacts_ > 0 ? static_cast<double>(mean_size_of_walk_) / impacts_ : 0.0; }
 };

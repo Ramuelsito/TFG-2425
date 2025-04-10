@@ -40,6 +40,10 @@ class SolutionDataTable {
       std::cout << "----------------------------------------" << std::endl;
     }
   }
+
+  void AnalizeTable(double& mean_impacts, double& total_max, double& total_min, double& total_mean_differences, 
+                    double& total_max_size, double& total_min_size, double& total_mean_size) const;
+  void WriteToStream(std::ostream& os) const;
  private:
   std::unordered_map<Solution, SolutionData> table_;
 };

@@ -13,6 +13,7 @@
 
 #include <iostream>
 #include <vector>
+#include <fstream>
 
 class Matrix {
  public:
@@ -33,9 +34,19 @@ class Matrix {
       for (int j = 0; j < matrix.cols_; ++j) {
         os << matrix(i, j) << " ";
       }
-      os << std::endl;
+      os << ";";
     }
     return os;
+  }
+
+  void WriteInline(std::ostream& os) const {
+    for (int i = 0; i < rows_; ++i) {
+      for (int j = 0; j < cols_; ++j) {
+        os << data_[i * cols_ + j];
+        if (j == cols_ - 1) { os << " "; }
+      }
+      if (i == rows_ - 1) { os << ";"; }
+    }
   }
  private:
   std::vector<int> data_;

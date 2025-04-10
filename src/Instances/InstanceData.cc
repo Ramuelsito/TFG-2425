@@ -45,3 +45,13 @@ InstanceData::InstanceData() {
   standard_deviation_ = std::sqrt(variance_);
   //  std::cout << compiled_times_ << std::endl;
 }
+
+void InstanceData::WriteToStream(std::ostream& os) const {
+  os << min_time_ << "," 
+     << max_time_ << "," 
+     << range_ << "," 
+     << mean_ << "," 
+     << median_ << "," 
+     << variance_ << "," 
+     << standard_deviation_;
+}

@@ -29,6 +29,8 @@ class InstanceData {
     os << "Standard deviation: " << instance_data.standard_deviation_ << std::endl;
     return os;
   }
+
+  void WriteToStream(std::ostream& filename) const;
  private:
   Matrix compiled_times_;
   int min_time_;

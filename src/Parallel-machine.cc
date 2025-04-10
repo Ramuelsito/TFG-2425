@@ -51,8 +51,6 @@ int main(int argc, char* argv[]) {
     std::string instance = argv[1];
     Problem& problem = Problem::getInstance("../Instances/" + instance + ".txt");
     std::cout << problem << std::endl;
-    InstanceData data;
-    std::cout << data << std::endl;
     Solution solution;
     std::string algorithm_name;
     std::chrono::seconds performance_time;
@@ -69,7 +67,15 @@ int main(int argc, char* argv[]) {
     std::cout << "Neighborhood data: " << std::endl;
     std::cout << multigvns.GetNeighborhoodData() << std::endl;
     std::cout << "Solution data table: " << std::endl;
-    multigvns.GetSolutionDataTable().PrintTable();
+    std::unique_ptr<SolutionDataTable> solution_table = std::make_unique<SolutionDataTable>(multigvns.GetSolutionDataTable());
+    solution_table->PrintTable();
+    std::unique_ptr<NeighborhoodData> neighborhood_data = std::make_unique<NeighborhoodData>(multigvns.GetNeighborhoodData());
+    InstanceData data;
+    std::cout << data << std::endl;
+    std::unique_ptr<InstanceData> instance_data = std::make_unique<InstanceData>(data);
+    StudiedSolution studied_solution(instance, std::move(solution_table), std::move(neighborhood_data), std::move(instance_data));
+    studied_solution.WriteHeader("../Results/sourceData.csv");
+    studied_solution.WriteCSVFile("../Results/sourceData.csv");
   }
   return 0;
 }
