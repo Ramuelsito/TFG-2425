@@ -74,7 +74,6 @@ int main(int argc, char* argv[]) {
     std::cout << data << std::endl;
     std::unique_ptr<InstanceData> instance_data = std::make_unique<InstanceData>(data);
     StudiedSolution studied_solution(instance, std::move(solution_table), std::move(neighborhood_data), std::move(instance_data));
-    studied_solution.WriteHeader("../Results/sourceData.csv");
     studied_solution.WriteCSVFile("../Results/sourceData.csv");
   }
   return 0;

@@ -19,21 +19,22 @@ InstanceData::InstanceData() {
   compiled_times_ = Matrix(number_of_tasks, number_of_tasks);
   int max_time = -1;
   int min_time = 999999;
-  int mean = 0; 
+  double mean = 0; 
+  int dispher = 0;
   for (int i = 0; i < number_of_tasks; i++) {
+    dispher = 1;
     for (int j = 0; j < number_of_tasks; j++) {
-      if (i == j || j == 0 || i == 0) {
+      if (i == j) {
+        compiled_times_(i, j) = problem.getSetupTimes()[i][j];
+        dispher = 2;
+      } else if (j == 0 || i == 0) {
         compiled_times_(i, j) = problem.getSetupTimes()[i][j];
       } else {
-        compiled_times_(i, j) = problem.getSetupTimeIn(i, j) + problem.getTasksTimes()[j - 1].GetTime();
+        compiled_times_(i, j) = problem.getSetupTimeIn(i, j) + problem.getTasksTimes()[j - dispher].GetTime();
       }
       mean += compiled_times_(i, j);
-      if (compiled_times_(i, j) > max_time) {
-        max_time = compiled_times_(i, j);
-      }
-      if (compiled_times_(i, j) < min_time) {
-        min_time = compiled_times_(i, j);
-      }
+      if (compiled_times_(i, j) > max_time) { max_time = compiled_times_(i, j); }
+      if (compiled_times_(i, j) < min_time) { min_time = compiled_times_(i, j); }
     }
   }
   min_time_ = min_time;
@@ -43,7 +44,6 @@ InstanceData::InstanceData() {
   variance_ = compiled_times_.CalculateVariance(mean_);
   median_ = compiled_times_.CalculateMedian();
   standard_deviation_ = std::sqrt(variance_);
-  //  std::cout << compiled_times_ << std::endl;
 }
 
 void InstanceData::WriteToStream(std::ostream& os) const {

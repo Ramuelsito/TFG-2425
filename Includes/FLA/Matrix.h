@@ -39,13 +39,12 @@ class Matrix {
     return os;
   }
 
-  void WriteInline(std::ostream& os) const {
+  void WriteStyled() const {
     for (int i = 0; i < rows_; ++i) {
       for (int j = 0; j < cols_; ++j) {
-        os << data_[i * cols_ + j];
-        if (j == cols_ - 1) { os << " "; }
+        std::cout << data_[i * cols_ + j] << " ";
       }
-      if (i == rows_ - 1) { os << ";"; }
+      std::cout << std::endl;
     }
   }
  private:

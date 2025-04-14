@@ -19,7 +19,7 @@ class InstanceData {
 
   friend std::ostream& operator<<(std::ostream& os, const InstanceData& instance_data) {
     os << "Compiled times: " << std::endl;
-    os << instance_data.compiled_times_;
+    instance_data.compiled_times_.WriteStyled();
     os << "Min time: " << instance_data.min_time_ << std::endl;
     os << "Max time: " << instance_data.max_time_ << std::endl;
     os << "Range: " << instance_data.range_ << std::endl;

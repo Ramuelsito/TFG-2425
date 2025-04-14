@@ -51,17 +51,7 @@ void StudiedSolution::WriteHeader(const std::string& filename) const {
  * @note The file will be opened in append mode
  */
 void StudiedSolution::WriteCSVFile(const std::string& filename) const {
-  // Verificar si el archivo está vacío
-  std::ifstream infile(filename);
-  bool is_empty = infile.peek() == std::ifstream::traits_type::eof();
-  infile.close();
-
-  // Escribir encabezados si el archivo está vacío
-  if (is_empty) {
-    WriteHeader(filename);
-  }
-
-  // Abrir el archivo en modo append
+  // Abrir el archivo para añadir una entrada
   std::ofstream file(filename, std::ios::app);
   if (file.is_open()) {
     file << instance_name_ << ",";
@@ -70,7 +60,7 @@ void StudiedSolution::WriteCSVFile(const std::string& filename) const {
     neighborhood_data_->WriteToStream(file);
     file << ",";
     solution_data_table_->WriteToStream(file);
-    file << "\n"; // Finalizar la línea
+    file << std::endl;
     file.close();
   } else {
     std::cerr << "Error opening file: " << filename << std::endl;
