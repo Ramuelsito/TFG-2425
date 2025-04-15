@@ -26,12 +26,12 @@ struct SolutionData {
   // Siempre que se actualice la tabla, se actualizan los datos
   void Update(int difference, int size_of_walk) {
     impacts_++;
-    max_differences_objective_function_ = std::max(max_differences_objective_function_, difference);
-    min_differences_objective_function_ = std::min(min_differences_objective_function_, difference);
+    max_differences_objective_function_ = max_differences_objective_function_ > difference ? max_differences_objective_function_ : difference;
+    min_differences_objective_function_ = min_differences_objective_function_ < difference ? min_differences_objective_function_ : difference;
     mean_differences_objective_function_ += difference; // Acumular la suma
 
-    max_size_of_walk_ = std::max(max_size_of_walk_, size_of_walk);
-    min_size_of_walk_ = std::min(min_size_of_walk_, size_of_walk);
+    max_size_of_walk_ = max_size_of_walk_ > size_of_walk ? max_size_of_walk_ : size_of_walk;
+    min_size_of_walk_ = min_size_of_walk_ < size_of_walk ? min_size_of_walk_ : size_of_walk;
     mean_size_of_walk_ += size_of_walk; // Acumular la suma
   }
 

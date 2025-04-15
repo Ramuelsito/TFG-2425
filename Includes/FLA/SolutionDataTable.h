@@ -41,8 +41,9 @@ class SolutionDataTable {
     }
   }
 
-  void AnalizeTable(double& mean_impacts, double& total_max, double& total_min, double& total_mean_differences, 
-                    double& total_max_size, double& total_min_size, double& total_mean_size) const;
+  void AnalizeTable(int& number_diff_local_optimums, double& total_impacts, double& total_max, double& total_min, 
+                    double& total_mean_differences, double& total_max_size, double& total_min_size, double& total_mean_size, 
+                    double& min_tct, double& max_tct, double& mean_tct) const;
   void WriteToStream(std::ostream& os) const;
  private:
   std::unordered_map<Solution, SolutionData> table_;

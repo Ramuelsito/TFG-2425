@@ -31,13 +31,17 @@ void StudiedSolution::WriteHeader(const std::string& filename) const {
          << "Times Improved, "
          << "Times Used Conditioned, "
          << "Times Improved Conditioned, "
+         << "Nº Local Optimums, "
          << "Mean Impacts, "
          << "Max Difference, "
          << "Min Difference, "
          << "Mean Differences, "
          << "Max Size of Walk, "
          << "Min Size of Walk, "
-         << "Mean Size of Walk"
+         << "Mean Size of Walk, "
+         << "Min TCT, "
+         << "Max TCT, "
+         << "Mean TCT"
          << std::endl;
     file.close();
   } else {
