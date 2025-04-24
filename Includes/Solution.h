@@ -22,6 +22,17 @@ class Solution {
  public:
   Solution() = default;
   Solution(std::vector<Machine> machines) : machines_{machines} { total_completion_time_ = 0; }
+  // Constructor de copia
+  Solution(const Solution& other) {
+    machines_ = other.machines_;
+    total_completion_time_ = other.total_completion_time_;
+  }
+  // Constructor de movimiento
+  Solution(Solution&& other) noexcept {
+    machines_ = std::move(other.machines_);
+    total_completion_time_ = other.total_completion_time_;
+    other.total_completion_time_ = 0;
+  }
 
   std::vector<Machine> getMachines() const { return machines_; }
   int GetTCT() const { return total_completion_time_; }
@@ -37,6 +48,8 @@ class Solution {
   int CalculateDistance(const Solution& solution) const;
   void PrintStudiedSolution(const std::string& filename, const std::string& algorithm_name, const double& time, const int& number_tasks);
   bool operator==(const Solution& solution) const;
+  Solution& operator=(const Solution& solution);
+  Solution& operator=(Solution&& solution) noexcept;
   const Machine& operator[](int i) const { return machines_[i]; }
 
   friend std::ostream& operator<<(std::ostream& os, const Solution& solution) {

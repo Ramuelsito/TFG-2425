@@ -14,15 +14,15 @@
 #include "SolutionData.h"
 #include <unordered_map>
 #include <vector>
-#include <memory> // Para std::shared_ptr
+#include <memory>
 #include <numeric>
 #include <iostream>
 
 class SolutionDataTable {
  public:
   // Agregar una nueva entrada a la tabla
-  void AddSolutionData(std::shared_ptr<Solution> solution, int difference, int size_of_walk) {
-    auto& data = table_[*solution];
+  void AddSolutionData(const Solution& solution, int difference, int size_of_walk) {
+    auto& data = table_[solution];
     data.Update(difference, size_of_walk);
   }
 

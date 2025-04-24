@@ -170,6 +170,25 @@ bool Solution::operator==(const Solution& solution) const {
   return true;
 }
 
+// Operador de asignación de copia
+Solution& Solution::operator=(const Solution& solution) {
+  if (this != &solution) {
+    machines_ = solution.machines_;
+    total_completion_time_ = solution.total_completion_time_;
+  }
+  return *this;
+}
+
+// Operador de asignación de movimiento
+Solution& Solution::operator=(Solution&& solution) noexcept {
+  if (this != &solution) {
+    machines_ = std::move(solution.machines_);
+    total_completion_time_ = solution.total_completion_time_;
+    solution.total_completion_time_ = 0;
+  }
+  return *this;
+}
+
 //TODO: Implement this method
 int Solution::CalculateDistance(const Solution& solution) const {
   int distance = Problem::getInstance().getTasksTimes().size();
