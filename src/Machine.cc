@@ -11,7 +11,7 @@
  */
 int Machine::EmulateInsertion(const Task& task, int q) const {
   int tasks_assigned_size = tasks_assigned_.size();
-  Problem* problem = &Problem::getInstance();
+  std::shared_ptr<Problem> problem = Problem::getInstance();
   int tct_increment = 0;
   if (tasks_assigned_size == 0) { 
     tct_increment = task.GetTime() + problem->CalculateSij(0, task.GetId() + 1);
@@ -53,7 +53,7 @@ int Machine::EmulateInsertion(const Task& task, int q) const {
  */
 int Machine::EmulateRemoval(const int& i) const {
   int tasks_assigned_size = tasks_assigned_.size();
-  Problem* problem = &Problem::getInstance();
+  std::shared_ptr<Problem> problem = Problem::getInstance();
   int tct_decrement = 0;
   if (i == 0) {
     int new_t0j = tasks_assigned_[i + 1].GetTime() + problem->CalculateSij(0, tasks_assigned_[i + 1].GetId() + 1);
@@ -105,7 +105,7 @@ void Machine::ExchangeTasks(const int& i, const int& j) {
 }
 
 int Machine::RecalculateTotalCompletionTime() {
-  std::vector<std::vector<int>> setup_times = Problem::getInstance().getSetupTimes();
+  std::vector<std::vector<int>> setup_times = Problem::getInstance()->getSetupTimes();
   int k = tasks_assigned_.size();
   int tc_time = k * (tasks_assigned_[0].GetTime() + setup_times[0][tasks_assigned_[0].GetId() + 1]); 
   for (int i = 1; i < tasks_assigned_.size(); i++) {

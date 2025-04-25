@@ -22,7 +22,7 @@ Solution MultiGVNS::Solve() {
   int iterations_without_improvement = 0;
   ExhaustedConstructionPhase construction_phase;
   
-  for (int alpha_inc = 0; alpha_inc < 5; alpha_inc++) {        //! 5 iteraciones
+  for (int iteration = 0; iteration < 5; iteration++) {        //! 5 iteraciones
     iterations_without_improvement = 0;
     for (int i = 0; i < number_jobs_ * number_jobs_; ++i) {    //! n^2 iteraciones
       int difference = 0;

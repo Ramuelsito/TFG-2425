@@ -51,6 +51,11 @@
     "stdexcept": "cpp",
     "streambuf": "cpp",
     "typeinfo": "cpp",
-    "set": "cpp"
+    "set": "cpp",
+    "condition_variable": "cpp",
+    "mutex": "cpp",
+    "semaphore": "cpp",
+    "stop_token": "cpp",
+    "thread": "cpp"
   }
 }

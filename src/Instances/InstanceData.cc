@@ -14,8 +14,8 @@
 #include <cmath>
 
 InstanceData::InstanceData() {
-  Problem& problem = Problem::getInstance();
-  int number_of_tasks = problem.getSetupTimes().size();
+  auto problem = Problem::getInstance();
+  int number_of_tasks = problem->getSetupTimes().size();
   compiled_times_ = Matrix(number_of_tasks, number_of_tasks);
   int max_time = -1;
   int min_time = 999999;
@@ -25,12 +25,12 @@ InstanceData::InstanceData() {
     dispher = 1;
     for (int j = 0; j < number_of_tasks; j++) {
       if (i == j) {
-        compiled_times_(i, j) = problem.getSetupTimes()[i][j];
+        compiled_times_(i, j) = problem->getSetupTimes()[i][j];
         dispher = 2;
       } else if (j == 0 || i == 0) {
-        compiled_times_(i, j) = problem.getSetupTimes()[i][j];
+        compiled_times_(i, j) = problem->getSetupTimes()[i][j];
       } else {
-        compiled_times_(i, j) = problem.getSetupTimeIn(i, j) + problem.getTasksTimes()[j - dispher].GetTime();
+        compiled_times_(i, j) = problem->getSetupTimeIn(i, j) + problem->getTasksTimes()[j - dispher].GetTime();
       }
       mean += compiled_times_(i, j);
       if (compiled_times_(i, j) > max_time) { max_time = compiled_times_(i, j); }

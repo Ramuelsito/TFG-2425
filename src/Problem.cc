@@ -12,8 +12,13 @@
 #include "../Includes/Problem.h"
 #include <algorithm>
 
-bool Problem::initialized = false;
-
+std::shared_ptr<Problem> Problem::getInstance(const std::string& file_name) {
+  static std::shared_ptr<Problem> instance = nullptr;
+  if (!instance && !file_name.empty()) {
+    instance = std::make_shared<Problem>(file_name);
+  }
+  return instance;
+}
 /**
  * Initialize the problem with the input file
  * @param file_name - Name of the file with the problem
@@ -78,14 +83,6 @@ void Problem::initialize(const std::string& file_name) {
   // std::sort(tasks_times_.begin(), tasks_times_.end());
   file.close();
 }
-
-/**
- * Calculate the total setup time of the problem
- * @param first_task - First task
- * @param second_task - Second task
- * @return - Total setup time
- */
-int Problem::CalculateSij(int first_task, int second_task) const { return setup_times_[first_task][second_task]; }
 
 /**
   * Overload of the << operator to print the problem

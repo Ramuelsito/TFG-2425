@@ -18,6 +18,8 @@
 #include "../Includes/FLA/StudiedSolution.h"
 #include <chrono>
 #include <filesystem>
+#include <thread>
+#include <mutex>
 
 int main(int argc, char* argv[]) {
   const std::string path = "../Instances/";
@@ -29,14 +31,39 @@ int main(int argc, char* argv[]) {
     Usage();
     return 0;
   }
+  thread_local std::unique_ptr<Problem> thread_local_problem;
   if (std::string(argv[1]) == "-all") {
-    Solution solution;
+    std::vector<std::thread> threads; // Vector para almacenar los hilos
+    std::mutex output_mutex;          // Mutex para proteger la salida estándar
+    // ! Hay un segmentation fault en esta parte
     for (const auto& entry : std::filesystem::directory_iterator(path)) {
-      Problem::getInstance(entry.path().string());
-      MultiGVNS multigvns(40);
-      solution = multigvns.Solve();
-      std::cout << solution << std::endl;
+      threads.emplace_back([&, entry]() {
+        try {
+          // Inicializar Problem específico para este hilo
+          thread_local_problem = std::make_unique<Problem>(entry.path().string());
+          // TODO: Detectar automaticamente el número de tareas en la instancia 
+          MultiGVNS multigvns(40);
+          Solution solution = multigvns.Solve();
+
+          // Bloquear el mutex para proteger la salida estándar
+          std::lock_guard<std::mutex> lock(output_mutex);
+          std::cout << "Instance: " << entry.path().filename() << std::endl;
+          std::cout << solution << std::endl;
+        } catch (const std::exception& e) {
+          // Manejar errores en el hilo
+          std::lock_guard<std::mutex> lock(output_mutex);
+          std::cerr << "Error processing instance " << entry.path().filename() << ": " << e.what() << std::endl;
+        }
+      });
     }
+
+    // Esperar a que todos los hilos terminen
+    for (auto& thread : threads) {
+      if (thread.joinable()) {
+        thread.join();
+      }
+    }
+
     return 0;
   } else if (std::string(argv[1]) == "-gen") {
     int number_of_tasks = std::stoi(argv[2]);
@@ -49,7 +76,7 @@ int main(int argc, char* argv[]) {
   } else {
     // int algorithmOption = AlgorithmMenu();
     std::string instance = argv[1];
-    Problem& problem = Problem::getInstance("../Instances/" + instance + ".txt");
+    std::shared_ptr<Problem> problem = Problem::getInstance("../Instances/" + instance + ".txt");
     std::cout << problem << std::endl;
     Solution solution;
     std::string algorithm_name;
@@ -62,7 +89,7 @@ int main(int argc, char* argv[]) {
     auto end = std::chrono::steady_clock::now();
     update_percentage = multigvns.GetUpdatePercentage();
     performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-    solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
+    solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance()->getTasksTimes().size());
     std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
     std::cout << "Neighborhood data: " << std::endl;
     std::cout << multigvns.GetNeighborhoodData() << std::endl;
