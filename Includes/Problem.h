@@ -44,6 +44,12 @@ class Problem {
   // Private constructor to enforce controlled instantiation
   Problem() = default;
   explicit Problem(const std::string& file_name) { initialize(file_name); }
+  // Reset the instance
+  void resetInstance() {
+    machines_.clear();
+    tasks_times_.clear();
+    setup_times_.clear();
+  }
 
   // Initialization logic
   void initialize(const std::string& file_name);

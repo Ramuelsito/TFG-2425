@@ -66,8 +66,8 @@ Solution ReInsertionInter::SelectRandomNeighbor() {
   int tct_decrement = new_solution[first_machine_index].EmulateRemoval(first_task_index);
   Task task_to_insert = new_solution[first_machine_index][first_task_index];
   int tct_increment = new_solution[second_machine_index].EmulateInsertion(task_to_insert, second_task_index);
+
   Movement movement = {first_machine_index, first_task_index, second_machine_index, second_task_index, (tct_increment + tct_decrement)};
-  // std::cout << "Movement: " << movement.orig_machine_index << " " << movement.orig_task_index << " " << movement.dest_machine_index << " " << movement.dest_task_index << " " << movement.tct_increment << std::endl;
   ApplyMovement(new_solution, movement);  
   return new_solution;
 }

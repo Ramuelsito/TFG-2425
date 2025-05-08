@@ -31,6 +31,10 @@ Problem& Problem::getInstance(const std::string& file_name) {
  * @param file_name - Name of the file with the problem
  */
 void Problem::initialize(const std::string& file_name) {
+  if (file_name.empty()) {
+    throw std::invalid_argument("File name cannot be empty");
+  }
+  resetInstance();
   std::ifstream file(file_name);
   if (!file.is_open()) {
     throw std::invalid_argument("File not found");
@@ -45,9 +49,10 @@ void Problem::initialize(const std::string& file_name) {
 
     case 'm':
       file >> auxiliar_char >> machines;
+      machines_.reserve(machines);
       for (int i = 0; i < machines; i++) {
         // Machine machine{i};
-        machines_.push_back(i);
+        machines_.emplace_back(i);
       }
       break;
 

@@ -33,10 +33,13 @@ Solution MultiGVNS::Solve() {
       int k = 1;
       previous_best_solution = std::make_unique<Solution>(best_solution_);
       while (k <= 6) {
-        auto shaked_solution = std::make_unique<Solution>(Shaking(*current_solution, k));
-        auto local_search_solution = std::make_unique<Solution>(LocalSearchByRandomVND(*shaked_solution, size_of_walk));
+        std::unique_ptr<Solution> shaked_solution = std::make_unique<Solution>(Shaking(*current_solution, k));
+        std::unique_ptr<Solution> local_search_solution = std::make_unique<Solution>(LocalSearchByRandomVND(*shaked_solution, size_of_walk));
         if (local_search_solution->GetTCT() < current_solution->GetTCT()) {
           current_solution = std::move(local_search_solution);
+          if (!current_solution) {
+            throw std::runtime_error("current_solution is not initialized");
+          }
           k = 1;
         } else {
           ++k;
@@ -197,8 +200,8 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution, int
         break;
       }
     }
-    // * Cuando se usa un movimiento por primera vez, no se almacena en las matrices condicionadas
-    // * Lo que puede dar lugar a que no coincida las veces que se usa un movimiento con las veces que se usa condicionado
+    // ! Cuando se usa un movimiento por primera vez, no se almacena en las matrices condicionadas
+    // ! Lo que puede dar lugar a que no coincida las veces que se usa un movimiento con las veces que se usa condicionado
     if (previous_solution.GetTCT() < local_optimum.GetTCT()) { // Si mejora
       neighborhood_data_.UpdateTimesImproved(movement);
       neighborhood_data_.UpdateTimesUsed(movement);
@@ -222,6 +225,7 @@ void MultiGVNS::UpdateSolution(const Solution& new_solution, const Solution& gra
   std::lock_guard<std::mutex> lock(data_mutex_);
   if (new_solution.GetTCT() < best_solution_.GetTCT()) {
     update_percentage_ = 100 * (grasp_solution.GetTCT() - new_solution.GetTCT()) / grasp_solution.GetTCT();
-    best_solution_ = std::move(new_solution);
+    // best_solution_ = std::move(new_solution);
+    best_solution_ = new_solution;
   }
 }
