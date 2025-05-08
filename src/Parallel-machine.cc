@@ -31,21 +31,24 @@ int main(int argc, char* argv[]) {
     Usage();
     return 0;
   }
-  thread_local std::unique_ptr<Problem> thread_local_problem;
-  if (std::string(argv[1]) == "-all") {
+  thread_local Problem* thread_local_problem = nullptr;
+  if (std::string(argv[1]) == "-all threads") {
     std::vector<std::thread> threads; // Vector para almacenar los hilos
     std::mutex output_mutex;          // Mutex para proteger la salida estándar
     // ! Hay un segmentation fault en esta parte
     for (const auto& entry : std::filesystem::directory_iterator(path)) {
-      threads.emplace_back([&, entry]() {
+      threads.emplace_back([&, entry = entry]() {
         try {
-          // Inicializar Problem específico para este hilo
-          thread_local_problem = std::make_unique<Problem>(entry.path().string());
-          // TODO: Detectar automaticamente el número de tareas en la instancia 
-          MultiGVNS multigvns(40);
-          Solution solution = multigvns.Solve();
-
           // Bloquear el mutex para proteger la salida estándar
+          std::cout << entry.path().string() << std::endl;
+          // Inicializar Problem específico para este hilo
+          thread_local_problem = &Problem::getInstance(entry.path().string());
+          int number_of_tasks = thread_local_problem->getTasksTimes().size();
+          MultiGVNS multigvns(number_of_tasks);
+          Solution solution = multigvns.Solve();
+          std::cout << "Problemong" << std::endl;
+          
+          
           std::lock_guard<std::mutex> lock(output_mutex);
           std::cout << "Instance: " << entry.path().filename() << std::endl;
           std::cout << solution << std::endl;
@@ -63,9 +66,39 @@ int main(int argc, char* argv[]) {
         thread.join();
       }
     }
-
-    return 0;
-  } else if (std::string(argv[1]) == "-gen") {
+  } else if (std::string(argv[1]) == "-all") {
+    for (const auto& entry : std::filesystem::directory_iterator(path)) {
+      std::cout << entry.path().string() << std::endl;
+      Problem& problem = Problem::getInstance(entry.path().string());
+      int number_of_tasks = problem.getTasksTimes().size();
+      std::string instance = entry.path().filename();
+      instance = instance.substr(0, instance.find_last_of('.'));
+      std::cout << instance << "  " << number_of_tasks << std::endl;
+      MultiGVNS multigvns(number_of_tasks);
+      auto start = std::chrono::steady_clock::now();
+      Solution solution = multigvns.Solve();
+      auto end = std::chrono::steady_clock::now();
+      std::string algorithm_name;
+      std::chrono::seconds performance_time;
+      double update_percentage;
+      update_percentage = multigvns.GetUpdatePercentage();
+      performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+      solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
+      std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+      std::cout << "Neighborhood data: " << std::endl;
+      std::cout << multigvns.GetNeighborhoodData() << std::endl;
+      std::cout << "Solution data table: " << std::endl;
+      std::unique_ptr<SolutionDataTable> solution_table = std::make_unique<SolutionDataTable>(multigvns.GetSolutionDataTable());
+      solution_table->PrintTable();
+      std::unique_ptr<NeighborhoodData> neighborhood_data = std::make_unique<NeighborhoodData>(multigvns.GetNeighborhoodData());
+      InstanceData data;
+      std::cout << data << std::endl;
+      std::unique_ptr<InstanceData> instance_data = std::make_unique<InstanceData>(data);
+      StudiedSolution studied_solution(instance, std::move(solution_table), std::move(neighborhood_data), std::move(instance_data));
+      // studied_solution.WriteHeader("../Results/sourceData.csv");
+      studied_solution.WriteCSVFile("../Results/sourceData.csv");
+    }  
+  }else if (std::string(argv[1]) == "-gen") {
     int number_of_tasks = std::stoi(argv[2]);
     int number_of_machines = std::stoi(argv[3]);
     std::string tasks_distribution = argv[4];
@@ -76,20 +109,21 @@ int main(int argc, char* argv[]) {
   } else {
     // int algorithmOption = AlgorithmMenu();
     std::string instance = argv[1];
-    std::shared_ptr<Problem> problem = Problem::getInstance("../Instances/" + instance + ".txt");
+    Problem& problem = Problem::getInstance("../Instances/" + instance + ".txt");
+    int number_of_tasks = problem.getTasksTimes().size();
     std::cout << problem << std::endl;
     Solution solution;
     std::string algorithm_name;
     std::chrono::seconds performance_time;
     double update_percentage;
     algorithm_name = "GVNS";
-    MultiGVNS multigvns(40);
+    MultiGVNS multigvns(number_of_tasks);
     auto start = std::chrono::steady_clock::now();
     solution = multigvns.Solve();
     auto end = std::chrono::steady_clock::now();
     update_percentage = multigvns.GetUpdatePercentage();
     performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-    solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance()->getTasksTimes().size());
+    solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
     std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
     std::cout << "Neighborhood data: " << std::endl;
     std::cout << multigvns.GetNeighborhoodData() << std::endl;

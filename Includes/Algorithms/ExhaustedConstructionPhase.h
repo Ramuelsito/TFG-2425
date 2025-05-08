@@ -17,10 +17,7 @@
 
 class ExhaustedConstructionPhase {
  public:
-  ExhaustedConstructionPhase() {
-    problem_ = Problem::getInstance();
-    final_solution_ = Solution();
-  };
+  ExhaustedConstructionPhase() : problem_(Problem::getInstance()), final_solution_(Solution()) {};
   Solution ConstructGreedyRandSolution();
   void IncreaseRCLSize() { RCL_size_++; }
   void IncreaseAlpha() { alpha_ += 0.1; }
@@ -28,7 +25,7 @@ class ExhaustedConstructionPhase {
   void InitializingMachines(std::vector<Task>& tasks_to_assign);
   std::vector<Insertion> MakeRandomCandidatesList(const std::vector<Task>& tasks_to_assign, int machine_index);
   std::vector<Insertion> MakeRandomCandidatesListWithRange(const std::vector<Task>& tasks_candidates, int chosen_machine_index);
-  std::shared_ptr<Problem> problem_;
+  const Problem& problem_;
   Solution final_solution_;
 
   float alpha_ = 0.1;

@@ -45,15 +45,15 @@ Solution MultiGVNS::Solve() {
       difference = abs(current_solution.get()->GetTCT() - initial_solution.get()->GetTCT());
       solution_data_table_.AddSolutionData(*current_solution, difference, size_of_walk);
       UpdateSolution(*current_solution, *initial_solution);
-      std::cout << "Best solution: " << best_solution_.GetTCT() << std::endl;
-      std::cout << "Current solution: " << current_solution->GetTCT() << std::endl;
-      std::cout << "Iterations without improvement: " << iterations_without_improvement << std::endl;
+      // std::cout << "Best solution: " << best_solution_.GetTCT() << std::endl;
+      // std::cout << "Current solution: " << current_solution->GetTCT() << std::endl;
+      // std::cout << "Iterations without improvement: " << iterations_without_improvement << std::endl;
       if (best_solution_.GetTCT() == previous_best_solution->GetTCT()) {
         ++iterations_without_improvement;
       } else {
         iterations_without_improvement = 0;
       }
-      if (iterations_without_improvement == 300) { break; }
+      if (iterations_without_improvement == 100) { break; }
     }
     construction_phase.IncreaseAlpha();
   }
@@ -219,9 +219,9 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution, int
 }
 
 void MultiGVNS::UpdateSolution(const Solution& new_solution, const Solution& grasp_solution) {
+  std::lock_guard<std::mutex> lock(data_mutex_);
   if (new_solution.GetTCT() < best_solution_.GetTCT()) {
     update_percentage_ = 100 * (grasp_solution.GetTCT() - new_solution.GetTCT()) / grasp_solution.GetTCT();
     best_solution_ = std::move(new_solution);
-    // best_solution_ = *new_solution;
   }
 }

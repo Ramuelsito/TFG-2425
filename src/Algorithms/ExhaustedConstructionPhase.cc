@@ -35,8 +35,8 @@ void PrintState(const std::vector<Task>& tasks_to_assign, const std::vector<Mach
  * @return Solución obtenida
  */
 Solution ExhaustedConstructionPhase::ConstructGreedyRandSolution() {
-  std::vector<Task> tasks_to_assign = problem_->getTasksTimes();
-  final_solution_ = problem_->getMachines();
+  std::vector<Task> tasks_to_assign = problem_.getTasksTimes();
+  final_solution_ = problem_.getMachines();
   InitializingMachines(tasks_to_assign);
   // machines_assigned_ = final_solution_.getMachines();
   // std::cout << std::endl;
@@ -79,7 +79,7 @@ void ExhaustedConstructionPhase::InitializingMachines(std::vector<Task>& tasks_t
     int best_time = 999999;
     int best_task_index = 0;
     for (int j = 0; j < tasks_to_assign.size(); j++) {
-      int t0j = tasks_to_assign[j].GetTime() + problem_->CalculateSij(0, tasks_to_assign[j].GetId() + 1); 
+      int t0j = tasks_to_assign[j].GetTime() + problem_.CalculateSij(0, tasks_to_assign[j].GetId() + 1); 
       if (t0j < best_time) {
         best_time = t0j;
         best_task_index = j;

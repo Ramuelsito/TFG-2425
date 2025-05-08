@@ -196,4 +196,6 @@ CMakeFiles/ParallelMachineProblem.dir/src/Environment/SwapIntra.cc.o: \
  /usr/include/c++/11/bits/this_thread_sleep.h /usr/include/c++/11/chrono \
  /usr/include/c++/11/ratio /usr/include/c++/11/limits \
  /usr/include/c++/11/ctime /usr/include/c++/11/bits/parse_numbers.h \
+ /usr/include/c++/11/mutex /usr/include/c++/11/bits/std_mutex.h \
+ /usr/include/c++/11/bits/unique_lock.h \
  /home/raul/Practicas/TFG-2425/src/Environment/../../Includes/Environment/Movement.h

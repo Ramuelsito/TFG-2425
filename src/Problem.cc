@@ -12,13 +12,20 @@
 #include "../Includes/Problem.h"
 #include <algorithm>
 
-std::shared_ptr<Problem> Problem::getInstance(const std::string& file_name) {
-  static std::shared_ptr<Problem> instance = nullptr;
-  if (!instance && !file_name.empty()) {
-    instance = std::make_shared<Problem>(file_name);
+/**
+ *  @brief Get the thread-local instance of the Problem class
+ * @param file_name Optional file name to initialize the instance
+ * @return A reference to the thread-local Problem instance
+ */
+Problem& Problem::getInstance(const std::string& file_name) {
+  thread_local Problem instance; // Cada hilo tiene su propia instancia
+  if (!file_name.empty()) {
+    instance.initialize(file_name);
+    std::cout << "Problem instance initialized for thread: " << std::this_thread::get_id() << " with file: " << file_name << std::endl;
   }
   return instance;
 }
+
 /**
  * Initialize the problem with the input file
  * @param file_name - Name of the file with the problem

@@ -35,15 +35,18 @@ class MultiGVNS {
   double GetUpdatePercentage() const { return update_percentage_; }
   const NeighborhoodData& GetNeighborhoodData() const { return neighborhood_data_; }
   const SolutionDataTable& GetSolutionDataTable() const { return solution_data_table_; }
+
  private: 
   Solution Shaking(const Solution&, const int&);
   Solution LocalSearchByVND(const Solution&);
   Solution LocalSearchByRandomVND(const Solution&, int&);
   void UpdateSolution(const Solution&, const Solution&);
-  
+
   Solution best_solution_;
   SolutionDataTable solution_data_table_;
   NeighborhoodData neighborhood_data_;
   double update_percentage_;
   int number_jobs_;
+
+  mutable std::mutex data_mutex_; // Mutex para proteger los datos compartidos
 };

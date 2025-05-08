@@ -22,13 +22,11 @@
 class Environment{
  public: 
   Environment() = default;
-  Environment(const Solution& initial_solution) : initial_solution_{initial_solution} {
-    problem_ = Problem::getInstance();
-  }
+  Environment(const Solution& initial_solution) : problem_(Problem::getInstance()), initial_solution_{initial_solution} {}
   
   virtual Solution GenerateEnvironment() = 0;
  protected:
-  std::shared_ptr<Problem> problem_;
+  const Problem& problem_;
   Solution initial_solution_;
   std::vector<Solution> local_optimums_;
 };
