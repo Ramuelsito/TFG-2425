@@ -1,14 +1,14 @@
 Processing instance: "I40j_2m_S1_1.txt"
-Processing instance: "I40j_8m_S1_1.txt"
+Processing instance: "I40j_4m_S1_1.txt"
 Processing instance: "I40j_6m_S1_1.txt"
-Problem instance initialized for thread: 139661263763008 with file: ../Instances/I40j_2m_S1_1.txt
-Processing instance: Problem instance initialized for thread: 139661238584896 with file: ../Instances/I40j_6m_S1_1.txt
-"I40j_4m_S1_1.txt"
-Problem instance initialized for thread: 139661255370304 with file: ../Instances/I40j_8m_S1_1.txt
+Problem instance initialized for thread: 139916883232320 with file: ../Instances/I40j_2m_S1_1.txt
+Processing instance: Problem instance initialized for thread: 139916866446912 with file: ../Instances/I40j_4m_S1_1.txt
+"I40j_8m_S1_1.txt"
+Problem instance initialized for thread: 139916858054208 with file: ../Instances/I40j_6m_S1_1.txt
 Processing instance: "I70j_2m_S1_1.txt"
-Problem instance initialized for thread: 139661246977600 with file: ../Instances/I40j_4m_S1_1.txt
-Processing instance: "I80j_2m_S1_1.txt"
 Processing instance: "I50j_2m_S1_1.txt"
-Problem instance initialized for thread: 139661230192192 with file: ../Instances/I70j_2m_S1_1.txt
-Problem instance initialized for thread: 139661213406784 with file: ../Instances/I50j_2m_S1_1.txt
-Problem instance initialized for thread: 139661221799488 with file: ../Instances/I80j_2m_S1_1.txt
+Processing instance: "I80j_2m_S1_1.txt"
+Problem instance initialized for thread: 139916874839616 with file: ../Instances/I40j_8m_S1_1.txt
+Problem instance initialized for thread: 139916832876096 with file: ../Instances/I50j_2m_S1_1.txt
+Problem instance initialized for thread: 139916841268800 with file: ../Instances/I80j_2m_S1_1.txt
+Problem instance initialized for thread: 139916849661504 with file: ../Instances/I70j_2m_S1_1.txt
