@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 Processing instance: "I40j_2m_S1_1.txt"
 Processing instance: "I40j_4m_S1_1.txt"
 Processing instance: "I40j_6m_S1_1.txt"
@@ -12,3 +13,5 @@ Problem instance initialized for thread: 139916874839616 with file: ../Instances
 Problem instance initialized for thread: 139916832876096 with file: ../Instances/I50j_2m_S1_1.txt
 Problem instance initialized for thread: 139916841268800 with file: ../Instances/I80j_2m_S1_1.txt
 Problem instance initialized for thread: 139916849661504 with file: ../Instances/I70j_2m_S1_1.txt
+=======
+>>>>>>> Stashed changes

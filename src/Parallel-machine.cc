@@ -163,10 +163,40 @@ int main(int argc, char* argv[]) {
     std::unique_ptr<NeighborhoodData> neighborhood_data = std::make_unique<NeighborhoodData>(multigvns.GetNeighborhoodData());
     InstanceData data;
     std::cout << data << std::endl;
+<<<<<<< Updated upstream
     std::unique_ptr<InstanceData> instance_data = std::make_unique<InstanceData>(data);
     StudiedSolution studied_solution(instance, std::move(solution_table), std::move(neighborhood_data), std::move(instance_data));
     // studied_solution.WriteHeader("../Results/sourceData.csv");
     studied_solution.WriteCSVFile("../Results/sourceData.csv");
+=======
+    Solution solution;
+    std::string algorithm_name;
+    std::chrono::seconds performance_time;
+    double update_percentage;
+    algorithm_name = "GVNS";
+    MultiGVNS multigvns(40);
+    auto start = std::chrono::steady_clock::now();
+    solution = multigvns.Solve(data_bank);
+    auto end = std::chrono::steady_clock::now();
+    update_percentage = multigvns.GetUpdatePercentage();
+    performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+    solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
+    std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+    // for (int i = 0; i < initial_solution.getMachines()[0].getTasksAssigned().size(); i++) {
+    //   std::vector<Machine> machines = initial_solution.getMachines();
+    //   std::cout << initial_solution << std::endl;
+    //   std::cout << "Task to remove: " << machines[0].getTasksAssigned()[i] << std::endl;
+    //   int tct_decrement = machines[0].EmulateRemoval(i);
+    //   machines[0].RemoveTask(i, tct_decrement);
+    //   Solution new_solution(machines);
+    //   int diference = new_solution.GetTCT();
+    //   std::cout << new_solution << std::endl;
+    //   new_solution.RecalculateTotalCompletionTime();
+    //   diference = diference - new_solution.GetTCT();
+    //   std::cout << new_solution << std::endl;
+    //   std::cout << "Diference: " << diference << std::endl;
+    // }
+>>>>>>> Stashed changes
   }
   return 0;
 }
