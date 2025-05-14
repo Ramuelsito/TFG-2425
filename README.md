@@ -11,10 +11,8 @@
 
 - 3 rangos de valores para las tareas, 6 combinaciones, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
 
-- Revisar la implementacion del multiGVNS, para manejar los punteros
-- Intentar aplicar multihilos, para acelerar las ejecuciones
-- Preparar el programa para lanzar distintos hilos con cada instancia.
 - Luego, Sacar la información propia de varias instancias, generando asi un benchmark
+- Segmentation fault, es probablemente en el shaking, deberia de poner condiciones o algo para debuguear
 
 # Done But Not Commented
 - Al comparar las soluciones, no son exactamente iguales pero tienen mismo TCT, comentarlo. Lo que se puede hacer es comprobar si la distancia es mayor a un limite, y si tienen menos de cierta distancia y mismo TCT son iguales.

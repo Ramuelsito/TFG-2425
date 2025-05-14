@@ -31,10 +31,10 @@ InstanceData::InstanceData() {
         compiled_times_(i, j) = problem.getSetupTimes()[i][j];
       } else {
         compiled_times_(i, j) = problem.getSetupTimeIn(i, j) + problem.getTasksTimes()[j - dispher].GetTime();
+        mean += compiled_times_(i, j);
       }
-      mean += compiled_times_(i, j);
       if (compiled_times_(i, j) > max_time) { max_time = compiled_times_(i, j); }
-      if (compiled_times_(i, j) < min_time) { min_time = compiled_times_(i, j); }
+      if (compiled_times_(i, j) < min_time && compiled_times_(i, j) != 0) { min_time = compiled_times_(i, j); }
     }
   }
   min_time_ = min_time;

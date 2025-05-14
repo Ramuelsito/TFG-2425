@@ -56,7 +56,7 @@ Solution MultiGVNS::Solve() {
       } else {
         iterations_without_improvement = 0;
       }
-      if (iterations_without_improvement == 100) { break; }
+      if (iterations_without_improvement == 300) { break; }
     }
     construction_phase.IncreaseAlpha();
   }
