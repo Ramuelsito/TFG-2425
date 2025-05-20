@@ -9,7 +9,7 @@
 - Posible mejora del rendimiento, tener ya la matriz completa de todos los tij -> Sij + Pij
 - Forma de igualdad, con distancias
 
-- 3 rangos de valores para las tareas, 6 combinaciones, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
+- 2 rangos de valores para las tareas, 2 variantes de generacion, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
 
 - Luego, Sacar la información propia de varias instancias, generando asi un benchmark
 - Segmentation fault, es probablemente en el shaking, deberia de poner condiciones o algo para debuguear
