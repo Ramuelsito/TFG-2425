@@ -131,9 +131,10 @@ int main(int argc, char* argv[]) {
   }else if (std::string(argv[1]) == "-gen") {
     int number_of_tasks = std::stoi(argv[2]);
     int number_of_machines = std::stoi(argv[3]);
+    int setup_id = 1;
     std::string tasks_distribution = argv[4];
     std::string setup_distribution = argv[5];
-    Instance instance(number_of_tasks, number_of_machines, tasks_distribution, setup_distribution);
+    Instance instance(number_of_tasks, number_of_machines, setup_id, tasks_distribution, setup_distribution);
     instance.GenerateInstance(4, 0.7);
     instance.SaveInstance(); 
   } else {

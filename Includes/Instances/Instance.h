@@ -22,8 +22,8 @@ struct TimeLimits {
 
 class Instance {
  public:
-  Instance(int number_of_tasks, int number_of_machines, std::string tasks_distribution, std::string setup_distribution, int max_task_time = 99, int min_task_time = 1, int max_setup_time = 49, int min_setup_time = 1) :
-          number_of_tasks_(number_of_tasks), number_of_machines_(number_of_machines), tasks_distribution_(tasks_distribution), setup_distribution_(setup_distribution) {
+  Instance(int number_of_tasks, int number_of_machines, int setup_id, std::string tasks_distribution, std::string setup_distribution, int max_task_time = 99, int min_task_time = 1, int max_setup_time = 49, int min_setup_time = 1) :
+          number_of_tasks_(number_of_tasks), number_of_machines_(number_of_machines), setup_id_(setup_id), tasks_distribution_(tasks_distribution), setup_distribution_(setup_distribution) {
     limits_.min_task_time = min_task_time;
     limits_.max_task_time = max_task_time;
     limits_.min_setup_time = min_setup_time;
@@ -32,9 +32,11 @@ class Instance {
   ~Instance() = default;
   void GenerateInstance(int k = 4, double correlation = 0.5);
   void SaveInstance();
+  std::string GenerateInstanceName() const;
  private:
   int number_of_tasks_;
   int number_of_machines_;
+  int setup_id_ = 1;
   std::vector<int> task_times_;
   Matrix setup_times_;
   
