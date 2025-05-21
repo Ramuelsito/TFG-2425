@@ -129,14 +129,30 @@ int main(int argc, char* argv[]) {
       studied_solution.WriteCSVFile("../Results/sourceData.csv");
     }  
   }else if (std::string(argv[1]) == "-gen") {
-    int number_of_tasks = std::stoi(argv[2]);
-    int number_of_machines = std::stoi(argv[3]);
+    const int kNumInstances = 5;
     int setup_id = 1;
-    std::string tasks_distribution = argv[4];
-    std::string setup_distribution = argv[5];
-    Instance instance(number_of_tasks, number_of_machines, setup_id, tasks_distribution, setup_distribution);
-    instance.GenerateInstance(4, 0.7);
-    instance.SaveInstance(); 
+    std::string tasks_distribution = "uniform";
+    std::vector<std::string> setup_distribution = {"uniform", "clustered"};
+    std::vector<int> machine_options = {2, 4, 6, 8, 10};
+    std::vector<int> tasks_options = {40, 50, 60, 70, 80, 90, 100}; 
+    std::vector<std::pair<int, int>> task_ranges = { {1, 49}, {50, 99}, {1, 99} };
+
+    // 2 rangos de valores para las tareas, 2 variantes de generacion, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
+    for (int i = 0; i < kNumInstances; i++) { // 5 instancias
+      for (int j = 0; j < machine_options.size(); j++) {
+        for (int k = 0; k < tasks_options.size(); k++) {
+          for (const auto& range : task_ranges) {
+            for (const auto& setup : setup_distribution) {
+              Instance instance(tasks_options[k], machine_options[j], setup_id, tasks_distribution, setup, 99, 1, range.second, range.first);
+              instance.GenerateInstance(tasks_options[k] / 10, 0.7); // number of clusters, correlation
+              instance.SaveInstance();
+            }
+            ++setup_id;
+          }
+          setup_id = 1;
+        }
+      }
+    }
   } else {
     // int algorithmOption = AlgorithmMenu();
     std::string instance = argv[1];

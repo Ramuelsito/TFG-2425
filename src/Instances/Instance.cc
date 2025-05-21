@@ -43,7 +43,6 @@ void Instance::GenerateInstance(int k, double correlation) {
   } else {
     std::cerr << "Distribution not supported" << std::endl;
   }
-  std::cout << "Task times: " << std::endl << std::endl;
 
   // * Generate setup times with different philosophies
   if (setup_distribution_ == "uniform") {
@@ -69,9 +68,9 @@ void Instance::GenerateInstance(int k, double correlation) {
       for (int j = 0; j < number_of_tasks_ + 1; j++) {
         if (i == j) { continue; }
         if (i / cluster_size == j / cluster_size) {
-          setup_times_(i, j) = dis(gen) / 2; // In-cluster setup times are smaller
+          setup_times_(i, j) = dis(gen) / 1.5; // In-cluster setup times are smaller
         } else {
-          setup_times_(i, j) = dis(gen) * 2; // Out-of-cluster setup times are larger
+          setup_times_(i, j) = dis(gen) * 1.5; // Out-of-cluster setup times are larger
           setup_times_(i, j) = std::max(limits_.min_setup_time, std::min(limits_.max_setup_time, setup_times_(i, j))); // Ensure setup time is within limits
         }
       }
