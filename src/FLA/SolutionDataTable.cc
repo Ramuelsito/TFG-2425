@@ -55,12 +55,12 @@ void SolutionDataTable::WriteToStream(std::ostream& os) const {
   int number_diff_local_optimums = 0;
   double total_impacts = 0;
   double total_max = -1;
-  double total_min = __INT16_MAX__;
+  double total_min = 1.7976931348623158e+308;
   double total_mean_differences = 0;
   double total_max_size = -1;
-  double total_min_size = __INT16_MAX__;
+  double total_min_size = 1.7976931348623158e+308;
   double total_mean_size = 0;
-  double min_tct = __INT16_MAX__;
+  double min_tct = 1.7976931348623158e+308;
   double max_tct = -1;
   double mean_tct = 0;
   AnalizeTable(number_diff_local_optimums, total_impacts, total_max, total_min, 
