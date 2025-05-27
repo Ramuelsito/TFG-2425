@@ -33,6 +33,8 @@ int main(int argc, char* argv[]) {
   }
   thread_local Problem* thread_local_problem = nullptr;
   if (std::string(argv[1]) == "-threads") {
+    const unsigned int max_threads = std::thread::hardware_concurrency();
+    
     std::vector<std::thread> threads; // Vector para almacenar los hilos
     std::mutex output_mutex;
     std::mutex file_mutex;
