@@ -135,8 +135,8 @@ int main(int argc, char* argv[]) {
     int setup_id = 1;
     std::string tasks_distribution = "uniform";
     std::vector<std::string> setup_distribution = {"uniform", "clustered"};
-    std::vector<int> machine_options = {2, 4, 6, 8, 10};
-    std::vector<int> tasks_options = {40, 50, 60, 70, 80, 90, 100}; 
+    std::vector<int> machine_options = {2, 4, 6};
+    std::vector<int> tasks_options = {40, 50, 60, 70, 80}; 
     std::vector<std::pair<int, int>> task_ranges = { {1, 49}, {50, 99}, {1, 99} };
 
     // 2 rangos de valores para las tareas, 2 variantes de generacion, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
