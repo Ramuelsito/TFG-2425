@@ -174,6 +174,7 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution, int
     std::uniform_int_distribution<> dis(0, available_movements.size() - 1);
     int index = dis(gen);
     movement = available_movements[index];
+    // Tenemos que apuntar las veces que arranca y mejora, Rate successfully improved
     switch (movement) {
       case 0: {
         // std::cout << "Movement Reinsertion intra ";
