@@ -33,7 +33,9 @@ Solution MultiGVNS::Solve() {
       int k = 1;
       previous_best_solution = std::make_unique<Solution>(best_solution_);
       while (k <= 6) {
+        std::cout << "GAY? " << std::endl;
         std::unique_ptr<Solution> shaked_solution = std::make_unique<Solution>(Shaking(*current_solution, k));
+        std::cout << "Lo suponia" << std::endl;
         std::unique_ptr<Solution> local_search_solution = std::make_unique<Solution>(LocalSearchByRandomVND(*shaked_solution, size_of_walk));
         if (local_search_solution->GetTCT() < current_solution->GetTCT()) {
           current_solution = std::move(local_search_solution);
@@ -171,6 +173,11 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution, int
   int previous_movement = -1;
   while (mejora) {
     previous_solution = local_optimum;
+    if (available_movements.size() == 0) {
+      // Si no hay movimientos disponibles, salimos del bucle
+      mejora = false;
+      continue;
+    }
     std::uniform_int_distribution<> dis(0, available_movements.size() - 1);
     int index = dis(gen);
     movement = available_movements[index];
@@ -201,21 +208,22 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution, int
         break;
       }
     }
-    // ! Cuando se usa un movimiento por primera vez, no se almacena en las matrices condicionadas
-    // ! Lo que puede dar lugar a que no coincida las veces que se usa un movimiento con las veces que se usa condicionado
     if (previous_solution.GetTCT() < local_optimum.GetTCT()) { // Si mejora
       neighborhood_data_.UpdateTimesImproved(movement);
       neighborhood_data_.UpdateTimesUsed(movement);
-      if (previous_movement != -1) { neighborhood_data_.UpdateTimesUsedConditioned(previous_movement, movement); }
-      if (previous_movement != -1) { neighborhood_data_.UpdateTimesImprovedConditioned(previous_movement, movement); }
+      // if (previous_movement != -1) { neighborhood_data_.UpdateTimesUsedConditioned(previous_movement, movement); }
+      // if (previous_movement != -1) { neighborhood_data_.UpdateTimesImprovedConditioned(previous_movement, movement); }
+      neighborhood_data_.UpdateTimesUsedConditioned(previous_movement + 1, movement);
+      neighborhood_data_.UpdateTimesImprovedConditioned(previous_movement + 1, movement);
       local_optimum = previous_solution;
       available_movements = {0, 1, 2, 3};
       size_of_walk++;
     } else {
       neighborhood_data_.UpdateTimesUsed(movement);
-      if (previous_movement != -1) { neighborhood_data_.UpdateTimesUsedConditioned(previous_movement, movement); }
+      // if (previous_movement != -1) { neighborhood_data_.UpdateTimesUsedConditioned(previous_movement, movement); }
+      neighborhood_data_.UpdateTimesUsedConditioned(previous_movement + 1, movement);
       available_movements.erase(available_movements.begin() + index);
-      if (available_movements.empty()) { mejora = false; }
+      if (available_movements.size() == 0) { mejora = false; }
     }
     previous_movement = movement;
   }

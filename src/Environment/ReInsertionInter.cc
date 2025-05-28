@@ -45,23 +45,35 @@ Solution ReInsertionInter::SelectRandomNeighbor() {
   std::mt19937 engine(rd());
 
   int number_of_machines = new_solution.getMachines().size();
-  std::uniform_int_distribution<> dist(0, number_of_machines - 1);
-  int first_machine_index = dist(engine);                                           //  Obtain a random machine index
-  if (new_solution[first_machine_index].getTasksAssigned().size() == 0) {
-    first_machine_index = (first_machine_index + 1) % number_of_machines;
+
+  std::vector<int> non_empty_machines;            // Vector to store indices of machines with at least one task
+  for (int i = 0; i < number_of_machines; ++i) {
+    if (!new_solution[i].getTasksAssigned().empty()) {
+      non_empty_machines.push_back(i);
+    }
   }
-  int second_machine_index = dist(engine);                                          //  Obtain another random machine index
-  if (new_solution[second_machine_index].getTasksAssigned().size() == 0) {
-    second_machine_index = (second_machine_index + 1) % number_of_machines;
+  if (non_empty_machines.empty()) {
+    return new_solution;                          // No hay máquinas con tareas, no se puede hacer movimiento
   }
-  if (first_machine_index == second_machine_index) {
-    second_machine_index = (second_machine_index + 1) % number_of_machines;
-  }
-  // std::cout << "First machine index: " << first_machine_index << " Second machine index: " << second_machine_index << std::endl;
-  std::uniform_int_distribution<> dist2(0, new_solution[first_machine_index].getTasksAssigned().size() - 1);
-  int first_task_index = dist2(engine);                                            // Obtain a random task index
-  std::uniform_int_distribution<> dist3(0, new_solution[second_machine_index].getTasksAssigned().size() - 1);
-  int second_task_index = dist3(engine);                                           // Obtain another random task index
+
+  // 2. Elegir aleatoriamente la máquina origen (no vacía)
+  std::uniform_int_distribution<> dist_non_empty(0, non_empty_machines.size() - 1);
+  int first_machine_index = non_empty_machines[dist_non_empty(engine)];
+
+  // 3. Elegir aleatoriamente la máquina destino (distinta de la origen)
+  std::uniform_int_distribution<> dist_dest(0, number_of_machines - 1);
+  int idx = dist_dest(engine);
+  // Saltar la máquina origen
+  int second_machine_index = (idx == first_machine_index) ? (idx + 1) % number_of_machines : idx;
+
+  int num_tasks_first = new_solution[first_machine_index].getTasksAssigned().size();
+  std::uniform_int_distribution<> dist_task(0, num_tasks_first - 1);
+  int first_task_index = dist_task(engine);
+
+  int num_tasks_second = new_solution[second_machine_index].getTasksAssigned().size() == 0 ? 0 : new_solution[second_machine_index].getTasksAssigned().size() - 1; // If the second machine has no tasks, set to 0
+  std::uniform_int_distribution<> dist_pos(0, num_tasks_second);
+  int second_task_index = dist_pos(engine);                                      // Obtain another random task index
+
   // std::cout << "First task index: " << first_task_index << " Second task index: " << second_task_index << std::endl;
   int tct_decrement = new_solution[first_machine_index].EmulateRemoval(first_task_index);
   Task task_to_insert = new_solution[first_machine_index][first_task_index];

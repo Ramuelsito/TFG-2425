@@ -20,8 +20,8 @@ class NeighborhoodData {
     times_used_.resize(4, 0);
     times_improved_.resize(4, 0);
     // Size --> 4 x 4, condicionada por cada movimiento
-    times_used_condicioned_ = Matrix(4, 4);
-    times_improved_condicioned_ = Matrix(4, 4);
+    times_used_condicioned_ = Matrix(5, 4);
+    times_improved_condicioned_ = Matrix(5, 4);
   }
   
   void UpdateTimesUsed(int index) { times_used_[index]++; }

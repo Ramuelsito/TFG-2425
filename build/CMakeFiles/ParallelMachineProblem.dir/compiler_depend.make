@@ -3334,7 +3334,14 @@ CMakeFiles/ParallelMachineProblem.dir/src/Parallel-machine.cc.o: ../src/Parallel
   /usr/include/c++/11/bits/quoted_string.h \
   /usr/include/c++/11/codecvt \
   /usr/include/c++/11/bits/fs_dir.h \
-  /usr/include/c++/11/bits/fs_ops.h
+  /usr/include/c++/11/bits/fs_ops.h \
+  /usr/include/c++/11/queue \
+  /usr/include/c++/11/deque \
+  /usr/include/c++/11/bits/stl_deque.h \
+  /usr/include/c++/11/bits/deque.tcc \
+  /usr/include/c++/11/bits/stl_queue.h \
+  /usr/include/c++/11/condition_variable \
+  /usr/include/c++/11/atomic
 
 CMakeFiles/ParallelMachineProblem.dir/src/Problem.cc.o: ../src/Problem.cc \
   /usr/include/stdc-predef.h \
@@ -3826,6 +3833,12 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
 
 ../src/Problem.cc:
 
+/usr/include/c++/11/atomic:
+
+/usr/include/c++/11/bits/deque.tcc:
+
+/usr/include/c++/11/deque:
+
 ../Includes/Util.h:
 
 ../src/Instances/InstanceData.cc:
@@ -3919,6 +3932,8 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
 /usr/include/c++/11/fstream:
 
 /usr/include/x86_64-linux-gnu/bits/endian.h:
+
+/usr/include/c++/11/bits/stl_deque.h:
 
 /usr/include/x86_64-linux-gnu/gnu/stubs.h:
 
@@ -4182,6 +4197,8 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
 
 /usr/include/c++/11/bits/stl_tempbuf.h:
 
+/usr/include/c++/11/bits/stl_queue.h:
+
 /usr/include/x86_64-linux-gnu/bits/stdint-uintn.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_timespec.h:
@@ -4398,6 +4415,8 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
 
 /usr/include/c++/11/bits/refwrap.h:
 
+/usr/include/c++/11/queue:
+
 /usr/include/c++/11/bits/shared_ptr_atomic.h:
 
 /usr/include/c++/11/bits/parse_numbers.h:
@@ -4407,6 +4426,8 @@ CMakeFiles/ParallelMachineProblem.dir/src/Solution.cc.o: ../src/Solution.cc \
 /usr/include/c++/11/bits/stl_iterator_base_funcs.h:
 
 /usr/include/c++/11/bits/std_thread.h:
+
+/usr/include/c++/11/condition_variable:
 
 ../Includes/Problem.h:
 

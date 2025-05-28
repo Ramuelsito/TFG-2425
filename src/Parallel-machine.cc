@@ -20,6 +20,9 @@
 #include <filesystem>
 #include <thread>
 #include <mutex>
+#include <queue>
+#include <condition_variable>
+#include <atomic>
 
 int main(int argc, char* argv[]) {
   const std::string path = "../Instances/";
@@ -31,53 +34,49 @@ int main(int argc, char* argv[]) {
     Usage();
     return 0;
   }
-  thread_local Problem* thread_local_problem = nullptr;
   if (std::string(argv[1]) == "-threads") {
     const unsigned int max_threads = std::thread::hardware_concurrency();
-    
-    std::vector<std::thread> threads; // Vector para almacenar los hilos
-    std::mutex output_mutex;
-    std::mutex file_mutex;
+    std::mutex output_mutex, file_mutex, queue_mutex;
+    std::condition_variable cv;
+    std::queue<std::filesystem::directory_entry> task_queue;
+    std::atomic<bool> done{false};
+
+    // Rellenar la cola de tareas
     for (const auto& entry : std::filesystem::directory_iterator(path)) {
-      threads.emplace_back([&, entry = entry]() {
+      task_queue.push(entry);
+    }
+
+    auto worker = [&]() {
+      while (true) {
+        std::filesystem::directory_entry entry;
+        {
+          std::unique_lock<std::mutex> lock(queue_mutex);
+          cv.wait(lock, [&]{ return !task_queue.empty() || done; });
+          if (task_queue.empty()) return;
+          entry = task_queue.front();
+          task_queue.pop();
+        }
         try {
           {
             std::lock_guard<std::mutex> lock(output_mutex);
             std::cout << "Processing instance: " << entry.path().filename() << std::endl;
           }
-
-          // Inicializar Problem específico para este hilo
-          thread_local_problem = &Problem::getInstance(entry.path().string());
-          if (!thread_local_problem) {
-            throw std::runtime_error("Failed to initialize Problem instance");
-          }
-          int number_of_tasks = thread_local_problem->getTasksTimes().size();
+          Problem& problem = Problem::getInstance(entry.path().string());
+          int number_of_tasks = problem.getTasksTimes().size();
           MultiGVNS multigvns(number_of_tasks);
-          
-          std::chrono::seconds performance_time;
+
           auto start = std::chrono::steady_clock::now();
           Solution solution = multigvns.Solve();
           auto end = std::chrono::steady_clock::now();
-          double update_percentage;
-          update_percentage = multigvns.GetUpdatePercentage();
-          performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+          double update_percentage = multigvns.GetUpdatePercentage();
+          std::chrono::seconds performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
 
           std::string instance = entry.path().filename();
           solution.PrintStudiedSolution(instance, "GVNS", performance_time.count(), Problem::getInstance().getTasksTimes().size());
           std::unique_ptr<SolutionDataTable> solution_table = std::make_unique<SolutionDataTable>(multigvns.GetSolutionDataTable());
-          // {
-          //   std::lock_guard<std::mutex> lock(output_mutex);
-          //   solution_table->PrintTable();
-          // }
           std::unique_ptr<NeighborhoodData> neighborhood_data = std::make_unique<NeighborhoodData>(multigvns.GetNeighborhoodData());
           InstanceData data;
           std::unique_ptr<InstanceData> instance_data = std::make_unique<InstanceData>(data);
-
-          // std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
-          // std::cout << "Neighborhood data: " << std::endl;
-          // std::cout << multigvns.GetNeighborhoodData() << std::endl;
-          // std::cout << "Solution data table: " << std::endl;
-          // std::cout << data << std::endl;
 
           StudiedSolution studied_solution(instance, std::move(solution_table), std::move(neighborhood_data), std::move(instance_data));
           {
@@ -85,18 +84,26 @@ int main(int argc, char* argv[]) {
             studied_solution.WriteCSVFile("../Results/sourceData.csv");
           }
         } catch (const std::exception& e) {
-          // Manejar errores en el hilo
           std::lock_guard<std::mutex> lock(output_mutex);
           std::cerr << "Error processing instance " << entry.path().filename() << ": " << e.what() << std::endl;
         }
-      });
+      }
+    };
+
+    // Lanzar el pool de hilos
+    std::vector<std::thread> thread_pool;
+    for (unsigned int i = 0; i < max_threads; ++i) {
+      thread_pool.emplace_back(worker);
     }
 
-    // Esperar a que todos los hilos terminen
-    for (auto& thread : threads) {
-      if (thread.joinable()) {
-        thread.join();
-      }
+    {
+      std::unique_lock<std::mutex> lock(queue_mutex);
+      done = true;
+    }
+    cv.notify_all();
+
+    for (auto& t : thread_pool) {
+      if (t.joinable()) t.join();
     }
   } else if (std::string(argv[1]) == "-all") {
     for (const auto& entry : std::filesystem::directory_iterator(path)) {
@@ -135,7 +142,7 @@ int main(int argc, char* argv[]) {
     int setup_id = 1;
     std::string tasks_distribution = "uniform";
     std::vector<std::string> setup_distribution = {"uniform", "clustered"};
-    std::vector<int> machine_options = {2, 4, 6};
+    std::vector<int> machine_options = {2, 4, 6, 8};
     std::vector<int> tasks_options = {40, 50, 60, 70, 80}; 
     std::vector<std::pair<int, int>> task_ranges = { {1, 49}, {50, 99}, {1, 99} };
 

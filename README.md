@@ -10,7 +10,7 @@
 - Forma de igualdad, con distancias
 
 - 2 rangos de valores para las tareas, 2 variantes de generacion, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
-- Proporcion de las maquinas
+- Proporcion de las maquinas, post procesado, se puede sacar con las columnas que ya existen. 
 
 - Luego, Sacar la información propia de varias instancias, generando asi un benchmark
 - Segmentation fault, es probablemente en el shaking, deberia de poner condiciones o algo para debuguear
