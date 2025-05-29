@@ -209,8 +209,8 @@ Solution MultiGVNS::LocalSearchByRandomVND(const Solution& initial_solution, int
       }
     }
     if (previous_solution.GetTCT() < local_optimum.GetTCT()) { // Si mejora
-      neighborhood_data_.UpdateTimesImproved(movement);
       neighborhood_data_.UpdateTimesUsed(movement);
+      neighborhood_data_.UpdateTimesImproved(movement);
       // if (previous_movement != -1) { neighborhood_data_.UpdateTimesUsedConditioned(previous_movement, movement); }
       // if (previous_movement != -1) { neighborhood_data_.UpdateTimesImprovedConditioned(previous_movement, movement); }
       neighborhood_data_.UpdateTimesUsedConditioned(previous_movement + 1, movement);
