@@ -22,3 +22,26 @@
 
 El uso de punteros inteligentes se debe a que estamos usando punteros de forma dinámica, por lo que este tipo de punteros se gestionan solos y nos permiten tener mayor flexibilidad.
 - Al tener distintas instancias de distintas caracteristicas obtenemos distintos espacios de soluciones que nos ayuda a caracterizar mejor el problema y poder predecir algunos aspectos en relacion a lo estudiado.
+
+# Interesante
+
+- Predicción de si una instancia es fácil o difícil
+  - 🎯 Qué: ¿Esta instancia es de alta complejidad o no?
+
+  - ✅ Cómo: Clasificación binaria (difícil/fácil) o regresión sobre nº de óptimos, tiempo de cómputo, TCT.
+
+  - 🧠 Uso: Ajustar parámetros metaheurísticos, por ejemplo: Tiempos de ejecución, Número de iteraciones o Diversificación
+
+- Clusterización de instancias por comportamiento heurístico
+  - 🎯 Qué: Agrupar instancias que responden de manera similar a movimientos.
+
+  - ✅ Cómo: Unsupervised learning (KMeans, DBSCAN, etc.)
+
+  - 🧠 Uso: Selección de estrategias por grupo, tipo de instancia.
+
+- Predicción de la efectividad de una estrategia compuesta
+  - 🎯 Qué: ¿Será efectiva una combinación específica de movimientos?
+
+  - ✅ Cómo: Clasificación binaria (efectiva/no), usando features + secuencia.
+  
+  - 🧠 Uso: Construcción automática de estrategias híbridas (portafolios).
