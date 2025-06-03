@@ -33,15 +33,10 @@ Solution MultiGVNS::Solve() {
       int k = 1;
       previous_best_solution = std::make_unique<Solution>(best_solution_);
       while (k <= 6) {
-        std::cout << "GAY? " << std::endl;
         std::unique_ptr<Solution> shaked_solution = std::make_unique<Solution>(Shaking(*current_solution, k));
-        std::cout << "Lo suponia" << std::endl;
         std::unique_ptr<Solution> local_search_solution = std::make_unique<Solution>(LocalSearchByRandomVND(*shaked_solution, size_of_walk));
         if (local_search_solution->GetTCT() < current_solution->GetTCT()) {
           current_solution = std::move(local_search_solution);
-          if (!current_solution) {
-            throw std::runtime_error("current_solution is not initialized");
-          }
           k = 1;
         } else {
           ++k;

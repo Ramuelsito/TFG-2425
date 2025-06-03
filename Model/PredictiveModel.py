@@ -133,7 +133,11 @@ def main():
     df_clean, df_original = preprocess_data(file_path)
 
     # Separar features y labels
-    features = df_clean.drop(columns=["Order_0", "Order_1", "Order_2", "Order_3"])
+    allowed_features = [
+        "n", "m", "Proportion n/m", "Min Time", "Max Time",
+        "Range", "Mean", "Median", "Variance", "Standard Deviation"
+    ]
+    features = df_clean[allowed_features].values
     y_order = df_clean[["Order_0", "Order_1", "Order_2", "Order_3"]].values
 
     # 1. Predecir el orden óptimo

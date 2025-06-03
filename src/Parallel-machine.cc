@@ -106,38 +106,41 @@ int main(int argc, char* argv[]) {
       if (t.joinable()) t.join();
     }
   } else if (std::string(argv[1]) == "-all") {
-    for (const auto& entry : std::filesystem::directory_iterator(path)) {
-      std::cout << entry.path().string() << std::endl;
-      Problem& problem = Problem::getInstance(entry.path().string());
-      int number_of_tasks = problem.getTasksTimes().size();
-      std::string instance = entry.path().filename();
-      instance = instance.substr(0, instance.find_last_of('.'));
-      std::cout << instance << "  " << number_of_tasks << std::endl;
-      MultiGVNS multigvns(number_of_tasks);
-      auto start = std::chrono::steady_clock::now();
-      Solution solution = multigvns.Solve();
-      auto end = std::chrono::steady_clock::now();
-      std::string algorithm_name;
-      std::chrono::seconds performance_time;
-      double update_percentage;
-      update_percentage = multigvns.GetUpdatePercentage();
-      performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
-      solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
-      std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
-      std::cout << "Neighborhood data: " << std::endl;
-      std::cout << multigvns.GetNeighborhoodData() << std::endl;
-      std::cout << "Solution data table: " << std::endl;
-      std::unique_ptr<SolutionDataTable> solution_table = std::make_unique<SolutionDataTable>(multigvns.GetSolutionDataTable());
-      solution_table->PrintTable();
-      std::unique_ptr<NeighborhoodData> neighborhood_data = std::make_unique<NeighborhoodData>(multigvns.GetNeighborhoodData());
-      InstanceData data;
-      std::cout << data << std::endl;
-      std::unique_ptr<InstanceData> instance_data = std::make_unique<InstanceData>(data);
-      StudiedSolution studied_solution(instance, std::move(solution_table), std::move(neighborhood_data), std::move(instance_data));
-      // studied_solution.WriteHeader("../Results/sourceData.csv");
-      studied_solution.WriteCSVFile("../Results/sourceData.csv");
-    }  
-  }else if (std::string(argv[1]) == "-gen") {
+    for (int i = 0; i <  5; ++i) {            // Se ejecutan todas las instancias de la carpeta Instance 5 veces
+      std::cout << "Iteration: " << i + 1 << std::endl;
+      for (const auto& entry : std::filesystem::directory_iterator(path)) {
+        std::cout << entry.path().string() << std::endl;
+        Problem& problem = Problem::getInstance(entry.path().string());
+        int number_of_tasks = problem.getTasksTimes().size();
+        std::string instance = entry.path().filename();
+        instance = instance.substr(0, instance.find_last_of('.'));
+        std::cout << instance << "  " << number_of_tasks << std::endl;
+        MultiGVNS multigvns(number_of_tasks);
+        auto start = std::chrono::steady_clock::now();
+        Solution solution = multigvns.Solve();
+        auto end = std::chrono::steady_clock::now();
+        std::string algorithm_name;
+        std::chrono::seconds performance_time;
+        double update_percentage;
+        update_percentage = multigvns.GetUpdatePercentage();
+        performance_time = std::chrono::duration_cast<std::chrono::seconds>(end - start);
+        solution.PrintStudiedSolution(instance, algorithm_name, performance_time.count(), Problem::getInstance().getTasksTimes().size());
+        std::cout << solution << std::endl << "Performance time: " << performance_time.count() << " seconds" << std::endl << "Update percentage: " << update_percentage << "%" << std::endl;
+        std::cout << "Neighborhood data: " << std::endl;
+        std::cout << multigvns.GetNeighborhoodData() << std::endl;
+        std::cout << "Solution data table: " << std::endl;
+        std::unique_ptr<SolutionDataTable> solution_table = std::make_unique<SolutionDataTable>(multigvns.GetSolutionDataTable());
+        solution_table->PrintTable();
+        std::unique_ptr<NeighborhoodData> neighborhood_data = std::make_unique<NeighborhoodData>(multigvns.GetNeighborhoodData());
+        InstanceData data;
+        std::cout << data << std::endl;
+        std::unique_ptr<InstanceData> instance_data = std::make_unique<InstanceData>(data);
+        StudiedSolution studied_solution(instance, std::move(solution_table), std::move(neighborhood_data), std::move(instance_data));
+        // studied_solution.WriteHeader("../Results/sourceData.csv");
+        studied_solution.WriteCSVFile("../Results/sourceData.csv");
+      }  
+    }
+  } else if (std::string(argv[1]) == "-gen") {
     const int kNumInstances = 5;
     int setup_id = 1;
     std::string tasks_distribution = "uniform";

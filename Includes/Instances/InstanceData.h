@@ -33,6 +33,9 @@ class InstanceData {
   void WriteToStream(std::ostream& filename) const;
  private:
   Matrix compiled_times_;
+  int number_of_tasks_;
+  int number_of_machines_;
+  int tasks_machines_proportion_;
   int min_time_;
   int max_time_;
   int range_;

@@ -37,6 +37,9 @@ InstanceData::InstanceData() {
       if (compiled_times_(i, j) < min_time && compiled_times_(i, j) != 0) { min_time = compiled_times_(i, j); }
     }
   }
+  number_of_tasks_ = problem.getTasksTimes().size();
+  number_of_machines_ = problem.getMachines().size();
+  tasks_machines_proportion_ = number_of_tasks / number_of_machines_;
   min_time_ = min_time;
   max_time_ = max_time;
   range_ = max_time - min_time;
@@ -47,7 +50,10 @@ InstanceData::InstanceData() {
 }
 
 void InstanceData::WriteToStream(std::ostream& os) const {
-  os << min_time_ << "," 
+  os << number_of_tasks_ << ","
+     << number_of_machines_ << ","
+     << tasks_machines_proportion_ << ","
+     << min_time_ << "," 
      << max_time_ << "," 
      << range_ << "," 
      << mean_ << "," 
