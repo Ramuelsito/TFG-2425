@@ -35,30 +35,29 @@ int main(int argc, char* argv[]) {
     return 0;
   }
   if (std::string(argv[1]) == "-threads") {
-    for (int i = 0; i <  5; ++i) {            // Se ejecutan todas las instancias de la carpeta Instances 5 veces
-      std::cout << "Iteration: " << i + 1 << std::endl;
-      const unsigned int max_threads = std::thread::hardware_concurrency();
-      std::mutex output_mutex, file_mutex, queue_mutex;
-      std::condition_variable cv;
-      std::queue<std::filesystem::directory_entry> task_queue;
-      std::atomic<bool> done{false};
-  
-      // Rellenar la cola de tareas
-      for (const auto& entry : std::filesystem::directory_iterator(path)) {
-        task_queue.push(entry);
-      }
-  
-      auto worker = [&]() {
-        while (true) {
-          std::filesystem::directory_entry entry;
-          {
-            std::unique_lock<std::mutex> lock(queue_mutex);
-            cv.wait(lock, [&]{ return !task_queue.empty() || done; });
-            if (task_queue.empty()) return;
-            entry = task_queue.front();
-            task_queue.pop();
-          }
-          try {
+    const unsigned int max_threads = std::thread::hardware_concurrency();
+    std::mutex output_mutex, file_mutex, queue_mutex;
+    std::condition_variable cv;
+    std::queue<std::filesystem::directory_entry> task_queue;
+    std::atomic<bool> done{false};
+
+    // Rellenar la cola de tareas
+    for (const auto& entry : std::filesystem::directory_iterator(path)) {
+      task_queue.push(entry);
+    }
+
+    auto worker = [&]() {
+      while (true) {
+        std::filesystem::directory_entry entry;
+        {
+          std::unique_lock<std::mutex> lock(queue_mutex);
+          cv.wait(lock, [&]{ return !task_queue.empty() || done; });
+          if (task_queue.empty()) return;
+          entry = task_queue.front();
+          task_queue.pop();
+        }
+        try {
+          for (int run = 0; run < 5; ++run) { // Solucionar 5 veces por instancia
             {
               std::lock_guard<std::mutex> lock(output_mutex);
               std::cout << "Processing instance: " << entry.path().filename() << std::endl;
@@ -85,28 +84,28 @@ int main(int argc, char* argv[]) {
               std::lock_guard<std::mutex> lock(file_mutex);
               studied_solution.WriteCSVFile("../Results/sourceData.csv");
             }
-          } catch (const std::exception& e) {
-            std::lock_guard<std::mutex> lock(output_mutex);
-            std::cerr << "Error processing instance " << entry.path().filename() << ": " << e.what() << std::endl;
           }
+        } catch (const std::exception& e) {
+          std::lock_guard<std::mutex> lock(output_mutex);
+          std::cerr << "Error processing instance " << entry.path().filename() << ": " << e.what() << std::endl;
         }
-      };
-  
-      // Lanzar el pool de hilos
-      std::vector<std::thread> thread_pool;
-      for (unsigned int i = 0; i < max_threads; ++i) {
-        thread_pool.emplace_back(worker);
       }
-  
-      {
-        std::unique_lock<std::mutex> lock(queue_mutex);
-        done = true;
-      }
-      cv.notify_all();
-  
-      for (auto& t : thread_pool) {
-        if (t.joinable()) t.join();
-      }
+    };
+
+    // Lanzar el pool de hilos
+    std::vector<std::thread> thread_pool;
+    for (unsigned int i = 0; i < max_threads; ++i) {
+      thread_pool.emplace_back(worker);
+    }
+
+    {
+      std::unique_lock<std::mutex> lock(queue_mutex);
+      done = true;
+    }
+    cv.notify_all();
+
+    for (auto& t : thread_pool) {
+      if (t.joinable()) t.join();
     }
   } else if (std::string(argv[1]) == "-all") {
     for (const auto& entry : std::filesystem::directory_iterator(path)) {
