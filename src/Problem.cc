@@ -73,10 +73,12 @@ void Problem::initialize(const std::string& file_name) {
       break;
     }
 
-    case 'S':
-      while (auxiliar_char != ']') {
-        file >> auxiliar_char;
-      }
+    case 'S': {
+      // while (auxiliar_char != ']') {
+      //   file >> auxiliar_char;
+      // }
+      std::string dummy;
+      std::getline(file, dummy); // Salta el resto de la línea
       setup_times_.resize(tasks + 1, std::vector<int>(tasks + 1));
       for (std::vector<int>& row : setup_times_) {
         for (int& time : row) {
@@ -84,6 +86,7 @@ void Problem::initialize(const std::string& file_name) {
         }
       }
       break;
+    }
 
     default:
       std::cout << auxiliar_char << std::endl;

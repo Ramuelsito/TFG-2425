@@ -35,7 +35,7 @@ int main(int argc, char* argv[]) {
     return 0;
   }
   if (std::string(argv[1]) == "-threads") {
-    for (int i = 0; i <  5; ++i) {            // Se ejecutan todas las instancias de la carpeta Instance 5 veces
+    for (int i = 0; i <  5; ++i) {            // Se ejecutan todas las instancias de la carpeta Instances 5 veces
       std::cout << "Iteration: " << i + 1 << std::endl;
       const unsigned int max_threads = std::thread::hardware_concurrency();
       std::mutex output_mutex, file_mutex, queue_mutex;
@@ -146,8 +146,8 @@ int main(int argc, char* argv[]) {
     std::string tasks_distribution = "uniform";
     std::vector<std::string> setup_distribution = {"uniform", "clustered"};
     std::vector<int> machine_options = {2, 4, 6, 8};
-    std::vector<int> tasks_options = {40, 50, 60, 70, 80}; 
-    std::vector<std::pair<int, int>> task_ranges = { {1, 49}, {50, 99}, {1, 99} };
+    std::vector<int> tasks_options = {40, 50, 70, 80}; 
+    std::vector<std::pair<int, int>> task_ranges = { {1, 49}, {1, 99}, {1, 124} };
 
     // 2 rangos de valores para las tareas, 2 variantes de generacion, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
     for (int i = 0; i < kNumInstances; i++) { // 5 instancias

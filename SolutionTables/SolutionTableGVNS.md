@@ -135,4 +135,5 @@
 | I50j_2m_S1_1.txt | 2 | 50 | 24553 | 160 |
 
 
-## Tabla de resultados, ejecución final
+## Tabla de resultados, ejecución final| I40j_2m_S3_5 | 2 | 40 | 18483 | 46 |
+| I70j_2m_S1_1 | 2 | 70 | 41547 | 260 |
