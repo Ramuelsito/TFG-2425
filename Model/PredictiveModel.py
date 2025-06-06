@@ -141,9 +141,11 @@ def main():
     y_order = df_clean[["Order_0", "Order_1", "Order_2", "Order_3"]].values
 
     # 1. Predecir el orden óptimo
+    print(df_clean.head())
     model_order = train_order_prediction(features, y_order)
 
     # # 2. Clusterizar instancias por comportamiento heurístico
+    # columna que represente el grupo
     # kmeans = cluster_instances(features, df_original)
 
     # # 3. Predecir efectividad de una estrategia
