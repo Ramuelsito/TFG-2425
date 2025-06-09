@@ -3,11 +3,15 @@ import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.multioutput import MultiOutputClassifier
+from mpl_toolkits.mplot3d import Axes3D  
+from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
 import seaborn as sns
+from collections import Counter
+import joblib
 
 # --- 0.5 Funciones auxiliares para procesar los datos ---
 
@@ -99,9 +103,62 @@ def preprocess_data(file_path):
     # print(df)
     return df_clean, df
 
+
+# --- 2. Clusterización de instancias por comportamiento heurístico ---
+
+def elbow_method(features, max_k=10):
+    scaler = StandardScaler()
+    features_scaled = scaler.fit_transform(features)
+    inertias = []
+    for k in range(1, max_k + 1):
+        kmeans = KMeans(n_clusters=k, random_state=42)
+        kmeans.fit(features_scaled)
+        inertias.append(kmeans.inertia_)
+    plt.figure(figsize=(8, 4))
+    plt.plot(range(1, max_k + 1), inertias, marker='o')
+    plt.xlabel('Número de clusters')
+    plt.ylabel('Inercia')
+    plt.title('Método del codo para elegir K')
+    plt.savefig("elbow_method.png")
+    plt.close()
+
+def cluster_instances(features, df_original, n_clusters=5):
+    # Escalar las características
+    scaler = StandardScaler()
+    features_scaled = scaler.fit_transform(features)
+
+    # Aplicar KMeans para clusterizar
+    kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+    clusters = kmeans.fit_predict(features_scaled)
+
+    # Añadir los clusters al DataFrame original
+    df_original['Cluster'] = clusters
+
+    # Visualizar los clusters en 3D con PCA
+    pca = PCA(n_components=3)
+    features_pca = pca.fit_transform(features)
+    fig = plt.figure(figsize=(10, 7))
+    ax = fig.add_subplot(111, projection='3d')
+    scatter = ax.scatter(features_pca[:, 0], features_pca[:, 1], features_pca[:, 2],
+                         c=clusters, cmap='viridis', s=60)
+    ax.set_title('Clusters visualizados con PCA (3D)')
+    ax.set_xlabel('Componente principal 1')
+    ax.set_ylabel('Componente principal 2')
+    ax.set_zlabel('Componente principal 3')
+    legend1 = ax.legend(*scatter.legend_elements(), title="Cluster")
+    ax.add_artist(legend1)
+    plt.savefig("clusters_visualization_3d.png")
+    plt.close()
+
+    print("\nNúmero de entradas por cluster:")
+    print(df_original['Cluster'].value_counts())
+    
+    return kmeans
+
+# --- 3. Predicción del orden óptimo de movimientos ---
 def train_order_prediction(features, y_order):
     # Dividir los datos en conjuntos de entrenamiento y prueba
-    X_train, X_test, y_train, y_test = train_test_split(features, y_order, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(features, y_order, test_size=0.25, random_state=42)
 
     # Escalar las características
     scaler = StandardScaler()
@@ -122,7 +179,11 @@ def train_order_prediction(features, y_order):
 
     exact_match = np.all(y_test == y_pred, axis=1).mean()
     print(f"Exact match accuracy (todas las posiciones bien): {exact_match:.2f}")
-    return model
+
+    # Guarda el modelo y el scaler
+    joblib.dump(model, "model_order.pkl")
+    joblib.dump(scaler, "scaler_order.pkl")
+    return model, scaler
 
 
 
@@ -140,14 +201,45 @@ def main():
     features = df_clean[allowed_features].values
     y_order = df_clean[["Order_0", "Order_1", "Order_2", "Order_3"]].values
 
+    # Mostrar todos los órdenes diferentes en el dataset
+    unique_orders = np.unique(y_order, axis=0)
+    print("Órdenes diferentes en el dataset:")
+    for order in unique_orders:
+        print(order)
+
+
+    # --- BALANCEO DE DATOS ---
+    majority_mask = np.all(y_order == [3, 1, 0, 2], axis=1)
+    minority_mask = ~majority_mask
+
+    n_minority = np.sum(minority_mask)
+    majority_indices = np.where(majority_mask)[0]
+    minority_indices = np.where(minority_mask)[0]
+
+    np.random.seed(42)
+    selected_majority = np.random.choice(majority_indices, size=n_minority, replace=False)
+    balanced_indices = np.concatenate([selected_majority, minority_indices])
+
+    # Reordena los datos balanceados
+    features_balanced = features[balanced_indices]
+    y_order_balanced = y_order[balanced_indices]
+    
+    print("Tamaño del dataset balanceado:", len(features_balanced))
+    print("Nº instancias orden mayoritario en balanceado:", np.sum(np.all(y_order_balanced == [3, 1, 0, 2], axis=1)))
+    print("Nº instancias minoritarias en balanceado:", np.sum(np.any(y_order_balanced != [3, 1, 0, 2], axis=1)))
+
     # 1. Predecir el orden óptimo
     print(df_clean.head())
-    model_order = train_order_prediction(features, y_order)
+    model_order, scaler = train_order_prediction(features_balanced, y_order_balanced)
 
     # # 2. Clusterizar instancias por comportamiento heurístico
-    # columna que represente el grupo
-    # kmeans = cluster_instances(features, df_original)
-
+    elbow_method(features_balanced, max_k=10)
+    kmeans = cluster_instances(features, df_original, 2)
+    print("Cluster 0:\n", df_original[df_original['Cluster'] == 0].head())
+    print("Cluster 1:\n", df_original[df_original['Cluster'] == 1].head())
+    # imprime una entrada cuyo orden es [3, 1, 2, 0]
+    print("Ejemplo de entrada con orden [3, 1, 2, 0]:")
+    print(df_original[np.all(y_order == [3, 1, 2, 0], axis=1)].head(1))
     # # 3. Predecir efectividad de una estrategia
     # strategy_model = train_strategy_effectiveness(features, df_original)
 
