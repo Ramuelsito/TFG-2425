@@ -194,6 +194,7 @@ def main():
     df_clean, df_original = preprocess_data(file_path)
 
     # Separar features y labels
+    # Tengo que comprobar que las columnas no tienen correlación entre ellas
     allowed_features = [
         "n", "m", "Proportion n/m", "Min Time", "Max Time",
         "Range", "Mean", "Median", "Variance", "Standard Deviation"
@@ -237,7 +238,7 @@ def main():
     kmeans = cluster_instances(features, df_original, 2)
     print("Cluster 0:\n", df_original[df_original['Cluster'] == 0].head())
     print("Cluster 1:\n", df_original[df_original['Cluster'] == 1].head())
-    # imprime una entrada cuyo orden es [3, 1, 2, 0]
+
     print("Ejemplo de entrada con orden [3, 1, 2, 0]:")
     print(df_original[np.all(y_order == [3, 1, 2, 0], axis=1)].head(1))
     # # 3. Predecir efectividad de una estrategia

@@ -11,8 +11,7 @@
 
 - 2 rangos de valores para las tareas, 2 variantes de generacion, 5 instancias de cada combinación. 4 combinaciones de tarea, 4 combinaciones de máquina.
 
-- Luego, Sacar la información propia de varias instancias, generando asi un benchmark
-- Segmentation fault, es probablemente en el shaking, deberia de poner condiciones o algo para debuguear
+- Generar uno o dos dataframes con la información que almacenamos de los optimos locales y los movimientos que se han realizado, para poder analizar la efectividad de los movimientos y las soluciones obtenidas.
 
 # Done But Not Commented
 - Al comparar las soluciones, no son exactamente iguales pero tienen mismo TCT, comentarlo. Lo que se puede hacer es comprobar si la distancia es mayor a un limite, y si tienen menos de cierta distancia y mismo TCT son iguales.
