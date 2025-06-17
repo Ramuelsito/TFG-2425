@@ -152,7 +152,6 @@ def cluster_instances(features, df_original, n_clusters=5):
 
     print("\nNúmero de entradas por cluster:")
     print(df_original['Cluster'].value_counts())
-    
     return kmeans
 
 # --- 3. Predicción del orden óptimo de movimientos ---
@@ -194,12 +193,38 @@ def main():
     df_clean, df_original = preprocess_data(file_path)
 
     # Separar features y labels
-    # Tengo que comprobar que las columnas no tienen correlación entre ellas
+    # Verificar que las columnas se están seleccionando bien
     allowed_features = [
         "n", "m", "Proportion n/m", "Min Time", "Max Time",
         "Range", "Mean", "Median", "Variance", "Standard Deviation"
     ]
+    print("Columnas seleccionadas como features:")
+    print(df_clean[allowed_features].head())
+
+    # Calcular y mostrar la matriz de correlación
+    corr_matrix = df_clean[allowed_features].corr()
+    print("\nMatriz de correlación entre features:")
+    print(corr_matrix)
+
+    # Visualizar la matriz de correlación con un heatmap
+    import matplotlib.pyplot as plt
+    import seaborn as sns
+    plt.figure(figsize=(10, 8))
+    sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
+    plt.title("Matriz de correlación entre features")
+    plt.tight_layout()
+    plt.savefig("correlation_matrix.png")
+    plt.close()
+
+    allowed_features = [
+    "n", "m", "Proportion n/m", "Min Time", "Standard Deviation"
+    ]
+    cluster_features = [
+        "n", "m", "Proportion n/m", "Min Time", "Max Time",
+        "Range", "Mean", "Median", "Variance", "Standard Deviation"
+    ]
     features = df_clean[allowed_features].values
+    cluster_features_values = df_clean[cluster_features].values
     y_order = df_clean[["Order_0", "Order_1", "Order_2", "Order_3"]].values
 
     # Mostrar todos los órdenes diferentes en el dataset
@@ -209,7 +234,7 @@ def main():
         print(order)
 
 
-    # --- BALANCEO DE DATOS ---
+# -------------------------- BALANCEO DE DATOS --------------------------
     majority_mask = np.all(y_order == [3, 1, 0, 2], axis=1)
     minority_mask = ~majority_mask
 
@@ -223,19 +248,20 @@ def main():
 
     # Reordena los datos balanceados
     features_balanced = features[balanced_indices]
+    cluster_features_balanced = cluster_features_values[balanced_indices]
     y_order_balanced = y_order[balanced_indices]
     
     print("Tamaño del dataset balanceado:", len(features_balanced))
     print("Nº instancias orden mayoritario en balanceado:", np.sum(np.all(y_order_balanced == [3, 1, 0, 2], axis=1)))
     print("Nº instancias minoritarias en balanceado:", np.sum(np.any(y_order_balanced != [3, 1, 0, 2], axis=1)))
 
-    # 1. Predecir el orden óptimo
+# -------------------------- Predecir el orden óptimo --------------------------
     print(df_clean.head())
     model_order, scaler = train_order_prediction(features_balanced, y_order_balanced)
 
-    # # 2. Clusterizar instancias por comportamiento heurístico
-    elbow_method(features_balanced, max_k=10)
-    kmeans = cluster_instances(features, df_original, 2)
+# -------------------------- Clusterizar instancias por comportamiento heurístico --------------------------
+    elbow_method(cluster_features_balanced, max_k=10)
+    kmeans = cluster_instances(cluster_features_values, df_original, 2)
     print("Cluster 0:\n", df_original[df_original['Cluster'] == 0].head())
     print("Cluster 1:\n", df_original[df_original['Cluster'] == 1].head())
 
