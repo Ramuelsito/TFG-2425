@@ -1,4 +1,4 @@
-# Install script for directory: /home/usuario/TFG-2425
+# Install script for directory: /home/raul/Practicas/TFG-2425
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -50,5 +50,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/usuario/TFG-2425/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/raul/Practicas/TFG-2425/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

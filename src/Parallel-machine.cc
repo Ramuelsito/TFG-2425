@@ -165,7 +165,6 @@ int main(int argc, char* argv[]) {
       }
     }
   } else {
-    // int algorithmOption = AlgorithmMenu();
     std::string instance = argv[1];
     Problem& problem = Problem::getInstance("../Instances/" + instance + ".txt");
     int number_of_tasks = problem.getTasksTimes().size();
