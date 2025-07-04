@@ -10,7 +10,6 @@ from sklearn.cluster import KMeans
 from sklearn.metrics import accuracy_score, classification_report
 import matplotlib.pyplot as plt
 import seaborn as sns
-from collections import Counter
 import joblib
 
 # --- 0.5 Funciones auxiliares para procesar los datos ---
@@ -81,7 +80,6 @@ def preprocess_data(file_path):
         calculate_success_rate_matrix(u, i)
         for u, i in zip(times_used_conditioned, times_improved_conditioned)
     ]
-    
     # Aplica el algoritmo greedy para encontrar el mejor orden
     df['Best Order'] = df['Success Rate Matrix'].apply(greedy_best_order)
 
@@ -93,20 +91,23 @@ def preprocess_data(file_path):
         df[f"Order_{i}"] = df["Best Order"].apply(lambda x: x[i])
     
     df_clean = df.drop(columns=['Instance Name', 'Times Used', 'Times Improved', 'Times Used Conditioned', 'Times Improved Conditioned', 'Success Rate Matrix', 'Best Order'])
-    # # Ejemplo: mostrar la primera fila de cada estructura reconstruida
-    # print("Times Used Vec: \n", times_used_vector)
-    # print("Times Improved Vec: \n", times_improved_vector)
-    # print("Times Used Conditioned Mat:\n", times_used_conditioned[0])
-    # print("Times Improved Conditioned Mat:\n", times_improved_conditioned)
-    # # print("Success Rate:\n", df['Success Rate Matrix'].head())
-    # # print("Best Order (primera fila):", df['Best Order'].head())
-    # print(df)
     return df_clean, df
 
 
 # --- 2. Clusterización de instancias por comportamiento heurístico ---
 
-def elbow_method(features, max_k=10):
+def mahalanobis_whitening(X):
+    scaler = StandardScaler()
+    X_scaled = scaler.fit_transform(X)
+    cov = np.cov(X_scaled, rowvar=False)
+    inv_cov = np.linalg.inv(cov)
+    L = np.linalg.cholesky(inv_cov)
+    X_maha = X_scaled @ L
+    return X_maha
+
+def elbow_method(features, max_k=10, use_mahalanobis=False):
+    if use_mahalanobis:
+        features = mahalanobis_whitening(features)
     scaler = StandardScaler()
     features_scaled = scaler.fit_transform(features)
     inertias = []
@@ -122,7 +123,10 @@ def elbow_method(features, max_k=10):
     plt.savefig("elbow_method.png")
     plt.close()
 
-def cluster_instances(features, df_original, n_clusters=5):
+def cluster_instances(features, df_original, n_clusters=5, use_mahalanobis=False):
+    # Mahalanobis whitening si se solicita
+    if use_mahalanobis:
+        features = mahalanobis_whitening(features)
     # Escalar las características
     scaler = StandardScaler()
     features_scaled = scaler.fit_transform(features)
@@ -130,25 +134,43 @@ def cluster_instances(features, df_original, n_clusters=5):
     # Aplicar KMeans para clusterizar
     kmeans = KMeans(n_clusters=n_clusters, random_state=42)
     clusters = kmeans.fit_predict(features_scaled)
-
-    # Añadir los clusters al DataFrame original
     df_original['Cluster'] = clusters
 
-    # Visualizar los clusters en 3D con PCA
-    pca = PCA(n_components=3)
-    features_pca = pca.fit_transform(features)
+    # PCA para visualización
+    pca_3d = PCA(n_components=3)
+    features_pca_3d = pca_3d.fit_transform(features_scaled)
+    pca_2d = PCA(n_components=2)
+    features_pca_2d = pca_2d.fit_transform(features_scaled)
+
+    # Visualización 3D
     fig = plt.figure(figsize=(10, 7))
     ax = fig.add_subplot(111, projection='3d')
-    scatter = ax.scatter(features_pca[:, 0], features_pca[:, 1], features_pca[:, 2],
+    scatter = ax.scatter(features_pca_3d[:, 0], features_pca_3d[:, 1], features_pca_3d[:, 2],
                          c=clusters, cmap='viridis', s=60)
     ax.set_title('Clusters visualizados con PCA (3D)')
-    ax.set_xlabel('Componente principal 1')
-    ax.set_ylabel('Componente principal 2')
-    ax.set_zlabel('Componente principal 3')
+    ax.set_xlabel('PC1')
+    ax.set_ylabel('PC2')
+    ax.set_zlabel('PC3')
     legend1 = ax.legend(*scatter.legend_elements(), title="Cluster")
     ax.add_artist(legend1)
+    plt.tight_layout()
     plt.savefig("clusters_visualization_3d.png")
     plt.close()
+
+    # Visualización 2D
+    plt.figure(figsize=(8, 6))
+    sns.scatterplot(x=features_pca_2d[:, 0], y=features_pca_2d[:, 1], hue=clusters, palette='viridis', s=60)
+    plt.xlabel('PC1')
+    plt.ylabel('PC2')
+    plt.title('Clusters visualizados con PCA (2D)')
+    plt.legend(title="Cluster")
+    plt.tight_layout()
+    plt.savefig("clusters_visualization_2d.png")
+    plt.close()
+
+    for i in range(n_clusters):
+        mean_original = df_original[df_original['Cluster'] == i][["n", "m", "Proportion n/m", "Min Time", "Standard Deviation"]].mean()
+        print(f"Media de las features originales para Cluster {i}:\n{mean_original.values}")
 
     print("\nNúmero de entradas por cluster:")
     print(df_original['Cluster'].value_counts())
@@ -195,8 +217,7 @@ def main():
     # Separar features y labels
     # Verificar que las columnas se están seleccionando bien
     allowed_features = [
-        "n", "m", "Proportion n/m", "Min Time", "Max Time",
-        "Range", "Mean", "Median", "Variance", "Standard Deviation"
+        "n", "m", "Proportion n/m", "Min Time", "Standard Deviation"
     ]
     print("Columnas seleccionadas como features:")
     print(df_clean[allowed_features].head())
@@ -205,10 +226,6 @@ def main():
     corr_matrix = df_clean[allowed_features].corr()
     print("\nMatriz de correlación entre features:")
     print(corr_matrix)
-
-    # Visualizar la matriz de correlación con un heatmap
-    import matplotlib.pyplot as plt
-    import seaborn as sns
     plt.figure(figsize=(10, 8))
     sns.heatmap(corr_matrix, annot=True, cmap='coolwarm')
     plt.title("Matriz de correlación entre features")
@@ -216,15 +233,7 @@ def main():
     plt.savefig("correlation_matrix.png")
     plt.close()
 
-    allowed_features = [
-    "n", "m", "Proportion n/m", "Min Time", "Standard Deviation"
-    ]
-    cluster_features = [
-        "n", "m", "Proportion n/m", "Min Time", "Max Time",
-        "Range", "Mean", "Median", "Variance", "Standard Deviation"
-    ]
     features = df_clean[allowed_features].values
-    cluster_features_values = df_clean[cluster_features].values
     y_order = df_clean[["Order_0", "Order_1", "Order_2", "Order_3"]].values
 
     # Mostrar todos los órdenes diferentes en el dataset
@@ -248,7 +257,6 @@ def main():
 
     # Reordena los datos balanceados
     features_balanced = features[balanced_indices]
-    cluster_features_balanced = cluster_features_values[balanced_indices]
     y_order_balanced = y_order[balanced_indices]
     
     print("Tamaño del dataset balanceado:", len(features_balanced))
@@ -260,15 +268,15 @@ def main():
     model_order, scaler = train_order_prediction(features_balanced, y_order_balanced)
 
 # -------------------------- Clusterizar instancias por comportamiento heurístico --------------------------
-    elbow_method(cluster_features_balanced, max_k=10)
-    kmeans = cluster_instances(cluster_features_values, df_original, 2)
+    cluster_features = df_original[["n", "m", "Proportion n/m", "Min Time", "Standard Deviation"]].values
+    elbow_method(cluster_features, max_k=10, use_mahalanobis=True)
+    kmeans = cluster_instances(cluster_features, df_original, n_clusters=4, use_mahalanobis=True)
     print("Cluster 0:\n", df_original[df_original['Cluster'] == 0].head())
     print("Cluster 1:\n", df_original[df_original['Cluster'] == 1].head())
+    print("Cluster 2:\n", df_original[df_original['Cluster'] == 2].head())
 
     print("Ejemplo de entrada con orden [3, 1, 2, 0]:")
     print(df_original[np.all(y_order == [3, 1, 2, 0], axis=1)].head(1))
-    # # 3. Predecir efectividad de una estrategia
-    # strategy_model = train_strategy_effectiveness(features, df_original)
 
 if __name__ == "__main__":
     main()
