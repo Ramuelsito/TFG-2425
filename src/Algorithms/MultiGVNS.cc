@@ -34,7 +34,7 @@ Solution MultiGVNS::Solve() {
       previous_best_solution = std::make_unique<Solution>(best_solution_);
       while (k <= 6) {
         std::unique_ptr<Solution> shaked_solution = std::make_unique<Solution>(Shaking(*current_solution, k));
-        std::unique_ptr<Solution> local_search_solution = std::make_unique<Solution>(LocalSearchByRandomVND(*shaked_solution, size_of_walk));
+        std::unique_ptr<Solution> local_search_solution = std::make_unique<Solution>(LocalSearchByVND(*shaked_solution));
         if (local_search_solution->GetTCT() < current_solution->GetTCT()) {
           current_solution = std::move(local_search_solution);
           k = 1;
@@ -134,15 +134,16 @@ Solution MultiGVNS::LocalSearchByVND(const Solution& initial_solution) {
   Solution current_solution = local_optimum;
   bool mejora = true;
   while (mejora) {
-    ReInsertionIntra reinsertion_intra = ReInsertionIntra(current_solution);
-    current_solution = reinsertion_intra.GenerateEnvironment();
+    // Orden 3, 1, 2, 0
+    ReInsertionInter reinsertion_inter = ReInsertionInter(current_solution);
+    current_solution = reinsertion_inter.GenerateEnvironment();
     SwapInter swap_inter = SwapInter(current_solution);
     current_solution = swap_inter.GenerateEnvironment();
     SwapIntra swap_intra = SwapIntra(current_solution);
     current_solution = swap_intra.GenerateEnvironment();
+    ReInsertionIntra reinsertion_intra = ReInsertionIntra(current_solution);
+    current_solution = reinsertion_intra.GenerateEnvironment();
     // Esta en el reinsert inter
-    ReInsertionInter reinsertion_inter = ReInsertionInter(current_solution);
-    current_solution = reinsertion_inter.GenerateEnvironment();
     if (current_solution.GetTCT() < local_optimum.GetTCT()) {
       local_optimum = current_solution;
     } else {

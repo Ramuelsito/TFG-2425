@@ -271,12 +271,11 @@ def main():
     cluster_features = df_original[["n", "m", "Proportion n/m", "Min Time", "Standard Deviation"]].values
     elbow_method(cluster_features, max_k=10, use_mahalanobis=True)
     kmeans = cluster_instances(cluster_features, df_original, n_clusters=4, use_mahalanobis=True)
-    print("Cluster 0:\n", df_original[df_original['Cluster'] == 0].head())
-    print("Cluster 1:\n", df_original[df_original['Cluster'] == 1].head())
-    print("Cluster 2:\n", df_original[df_original['Cluster'] == 2].head())
 
     print("Ejemplo de entrada con orden [3, 1, 2, 0]:")
-    print(df_original[np.all(y_order == [3, 1, 2, 0], axis=1)].head(1))
+    print(df_original[np.all(y_order == [3, 1, 2, 0], axis=1)].head(5))
+    print(df_original[df_original["Instance Name"] == "I40j_2m_S1_UC_1.txt"])
+    print(df_original[df_original["Instance Name"] == "I40j_2m_S1_UC_1.txt"][["Instance Name", "Max TCT", "Mean TCT","Min TCT"]])
 
 if __name__ == "__main__":
     main()
