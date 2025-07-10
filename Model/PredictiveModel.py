@@ -274,8 +274,8 @@ def main():
 
     print("Ejemplo de entrada con orden [3, 1, 2, 0]:")
     print(df_original[np.all(y_order == [3, 1, 2, 0], axis=1)].head(5))
-    print(df_original[df_original["Instance Name"] == "I40j_2m_S1_UC_1.txt"])
-    print(df_original[df_original["Instance Name"] == "I40j_2m_S1_UC_1.txt"][["Instance Name", "Max TCT", "Mean TCT","Min TCT"]])
+    print(df_original[df_original["Instance Name"] == "I50j_2m_S1_UU_1.txt"])
+    print(df_original[df_original["Instance Name"] == "I50j_2m_S1_UU_1.txt"][["Instance Name", "Max TCT", "Mean TCT","Min TCT"]])
 
 if __name__ == "__main__":
     main()
